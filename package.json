@@ -1,0 +1,38 @@
+{
+  "name": "nextjs-material-ui-boilerplate",
+  "version": "1.0.0",
+  "description": "This is a boilerplate for next-js using material-ui.",
+  "main": "index.js",
+  "scripts": {
+    "dev:windows": "next lint && cross-env NODE_ENV=development next dev",
+    "dev": "next lint && NODE_ENV=development next dev",
+    "build": "next build",
+    "start:windows": "cross-env NODE_ENV=production next start",
+    "start": "NODE_ENV=production next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abelofficial/nextjs-material-ui_Boiler.git"
+  },
+  "author": "Abel Sintaro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abelofficial/nextjs-material-ui_Boiler/issues"
+  },
+  "homepage": "https://github.com/abelofficial/nextjs-material-ui_Boiler#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "cors": "^2.8.5",
+    "next": "^11.0.1",
+    "next-connect": "^0.10.1",
+    "next-seo": "^4.26.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint": "^7.30.0",
+    "eslint-config-next": "^11.0.1"
+  }
+}

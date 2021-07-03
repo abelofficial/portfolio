@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@local/*": ["*"],
+            "@local-components/*": ["src/components/*"],
+            "@local-lib/*": ["src/lib/*"],
+            "@local-utils/*": ["src/utils/*"],
+            "@local-services/*": ["src/services/*"],
+        }
+    }
+}
