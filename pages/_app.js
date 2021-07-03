@@ -16,7 +16,7 @@ import {
 import SEO from '@local/src/utils/next-seo.config';
 import theme from '@local-utils/globalTheme';
 
-export default function MyApp(props) {
+const App = (props) => {
   const { Component, pageProps } = props;
 
   // Auto detect browser theme mode
@@ -37,15 +37,6 @@ export default function MyApp(props) {
     <>
       <Head>
         <DefaultSeo {...SEO} />
-        {/* 
-      // Cookie based redirect
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `if (document.cookie && document.cookie.includes('${__COOKIE_NAME__}')) {
-          window.location.href = "${__REDIRECT_URL__}"
-        }`
-        }}
-      /> */}
       </Head>
       <ThemeProvider theme={globalTheme}>
         <CssBaseline />
@@ -53,9 +44,11 @@ export default function MyApp(props) {
       </ThemeProvider>
     </>
   );
-}
+};
 
-MyApp.propTypes = {
+export default App;
+
+App.propTypes = {
   Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.object.isRequired
 };

@@ -1,45 +1,82 @@
 import { createMuiTheme } from '@material-ui/core';
-import { red, blue } from '@material-ui/core/colors';
+import { grey } from '@material-ui/core/colors';
 
+// Fonts
+import {
+  balooBhai,
+  balooBhaiBold,
+  balooBhaiSemiBold,
+  balooBhaiExtraBold
+} from '@local-utils/globalFonts';
 const theme = (mode = 'light') =>
   createMuiTheme({
-    /** @@type Object */
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [
+            balooBhai,
+            balooBhaiBold,
+            balooBhaiSemiBold,
+            balooBhaiExtraBold
+          ]
+        }
+      }
+    },
     palette: {
-      type: mode,
+      type: 'light',
       primary: {
-        main: red[400]
+        main: grey[900]
       },
       secondary: {
-        main: blue[400]
+        main: grey[200]
+      },
+      text: {
+        primary: 'rgba(0, 0, 0, 0.87)',
+        secondary: 'rgba(255, 255, 255, 1)'
+      },
+      action: {
+        active: '#FFC40C'
       }
     },
 
-    /** @@type Object */
     typography: {
+      fontFamily: [
+        'BalooBhai',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"'
+      ].join(','),
+
       h1: {
-        fontSize: '3.5rem'
+        fontSize: '4rem',
+        fontWeight: 900
+      },
+
+      h4: {
+        fontSize: '1.5rem',
+        fontWeight: 500
       }
     },
 
-    /** @@type Object */
     transitions: {},
 
-    /** @@type Object */
     breakpoints: {},
 
-    /** @@type Object */
     mixins: {},
 
-    /** @@type Object */
     props: {},
 
-    /** @@type Object */
     shape: {},
 
-    /** @@type Object */
     zIndex: {}
 
-    /** @@type Object */
     // shadows: {},
     /** @@type f e() */
     // spacing: {},
