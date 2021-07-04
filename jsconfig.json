@@ -3,6 +3,7 @@
         "baseUrl": ".",
         "paths": {
             "@local/*": ["*"],
+            "@local-store/*": ["src/store/*"],
             "@local-components/*": ["src/components/*"],
             "@local-lib/*": ["src/lib/*"],
             "@local-utils/*": ["src/utils/*"],

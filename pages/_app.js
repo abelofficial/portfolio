@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
+import { Provider as StateProvider } from 'react-redux';
 
 // Material ui
 import {
@@ -13,17 +14,17 @@ import {
 } from '@material-ui/core';
 
 // Local
+import { store } from '@local-store/store';
 import SEO from '@local/src/utils/next-seo.config';
 import theme from '@local-utils/globalTheme';
+import Layout from '@local-components/Layout';
 
 const App = (props) => {
   const { Component, pageProps } = props;
 
   // Auto detect browser theme mode
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const globalTheme = responsiveFontSizes(
-    theme(prefersDarkMode ? 'dark' : 'light')
-  );
+  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const globalTheme = responsiveFontSizes(theme(false));
 
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -40,7 +41,11 @@ const App = (props) => {
       </Head>
       <ThemeProvider theme={globalTheme}>
         <CssBaseline />
-        <Component {...pageProps} />
+        <StateProvider store={store}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </StateProvider>
       </ThemeProvider>
     </>
   );
