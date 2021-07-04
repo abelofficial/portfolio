@@ -8,7 +8,7 @@ import {
   balooBhaiSemiBold,
   balooBhaiExtraBold
 } from '@local-utils/globalFonts';
-const theme = (mode = 'light') =>
+const theme = (darkMode = false) =>
   createMuiTheme({
     overrides: {
       MuiCssBaseline: {
@@ -23,19 +23,18 @@ const theme = (mode = 'light') =>
       }
     },
     palette: {
-      type: 'light',
+      type: darkMode ? 'dark' : 'light',
       primary: {
-        main: grey[900]
+        main: darkMode ? '#FFC40C' : '#000000'
       },
       secondary: {
-        main: grey[200]
+        main: darkMode ? '#000000' : '#FFC40C'
+      },
+      background: {
+        default: darkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)'
       },
       text: {
-        primary: 'rgba(0, 0, 0, 0.87)',
-        secondary: 'rgba(255, 255, 255, 1)'
-      },
-      action: {
-        active: '#FFC40C'
+        primary: darkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'
       }
     },
 
