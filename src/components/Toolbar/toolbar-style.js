@@ -23,10 +23,19 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor:
       theme.palette.type === 'light'
         ? theme.palette.secondary.main
-        : theme.palette.primary.main
+        : theme.palette.primary.main,
+    '&:hover': {
+      backgroundColor:
+        theme.palette.type === 'light'
+          ? theme.palette.secondary.main
+          : theme.palette.primary.main
+    }
   },
   closeButton: {
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main
+    }
   },
   actionButton: {
     boxShadow: theme.shadows[16],
