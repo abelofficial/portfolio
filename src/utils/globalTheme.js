@@ -57,10 +57,19 @@ const theme = (darkMode = false) =>
         fontSize: '4rem',
         fontWeight: 900
       },
+      h2: {
+        fontSize: '2.5rem',
+        fontWeight: 700
+      },
 
       h4: {
         fontSize: '1.5rem',
         fontWeight: 500
+      },
+
+      body1: {
+        fontSize: '1rem',
+        fontWeight: 300
       }
     },
 

@@ -6,10 +6,10 @@ import { useSelector } from 'react-redux';
 import { Box } from '@material-ui/core';
 
 // Internal
-import Toolbar from '@local-components/Toolbar';
+import Toolbar from '@local/src/components/sections/Toolbar';
 
 // Component style
-import useStyles from './layout-style';
+import useStyles from './layout.style';
 
 const Layout = ({ children }) => {
   const classes = useStyles();
