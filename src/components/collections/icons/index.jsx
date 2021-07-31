@@ -5,7 +5,7 @@ import clsx from 'classnames';
 import { SvgIcon } from '@material-ui/core';
 
 // Component style
-import useStyles from './icons-style';
+import useStyles from './icons.style';
 
 export const HomeIcon = ({ isActive, props }) => {
   const classes = useStyles();

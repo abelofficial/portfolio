@@ -22,10 +22,10 @@ import {
   LogInIcon,
   CloseIcon,
   BurgerMenuIcon
-} from '@local-components/Icons';
+} from '@local/src/components/collections/icons';
 
 // Component style
-import useStyles from './toolbar-style';
+import useStyles from './toolbar.style';
 
 const Toolbar = (props) => {
   const classes = useStyles();
