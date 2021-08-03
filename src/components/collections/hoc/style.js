@@ -1,11 +1,10 @@
 import { makeStyles } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
-  greyContainer: {
+  sectionContainer: {
     padding: theme.spacing(1),
-    backgroundColor: grey[200],
-    borderRadius: theme.shape.borderRadius
+    backgroundColor: theme.palette.background.paper,
+    borderRadius: '1rem'
   },
   pageContainer: {
     padding: theme.spacing(5),
@@ -14,11 +13,20 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     position: 'absolute',
     zIndex: 400,
-    transition: `${theme.transitions.create(['filter', 'padding'], {
-      duration: theme.transitions.duration.standard,
-      easing: theme.transitions.easing.easeInOut
-    })}`,
-    filter: 'blur(0)'
+    transition: `${theme.transitions.create(
+      ['filter', 'padding', 'background-color'],
+      {
+        duration: theme.transitions.duration.standard,
+        easing: theme.transitions.easing.easeInOut
+      }
+    )}`,
+    filter: 'blur(0)',
+    '& *': {
+      transition: `${theme.transitions.create(['background-color'], {
+        duration: theme.transitions.duration.complex,
+        easing: theme.transitions.easing.easeInOut
+      })}`
+    }
   },
 
   blur: {

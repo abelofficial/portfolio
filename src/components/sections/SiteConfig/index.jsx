@@ -4,7 +4,7 @@
 import { Grid } from '@material-ui/core';
 
 // Local
-import { GreyContainer } from '@local-components/collections/hoc';
+import { SectionContainer } from '@local-components/collections/hoc';
 import { SiteThemeSelector } from '@local-components/collections/buttons';
 
 // Component style
@@ -14,9 +14,9 @@ const SiteConfig = (props) => {
   const styles = useStyles();
 
   return (
-    <GreyContainer component={Grid} container justifyContent="space-around">
+    <SectionContainer component={Grid} container justifyContent="space-around">
       <SiteThemeSelector />
-    </GreyContainer>
+    </SectionContainer>
   );
 };
 
