@@ -16,12 +16,7 @@ const Welcome = (props) => {
   const styles = useStyles();
 
   return (
-    <GreyContainer
-      component={Grid}
-      container
-      justifyContent="space-around"
-      alignItems="center"
-    >
+    <GreyContainer component={Grid} container justifyContent="space-around">
       <Grid item xs={7} className={styles.section}>
         <Typography variant="h2"> Hello Friend</Typography>
         <Typography variant="body1">

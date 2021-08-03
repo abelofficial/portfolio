@@ -11,7 +11,21 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(5),
     width: '100vw',
     minHeight: '100vh',
-    margin: 'auto'
+    margin: 'auto',
+    position: 'absolute',
+    zIndex: 400,
+    transition: `${theme.transitions.create(['filter', 'padding'], {
+      duration: theme.transitions.duration.standard,
+      easing: theme.transitions.easing.easeInOut
+    })}`,
+    filter: 'blur(0)'
+  },
+
+  blur: {
+    filter: 'blur(0.2rem)'
+  },
+  withToolbar: {
+    paddingLeft: theme.spacing(22)
   }
 }));
 

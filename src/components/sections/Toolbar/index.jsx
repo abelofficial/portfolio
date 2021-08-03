@@ -1,14 +1,17 @@
 // Core
 import clsx from 'classnames';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // Material ui
 import {
   Grid,
   IconButton,
-  Box,
+  useMediaQuery,
+  useTheme,
   Typography,
-  ClickAwayListener
+  ClickAwayListener,
+  Box
 } from '@material-ui/core';
 
 // Local
@@ -28,32 +31,49 @@ import {
 import useStyles from './toolbar.style';
 
 const Toolbar = (props) => {
-  const classes = useStyles();
-
-  const drawer = useSelector((state) => state.siteConfig.drawer);
+  const styles = useStyles();
+  const theme = useTheme();
   const dispatch = useDispatch();
 
+  const bigScreen = useMediaQuery(theme.breakpoints.up('md'));
+  const drawer = useSelector((state) => state.siteConfig.drawer);
+
+  const handleCloseDrawer = () => {
+    bigScreen || dispatch(closeDrawer());
+  };
+
+  useEffect(() => {
+    bigScreen && dispatch(openDrawer());
+    bigScreen || handleCloseDrawer();
+  }, [bigScreen]);
+
   return (
-    <ClickAwayListener onClickAway={() => dispatch(closeDrawer())}>
+    <ClickAwayListener onClickAway={handleCloseDrawer}>
       <Grid container>
-        <IconButton
-          className={clsx(classes.actionButton, classes.closeButton, {
-            [`${classes.showActionButton}`]: drawer,
-            [`${classes.hideActionButton}`]: !drawer
-          })}
-          onClick={() => dispatch(closeDrawer())}
-        >
-          <CloseIcon />
-        </IconButton>
+        <Box>
+          {bigScreen ? (
+            <> </>
+          ) : (
+            <IconButton
+              className={clsx(styles.actionButton, styles.closeButton, {
+                [`${styles.showActionButton}`]: drawer,
+                [`${styles.hideActionButton}`]: !drawer
+              })}
+              onClick={() => dispatch(closeDrawer())}
+            >
+              <CloseIcon />
+            </IconButton>
+          )}
+        </Box>
         <Grid item>
           <Grid
             container
             direction="column"
             alignContent="center"
             justify="space-between"
-            className={classes.mainSection}
+            className={styles.mainSection}
           >
-            <Typography variant="h1" className={classes.initial}>
+            <Typography variant="h1" className={styles.initial}>
               A.S
             </Typography>
 
@@ -81,15 +101,21 @@ const Toolbar = (props) => {
             </IconButton>
           </Grid>
         </Grid>
-        <IconButton
-          onClick={() => dispatch(openDrawer())}
-          className={clsx(classes.actionButton, classes.openButton, {
-            [`${classes.showActionButton}`]: !drawer,
-            [`${classes.hideActionButton}`]: drawer
-          })}
-        >
-          <BurgerMenuIcon />
-        </IconButton>
+        <Box>
+          {bigScreen ? (
+            <> </>
+          ) : (
+            <IconButton
+              onClick={() => dispatch(openDrawer())}
+              className={clsx(styles.actionButton, styles.openButton, {
+                [`${styles.showActionButton}`]: !drawer,
+                [`${styles.hideActionButton}`]: drawer
+              })}
+            >
+              <BurgerMenuIcon />
+            </IconButton>
+          )}
+        </Box>
       </Grid>
     </ClickAwayListener>
   );
