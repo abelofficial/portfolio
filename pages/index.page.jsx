@@ -2,16 +2,19 @@
 import { NextSeo } from 'next-seo';
 
 // Material
-import { Box, Grid } from '@material-ui/core';
+import { Box, Grid, useMediaQuery, useTheme } from '@material-ui/core';
 
 // Local
 import Welcome from '@local/src/components/sections/Welcome';
+import SiteConfig from '@local-components/sections/SiteConfig';
 
 // Style
 import useStyle from './index.style';
 
 export default function Home() {
   const styles = useStyle();
+  const theme = useTheme();
+  const bigScreen = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
     <Box>
@@ -24,9 +27,17 @@ export default function Home() {
         }}
       />
 
-      <Grid container>
+      <Grid
+        container
+        direction={bigScreen ? 'row' : 'column-reverse'}
+        spacing={5}
+        justify="space-between"
+      >
         <Grid item xs={12} md={7}>
           <Welcome />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <SiteConfig />
         </Grid>
       </Grid>
     </Box>

@@ -8,13 +8,14 @@ import { Box } from '@material-ui/core';
 // Internal
 import Toolbar from '@local/src/components/sections/Toolbar';
 import { PageContainer } from '@local/src/components/collections/hoc';
+import { selectDrawer } from '@local-store/SiteConfig';
 
 // Component style
 import useStyles from './layout.style';
 
 const Layout = ({ children }) => {
   const styles = useStyles();
-  const drawer = useSelector((state) => state.siteConfig.drawer);
+  const drawer = useSelector(selectDrawer);
 
   return (
     <Box className={styles.page}>

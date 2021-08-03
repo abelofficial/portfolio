@@ -1,9 +1,25 @@
 // Core
+import { useEffect } from 'react';
 import clsx from 'classnames';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+// Internal
+import {
+  selectDrawer,
+  selectDarkMode,
+  setDarkMode,
+  turnOffDarkMode
+} from '@local-store/SiteConfig';
+import globalTheme from '@local-utils/globalTheme';
 
 // Material-ui
-import { Box, useMediaQuery, useTheme } from '@material-ui/core';
+import {
+  Box,
+  useMediaQuery,
+  useTheme,
+  ThemeProvider,
+  responsiveFontSizes
+} from '@material-ui/core';
 
 // Styles
 import useStyles from './style';
@@ -23,7 +39,7 @@ export const PageContainer = ({ className, children, ...restProps }) => {
   const theme = useTheme();
 
   const bigScreen = useMediaQuery(theme.breakpoints.up('md'));
-  const drawer = useSelector((state) => state.siteConfig.drawer);
+  const drawer = useSelector(selectDrawer);
 
   return (
     <Box
@@ -36,4 +52,17 @@ export const PageContainer = ({ className, children, ...restProps }) => {
       {children}
     </Box>
   );
+};
+
+export const CustomThemeProvider = ({ className, children, ...restProps }) => {
+  const dispatch = useDispatch();
+  const darkMode = useSelector(selectDarkMode);
+  const theme = responsiveFontSizes(globalTheme(darkMode));
+
+  useEffect(() => {
+    darkMode || dispatch(turnOffDarkMode());
+    darkMode && dispatch(setDarkMode());
+  }, [darkMode]);
+
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };

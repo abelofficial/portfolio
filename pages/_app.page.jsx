@@ -6,25 +6,16 @@ import { DefaultSeo } from 'next-seo';
 import { Provider as StateProvider } from 'react-redux';
 
 // Material ui
-import {
-  CssBaseline,
-  ThemeProvider,
-  useMediaQuery,
-  responsiveFontSizes
-} from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 
 // Local
 import { store } from '@local-store/store';
 import SEO from '@local/src/utils/next-seo.config';
-import theme from '@local-utils/globalTheme';
+import { CustomThemeProvider } from '@local-components/collections/hoc';
 import Layout from '@local-components/Layout';
 
 const App = (props) => {
   const { Component, pageProps } = props;
-
-  // Auto detect browser theme mode
-  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const globalTheme = responsiveFontSizes(theme(false));
 
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -39,14 +30,15 @@ const App = (props) => {
       <Head>
         <DefaultSeo {...SEO} />
       </Head>
-      <ThemeProvider theme={globalTheme}>
-        <CssBaseline />
-        <StateProvider store={store}>
+
+      <StateProvider store={store}>
+        <CustomThemeProvider>
+          <CssBaseline />
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </StateProvider>
-      </ThemeProvider>
+        </CustomThemeProvider>
+      </StateProvider>
     </>
   );
 };

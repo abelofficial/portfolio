@@ -3,7 +3,7 @@ import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   greyContainer: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
     backgroundColor: grey[200],
     borderRadius: theme.shape.borderRadius
   },
