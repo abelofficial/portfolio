@@ -26,18 +26,6 @@ const useStyles = makeStyles((theme) => ({
     left: '-7.2rem',
     top: '-2rem',
     transform: 'scale(0.8)'
-  },
-  main: {
-    position: 'absolute',
-    zIndex: 400,
-    transition: `${theme.transitions.create(['filter'], {
-      duration: theme.transitions.duration.standard,
-      easing: theme.transitions.easing.easeInOut
-    })}`,
-    filter: 'blur(0)'
-  },
-  blur: {
-    filter: 'blur(0.2rem)'
   }
 }));
 

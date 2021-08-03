@@ -6,7 +6,7 @@ import { Box, Grid } from '@material-ui/core';
 
 // Local
 import Welcome from '@local/src/components/sections/Welcome';
-import { PageContainer } from '@local/src/components/collections/hoc';
+
 // Style
 import useStyle from './index.style';
 
@@ -14,7 +14,7 @@ export default function Home() {
   const styles = useStyle();
 
   return (
-    <Box component={PageContainer}>
+    <Box>
       <NextSeo
         title="Nextjs With Material Ui"
         canonical="http://localhost/3000"

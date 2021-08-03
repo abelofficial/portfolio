@@ -7,31 +7,26 @@ import { Box } from '@material-ui/core';
 
 // Internal
 import Toolbar from '@local/src/components/sections/Toolbar';
+import { PageContainer } from '@local/src/components/collections/hoc';
 
 // Component style
 import useStyles from './layout.style';
 
 const Layout = ({ children }) => {
-  const classes = useStyles();
+  const styles = useStyles();
   const drawer = useSelector((state) => state.siteConfig.drawer);
 
   return (
-    <Box className={classes.page}>
+    <Box className={styles.page}>
       <Box
-        className={clsx(classes.toolbar, {
-          [`${classes.showToolbar}`]: drawer,
-          [`${classes.hideToolbar}`]: !drawer
+        className={clsx(styles.toolbar, {
+          [`${styles.showToolbar}`]: drawer,
+          [`${styles.hideToolbar}`]: !drawer
         })}
       >
         <Toolbar />
       </Box>
-      <main
-        className={clsx(classes.main, {
-          [`${classes.blur}`]: drawer
-        })}
-      >
-        {children}
-      </main>
+      <PageContainer>{children}</PageContainer>
     </Box>
   );
 };
