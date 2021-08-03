@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  drawer: false
+  drawer: false,
+  darkMode: false
 };
 
 export const siteConfigSlice = createSlice({
@@ -13,14 +14,22 @@ export const siteConfigSlice = createSlice({
     },
     closeDrawer: (state) => {
       state.drawer = false;
+    },
+    setDarkMode: (state) => {
+      state.darkMode = true;
+    },
+    turnOffDarkMode: (state) => {
+      state.darkMode = false;
     }
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload
-    // },
   }
 });
 
-// Action creators are generated for each case reducer function
-export const { openDrawer, closeDrawer } = siteConfigSlice.actions;
+// Actions
+export const { openDrawer, closeDrawer, setDarkMode, turnOffDarkMode } =
+  siteConfigSlice.actions;
+
+// Selectors
+export const selectDrawer = (state) => state.siteConfig.drawer;
+export const selectDarkMode = (state) => state.siteConfig.darkMode;
 
 export default siteConfigSlice.reducer;

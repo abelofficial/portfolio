@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core';
 
 // Local
-import { openDrawer, closeDrawer } from '@local-store/SiteConfig';
+import { openDrawer, closeDrawer, selectDrawer } from '@local-store/SiteConfig';
 import {
   HomeIcon,
   EducationIcon,
@@ -36,7 +36,7 @@ const Toolbar = (props) => {
   const dispatch = useDispatch();
 
   const bigScreen = useMediaQuery(theme.breakpoints.up('md'));
-  const drawer = useSelector((state) => state.siteConfig.drawer);
+  const drawer = useSelector(selectDrawer);
 
   const handleCloseDrawer = () => {
     bigScreen || dispatch(closeDrawer());
