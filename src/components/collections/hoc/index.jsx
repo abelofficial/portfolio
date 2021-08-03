@@ -24,11 +24,11 @@ import {
 // Styles
 import useStyles from './style';
 
-export const GreyContainer = ({ className, children, ...restProps }) => {
+export const SectionContainer = ({ className, children, ...restProps }) => {
   const styles = useStyles();
 
   return (
-    <Box className={styles.greyContainer} {...restProps}>
+    <Box className={styles.sectionContainer} {...restProps}>
       {children}
     </Box>
   );

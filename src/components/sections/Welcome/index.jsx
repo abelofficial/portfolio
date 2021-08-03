@@ -1,13 +1,12 @@
 // Core
 import Image from 'next/image';
 import clsx from 'classnames';
-import { useSelector, useDispatch } from 'react-redux';
 
 // Material ui
 import { Grid, Typography } from '@material-ui/core';
 
 // Local
-import { GreyContainer } from '@local-components/collections/hoc';
+import { SectionContainer } from '@local-components/collections/hoc';
 
 // Component style
 import useStyles from './welcome.style';
@@ -16,7 +15,7 @@ const Welcome = (props) => {
   const styles = useStyles();
 
   return (
-    <GreyContainer component={Grid} container justifyContent="space-around">
+    <SectionContainer component={Grid} container justifyContent="space-around">
       <Grid item xs={7} className={styles.section}>
         <Typography variant="h2"> Hello Friend</Typography>
         <Typography variant="body1">
@@ -34,7 +33,7 @@ const Welcome = (props) => {
           />
         </div>
       </Grid>
-    </GreyContainer>
+    </SectionContainer>
   );
 };
 

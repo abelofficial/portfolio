@@ -31,8 +31,10 @@ const theme = (darkMode = false) =>
         main: darkMode ? '#000000' : '#FFC40C'
       },
       background: {
-        default: darkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)'
+        default: darkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
+        paper: darkMode ? '#424242' : '#F2F2F2'
       },
+
       text: {
         primary: darkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'
       }
