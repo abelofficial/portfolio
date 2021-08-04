@@ -6,6 +6,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     borderRadius: '1rem'
   },
+  siteContainer: {
+    height: '100vh',
+    minHeight: '55rem',
+    backgroundColor: theme.palette.background.default,
+    transition: `${theme.transitions.create(['background-color'], {
+      duration: theme.transitions.duration.complex,
+      easing: theme.transitions.easing.easeInOut
+    })}`
+  },
   pageContainer: {
     padding: theme.spacing(5),
     width: '100vw',
@@ -13,20 +22,11 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     position: 'absolute',
     zIndex: 400,
-    transition: `${theme.transitions.create(
-      ['filter', 'padding', 'background-color'],
-      {
-        duration: theme.transitions.duration.standard,
-        easing: theme.transitions.easing.easeInOut
-      }
-    )}`,
     filter: 'blur(0)',
-    '& *': {
-      transition: `${theme.transitions.create(['background-color'], {
-        duration: theme.transitions.duration.complex,
-        easing: theme.transitions.easing.easeInOut
-      })}`
-    }
+    transition: `${theme.transitions.create(['filter', 'padding'], {
+      duration: theme.transitions.duration.standard,
+      easing: theme.transitions.easing.easeInOut
+    })}`
   },
 
   blur: {

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   page: {
     position: 'relative',
-    minHeight: '100vh',
+    height: '100%',
     width: '100vw',
     maxWidth: '100%'
   },
@@ -11,11 +11,12 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     zIndex: 500,
     left: '1rem',
+    height: '85%',
+    minHeight: '50rem',
     transition: `${theme.transitions.create(['left', 'top', 'transform'], {
       duration: theme.transitions.duration.standard,
       easing: theme.transitions.easing.easeInOut
-    })}`,
-    height: '90%'
+    })}`
   },
   showToolbar: {
     left: '1rem',

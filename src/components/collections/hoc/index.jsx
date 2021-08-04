@@ -54,6 +54,16 @@ export const PageContainer = ({ className, children, ...restProps }) => {
   );
 };
 
+export const SiteContainer = ({ className, children, ...restProps }) => {
+  const styles = useStyles();
+
+  return (
+    <Box className={styles.siteContainer} {...restProps}>
+      {children}
+    </Box>
+  );
+};
+
 export const CustomThemeProvider = ({ className, children, ...restProps }) => {
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);

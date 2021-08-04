@@ -75,7 +75,11 @@ const theme = (darkMode = false) =>
       }
     },
 
-    transitions: {},
+    transitions: {
+      duration: {
+        complex: 875
+      }
+    },
 
     breakpoints: {},
 
