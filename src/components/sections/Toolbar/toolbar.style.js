@@ -1,11 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    height: '90vh'
-  },
-
   mainSection: {
     height: '100%',
     position: 'absolute',
@@ -14,7 +9,11 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(18),
     borderRadius: theme.spacing(3),
     boxShadow: theme.shadows[16],
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
+    transition: `${theme.transitions.create(['background-color'], {
+      duration: theme.transitions.duration.complex,
+      easing: theme.transitions.easing.easeInOut
+    })}`
   },
   initial: {
     color: theme.palette.primary.contrastText

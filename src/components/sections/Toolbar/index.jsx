@@ -25,7 +25,7 @@ import {
   LogInIcon,
   CloseIcon,
   BurgerMenuIcon
-} from '@local/src/components/collections/icons';
+} from '@local-assets/icons';
 
 // Component style
 import useStyles from './toolbar.style';

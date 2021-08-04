@@ -1,5 +1,4 @@
 import { createMuiTheme } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
 
 // Fonts
 import {
@@ -75,7 +74,11 @@ const theme = (darkMode = false) =>
       }
     },
 
-    transitions: {},
+    transitions: {
+      duration: {
+        complex: 875
+      }
+    },
 
     breakpoints: {},
 
