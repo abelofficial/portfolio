@@ -2,7 +2,7 @@
 import { NextSeo } from 'next-seo';
 
 // Material
-import { Box, Grid, useMediaQuery, useTheme } from '@material-ui/core';
+import { Box, Grid, Hidden, useMediaQuery, useTheme } from '@material-ui/core';
 
 // Local
 import Welcome from '@local/src/components/sections/Welcome';
@@ -10,6 +10,7 @@ import SiteConfig from '@local-components/sections/SiteConfig';
 
 // Style
 import useStyle from './index.style';
+import Logo from '@local/src/components/collections/Logo';
 
 export default function Home() {
   const styles = useStyle();
@@ -30,15 +31,24 @@ export default function Home() {
       <Grid
         container
         direction={bigScreen ? 'row' : 'column-reverse'}
-        spacing={5}
-        justify="space-between"
+        justify="space-around"
       >
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={7} component={Box} py={4}>
           <Welcome />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Box
+          margin={2}
+          p={1}
+          display="flex"
+          alignItems="center"
+          component={Grid}
+          item
+          xs={12}
+          md={4}
+        >
           <SiteConfig />
-        </Grid>
+          <Logo />
+        </Box>
       </Grid>
     </Box>
   );
