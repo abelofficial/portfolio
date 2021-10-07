@@ -2,9 +2,10 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   sectionContainer: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(0.5),
     backgroundColor: theme.palette.background.paper,
-    borderRadius: '1rem'
+    borderRadius: '1rem',
+    height: 'fit-content'
   },
   siteContainer: {
     height: '100vh',
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     })}`
   },
   pageContainer: {
-    padding: theme.spacing(5),
+    padding: theme.spacing(3),
     width: '100vw',
     minHeight: '100vh',
     margin: 'auto',
