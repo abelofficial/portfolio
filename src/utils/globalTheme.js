@@ -86,7 +86,9 @@ const theme = (darkMode = false) =>
 
     props: {},
 
-    shape: {},
+    shape: {
+      borderRadius: '1rem'
+    },
 
     zIndex: {}
 

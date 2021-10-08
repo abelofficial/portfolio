@@ -1,21 +1,24 @@
 // Core
 import { NextSeo } from 'next-seo';
-
+import clsx from 'classnames';
 // Material
 import { Box, Grid, Hidden, useMediaQuery, useTheme } from '@material-ui/core';
 
 // Local
+import Logo from '@local/src/components/collections/Logo';
 import Welcome from '@local/src/components/sections/Welcome';
 import SiteConfig from '@local-components/sections/SiteConfig';
+import { useOnScreen } from '@local/src/hooks/useOnScreen';
 
 // Style
 import useStyle from './index.style';
-import Logo from '@local/src/components/collections/Logo';
 
 export default function Home() {
   const styles = useStyle();
   const theme = useTheme();
   const bigScreen = useMediaQuery(theme.breakpoints.up('md'));
+
+  const [setRef, visible] = useOnScreen({ threshold: '0.35' });
 
   return (
     <Box>
@@ -36,20 +39,17 @@ export default function Home() {
         <Grid item xs={12} md={7} component={Box} py={4}>
           <Welcome />
         </Grid>
-        <Box
-          margin={2}
-          p={1}
-          display="flex"
-          alignItems="center"
-          component={Grid}
+        <Grid
           item
           xs={12}
           md={4}
+          className={clsx(styles.section, { [styles.onTopScreen]: visible })}
         >
           <SiteConfig />
           <Logo />
-        </Box>
+        </Grid>
       </Grid>
+      <Box height="200vh" ref={setRef} />
     </Box>
   );
 }
