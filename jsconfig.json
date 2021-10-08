@@ -1,13 +1,14 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "@local/*": ["*"],
-            "@local-store/*": ["src/store/*"],
-            "@local-components/*": ["src/components/*"],
-            "@local-utils/*": ["src/utils/*"],
-            "@local-services/*": ["src/services/*"],
-            "@local-assets/*": ["src/assets/*"],
-        }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@local/*": ["*"],
+      "@local-store/*": ["src/store/*"],
+      "@local-components/*": ["src/components/*"],
+      "@local-utils/*": ["src/utils/*"],
+      "@local-hooks/*": ["src/hooks/*"],
+      "@local-services/*": ["src/services/*"],
+      "@local-assets/*": ["src/assets/*"]
     }
+  }
 }
