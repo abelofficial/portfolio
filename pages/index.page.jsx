@@ -12,6 +12,7 @@ import { useOnScreen } from '@local/src/hooks/useOnScreen';
 
 // Style
 import useStyle from './index.style';
+import WhatIDo from '@local/src/components/sections/WhatIDo';
 
 export default function Home() {
   const styles = useStyle();
@@ -39,6 +40,7 @@ export default function Home() {
       >
         <Grid item xs={12} md={7} component={Box} py={4}>
           <AboutMe />
+          <WhatIDo />
         </Grid>
         <Grid item xs={12} md={4} className={clsx(styles.section)}>
           <Logo width={270} height={60} />
