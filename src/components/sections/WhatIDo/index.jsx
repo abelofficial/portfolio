@@ -27,7 +27,7 @@ import { HighLightText } from '../../collections/text';
 
 const WhatIDo = (props) => {
   const styles = useStyles();
-  const [setRef, visible] = useOnScreen({ threshold: '0.3' });
+  const [setRef, visible] = useOnScreen({ threshold: '0.1' });
 
   return (
     <SectionContainer>

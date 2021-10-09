@@ -4,75 +4,50 @@ import clsx from 'classnames';
 import Carousel from 'react-material-ui-carousel';
 import { v4 as uuid } from 'uuid';
 // Material ui
-import { Box, Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Icon, IconButton, Typography } from '@material-ui/core';
 
 // Local
 import { SectionContainer } from '@local-components/collections/hoc';
 import data from './data.json';
 
 // Component style
-import useStyles from './about.style';
+import useStyles from './contact.style';
 import { HighLightText, Paragraph, Title } from '../../collections/text';
+import { SubSectionTitle } from '../../collections/text';
+import { SectionTitle } from '../../collections/text';
 
-const Welcome = (props) => {
+const Contact = (props) => {
   const styles = useStyles();
   const dataList = data;
   return (
-    <SectionContainer component={Grid} container justifyContent="space-around">
-      <Grid container direction="row">
-        <Grid
-          item
-          xs={8}
-          className={styles.section}
-          component={Box}
-          p={2}
-          height="9rem"
-        >
-          <Carousel
-            autoPlay
-            animation="fade"
-            timeout={600}
-            interval={5000}
-            indicators={false}
-            className={styles.textSlideShow}
+    <SectionContainer
+      component={Box}
+      width="100%"
+      direction="column"
+      justifyContent="space-around"
+    >
+      <SectionTitle className={styles.title}> Connect with me </SectionTitle>
+      <Grid container direction="row" justify="space-between">
+        {Object.keys(data).map((item) => (
+          <Box
+            key={uuid()}
+            display="flex"
+            flexDirection="column"
+            className={styles.contactLink}
           >
-            {dataList.map((item) => (
-              <Box key={uuid()}>
-                <Title gutterBottom> {item.title} </Title>
-                <Paragraph variant="body1" className={styles.info}>
-                  {item.description}
-                </Paragraph>
-              </Box>
-            ))}
-          </Carousel>
-        </Grid>
-
-        <Grid item xs={3} className={clsx(styles.section, styles.animSection)}>
-          <Carousel
-            autoPlay
-            animation="fade"
-            timeout={600}
-            interval={15000}
-            indicators={false}
-            ind
-            className={styles.imageContainer}
-          >
-            {dataList.map((item) => (
-              <Image
-                key={uuid()}
-                alt="welcome image"
-                src={item.image}
-                width={100}
-                height={170}
-                layout="intrinsic"
-                className={styles.image}
-              />
-            ))}
-          </Carousel>
-        </Grid>
+            <Image
+              alt="Github Icon"
+              src={data[item]}
+              height={35}
+              width={35}
+              className={styles.icon}
+            />
+            <HighLightText> {item} </HighLightText>
+          </Box>
+        ))}
       </Grid>
     </SectionContainer>
   );
 };
 
-export default Welcome;
+export default Contact;

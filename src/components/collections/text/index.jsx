@@ -20,9 +20,9 @@ export const Title = ({ children, ...restProps }) => {
   const styles = useStyles();
   return (
     <Typography
-      {...restProps}
       variant="h2"
       className={clsx(styles.text, styles.title)}
+      {...restProps}
     >
       {children}
     </Typography>
@@ -33,9 +33,9 @@ export const SectionTitle = ({ children, ...restProps }) => {
   const styles = useStyles();
   return (
     <Typography
-      {...restProps}
       variant="h3"
       className={clsx(styles.text, styles.sectionTitle)}
+      {...restProps}
     >
       {children}
     </Typography>
@@ -46,9 +46,9 @@ export const SubSectionTitle = ({ children, ...restProps }) => {
   const styles = useStyles();
   return (
     <Typography
-      {...restProps}
       variant="subtitle1"
       className={clsx(styles.text, styles.subSectionTitle)}
+      {...restProps}
     >
       {children}
     </Typography>
@@ -59,9 +59,9 @@ export const Paragraph = ({ children, ...restProps }) => {
   const styles = useStyles();
   return (
     <Typography
-      {...restProps}
       variant="body1"
       className={clsx(styles.text, styles.sectionTitle)}
+      {...restProps}
     >
       {children}
     </Typography>
@@ -72,9 +72,9 @@ export const HighLightText = ({ children, ...restProps }) => {
   const styles = useStyles();
   return (
     <Typography
-      {...restProps}
       variant="body2"
       className={clsx(styles.text, styles.highlightText)}
+      {...restProps}
     >
       {children}
     </Typography>
