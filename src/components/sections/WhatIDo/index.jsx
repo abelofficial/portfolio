@@ -1,9 +1,17 @@
 // Core
 import Image from 'next/image';
 import clsx from 'classnames';
-
+import { v4 as uuid } from 'uuid';
 // Material ui
-import { Box, Divider, Fade, Grid, Typography } from '@material-ui/core';
+import {
+  Box,
+  Divider,
+  Slide,
+  Grid,
+  Paper,
+  Typography,
+  Fade
+} from '@material-ui/core';
 
 // Local
 import { SectionContainer } from '@local-components/collections/hoc';
@@ -15,11 +23,11 @@ import { useOnScreen } from '@local/src/hooks/useOnScreen';
 import { SectionTitle } from '../../collections/text';
 import { Paragraph } from '../../collections/text';
 import { SubSectionTitle } from '../../collections/text';
+import { HighLightText } from '../../collections/text';
 
 const WhatIDo = (props) => {
   const styles = useStyles();
   const [setRef, visible] = useOnScreen({ threshold: '0.3' });
-  let timeoutStarter = 0;
 
   return (
     <SectionContainer>
@@ -33,10 +41,30 @@ const WhatIDo = (props) => {
           <SectionTitle variant="h4" gutterBottom>
             Tech stack
           </SectionTitle>
+          <Box className={clsx(styles.section, styles.slideAnim)}>
+            {data[0].map((item, index) => (
+              <Slide
+                key={uuid()}
+                in={visible}
+                direction="left"
+                timeout={index * 300}
+              >
+                <Box className={clsx(styles.frameworkContainer)}>
+                  <Image
+                    alt={item.title + ' icon'}
+                    width={120}
+                    height={60}
+                    src={item.link}
+                  />
+                  <HighLightText gutterBottom> {item.name} </HighLightText>
+                </Box>
+              </Slide>
+            ))}
+          </Box>
         </Grid>
 
-        {data.map((item) => (
-          <Fade key={item.title} in={visible} timeout={(timeoutStarter += 500)}>
+        {data.slice(1).map((item, index) => (
+          <Fade key={item.title} in={visible} timeout={index * 600}>
             <Box>
               <Divider className={styles.divider} />
               <Grid
