@@ -71,6 +71,10 @@ const theme = (darkMode = false) =>
       body1: {
         fontSize: '1rem',
         fontWeight: 300
+      },
+      body2: {
+        fontSize: '0.9rem',
+        fontWeight: 300
       }
     },
 
@@ -90,8 +94,12 @@ const theme = (darkMode = false) =>
       borderRadius: '1rem'
     },
 
-    zIndex: {}
+    zIndex: {},
 
+    shadows: [
+      'none',
+      '0px 3px 5px -1px rgba(255,196,12,0.2),0px 5px 8px 0px rgba(255,196,12,0.14),0px 1px 14px 0px rgba(255,196,12,0.12)'
+    ]
     // shadows: {},
     /** @@type f e() */
     // spacing: {},

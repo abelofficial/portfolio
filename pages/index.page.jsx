@@ -5,8 +5,8 @@ import clsx from 'classnames';
 import { Box, Grid, Hidden, useMediaQuery, useTheme } from '@material-ui/core';
 
 // Local
-import Logo from '@local/src/components/collections/Logo';
-import Welcome from '@local/src/components/sections/Welcome';
+import Logo from '@local-assets/svgs/logo/image';
+import AboutMe from '@local/src/components/sections/AboutMe';
 import SiteConfig from '@local-components/sections/SiteConfig';
 import { useOnScreen } from '@local/src/hooks/useOnScreen';
 
@@ -35,18 +35,14 @@ export default function Home() {
         container
         direction={bigScreen ? 'row' : 'column-reverse'}
         justify="space-around"
+        alignItems={bigScreen ? 'flex-start' : 'stretch'}
       >
         <Grid item xs={12} md={7} component={Box} py={4}>
-          <Welcome />
+          <AboutMe />
         </Grid>
-        <Grid
-          item
-          xs={12}
-          md={4}
-          className={clsx(styles.section, { [styles.onTopScreen]: visible })}
-        >
+        <Grid item xs={12} md={4} className={clsx(styles.section)}>
+          <Logo width={270} height={60} />
           <SiteConfig />
-          <Logo />
         </Grid>
       </Grid>
       <Box height="200vh" ref={setRef} />
