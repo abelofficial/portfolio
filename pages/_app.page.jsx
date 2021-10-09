@@ -11,10 +11,7 @@ import { CssBaseline } from '@material-ui/core';
 // Local
 import { store } from '@local-store/store';
 import SEO from '@local/src/utils/next-seo.config';
-import {
-  CustomThemeProvider,
-  SiteContainer
-} from '@local-components/collections/hoc';
+import { CustomThemeProvider, SiteContainer } from '@local/src/components/hoc';
 import Layout from '@local-components/Layout';
 
 const App = (props) => {

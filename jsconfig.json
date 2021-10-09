@@ -9,6 +9,23 @@
       "@local-hooks/*": ["src/hooks/*"],
       "@local-services/*": ["src/services/*"],
       "@local-assets/*": ["src/assets/*"]
-    }
-  }
+    },
+    "jsx": "preserve",
+    "outDir": "./build",
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
