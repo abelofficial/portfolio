@@ -15,6 +15,19 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     bottom: 0,
     right: 0
+  },
+  info: {
+    fontSize: '11px',
+    fontWeight: 200,
+    letterSpacing: '0.2em',
+
+    textAlign: 'left'
+  },
+  highlight: {
+    color:
+      theme.palette.type === 'light'
+        ? theme.palette.secondary.dark
+        : theme.palette.primary.dark
   }
 }));
 

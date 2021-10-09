@@ -11,6 +11,7 @@ import {
   turnOffDarkMode
 } from '@local-store/SiteConfig';
 import globalTheme from '@local-utils/globalTheme';
+import { useOnScreen } from '@local/src/hooks/useOnScreen';
 
 // Material-ui
 import {
@@ -18,7 +19,8 @@ import {
   useMediaQuery,
   useTheme,
   ThemeProvider,
-  responsiveFontSizes
+  responsiveFontSizes,
+  Container
 } from '@material-ui/core';
 
 // Styles
@@ -26,9 +28,16 @@ import useStyles from './style';
 
 export const SectionContainer = ({ className, children, ...restProps }) => {
   const styles = useStyles();
+  const [setRef, visible] = useOnScreen({ threshold: '0.5' });
 
   return (
-    <Box className={styles.sectionContainer} {...restProps}>
+    <Box
+      ref={setRef}
+      className={clsx(styles.sectionContainer, {
+        [styles.withShadow]: visible
+      })}
+      {...restProps}
+    >
       {children}
     </Box>
   );
