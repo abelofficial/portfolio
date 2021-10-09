@@ -34,18 +34,25 @@ export default function Home() {
 
       <Grid
         container
-        direction={bigScreen ? 'row' : 'column-reverse'}
+        direction={bigScreen ? 'row-reverse' : 'column'}
         justify="space-around"
         alignItems={bigScreen ? 'flex-start' : 'stretch'}
       >
+        <Grid item xs={12} md={4} className={clsx(styles.section)}>
+          <Logo width={270} height={60} className={clsx(styles.logo)} />
+          <SiteConfig />
+        </Grid>
         <Grid item xs={12} md={7} component={Box} py={4}>
           <AboutMe />
           <WhatIDo />
         </Grid>
-        <Grid item xs={12} md={4} className={clsx(styles.section)}>
-          <Logo width={270} height={60} />
-          <SiteConfig />
+
+        {/* <Grid item xs={12} md={7} component={Box} py={4}>
+          <WhatIDo />
         </Grid>
+        <Grid item xs={12} md={4} className={clsx(styles.section)}>
+          <h1>hello</h1>
+        </Grid> */}
       </Grid>
       <Box height="200vh" ref={setRef} />
     </Box>

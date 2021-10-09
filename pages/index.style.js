@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
+  },
+  logo: {
+    alignSelf: 'flex-end'
   }
 }));
 
