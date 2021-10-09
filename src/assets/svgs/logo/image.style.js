@@ -13,9 +13,9 @@ const useStyles = makeStyles((theme) => ({
   /* The element to apply the animation to */
 
   redCircle: {
-    fill: theme.palette.error.main,
+    fill: theme.palette.error.main
 
-    animation: `$blink 1500ms ${theme.transitions.easing.easeInOut} 100ms infinite alternate-reverse`
+    // animation: `$blink 1500ms ${theme.transitions.easing.easeInOut} 100ms infinite alternate-reverse`
   }
 }));
 
