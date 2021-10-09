@@ -12,6 +12,9 @@ import { SectionContainer } from '@local-components/collections/hoc';
 import data from './data.json';
 import useStyles from './whatIDo.style';
 import { useOnScreen } from '@local/src/hooks/useOnScreen';
+import { SectionTitle } from '../../collections/text';
+import { Paragraph } from '../../collections/text';
+import { SubSectionTitle } from '../../collections/text';
 
 const WhatIDo = (props) => {
   const styles = useStyles();
@@ -20,11 +23,16 @@ const WhatIDo = (props) => {
 
   return (
     <SectionContainer>
-      <Grid container justifyContent="space-around" ref={setRef}>
+      <Grid
+        container
+        justifyContent="space-around"
+        ref={setRef}
+        className={styles.container}
+      >
         <Grid item xs={12}>
-          <Typography variant="h4" gutterBottom>
+          <SectionTitle variant="h4" gutterBottom>
             Tech stack
-          </Typography>
+          </SectionTitle>
         </Grid>
 
         {data.map((item) => (
@@ -35,7 +43,7 @@ const WhatIDo = (props) => {
                 container
                 direction="column"
                 alignItems="flex-start"
-                className={styles.container}
+                className={styles.section}
               >
                 <Image
                   alt={item.title + ' Image'}
@@ -43,12 +51,8 @@ const WhatIDo = (props) => {
                   width={60}
                   height={60}
                 />
-                <Typography variant="h6" gutterBottom>
-                  {item.title}{' '}
-                </Typography>
-                <Typography variant="body1" className={styles.content}>
-                  {item.content}{' '}
-                </Typography>
+                <SubSectionTitle gutterBottom>{item.title}</SubSectionTitle>
+                <Paragraph className={styles.content}>{item.content}</Paragraph>
               </Grid>
             </Box>
           </Fade>

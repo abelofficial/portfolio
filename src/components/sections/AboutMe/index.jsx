@@ -1,45 +1,75 @@
 // Core
 import Image from 'next/image';
 import clsx from 'classnames';
-
+import Carousel from 'react-material-ui-carousel';
+import { v4 as uuid } from 'uuid';
 // Material ui
-import { Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 
 // Local
 import { SectionContainer } from '@local-components/collections/hoc';
+import data from './data.json';
 
 // Component style
-import useStyles from './welcome.style';
+import useStyles from './about.style';
+import { HighLightText, Paragraph, Title } from '../../collections/text';
 
 const Welcome = (props) => {
   const styles = useStyles();
-
+  const dataList = data;
   return (
     <SectionContainer component={Grid} container justifyContent="space-around">
-      <Grid item xs={8} className={styles.section}>
-        <Typography variant="h2" gutterBottom>
-          JavaScript Developer
-        </Typography>
-        <Typography variant="body2" className={styles.info}>
-          I am a trained Network technician and self-taught front-end web
-          developer. I am a dedicated and self-motivated Javascript developer
-          who specializes in{' '}
-          <strong className={styles.highlight}> React </strong> for front-end
-          development as well as{' '}
-          <strong className={styles.highlight}> Nestjs (node) </strong> for
-          backend development.
-        </Typography>
-      </Grid>
-      <Grid item xs={3} className={clsx(styles.section, styles.animSection)}>
-        <div className={styles.image}>
-          <Image
-            alt="welcome image"
-            src="/images/no_bg.png"
-            width={100}
-            height={170}
-            layout="intrinsic"
-          />
-        </div>
+      <Grid container direction="row">
+        <Grid
+          item
+          xs={8}
+          className={styles.section}
+          component={Box}
+          p={2}
+          height="9rem"
+        >
+          <Carousel
+            autoPlay
+            animation="fade"
+            timeout={600}
+            interval={5000}
+            indicators={false}
+            className={styles.textSlideShow}
+          >
+            {dataList.map((item) => (
+              <Box key={uuid()}>
+                <Title gutterBottom> {item.title} </Title>
+                <Paragraph variant="body1" className={styles.info}>
+                  {item.description}
+                </Paragraph>
+              </Box>
+            ))}
+          </Carousel>
+        </Grid>
+
+        <Grid item xs={3} className={clsx(styles.section, styles.animSection)}>
+          <Carousel
+            autoPlay
+            animation="fade"
+            timeout={600}
+            interval={15000}
+            indicators={false}
+            ind
+            className={styles.imageContainer}
+          >
+            {dataList.map((item) => (
+              <Image
+                key={uuid()}
+                alt="welcome image"
+                src={item.image}
+                width={100}
+                height={170}
+                layout="intrinsic"
+                className={styles.image}
+              />
+            ))}
+          </Carousel>
+        </Grid>
       </Grid>
     </SectionContainer>
   );
