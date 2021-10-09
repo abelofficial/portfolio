@@ -2,11 +2,12 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   sectionContainer: {
+    marginTop: theme.spacing(1.5),
+    marginBottom: theme.spacing(1.5),
     padding: theme.spacing(0.5),
     backgroundColor: theme.palette.background.paper,
     borderRadius: '1rem',
     height: 'fit-content',
-
     boxShadow: theme.shadows[0]
   },
   siteContainer: {

@@ -36,7 +36,8 @@ const theme = (darkMode = false) =>
 
       text: {
         primary: darkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'
-      }
+      },
+      divider: '#FFE40C'
     },
 
     typography: {
