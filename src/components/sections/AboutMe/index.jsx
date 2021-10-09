@@ -1,36 +1,36 @@
 // Core
-import Image from 'next/image';
-import clsx from 'classnames';
-import Carousel from 'react-material-ui-carousel';
-import { v4 as uuid } from 'uuid';
+import Image from "next/image";
+import clsx from "classnames";
+import Carousel from "react-material-ui-carousel";
+import { v4 as uuid } from "uuid";
 // Material ui
-import { Box, Grid, Typography } from '@material-ui/core';
+import { Box, Grid } from "@material-ui/core";
 
 // Local
-import { SectionContainer } from '@local-components/collections/hoc';
-import data from './data.json';
+import { SectionContainer } from "@local/src/components/hoc";
+import data from "./data.json";
 
 // Component style
-import useStyles from './about.style';
-import { HighLightText, Paragraph, Title } from '../../collections/text';
+import useStyles from "./about.style";
+import { Paragraph, Title } from "../../collections/text";
 
-const Welcome = (props) => {
+const AboutMe = (props) => {
   const styles = useStyles();
   const dataList = data;
   return (
-    <SectionContainer component={Grid} container justifyContent="space-around">
-      <Grid container direction="row">
+    <SectionContainer component={Grid} container justifyContent='space-around'>
+      <Grid container direction='row'>
         <Grid
           item
           xs={8}
           className={styles.section}
           component={Box}
           p={2}
-          height="9rem"
+          height='9rem'
         >
           <Carousel
             autoPlay
-            animation="fade"
+            animation='fade'
             timeout={600}
             interval={5000}
             indicators={false}
@@ -39,7 +39,7 @@ const Welcome = (props) => {
             {dataList.map((item) => (
               <Box key={uuid()}>
                 <Title gutterBottom> {item.title} </Title>
-                <Paragraph variant="body1" className={styles.info}>
+                <Paragraph variant='body1' className={styles.info}>
                   {item.description}
                 </Paragraph>
               </Box>
@@ -50,7 +50,7 @@ const Welcome = (props) => {
         <Grid item xs={3} className={clsx(styles.section, styles.animSection)}>
           <Carousel
             autoPlay
-            animation="fade"
+            animation='fade'
             timeout={600}
             interval={15000}
             indicators={false}
@@ -60,11 +60,11 @@ const Welcome = (props) => {
             {dataList.map((item) => (
               <Image
                 key={uuid()}
-                alt="welcome image"
+                alt='AboutMe image'
                 src={item.image}
                 width={100}
                 height={170}
-                layout="intrinsic"
+                layout='intrinsic'
                 className={styles.image}
               />
             ))}
@@ -75,4 +75,4 @@ const Welcome = (props) => {
   );
 };
 
-export default Welcome;
+export default AboutMe;
