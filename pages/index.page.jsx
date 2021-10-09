@@ -13,6 +13,7 @@ import { useOnScreen } from '@local/src/hooks/useOnScreen';
 // Style
 import useStyle from './index.style';
 import WhatIDo from '@local/src/components/sections/WhatIDo';
+import Contact from '@local/src/components/sections/Contact';
 
 export default function Home() {
   const styles = useStyle();
@@ -34,17 +35,20 @@ export default function Home() {
 
       <Grid
         container
-        direction={bigScreen ? 'row-reverse' : 'column'}
+        direction={bigScreen ? 'row' : 'column-reverse'}
         justify="space-around"
         alignItems={bigScreen ? 'flex-start' : 'stretch'}
       >
-        <Grid item xs={12} md={4} className={clsx(styles.section)}>
-          <Logo width={270} height={60} className={clsx(styles.logo)} />
-          <SiteConfig />
-        </Grid>
         <Grid item xs={12} md={7} component={Box} py={4}>
-          <AboutMe />
           <WhatIDo />
+        </Grid>
+        <Grid item xs={12} md={4} className={clsx(styles.section)}>
+          <Box display="flex" flexDirection="column">
+            <Logo width={270} height={60} className={clsx(styles.logo)} />
+            <SiteConfig />
+          </Box>
+          <AboutMe />
+          <Contact />
         </Grid>
 
         {/* <Grid item xs={12} md={7} component={Box} py={4}>
