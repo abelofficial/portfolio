@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     borderRadius: '1rem',
     height: 'fit-content',
-    boxShadow: theme.shadows[0]
+    boxShadow: theme.shadows[1]
   },
   siteContainer: {
     height: '100vh',

@@ -11,23 +11,21 @@ const useStyles = makeStyles((theme) => ({
   animSection: {
     position: 'relative'
   },
-  image: {
+  textSlideShow: {
+    width: '100%'
+  },
+  imageContainer: {
     position: 'absolute',
     bottom: 0,
     right: 0
   },
+  image: {
+    boxShadow: theme.shadows[1]
+  },
   info: {
     fontSize: '11px',
-    fontWeight: 200,
-    letterSpacing: '0.2em',
 
     textAlign: 'left'
-  },
-  highlight: {
-    color:
-      theme.palette.type === 'light'
-        ? theme.palette.secondary.dark
-        : theme.palette.primary.dark
   }
 }));
 

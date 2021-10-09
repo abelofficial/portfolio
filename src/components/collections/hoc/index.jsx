@@ -28,16 +28,9 @@ import useStyles from './style';
 
 export const SectionContainer = ({ className, children, ...restProps }) => {
   const styles = useStyles();
-  const [setRef, visible] = useOnScreen({ threshold: '0.5' });
 
   return (
-    <Box
-      ref={setRef}
-      className={clsx(styles.sectionContainer, {
-        [styles.withShadow]: visible
-      })}
-      {...restProps}
-    >
+    <Box className={clsx(styles.sectionContainer)} {...restProps}>
       {children}
     </Box>
   );
