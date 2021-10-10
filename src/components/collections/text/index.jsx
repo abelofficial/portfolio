@@ -73,3 +73,17 @@ export const HighLightText = ({ children, ...restProps }) => {
     </Typography>
   );
 };
+
+// To be removed
+export const ComingSoon = ({ title, ...restProps }) => {
+  const styles = useStyles();
+  return (
+    <Typography
+      variant='h1'
+      className={clsx(styles.text, styles.highlightText)}
+      {...restProps}
+    >
+      {title} coming soon!
+    </Typography>
+  );
+};

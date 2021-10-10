@@ -34,11 +34,13 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   main: {
+    width: "100%",
     height: "100vh",
     marginLeft: theme.spacing(2),
     overflowY: "scroll",
   },
   sideBar: {
+    width: "100%",
     height: "100vh",
     margin: "auto",
     padding: theme.spacing(1),
