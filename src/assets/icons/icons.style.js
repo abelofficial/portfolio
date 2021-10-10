@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   active: {
-    color: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
   },
   largeIcon: {
     ...theme.typography.h2,
@@ -15,7 +15,16 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.primary,
   },
   invert: {
-    color: "white",
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.common.black
+        : theme.palette.common.white,
+  },
+  invertActive: {
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.common.white
+        : theme.palette.secondary.light,
   },
 }));
 

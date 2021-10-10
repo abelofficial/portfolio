@@ -1,44 +1,27 @@
 [
-  [
-    {
-      "name": "React",
-      "icon": "React",
-      "link": "/images/react.svg"
-    },
-    {
-      "name": "Next.js",
-      "icon": "React",
-      "link": "/images/nextjs.svg"
-    },
-    {
-      "name": "Nest.js",
-      "icon": "React",
-      "link": "/images/nestjs.svg"
-    },
-    {
-      "name": "JavaScript",
-      "icon": "React",
-      "link": "/images/javascript.svg"
-    },
-    {
-      "name": "TypeScript",
-      "icon": "React",
-      "link": "/images/typescript-icon.svg"
-    }
-  ],
   {
-    "title": "Frontend development using React",
-    "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
-    "icon": "/images/react.svg"
+    "name": "React",
+    "icon": "React",
+    "link": "/images/react.svg"
   },
   {
-    "title": "Advanced fullstack development using Nextjs + React",
-    "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
-    "icon": "/images/nextjs.svg"
+    "name": "Next.js",
+    "icon": "React",
+    "link": "/images/nextjs.svg"
   },
   {
-    "title": "Backend development using Nestjs",
-    "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
-    "icon": "/images/nestjs.svg"
+    "name": "Nest.js",
+    "icon": "React",
+    "link": "/images/nestjs.svg"
+  },
+  {
+    "name": "JavaScript",
+    "icon": "React",
+    "link": "/images/javascript.svg"
+  },
+  {
+    "name": "TypeScript",
+    "icon": "React",
+    "link": "/images/typescript-icon.svg"
   }
 ]

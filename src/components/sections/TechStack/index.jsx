@@ -3,7 +3,7 @@ import Image from "next/image";
 import clsx from "classnames";
 import { v4 as uuid } from "uuid";
 // Material ui
-import { Box, Divider, Slide, Grid, Fade } from "@material-ui/core";
+import { Box, Slide, Grid } from "@material-ui/core";
 
 // Local
 import { SectionContainer } from "@local/src/components/hoc";
@@ -13,8 +13,6 @@ import data from "./data.json";
 import useStyles from "./techStack.style";
 import { useOnScreen } from "@local/src/hooks/useOnScreen";
 import { SectionTitle } from "../../collections/text";
-import { Paragraph } from "../../collections/text";
-import { SubSectionTitle } from "../../collections/text";
 import { HighLightText } from "../../collections/text";
 
 const TechStack = (props) => {
@@ -34,7 +32,7 @@ const TechStack = (props) => {
             Tech stack
           </SectionTitle>
           <Box className={clsx(styles.section, styles.slideAnim)}>
-            {data[0].map((item, index) => (
+            {data.map((item, index) => (
               <Slide
                 key={uuid()}
                 in={visible}
@@ -59,29 +57,6 @@ const TechStack = (props) => {
             ))}
           </Box>
         </Grid>
-
-        {data.slice(1).map((item, index) => (
-          <Fade key={item.title} in={visible} timeout={index * 600}>
-            <Box>
-              <Divider className={styles.divider} />
-              <Grid
-                container
-                direction='column'
-                alignItems='flex-start'
-                className={styles.section}
-              >
-                <Image
-                  alt={item.title + " Image"}
-                  src={item.icon}
-                  width={60}
-                  height={60}
-                />
-                <SubSectionTitle gutterBottom>{item.title}</SubSectionTitle>
-                <Paragraph className={styles.content}>{item.content}</Paragraph>
-              </Grid>
-            </Box>
-          </Fade>
-        ))}
       </Grid>
     </SectionContainer>
   );
