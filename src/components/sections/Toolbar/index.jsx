@@ -16,7 +16,7 @@ import {
 
 // Local
 import { openDrawer, closeDrawer, selectDrawer } from "@local-store/SiteConfig";
-import { LogInIcon, CloseIcon, BurgerMenuIcon } from "@local-assets/icons";
+import { LogInIcon, BurgerMenuIcon } from "@local-assets/icons";
 
 // Component style
 import useStyles from "./toolbar.style";
@@ -42,21 +42,6 @@ const Toolbar = (props) => {
   return (
     <ClickAwayListener onClickAway={handleCloseDrawer}>
       <Grid container>
-        <Box>
-          {bigScreen ? (
-            <> </>
-          ) : (
-            <IconButton
-              className={clsx(styles.actionButton, styles.closeButton, {
-                [`${styles.showActionButton}`]: drawer,
-                [`${styles.hideActionButton}`]: !drawer,
-              })}
-              onClick={() => dispatch(closeDrawer())}
-            >
-              <CloseIcon />
-            </IconButton>
-          )}
-        </Box>
         <Grid item>
           <Grid
             container

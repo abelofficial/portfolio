@@ -9,6 +9,7 @@ import { Box } from "@material-ui/core";
 import useStyle from "./index.style";
 import TechStack from "@local/src/components/sections/TechStack";
 import Specialty from "@local/src/components/sections/Specialty";
+import GitHubCalendar from "@local/src/components/sections/GithubActivities";
 
 export default function Home() {
   const styles = useStyle();
@@ -24,6 +25,7 @@ export default function Home() {
         }}
       />
       <TechStack />
+      <GitHubCalendar />
       <Specialty />
 
       <Box height='200vh' />
