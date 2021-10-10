@@ -38,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     marginLeft: theme.spacing(2),
     overflowY: "scroll",
+    backgroundColor: theme.palette.background.paper,
   },
   sideBar: {
     width: "100%",
@@ -47,7 +48,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    right: theme.spacing(2),
   },
   logo: {
     alignSelf: "flex-end",
