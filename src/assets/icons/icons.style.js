@@ -6,7 +6,10 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   active: {
-    color: theme.palette.primary.main,
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.primary.main
+        : theme.palette.secondary.main,
   },
   largeIcon: {
     ...theme.typography.h2,

@@ -36,9 +36,11 @@ const useStyles = makeStyles((theme) => ({
   main: {
     width: "100%",
     height: "100vh",
-    marginLeft: theme.spacing(2),
     overflowY: "scroll",
     backgroundColor: theme.palette.background.paper,
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(2),
+    },
   },
   sideBar: {
     width: "100%",
