@@ -23,8 +23,6 @@ export default function Experience() {
         }}
       />
       <ComingSoon title='Experience' />
-
-      <Box height='100vh' />
     </Box>
   );
 }
