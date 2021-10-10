@@ -1,8 +1,8 @@
 // Core
-import clsx from 'classnames';
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
+import clsx from "classnames";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Link from "next/link";
 // Material ui
 import {
   Grid,
@@ -11,31 +11,23 @@ import {
   useTheme,
   Typography,
   ClickAwayListener,
-  Box
-} from '@material-ui/core';
+  Box,
+} from "@material-ui/core";
 
 // Local
-import { openDrawer, closeDrawer, selectDrawer } from '@local-store/SiteConfig';
-import {
-  HomeIcon,
-  EducationIcon,
-  BlogIcon,
-  MessageIcon,
-  SettingIcon,
-  LogInIcon,
-  CloseIcon,
-  BurgerMenuIcon
-} from '@local-assets/icons';
+import { openDrawer, closeDrawer, selectDrawer } from "@local-store/SiteConfig";
+import { LogInIcon, CloseIcon, BurgerMenuIcon } from "@local-assets/icons";
 
 // Component style
-import useStyles from './toolbar.style';
+import useStyles from "./toolbar.style";
+import { NavigationLinks } from "../../collections/Link";
 
 const Toolbar = (props) => {
   const styles = useStyles();
   const theme = useTheme();
   const dispatch = useDispatch();
 
-  const bigScreen = useMediaQuery(theme.breakpoints.up('md'));
+  const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
   const drawer = useSelector(selectDrawer);
 
   const handleCloseDrawer = () => {
@@ -57,7 +49,7 @@ const Toolbar = (props) => {
             <IconButton
               className={clsx(styles.actionButton, styles.closeButton, {
                 [`${styles.showActionButton}`]: drawer,
-                [`${styles.hideActionButton}`]: !drawer
+                [`${styles.hideActionButton}`]: !drawer,
               })}
               onClick={() => dispatch(closeDrawer())}
             >
@@ -68,37 +60,23 @@ const Toolbar = (props) => {
         <Grid item>
           <Grid
             container
-            direction="column"
-            alignContent="center"
-            justify="space-between"
+            direction='column'
+            alignContent='center'
+            justify='space-between'
             className={styles.mainSection}
           >
-            <Typography variant="h1" className={styles.initial}>
+            <Typography variant='h1' className={styles.initial}>
               A.S
             </Typography>
 
             <Grid item>
-              <Grid container direction="column" alignContent="center">
-                <IconButton>
-                  <HomeIcon isActive />
-                </IconButton>
-                <IconButton>
-                  <EducationIcon />
-                </IconButton>
-                <IconButton>
-                  <BlogIcon />
-                </IconButton>
-                <IconButton>
-                  <MessageIcon />
-                </IconButton>
-                <IconButton>
-                  <SettingIcon />
-                </IconButton>
-              </Grid>
+              <NavigationLinks invert />
             </Grid>
-            <IconButton>
-              <LogInIcon />
-            </IconButton>
+            <Link href=''>
+              <a>
+                <LogInIcon />
+              </a>
+            </Link>
           </Grid>
         </Grid>
         <Box>
@@ -109,7 +87,7 @@ const Toolbar = (props) => {
               onClick={() => dispatch(openDrawer())}
               className={clsx(styles.actionButton, styles.openButton, {
                 [`${styles.showActionButton}`]: !drawer,
-                [`${styles.hideActionButton}`]: drawer
+                [`${styles.hideActionButton}`]: drawer,
               })}
             >
               <BurgerMenuIcon />

@@ -46,14 +46,14 @@ const Layout = ({ children }) => {
         <Grid
           item
           xs={12}
-          md={8}
+          md={7}
           component={Box}
           py={2}
           className={clsx(styles.main)}
         >
           <PageContainer>{children}</PageContainer>
         </Grid>
-        <Grid item xs={11} md={3} className={clsx(styles.sideBar)}>
+        <Grid item xs={11} md={4} className={clsx(styles.sideBar)}>
           <Box display='flex' flexDirection='column' width='100%'>
             <LogoSvg width={270} height={60} className={clsx(styles.logo)} />
             <SiteConfig />

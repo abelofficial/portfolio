@@ -30,6 +30,9 @@ const Contact = (props) => {
             key={uuid()}
             display='flex'
             flexDirection='column'
+            component={Grid}
+            item
+            xs={2}
             className={styles.contactLink}
           >
             <Image
