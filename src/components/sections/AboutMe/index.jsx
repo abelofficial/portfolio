@@ -34,6 +34,7 @@ const AboutMe = (props) => {
             timeout={600}
             interval={5000}
             indicators={false}
+            navButtonsAlwaysInvisible={true}
             className={styles.textSlideShow}
           >
             {dataList.map((item) => (
@@ -54,7 +55,7 @@ const AboutMe = (props) => {
             timeout={600}
             interval={15000}
             indicators={false}
-            ind
+            navButtonsAlwaysInvisible={true}
             className={styles.imageContainer}
           >
             {dataList.map((item) => (

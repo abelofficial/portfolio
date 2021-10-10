@@ -7,9 +7,9 @@ import { Box } from "@material-ui/core";
 
 // Style
 import useStyle from "./index.style";
-import TechStack from "@local/src/components/sections/TechStack";
+import { ComingSoon } from "@local/src/components/collections/text";
 
-export default function Home() {
+export default function Blog() {
   const styles = useStyle();
 
   return (
@@ -22,9 +22,7 @@ export default function Home() {
           url: "http://localhost/3000",
         }}
       />
-      <TechStack />
-
-      <Box height='200vh' />
+      <ComingSoon title='Blog' />
     </Box>
   );
 }

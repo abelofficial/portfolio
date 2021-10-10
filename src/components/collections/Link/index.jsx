@@ -6,6 +6,7 @@ import {
   BlogIcon,
   MessageIcon,
   SettingIcon,
+  WorkIcon,
 } from "@local-assets/icons";
 import { Grid } from "@material-ui/core";
 
@@ -32,10 +33,15 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
       </Link>
       <Link href='/experience' className={styles.link}>
         <a>
-          <BlogIcon
+          <WorkIcon
             invert={invert}
             isActive={router.pathname === "/experience"}
           />
+        </a>
+      </Link>
+      <Link href='/blog' className={styles.link}>
+        <a>
+          <BlogIcon invert={invert} isActive={router.pathname === "/blog"} />
         </a>
       </Link>
       <Link href='message' className={styles.link}>

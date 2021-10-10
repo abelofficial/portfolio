@@ -23,8 +23,6 @@ export default function Education() {
         }}
       />
       <ComingSoon title='Education' />
-
-      <Box height='100vh' />
     </Box>
   );
 }

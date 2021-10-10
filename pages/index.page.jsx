@@ -27,8 +27,6 @@ export default function Home() {
       <TechStack />
       <GitHubCalendar />
       <Specialty />
-
-      <Box height='200vh' />
     </Box>
   );
 }

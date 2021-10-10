@@ -23,8 +23,6 @@ export default function Message() {
         }}
       />
       <ComingSoon title='Message' />
-
-      <Box height='100vh' />
     </Box>
   );
 }
