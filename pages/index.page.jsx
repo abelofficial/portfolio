@@ -8,6 +8,7 @@ import { Box } from "@material-ui/core";
 // Style
 import useStyle from "./index.style";
 import TechStack from "@local/src/components/sections/TechStack";
+import Specialty from "@local/src/components/sections/Specialty";
 
 export default function Home() {
   const styles = useStyle();
@@ -23,6 +24,7 @@ export default function Home() {
         }}
       />
       <TechStack />
+      <Specialty />
 
       <Box height='200vh' />
     </Box>

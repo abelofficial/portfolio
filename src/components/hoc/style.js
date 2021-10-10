@@ -5,7 +5,10 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1.5),
     marginBottom: theme.spacing(1.5),
     padding: theme.spacing(0.5),
-    backgroundColor: theme.palette.common.white,
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.common.white
+        : theme.palette.common.black,
     borderRadius: "1rem",
     height: "fit-content",
     boxShadow: theme.shadows[1],
