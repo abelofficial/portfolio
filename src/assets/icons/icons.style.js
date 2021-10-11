@@ -1,16 +1,34 @@
-import { colors, makeStyles } from '@material-ui/core';
+import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
-    ...theme.typography.h4,
-    color: theme.palette.primary.contrastText
+    ...theme.typography.subtitle1,
+    margin: theme.spacing(1),
   },
   active: {
-    color: theme.palette.secondary.main
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.primary.main
+        : theme.palette.secondary.main,
   },
   largeIcon: {
-    ...theme.typography.h2
-  }
+    fontSize: "2rem",
+  },
+  normal: {
+    color: theme.palette.text.primary,
+  },
+  invert: {
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.common.black
+        : theme.palette.common.white,
+  },
+  invertActive: {
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.common.white
+        : theme.palette.secondary.light,
+  },
 }));
 
 export default useStyles;

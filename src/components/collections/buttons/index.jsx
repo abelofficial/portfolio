@@ -1,17 +1,16 @@
 // Core
-import clsx from 'classnames';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 
 // Internal
 import {
   selectDarkMode,
   setDarkMode,
-  turnOffDarkMode
-} from '@local-store/SiteConfig';
-import { DarkModeIcon, LightModeIcon } from '@local-assets/icons';
+  turnOffDarkMode,
+} from "@local-store/SiteConfig";
+import { DarkModeIcon, LightModeIcon } from "@local-assets/icons";
 
 // Material ui
-import { IconButton } from '@material-ui/core';
+import { IconButton } from "@material-ui/core";
 
 export const SiteThemeSelector = ({ props }) => {
   const dispatch = useDispatch();
