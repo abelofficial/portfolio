@@ -99,7 +99,7 @@ export const SettingIcon = ({ isActive, invert, props }) => {
   );
 };
 
-export const WorkIcon = ({ isActive, invert, props }) => {
+export const TimeLineIcon = ({ isActive, invert, props }) => {
   const styles = useStyles();
   return (
     <SvgIcon
@@ -111,7 +111,10 @@ export const WorkIcon = ({ isActive, invert, props }) => {
       })}
       {...props}
     >
-      <path d='M18 4H14V2C14 0.89 13.11 0 12 0H8C6.89 0 6 0.89 6 2V4H2C0.89 4 0.00999999 4.89 0.00999999 6L0 17C0 18.11 0.89 19 2 19H18C19.11 19 20 18.11 20 17V6C20 4.89 19.11 4 18 4ZM12 4H8V2H12V4Z' />
+      <path d='M6 12C6 10.7 5.2 9.6 4 9.2V5.8C5.2 5.4 6 4.3 6 3C6 1.3 4.7 0 3 0C1.3 0 0 1.3 0 3C0 4.3 0.8 5.4 2 5.8V9.2C0.8 9.6 0 10.7 0 12C0 13.3 0.8 14.4 2 14.8V18.2C0.8 18.6 0 19.7 0 21C0 22.7 1.3 24 3 24C4.7 24 6 22.7 6 21C6 19.7 5.2 18.6 4 18.2V14.8C5.2 14.4 6 13.3 6 12Z' />
+      <path d='M27 4H11C10.4 4 10 3.6 10 3C10 2.4 10.4 2 11 2H27C27.6 2 28 2.4 28 3C28 3.6 27.6 4 27 4Z' />
+      <path d='M27 13H11C10.4 13 10 12.6 10 12C10 11.4 10.4 11 11 11H27C27.6 11 28 11.4 28 12C28 12.6 27.6 13 27 13Z' />
+      <path d='M27 22H11C10.4 22 10 21.6 10 21C10 20.4 10.4 20 11 20H27C27.6 20 28 20.4 28 21C28 21.6 27.6 22 27 22Z' />
     </SvgIcon>
   );
 };
