@@ -4,10 +4,9 @@ import { NextSeo } from "next-seo";
 import { Box } from "@material-ui/core";
 
 // Local
-
+import ChatBox from "@local/src/components/sections/ChatBox";
 // Style
 import useStyle from "./index.style";
-import { ComingSoon } from "@local/src/components/collections/text";
 
 export default function Message() {
   const styles = useStyle();
@@ -22,7 +21,7 @@ export default function Message() {
           url: "http://localhost/3000",
         }}
       />
-      <ComingSoon title='Message' />
+      <ChatBox />
     </Box>
   );
 }

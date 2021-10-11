@@ -4,6 +4,7 @@ import { NextSeo } from "next-seo";
 import { Box } from "@material-ui/core";
 
 // Local
+import { SectionContainer } from "@local/src/components/hoc";
 
 // Style
 import useStyle from "./index.style";
@@ -22,7 +23,9 @@ export default function Blog() {
           url: "http://localhost/3000",
         }}
       />
-      <ComingSoon title='Blog' />
+      <SectionContainer>
+        <ComingSoon title='Blog' />
+      </SectionContainer>
     </Box>
   );
 }

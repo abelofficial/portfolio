@@ -23,10 +23,10 @@ const useStyles = makeStyles((theme) => ({
     })}`,
   },
   pageContainer: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(1),
     width: "100vw",
     maxWidth: "100%",
-    minHeight: "100vh",
+    minHeight: "90vh",
     margin: "auto",
 
     [theme.breakpoints.up("md")]: {
