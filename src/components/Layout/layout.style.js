@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     position: "fixed",
     zIndex: 500,
     left: "1rem",
-    height: "85%",
+    height: "75%",
     minHeight: "50rem",
     transition: `${theme.transitions.create(["left", "top", "transform"], {
       duration: theme.transitions.duration.standard,
@@ -38,9 +38,6 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     overflowY: "scroll",
     backgroundColor: theme.palette.background.paper,
-    [theme.breakpoints.up("sm")]: {
-      // marginLeft: theme.spacing(2),
-    },
   },
   pageContainer: {
     [theme.breakpoints.up("sm")]: {

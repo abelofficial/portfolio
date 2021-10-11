@@ -20,11 +20,13 @@ const Footer = (props) => {
       {...props}
     >
       <Divider className={styles.divider} />
-      <Typography variant='body2'>
-        <small>
-          Made by Abel © {new Date().getFullYear()}. As always With 💜
-        </small>
-      </Typography>
+      <Grid item xs={12}>
+        <Typography variant='body2'>
+          <small>
+            Made by Abel © {new Date().getFullYear()}. As always With 💜
+          </small>
+        </Typography>
+      </Grid>
     </Grid>
   );
 };

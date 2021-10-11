@@ -2,6 +2,8 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    width: "100vw",
+    maxWidth: "100%",
     backgroundColor: theme.palette.background.default,
   },
   divider: {
