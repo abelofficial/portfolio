@@ -1,0 +1,41 @@
+{
+  "education": [
+    {
+      "title": "Computer Management and Network Design",
+      "place": "Halmstad University",
+      "startDate": 2019,
+      "endDate": 2020,
+      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+    },
+    {
+      "title": "B.S Computer Science / Network security",
+      "place": "Linnaeus University",
+      "startDate": 2015,
+      "endDate": 2020,
+      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Full-stack Javascript Developer",
+      "place": "Din Psykolog",
+      "startDate": "May 2021",
+      "endDate": "August 2021",
+      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+    },
+    {
+      "title": "React Frontend Lead ( Internship)",
+      "place": "Virtual Connections",
+      "startDate": "May 2021",
+      "endDate": "August 2021",
+      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+    },
+    {
+      "title": "Teaching Assistant",
+      "place": "Linnaeus University",
+      "startDate": "September 2019",
+      "endDate": "November 2019",
+      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+    }
+  ]
+}

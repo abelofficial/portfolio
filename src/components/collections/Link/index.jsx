@@ -2,11 +2,10 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import {
   HomeIcon,
-  EducationIcon,
   BlogIcon,
   MessageIcon,
   SettingIcon,
-  WorkIcon,
+  TimeLineIcon,
 } from "@local-assets/icons";
 import { Grid } from "@material-ui/core";
 
@@ -23,22 +22,15 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
           <HomeIcon invert={invert} isActive={router.pathname === "/"} />
         </a>
       </Link>
-      <Link href='/education' className={styles.link}>
+      <Link href='/timeline' className={styles.link}>
         <a>
-          <EducationIcon
+          <TimeLineIcon
             invert={invert}
-            isActive={router.pathname === "/education"}
+            isActive={router.pathname === "/timeline"}
           />
         </a>
       </Link>
-      <Link href='/experience' className={styles.link}>
-        <a>
-          <WorkIcon
-            invert={invert}
-            isActive={router.pathname === "/experience"}
-          />
-        </a>
-      </Link>
+
       <Link href='/blog' className={styles.link}>
         <a>
           <BlogIcon invert={invert} isActive={router.pathname === "/blog"} />
