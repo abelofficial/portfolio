@@ -4,13 +4,12 @@ import { NextSeo } from "next-seo";
 import { Box } from "@material-ui/core";
 
 // Local
-import data from "./data.json";
-import TimeLine from "@local/src/components/sections/TimeLine";
-
+import { SectionContainer } from "@local/src/components/hoc";
 // Style
 import useStyle from "./index.style";
+import { ComingSoon } from "@local/src/components/collections/text";
 
-export default function Education() {
+export default function Setting() {
   const styles = useStyle();
 
   return (
@@ -23,8 +22,9 @@ export default function Education() {
           url: "http://localhost/3000",
         }}
       />
-      <TimeLine title='Work Experience' data={data.experience} />
-      <TimeLine title='Education' data={data.education} />
+      <SectionContainer>
+        <ComingSoon title='Setting' />
+      </SectionContainer>
     </Box>
   );
 }

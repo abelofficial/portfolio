@@ -44,9 +44,12 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
           />
         </a>
       </Link>
-      <Link href='/' className={styles.link}>
+      <Link href='/setting' className={styles.link}>
         <a>
-          <SettingIcon invert={invert} isActive={router.pathname === ""} />
+          <SettingIcon
+            invert={invert}
+            isActive={router.pathname === "/setting"}
+          />
         </a>
       </Link>
     </Grid>
