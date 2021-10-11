@@ -75,7 +75,7 @@ const Toolbar = (props) => {
                 [`${styles.hideActionButton}`]: drawer,
               })}
             >
-              <BurgerMenuIcon />
+              <BurgerMenuIcon Width={100} />
             </IconButton>
           )}
         </Box>

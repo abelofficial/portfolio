@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         : theme.palette.secondary.main,
   },
   largeIcon: {
-    ...theme.typography.h2,
+    fontSize: "2rem",
   },
   normal: {
     color: theme.palette.text.primary,

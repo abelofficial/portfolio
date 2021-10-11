@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   sectionContainer: {
     marginTop: theme.spacing(1.5),
     marginBottom: theme.spacing(1.5),
-    padding: theme.spacing(0.5),
+    padding: theme.spacing(0.75),
     backgroundColor:
       theme.palette.type === "light"
         ? theme.palette.common.white
