@@ -3,7 +3,7 @@ import clsx from "classnames";
 import { useSelector } from "react-redux";
 
 // Material ui
-import { Box, Grid, useMediaQuery, useTheme } from "@material-ui/core";
+import { Box, Grid, Hidden, useMediaQuery, useTheme } from "@material-ui/core";
 
 // Internal
 import Toolbar from "@local/src/components/sections/Toolbar";
@@ -16,6 +16,7 @@ import Contact from "../sections/Contact";
 import AboutMe from "../sections/AboutMe";
 import { LogoSvg } from "@local/src/assets/svgs/exports";
 import SiteConfig from "@local/src/components/sections/SiteConfig";
+import Footer from "../sections/Footer";
 
 const Layout = ({ children }) => {
   const styles = useStyles();
@@ -48,10 +49,15 @@ const Layout = ({ children }) => {
           xs={12}
           md={7}
           component={Box}
-          py={2}
+          pt={2}
           className={clsx(styles.main)}
         >
-          <PageContainer>{children}</PageContainer>
+          <Box className={clsx(styles.pageContainer)}>
+            <PageContainer>{children}</PageContainer>
+          </Box>
+          <Hidden mdUp>
+            <Footer />
+          </Hidden>
         </Grid>
         <Grid item xs={11} md={4} className={clsx(styles.sideBar)}>
           <Box display='flex' flexDirection='column' width='100%'>
@@ -60,6 +66,9 @@ const Layout = ({ children }) => {
           </Box>
           <AboutMe />
           <Contact />
+          <Hidden smDown>
+            <Footer className={clsx(styles.footer)} />
+          </Hidden>
         </Grid>
       </Grid>
     </Box>

@@ -39,6 +39,11 @@ const useStyles = makeStyles((theme) => ({
     overflowY: "scroll",
     backgroundColor: theme.palette.background.paper,
     [theme.breakpoints.up("sm")]: {
+      // marginLeft: theme.spacing(2),
+    },
+  },
+  pageContainer: {
+    [theme.breakpoints.up("sm")]: {
       marginLeft: theme.spacing(2),
     },
   },
@@ -53,6 +58,11 @@ const useStyles = makeStyles((theme) => ({
   },
   logo: {
     alignSelf: "flex-end",
+  },
+  footer: {
+    width: "fit-content",
+    position: "absolute",
+    bottom: 0,
   },
 }));
 
