@@ -11,10 +11,21 @@ const useStyles = makeStyles((theme) => ({
   animSection: {
     position: 'relative'
   },
-  image: {
+  textSlideShow: {
+    width: '100%'
+  },
+  imageContainer: {
     position: 'absolute',
     bottom: 0,
     right: 0
+  },
+  image: {
+    boxShadow: theme.shadows[1]
+  },
+  info: {
+    fontSize: '11px',
+
+    textAlign: 'left'
   }
 }));
 
