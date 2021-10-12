@@ -17,6 +17,7 @@ import AboutMe from "../sections/AboutMe";
 import { LogoSvg } from "@local/src/assets/svgs/exports";
 import SiteConfig from "@local/src/components/sections/SiteConfig";
 import Footer from "../sections/Footer";
+import { GithubSummery } from "../collections/cards";
 
 const Layout = ({ children }) => {
   const styles = useStyles();
@@ -66,6 +67,7 @@ const Layout = ({ children }) => {
           </Box>
           <AboutMe />
           <Contact />
+          <GithubSummery />
           <Hidden smDown>
             <Footer className={clsx(styles.footer)} />
           </Hidden>
