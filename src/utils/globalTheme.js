@@ -1,45 +1,143 @@
 import { createMuiTheme } from '@material-ui/core';
-import { red, blue } from '@material-ui/core/colors';
 
-const theme = (mode = 'light') =>
+// Fonts
+import {
+  balooBhai,
+  balooBhaiBold,
+  balooBhaiSemiBold,
+  balooBhaiExtraBold
+} from '@local-utils/globalFonts';
+const theme = (darkMode = false) =>
   createMuiTheme({
-    /** @@type Object */
+    overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '*': {
+            scrollbarColor: `${darkMode ? '#FFC40C' : '#424242'} ${
+              darkMode ? '#424242' : '#F2F2F2'
+            }`,
+            scrollbarWidth: 'thin',
+            scrollbarGutter: 'revert'
+          },
+          '::-webkit-scrollbar': {
+            width: '0.5rem'
+          },
+          '::-webkit-scrollbar-track': {
+            backgroundColor: darkMode ? '#424242' : '#F2F2F2'
+          },
+          '::-webkit-scrollbar-thumb': {
+            backgroundColor: darkMode ? '#FFC40C' : '#424242',
+            borderRadius: '1rem',
+            boxShadow:
+              '0px 2px 1px -1px rgba(255,196,12,0.2),0px 1px 1px 0px rgba(255,196,12,0.14),0px 1px 3px 0px rgba(255,196,12,0.12)'
+          },
+
+          '@font-face': [
+            balooBhai,
+            balooBhaiBold,
+            balooBhaiSemiBold,
+            balooBhaiExtraBold
+          ]
+        }
+      }
+    },
     palette: {
-      type: mode,
+      type: darkMode ? 'dark' : 'light',
       primary: {
-        main: red[400]
+        main: darkMode ? '#FFC40C' : '#000000'
       },
       secondary: {
-        main: blue[400]
-      }
+        main: darkMode ? '#000000' : '#FFC40C'
+      },
+      background: {
+        default: darkMode ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)',
+        paper: darkMode ? '#424242' : '#F2F2F2'
+      },
+
+      text: {
+        primary: darkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'
+      },
+      divider: '#FFE40C'
     },
 
-    /** @@type Object */
     typography: {
+      fontFamily: [
+        'BalooBhai',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"'
+      ].join(','),
+
       h1: {
-        fontSize: '3.5rem'
+        fontSize: '1.5rem',
+        fontWeight: 900
+      },
+      h2: {
+        fontSize: '1.4rem',
+        fontWeight: 700
+      },
+      h3: {
+        fontSize: '1.3rem',
+        fontWeight: 700
+      },
+
+      h4: {
+        fontSize: '1.2rem',
+        fontWeight: 500
+      },
+
+      subtitle1: {
+        fontSize: '1.1rem',
+        fontWeight: 500
+      },
+
+      subtitle2: {
+        fontSize: '1rem',
+        fontWeight: 500
+      },
+
+      body1: {
+        fontSize: '0.9rem',
+        fontWeight: 300
+      },
+      body2: {
+        fontSize: '0.9rem',
+        fontWeight: 300
       }
     },
 
-    /** @@type Object */
-    transitions: {},
+    transitions: {
+      duration: {
+        complex: 875
+      }
+    },
 
-    /** @@type Object */
     breakpoints: {},
 
-    /** @@type Object */
     mixins: {},
 
-    /** @@type Object */
     props: {},
 
-    /** @@type Object */
-    shape: {},
+    shape: {
+      borderRadius: '1rem'
+    },
 
-    /** @@type Object */
-    zIndex: {}
+    zIndex: {},
 
-    /** @@type Object */
+    shadows: [
+      'none',
+      '0px 2px 1px -1px rgba(255,196,12,0.2),0px 1px 1px 0px rgba(255,196,12,0.14),0px 1px 3px 0px rgba(255,196,12,0.12)',
+      '0px 3px 5px -1px rgba(255,196,12,0.2),0px 5px 8px 0px rgba(255,196,12,0.14),0px 1px 14px 0px rgba(255,196,12,0.12)',
+      '0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)',
+      '0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)'
+    ]
     // shadows: {},
     /** @@type f e() */
     // spacing: {},
