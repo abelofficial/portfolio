@@ -13,6 +13,19 @@ const useStyles = makeStyles((theme) => ({
     height: "fit-content",
     boxShadow: theme.shadows[1],
   },
+  infoContainer: {
+    marginTop: theme.spacing(1.5),
+    marginBottom: theme.spacing(1.5),
+    padding: theme.spacing(0.75),
+    backgroundColor:
+      theme.palette.type === "light"
+        ? theme.palette.grey[200]
+        : theme.palette.grey[800],
+    borderRadius: "0.5rem",
+    height: "fit-content",
+    boxShadow: theme.shadows[3],
+  },
+
   siteContainer: {
     height: "100vh",
     minHeight: "55rem",

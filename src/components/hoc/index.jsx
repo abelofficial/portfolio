@@ -24,7 +24,7 @@ import {
 // Styles
 import useStyles from "./style";
 
-export const SectionContainer = ({ className, children, ...restProps }) => {
+export const SectionContainer = ({ children, ...restProps }) => {
   const styles = useStyles();
 
   return (
@@ -34,7 +34,17 @@ export const SectionContainer = ({ className, children, ...restProps }) => {
   );
 };
 
-export const PageContainer = ({ className, children, ...restProps }) => {
+export const InfoContainer = ({ children, ...restProps }) => {
+  const styles = useStyles();
+
+  return (
+    <Box className={clsx(styles.infoContainer)} {...restProps}>
+      {children}
+    </Box>
+  );
+};
+
+export const PageContainer = ({ children, ...restProps }) => {
   const styles = useStyles();
   const theme = useTheme();
 
@@ -54,7 +64,7 @@ export const PageContainer = ({ className, children, ...restProps }) => {
   );
 };
 
-export const SiteContainer = ({ className, children, ...restProps }) => {
+export const SiteContainer = ({ children, ...restProps }) => {
   const styles = useStyles();
 
   return (
@@ -64,7 +74,7 @@ export const SiteContainer = ({ className, children, ...restProps }) => {
   );
 };
 
-export const CustomThemeProvider = ({ className, children, ...restProps }) => {
+export const CustomThemeProvider = ({ children, ...restProps }) => {
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);
   const theme = responsiveFontSizes(globalTheme(darkMode));

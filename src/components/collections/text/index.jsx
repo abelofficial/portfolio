@@ -48,6 +48,19 @@ export const SubSectionTitle = ({ children, ...restProps }) => {
   );
 };
 
+export const StrongText = ({ children, ...restProps }) => {
+  const styles = useStyles();
+  return (
+    <Typography
+      variant='subtitle1'
+      className={clsx(styles.text, styles.strongText)}
+      {...restProps}
+    >
+      {children}
+    </Typography>
+  );
+};
+
 export const Paragraph = ({ children, ...restProps }) => {
   const styles = useStyles();
   return (
