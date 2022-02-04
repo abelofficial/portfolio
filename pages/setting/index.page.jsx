@@ -18,14 +18,7 @@ export default function Setting() {
 
   return (
     <Box>
-      <NextSeo
-        title='Nextjs With Material Ui'
-        canonical='http://localhost/3000'
-        openGraph={{
-          title: "Nextjs With Material Ui",
-          url: "http://localhost/3000",
-        }}
-      />
+      <NextSeo title='Abel Sintaro - Settings' />
 
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
         <motion.div variants={routeAnim.stagger}>
