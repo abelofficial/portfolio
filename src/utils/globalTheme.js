@@ -1,4 +1,4 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@mui/material/styles";
 
 // Fonts
 import {
@@ -8,7 +8,7 @@ import {
   balooBhaiExtraBold,
 } from "@local-utils/globalFonts";
 const theme = (darkMode = false) =>
-  createMuiTheme({
+  createTheme({
     overrides: {
       MuiCssBaseline: {
         "@global": {

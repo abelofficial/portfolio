@@ -7,16 +7,20 @@ import { Provider as StateProvider } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 
 // Material ui
-import { CssBaseline } from "@material-ui/core";
+import { CssBaseline } from "@mui/material";
+import { CacheProvider } from "@emotion/react";
 
 // Local
 import { store } from "@local-store/store";
 import SEO from "@local/src/utils/next-seo.config";
-import { CustomThemeProvider, SiteContainer } from "@local/src/components/hoc";
-import Layout from "@local-components/Layout";
+import createEmotionCache from "@local/src/utils/createEmotionCache";
+// import { CustomThemeProvider, SiteContainer } from "@local/src/components/hoc";
+// import Layout from "@local-components/Layout";
+
+const clientSideEmotionCache = createEmotionCache();
 
 const App = (props) => {
-  const { Component, pageProps } = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   useEffect(() => {
     // Remove the server-side injected CSS.
@@ -27,13 +31,15 @@ const App = (props) => {
   }, []);
 
   return (
-    <>
+    <CacheProvider value={emotionCache}>
       <Head>
         <DefaultSeo {...SEO} />
       </Head>
 
       <StateProvider store={store}>
-        <CustomThemeProvider>
+        <h1> Under Construction</h1>
+        <Component {...pageProps} />
+        {/* <CustomThemeProvider>
           <SiteContainer>
             <CssBaseline />
             <Layout>
@@ -42,9 +48,9 @@ const App = (props) => {
               </AnimatePresence>
             </Layout>
           </SiteContainer>
-        </CustomThemeProvider>
+        </CustomThemeProvider> */}
       </StateProvider>
-    </>
+    </CacheProvider>
   );
 };
 

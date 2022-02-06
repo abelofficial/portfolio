@@ -3,7 +3,7 @@ import Image from "next/image";
 import { NextSeo } from "next-seo";
 
 // Material
-import { Grid, Link, Container, Typography, Box } from "@material-ui/core";
+import { Grid, Link, Container, Typography, Box } from "@mui/material";
 
 export default function Error() {
   return (

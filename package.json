@@ -4,8 +4,7 @@
   "description": "This is a boilerplate for next-js using material-ui.",
   "main": "index.js",
   "scripts": {
-    "dev:windows": "next lint && cross-env NODE_ENV=development next dev",
-    "dev": "next lint && NODE_ENV=development next dev",
+    "dev": "cross-env NODE_ENV=development next dev",
     "build": "next build",
     "start:windows": "cross-env NODE_ENV=production next start",
     "start": "NODE_ENV=production next start",

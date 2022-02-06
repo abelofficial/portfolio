@@ -1,7 +1,8 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles((theme) => ({
-  container: {},
-}));
+const useStyles = (theme) =>
+  makeStyles((theme) => ({
+    container: {},
+  }));
 
 export default useStyles;
