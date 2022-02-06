@@ -13,22 +13,22 @@ import {
 import globalTheme from "@local-utils/globalTheme";
 
 // Material-ui
-import { useMediaQuery } from "@mui/material";
+import { useMediaQuery, Box } from "@mui/material";
 import { ThemeProvider, useTheme } from "@mui/styles";
-import { Box } from "@mui/material";
 
 // Styles
 import useStyles from "./style";
 
-// export const SectionContainer = ({ children, ...restProps }) => {
-//   const styles = useStyles();
+export const SectionContainer = ({ children, ...restProps }) => {
+  const theme = useTheme();
+  const styles = useStyles(theme)();
 
-//   return (
-//     <Box className={clsx(styles.sectionContainer)} {...restProps}>
-//       {children}
-//     </Box>
-//   );
-// };
+  return (
+    <Box className={clsx(styles.sectionContainer)} {...restProps}>
+      {children}
+    </Box>
+  );
+};
 
 // export const InfoContainer = ({ children, ...restProps }) => {
 //   const styles = useStyles();

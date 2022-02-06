@@ -158,8 +158,7 @@ export const BurgerMenuIcon = ({ isActive, invert, props }) => {
           [`${styles.active}`]: isActive && !invert,
           [`${styles.invertActive}`]: isActive && invert,
           [styles.invert]: invert,
-        }),
-        styles.largeIcon
+        })
       )}
       {...props}
     >

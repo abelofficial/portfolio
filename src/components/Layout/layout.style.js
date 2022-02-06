@@ -42,17 +42,19 @@ const useStyles = (theme) =>
     },
     pageContainer: {
       [theme.breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(2),
+        marginLeft: theme.spacing(1),
       },
     },
     sideBar: {
       width: "100%",
-      height: "100vh",
-      margin: "auto",
-      padding: theme.spacing(1),
       display: "flex",
       flexDirection: "column",
-      alignItems: "center",
+      padding: theme.spacing(1),
+      height: "fit-content",
+      backgroundColor: theme.palette.background.default,
+      [theme.breakpoints.up("md")]: {
+        height: "100vh",
+      },
     },
     logo: {
       alignSelf: "flex-end",

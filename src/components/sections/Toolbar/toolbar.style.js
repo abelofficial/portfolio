@@ -3,13 +3,15 @@ import { makeStyles } from "@mui/styles";
 const useStyles = (theme) =>
   makeStyles(() => ({
     mainSection: {
-      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-around",
       position: "absolute",
       zIndex: 200,
-      padding: theme.spacing(2),
-      width: theme.spacing(18),
+      padding: `${theme.spacing(4)} ${theme.spacing(2)}`,
       borderRadius: theme.spacing(3),
-      boxShadow: theme.shadows[16],
+      boxShadow: theme.shadows[3],
       backgroundColor: theme.palette.primary.main,
       transition: `${theme.transitions.create(["background-color"], {
         duration: theme.transitions.duration.complex,
@@ -44,22 +46,18 @@ const useStyles = (theme) =>
       },
     },
     actionButton: {
-      boxShadow: theme.shadows[16],
-      padding: "0.2rem",
+      boxShadow: theme.shadows[4],
+      padding: "0.3rem",
       position: "absolute",
       zIndex: 100,
-      top: "1rem",
       borderRadius: theme.shape.borderRadius,
-      transition: `${theme.transitions.create(
-        ["background-color", "left", "transform"],
-        {
-          duration: theme.transitions.duration.standard,
-        }
-      )}`,
+      transition: `${theme.transitions.create(["background-color", "left"], {
+        duration: theme.transitions.duration.standard,
+      })}`,
     },
 
     showActionButton: {
-      left: "8.8rem",
+      left: "9.18rem",
       transform: "scale(1.2)",
     },
     hideActionButton: {

@@ -1,18 +1,17 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = (theme) =>
-  makeStyles((theme) => ({
+  makeStyles(() => ({
     sectionContainer: {
-      marginTop: theme.spacing(1.5),
-      marginBottom: theme.spacing(1.5),
-      padding: theme.spacing(0.75),
+      padding: theme.spacing(0.2),
+      width: "95%",
       backgroundColor:
         theme.palette.type === "light"
           ? theme.palette.common.white
           : theme.palette.common.black,
       borderRadius: "1rem",
       height: "fit-content",
-      boxShadow: theme.shadows[1],
+      boxShadow: theme.shadows[2],
     },
     infoContainer: {
       marginTop: theme.spacing(1.5),

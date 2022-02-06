@@ -15,10 +15,10 @@ import { selectDrawer } from "@local-store/SiteConfig";
 import useStyles from "./layout.style";
 // import Contact from "../sections/Contact";
 // import AboutMe from "../sections/AboutMe";
-// import { LogoSvg } from "@local/src/assets/svgs/exports";
+import { LogoSvg } from "@local/src/assets/svgs/exports";
 // import Footer from "../sections/Footer";
 // import { GithubSummery } from "../collections/cards";
-// import SiteConfig from "@local/src/components/sections/SiteConfig";
+import SiteConfig from "@local/src/components/sections/SiteConfig";
 
 const Layout = ({ children }) => {
   const theme = useTheme();
@@ -42,18 +42,11 @@ const Layout = ({ children }) => {
       <Grid
         container
         direction={bigScreen ? "row" : "column-reverse"}
-        justify='space-around'
+        justify='center'
         alignItems={bigScreen ? "flex-start" : "stretch"}
         className={clsx(styles.container)}
       >
-        <Grid
-          item
-          xs={12}
-          md={7}
-          component={Box}
-          pt={2}
-          className={clsx(styles.main)}
-        >
+        <Grid item xs={12} md={7}>
           <Box className={clsx(styles.pageContainer)}>
             <PageContainer>{children}</PageContainer>
           </Box>
@@ -63,12 +56,12 @@ const Layout = ({ children }) => {
           </Hidden>
         </Grid>
         <Grid item xs={12} md={5} className={clsx(styles.sideBar)}>
-          {/* <LogoSvg width={270} height={60} className={clsx(styles.logo)} />
+          <LogoSvg width={200} height={60} className={clsx(styles.logo)} />
           <SiteConfig />
-          <AboutMe />
+          {/* <AboutMe />
           <Contact />
           <GithubSummery /> */}
-          <Typography> Sidebar header</Typography>
+
           <Typography> Sidebar Main</Typography>
           <Hidden smDown>
             {/* <Footer className={clsx(styles.footer)} /> */}
