@@ -8,7 +8,7 @@ import { useTheme } from "@mui/styles";
 
 // Internal
 import Toolbar from "@local/src/components/sections/Toolbar";
-// import { PageContainer } from "@local/src/components/hoc";
+import { PageContainer } from "@local/src/components/hoc";
 import { selectDrawer } from "@local-store/SiteConfig";
 
 // Component style
@@ -55,23 +55,20 @@ const Layout = ({ children }) => {
           className={clsx(styles.main)}
         >
           <Box className={clsx(styles.pageContainer)}>
-            {/* <PageContainer>{children}</PageContainer> */}
-            {children}
+            <PageContainer>{children}</PageContainer>
           </Box>
           <Hidden mdUp>
             {/* <Footer /> */}
             <Typography> Big screen footer</Typography>
           </Hidden>
         </Grid>
-        <Grid item xs={11} md={4} className={clsx(styles.sideBar)}>
-          <Box display='flex' flexDirection='column' width='100%'>
-            {/* <LogoSvg width={270} height={60} className={clsx(styles.logo)} />
-            <SiteConfig /> */}
-            <Typography> Sidebar header</Typography>
-          </Box>
-          {/* <AboutMe />
+        <Grid item xs={12} md={5} className={clsx(styles.sideBar)}>
+          {/* <LogoSvg width={270} height={60} className={clsx(styles.logo)} />
+          <SiteConfig />
+          <AboutMe />
           <Contact />
           <GithubSummery /> */}
+          <Typography> Sidebar header</Typography>
           <Typography> Sidebar Main</Typography>
           <Hidden smDown>
             {/* <Footer className={clsx(styles.footer)} /> */}

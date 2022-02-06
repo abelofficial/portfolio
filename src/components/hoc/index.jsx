@@ -40,25 +40,25 @@ import useStyles from "./style";
 //   );
 // };
 
-// export const PageContainer = ({ children, ...restProps }) => {
-//   const styles = useStyles();
-//   const theme = useTheme();
+export const PageContainer = ({ children, ...restProps }) => {
+  const theme = useTheme();
+  const styles = useStyles(theme)();
 
-//   const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
-//   const drawer = useSelector(selectDrawer);
+  const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const drawer = useSelector(selectDrawer);
 
-//   return (
-//     <Box
-//       className={clsx(styles.pageContainer, {
-//         [`${styles.blur}`]: !bigScreen & drawer,
-//         [`${styles.withToolbar}`]: bigScreen,
-//       })}
-//       {...restProps}
-//     >
-//       {children}
-//     </Box>
-//   );
-// };
+  return (
+    <Box
+      className={clsx(styles.pageContainer, {
+        [`${styles.blur}`]: !bigScreen & drawer,
+        [`${styles.withToolbar}`]: bigScreen,
+      })}
+      {...restProps}
+    >
+      {children}
+    </Box>
+  );
+};
 
 // export const SiteContainer = ({ children, ...restProps }) => {
 //   const styles = useStyles();
