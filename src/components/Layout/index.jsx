@@ -7,7 +7,7 @@ import { Box, Grid, Hidden, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 // Internal
-// import Toolbar from "@local/src/components/sections/Toolbar";
+import Toolbar from "@local/src/components/sections/Toolbar";
 // import { PageContainer } from "@local/src/components/hoc";
 import { selectDrawer } from "@local-store/SiteConfig";
 
@@ -37,8 +37,7 @@ const Layout = ({ children }) => {
           [`${styles.hideToolbar}`]: !drawer,
         })}
       >
-        {/* <Toolbar /> */}
-        <Typography> Toolbar</Typography>
+        <Toolbar />
       </Box>
       <Grid
         container
