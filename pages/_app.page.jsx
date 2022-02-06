@@ -15,7 +15,7 @@ import { store } from "@local-store/store";
 import SEO from "@local/src/utils/next-seo.config";
 import createEmotionCache from "@local/src/utils/createEmotionCache";
 import { CustomThemeProvider } from "@local/src/components/hoc";
-// import Layout from "@local-components/Layout";
+import Layout from "@local-components/Layout";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -39,13 +39,14 @@ const App = (props) => {
       <StateProvider store={store}>
         <CustomThemeProvider>
           <CssBaseline />
-          <h1> Under Construction</h1>
-          <Component {...pageProps} />
-          {/* <Layout>
-              <AnimatePresence exitBeforeEnter>
+
+          <Layout>
+            <h1> Under Construction</h1>
+            <Component {...pageProps} />
+            {/* <AnimatePresence exitBeforeEnter>
                 <Component {...pageProps} />
-              </AnimatePresence>
-            </Layout> */}
+              </AnimatePresence> */}
+          </Layout>
         </CustomThemeProvider>
       </StateProvider>
     </CacheProvider>

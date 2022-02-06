@@ -3,25 +3,26 @@ import clsx from "classnames";
 import { useSelector } from "react-redux";
 
 // Material ui
-import { Box, Grid, Hidden, useMediaQuery, useTheme } from "@material-ui/core";
+import { Box, Grid, Hidden, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/styles";
 
 // Internal
-import Toolbar from "@local/src/components/sections/Toolbar";
-import { PageContainer } from "@local/src/components/hoc";
+// import Toolbar from "@local/src/components/sections/Toolbar";
+// import { PageContainer } from "@local/src/components/hoc";
 import { selectDrawer } from "@local-store/SiteConfig";
 
 // Component style
 import useStyles from "./layout.style";
-import Contact from "../sections/Contact";
-import AboutMe from "../sections/AboutMe";
-import { LogoSvg } from "@local/src/assets/svgs/exports";
-import SiteConfig from "@local/src/components/sections/SiteConfig";
-import Footer from "../sections/Footer";
-import { GithubSummery } from "../collections/cards";
+// import Contact from "../sections/Contact";
+// import AboutMe from "../sections/AboutMe";
+// import { LogoSvg } from "@local/src/assets/svgs/exports";
+// import Footer from "../sections/Footer";
+// import { GithubSummery } from "../collections/cards";
+// import SiteConfig from "@local/src/components/sections/SiteConfig";
 
 const Layout = ({ children }) => {
-  const styles = useStyles();
   const theme = useTheme();
+  const styles = useStyles(theme)();
   const drawer = useSelector(selectDrawer);
 
   const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
@@ -36,7 +37,8 @@ const Layout = ({ children }) => {
           [`${styles.hideToolbar}`]: !drawer,
         })}
       >
-        <Toolbar />
+        {/* <Toolbar /> */}
+        <Typography> Toolbar</Typography>
       </Box>
       <Grid
         container
@@ -54,22 +56,27 @@ const Layout = ({ children }) => {
           className={clsx(styles.main)}
         >
           <Box className={clsx(styles.pageContainer)}>
-            <PageContainer>{children}</PageContainer>
+            {/* <PageContainer>{children}</PageContainer> */}
+            {children}
           </Box>
           <Hidden mdUp>
-            <Footer />
+            {/* <Footer /> */}
+            <Typography> Big screen footer</Typography>
           </Hidden>
         </Grid>
         <Grid item xs={11} md={4} className={clsx(styles.sideBar)}>
           <Box display='flex' flexDirection='column' width='100%'>
-            <LogoSvg width={270} height={60} className={clsx(styles.logo)} />
-            <SiteConfig />
+            {/* <LogoSvg width={270} height={60} className={clsx(styles.logo)} />
+            <SiteConfig /> */}
+            <Typography> Sidebar header</Typography>
           </Box>
-          <AboutMe />
+          {/* <AboutMe />
           <Contact />
-          <GithubSummery />
+          <GithubSummery /> */}
+          <Typography> Sidebar Main</Typography>
           <Hidden smDown>
-            <Footer className={clsx(styles.footer)} />
+            {/* <Footer className={clsx(styles.footer)} /> */}
+            <Typography> Sidebar Footer</Typography>
           </Hidden>
         </Grid>
       </Grid>
