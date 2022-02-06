@@ -13,71 +13,67 @@ import {
 import globalTheme from "@local-utils/globalTheme";
 
 // Material-ui
-import {
-  Box,
-  useMediaQuery,
-  useTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from "@material-ui/core";
+import { useMediaQuery } from "@mui/material";
+import { ThemeProvider, useTheme } from "@mui/styles";
+import { Box } from "@mui/material";
 
 // Styles
 import useStyles from "./style";
 
-export const SectionContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
+// export const SectionContainer = ({ children, ...restProps }) => {
+//   const styles = useStyles();
 
-  return (
-    <Box className={clsx(styles.sectionContainer)} {...restProps}>
-      {children}
-    </Box>
-  );
-};
+//   return (
+//     <Box className={clsx(styles.sectionContainer)} {...restProps}>
+//       {children}
+//     </Box>
+//   );
+// };
 
-export const InfoContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
+// export const InfoContainer = ({ children, ...restProps }) => {
+//   const styles = useStyles();
 
-  return (
-    <Box className={clsx(styles.infoContainer)} {...restProps}>
-      {children}
-    </Box>
-  );
-};
+//   return (
+//     <Box className={clsx(styles.infoContainer)} {...restProps}>
+//       {children}
+//     </Box>
+//   );
+// };
 
-export const PageContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
-  const theme = useTheme();
+// export const PageContainer = ({ children, ...restProps }) => {
+//   const styles = useStyles();
+//   const theme = useTheme();
 
-  const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
-  const drawer = useSelector(selectDrawer);
+//   const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
+//   const drawer = useSelector(selectDrawer);
 
-  return (
-    <Box
-      className={clsx(styles.pageContainer, {
-        [`${styles.blur}`]: !bigScreen & drawer,
-        [`${styles.withToolbar}`]: bigScreen,
-      })}
-      {...restProps}
-    >
-      {children}
-    </Box>
-  );
-};
+//   return (
+//     <Box
+//       className={clsx(styles.pageContainer, {
+//         [`${styles.blur}`]: !bigScreen & drawer,
+//         [`${styles.withToolbar}`]: bigScreen,
+//       })}
+//       {...restProps}
+//     >
+//       {children}
+//     </Box>
+//   );
+// };
 
-export const SiteContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
+// export const SiteContainer = ({ children, ...restProps }) => {
+//   const styles = useStyles();
 
-  return (
-    <Box className={styles.siteContainer} {...restProps}>
-      {children}
-    </Box>
-  );
-};
+//   return (
+//     <Box className={styles.siteContainer} {...restProps}>
+//       {children}
+//     </Box>
+//   );
+// };
 
 export const CustomThemeProvider = ({ children, ...restProps }) => {
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);
-  const theme = responsiveFontSizes(globalTheme(darkMode));
+  const theme = globalTheme(darkMode);
 
   useEffect(() => {
     darkMode || dispatch(turnOffDarkMode());
