@@ -1,9 +1,8 @@
 // Core
-import Image from "next/image";
 import { NextSeo } from "next-seo";
 
 // Material
-import { Grid, Link, Container, Typography, Box } from "@mui/material";
+import { Grid, Container, Typography, Box } from "@mui/material";
 
 export default function NotFound() {
   return (

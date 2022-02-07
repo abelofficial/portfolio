@@ -76,7 +76,7 @@ export const Paragraph = ({ children, ...restProps }) => {
   return (
     <Typography
       variant='body1'
-      className={clsx(styles.text, styles.sectionTitle)}
+      className={clsx(styles.text, styles.paragraph)}
       {...restProps}
     >
       {children}

@@ -3,6 +3,11 @@ import { makeStyles } from "@mui/styles";
 const useStyles = (theme) =>
   makeStyles(() => ({
     text: {
+      color:
+        theme.palette.type === "light"
+          ? theme.palette.primary.main
+          : theme.palette.primary.dark,
+
       transition: `${theme.transitions.create(["color"], {
         duration: theme.transitions.duration.complex,
         easing: theme.transitions.easing.easeInOut,
@@ -12,13 +17,13 @@ const useStyles = (theme) =>
     strongText: {
       fontWeight: 300,
       letterSpacing: "0.1em",
-      textAlign: "justify",
     },
 
     paragraph: {
-      fontWeight: 200,
+      fontSize: "0.8rem",
+      fontWeight: 300,
       letterSpacing: "0.2em",
-      textAlign: "justify",
+      textAlign: "left",
     },
 
     highlightText: {

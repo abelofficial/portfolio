@@ -1,7 +1,4 @@
-const withFonts = require("next-fonts");
-
-module.exports = withFonts({
-  enableSvg: true,
+module.exports = {
   reactStrictMode: true,
   pageExtensions: [
     "page.jsx",
@@ -11,7 +8,4 @@ module.exports = withFonts({
     "api.js",
     "api.ts",
   ],
-  webpack(config, options) {
-    return config;
-  },
-});
+};

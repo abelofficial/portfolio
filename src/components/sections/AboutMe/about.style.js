@@ -3,8 +3,6 @@ import { makeStyles } from "@mui/styles";
 const useStyles = (theme) =>
   makeStyles(() => ({
     section: {
-      minHeight: theme.spacing(15),
-      // padding: `${theme.spacing(2)}px`
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -12,11 +10,9 @@ const useStyles = (theme) =>
     animSection: {
       position: "relative",
     },
-    textSlideShow: {
-      width: "100%",
-    },
+
     imageContainer: {
-      position: "absolute",
+      position: "relative",
       bottom: 0,
       right: 0,
     },
@@ -25,8 +21,7 @@ const useStyles = (theme) =>
     },
     info: {
       fontSize: "11px",
-
-      textAlign: "left",
+      textAlign: "justify",
     },
   }));
 
