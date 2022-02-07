@@ -1,10 +1,9 @@
 // Core components
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
 import { Provider as StateProvider } from "react-redux";
-import { AnimatePresence } from "framer-motion";
 
 // Material ui
 import { CssBaseline } from "@mui/material";
@@ -48,5 +47,6 @@ export default App;
 
 App.propTypes = {
   Component: PropTypes.elementType.isRequired,
+  emotionCache: PropTypes.object,
   pageProps: PropTypes.object.isRequired,
 };

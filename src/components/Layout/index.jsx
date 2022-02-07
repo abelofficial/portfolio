@@ -13,8 +13,9 @@ import { selectDrawer } from "@local-store/SiteConfig";
 
 // Component style
 import useStyles from "./layout.style";
+
 // import Contact from "../sections/Contact";
-// import AboutMe from "../sections/AboutMe";
+import AboutMe from "../sections/AboutMe";
 import { LogoSvg } from "@local/src/assets/svgs/exports";
 // import Footer from "../sections/Footer";
 // import { GithubSummery } from "../collections/cards";
@@ -58,7 +59,8 @@ const Layout = ({ children }) => {
         <Grid item xs={12} md={5} className={clsx(styles.sideBar)}>
           <LogoSvg width={200} height={60} className={clsx(styles.logo)} />
           <SiteConfig />
-          {/* <AboutMe />
+          <AboutMe />
+          {/* 
           <Contact />
           <GithubSummery /> */}
 

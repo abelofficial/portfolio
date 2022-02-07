@@ -2,6 +2,7 @@ const withFonts = require("next-fonts");
 
 module.exports = withFonts({
   enableSvg: true,
+  reactStrictMode: true,
   pageExtensions: [
     "page.jsx",
     "page.js",
