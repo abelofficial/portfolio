@@ -1,6 +1,4 @@
 // Core
-import { NextSeo } from "next-seo";
-import { motion } from "framer-motion";
 
 // Material
 import { Box, Typography } from "@mui/material";

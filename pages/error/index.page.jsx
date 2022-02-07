@@ -1,14 +1,13 @@
 // Core
-import Image from "next/image";
 import { NextSeo } from "next-seo";
 
 // Material
-import { Grid, Link, Container, Typography, Box } from "@mui/material";
+import { Grid, Container, Typography, Box } from "@mui/material";
 
 export default function Error() {
   return (
     <Container maxWidth='md' component={Box}>
-      <NextSeo title='Abel Sintaro - Error' />
+      <NextSeo title='Abel Sintaro - Not found' />
       <Box minHeight='100vh' display='flex' alignItems='center'>
         <Grid
           container
@@ -21,25 +20,10 @@ export default function Error() {
           width='100%'
         >
           <Grid item>
-            <Typography variant='h1'> Error Page </Typography>
+            <Typography variant='h1'> 500 </Typography>
           </Grid>
           <Grid item component={Box} pt={4}>
-            <Typography>
-              This is a boilerplate for{" "}
-              <Link href='https://nextjs.org/'>Nextjs</Link> with{" "}
-              <Link href='https://material-ui.com/'>Material-UI.</Link>
-            </Typography>
-            <Link href='https://github.com/abelofficial/Nextjs-Material-ui-boilerplate'>
-              <em>See Heres</em>
-            </Link>
-          </Grid>
-          <Grid item>
-            <Image
-              alt='Material ui with Next'
-              src='/material-vs-next.svg'
-              width={400}
-              height={400}
-            />
+            <Typography>Internal error occurred</Typography>
           </Grid>
         </Grid>
       </Box>

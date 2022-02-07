@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 
 import {

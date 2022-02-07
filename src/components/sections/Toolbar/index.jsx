@@ -2,7 +2,6 @@
 import clsx from "classnames";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Link from "next/link";
 
 // Material ui
 import {
