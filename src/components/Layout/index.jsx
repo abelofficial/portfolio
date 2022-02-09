@@ -3,7 +3,8 @@ import clsx from "classnames";
 import { useSelector } from "react-redux";
 
 // Material ui
-import { Box, Grid, Hidden, useMediaQuery, useTheme } from "@material-ui/core";
+import { Box, Grid, Hidden, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/styles";
 
 // Internal
 import Toolbar from "@local/src/components/sections/Toolbar";
@@ -12,16 +13,17 @@ import { selectDrawer } from "@local-store/SiteConfig";
 
 // Component style
 import useStyles from "./layout.style";
+
 import Contact from "../sections/Contact";
 import AboutMe from "../sections/AboutMe";
 import { LogoSvg } from "@local/src/assets/svgs/exports";
-import SiteConfig from "@local/src/components/sections/SiteConfig";
 import Footer from "../sections/Footer";
 import { GithubSummery } from "../collections/cards";
+import SiteConfig from "@local/src/components/sections/SiteConfig";
 
 const Layout = ({ children }) => {
-  const styles = useStyles();
   const theme = useTheme();
+  const styles = useStyles(theme)();
   const drawer = useSelector(selectDrawer);
 
   const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
@@ -41,35 +43,24 @@ const Layout = ({ children }) => {
       <Grid
         container
         direction={bigScreen ? "row" : "column-reverse"}
-        justify='space-around'
+        justify='center'
         alignItems={bigScreen ? "flex-start" : "stretch"}
         className={clsx(styles.container)}
       >
-        <Grid
-          item
-          xs={12}
-          md={7}
-          component={Box}
-          pt={2}
-          className={clsx(styles.main)}
-        >
-          <Box className={clsx(styles.pageContainer)}>
-            <PageContainer>{children}</PageContainer>
-          </Box>
+        <Grid item xs={12} md={7} className={clsx(styles.main)}>
+          <PageContainer>{children}</PageContainer>
           <Hidden mdUp>
             <Footer />
           </Hidden>
         </Grid>
-        <Grid item xs={11} md={4} className={clsx(styles.sideBar)}>
-          <Box display='flex' flexDirection='column' width='100%'>
-            <LogoSvg width={270} height={60} className={clsx(styles.logo)} />
-            <SiteConfig />
-          </Box>
+        <Grid item xs={12} md={5} className={clsx(styles.sideBar)}>
+          <LogoSvg width={200} height={60} className={clsx(styles.logo)} />
+          <SiteConfig />
           <AboutMe />
           <Contact />
           <GithubSummery />
-          <Hidden smDown>
-            <Footer className={clsx(styles.footer)} />
+          <Hidden mdDown>
+            <Footer />
           </Hidden>
         </Grid>
       </Grid>

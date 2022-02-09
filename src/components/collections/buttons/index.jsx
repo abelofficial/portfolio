@@ -10,7 +10,7 @@ import {
 import { DarkModeIcon, LightModeIcon } from "@local-assets/icons";
 
 // Material ui
-import { IconButton } from "@material-ui/core";
+import { IconButton } from "@mui/material";
 
 export const SiteThemeSelector = ({ props }) => {
   const dispatch = useDispatch();

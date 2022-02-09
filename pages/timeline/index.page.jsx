@@ -3,19 +3,14 @@ import { NextSeo } from "next-seo";
 import { motion } from "framer-motion";
 
 // Material
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 
 // Local
 import data from "./data.json";
 import TimeLine from "@local/src/components/sections/TimeLine";
 import routeAnim from "@local/src/assets/routeAnimation.json";
 
-// Style
-import useStyle from "./index.style";
-
 export default function Education() {
-  const styles = useStyle();
-
   return (
     <Box>
       <NextSeo title='Abel Sintaro - Timeline' />

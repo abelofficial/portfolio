@@ -3,8 +3,8 @@ import Image from "next/image";
 import clsx from "classnames";
 import { v4 as uuid } from "uuid";
 // Material ui
-import { Box, Slide, Grid } from "@material-ui/core";
-
+import { Box, Slide, Grid } from "@mui/material";
+import { useTheme } from "@mui/styles";
 // Local
 import { SectionContainer } from "@local/src/components/hoc";
 
@@ -16,7 +16,8 @@ import { SectionTitle } from "../../collections/text";
 import { HighLightText } from "../../collections/text";
 
 const TechStack = (props) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
   const [setRef, visible] = useOnScreen({ threshold: "0.1" });
 
   return (
@@ -28,9 +29,7 @@ const TechStack = (props) => {
         className={styles.container}
       >
         <Grid item xs={12}>
-          <SectionTitle variant='h4' gutterBottom>
-            Tech stack
-          </SectionTitle>
+          <SectionTitle gutterBottom>Tech stack</SectionTitle>
           <Box className={clsx(styles.section, styles.slideAnim)}>
             {data.map((item, index) => (
               <Slide

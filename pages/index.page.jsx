@@ -1,9 +1,9 @@
 // Core
-import { NextSeo } from "next-seo";
-import { motion } from "framer-motion";
 
 // Material
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
+import { motion } from "framer-motion";
+import { NextSeo } from "next-seo";
 
 // Local
 import TechStack from "@local/src/components/sections/TechStack";

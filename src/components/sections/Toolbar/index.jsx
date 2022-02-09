@@ -2,29 +2,29 @@
 import clsx from "classnames";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Link from "next/link";
+
 // Material ui
 import {
+  Box,
   Grid,
   IconButton,
-  useMediaQuery,
-  useTheme,
   Typography,
+  useMediaQuery,
   ClickAwayListener,
-  Box,
-} from "@material-ui/core";
+} from "@mui/material";
+import { useTheme } from "@mui/styles";
 
 // Local
 import { openDrawer, closeDrawer, selectDrawer } from "@local-store/SiteConfig";
-import { LogInIcon, BurgerMenuIcon } from "@local-assets/icons";
+import { BurgerMenuIcon } from "@local-assets/icons";
 
 // Component style
 import useStyles from "./toolbar.style";
 import { NavigationLinks } from "../../collections/Link";
 
 const Toolbar = (props) => {
-  const styles = useStyles();
   const theme = useTheme();
+  const styles = useStyles(theme)();
   const dispatch = useDispatch();
 
   const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
@@ -42,26 +42,14 @@ const Toolbar = (props) => {
   return (
     <ClickAwayListener onClickAway={handleCloseDrawer}>
       <Grid container>
-        <Grid item>
-          <Grid
-            container
-            direction='column'
-            alignContent='center'
-            justify='space-between'
-            className={styles.mainSection}
-          >
-            <Typography variant='h1' className={styles.initial}>
+        <Grid item className={styles.mainSection}>
+          <Box className={styles.headerContainer}>
+            <Typography variant='h4' className={styles.initial}>
               A.S
             </Typography>
-
-            <Grid item>
-              <NavigationLinks invert />
-            </Grid>
-            <Link href=''>
-              <a>
-                <LogInIcon />
-              </a>
-            </Link>
+          </Box>
+          <Grid item component={Box} my={theme.spacing(15)}>
+            <NavigationLinks invert />
           </Grid>
         </Grid>
         <Box>
@@ -75,7 +63,7 @@ const Toolbar = (props) => {
                 [`${styles.hideActionButton}`]: drawer,
               })}
             >
-              <BurgerMenuIcon Width={100} />
+              <BurgerMenuIcon Width={60} />
             </IconButton>
           )}
         </Box>

@@ -1,12 +1,17 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles((theme) => ({
-  link: {
-    margin: theme.spacing(1),
-  },
-  active: {
-    color: theme.palette.secondary.dark,
-  },
-}));
+const useStyles = (theme) =>
+  makeStyles(() => ({
+    link: {
+      "& a": {
+        textDecoration: "none",
+        margin: theme.spacing(1),
+        color: theme.palette.text.primary,
+      },
+    },
+    active: {
+      color: theme.palette.text.secondary,
+    },
+  }));
 
 export default useStyles;

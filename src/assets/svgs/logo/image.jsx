@@ -1,11 +1,7 @@
-import { useTheme } from "@material-ui/core";
-
-// Component style
-import useStyles from "./image.style";
+import { useTheme } from "@mui/styles";
 
 const LogoSvg = (props) => {
   const theme = useTheme();
-  const styles = useStyles();
 
   return (
     <svg

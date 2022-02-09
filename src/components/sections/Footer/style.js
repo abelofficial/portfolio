@@ -1,17 +1,21 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    width: "100vw",
-    maxWidth: "100%",
-    backgroundColor: theme.palette.background.default,
-  },
-  divider: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    opacity: 0.4,
-    filter: "blur(0.1rem)",
-  },
-}));
+const useStyles = (theme) =>
+  makeStyles(() => ({
+    container: {
+      width: "100%",
+      position: "absolute",
+      bottom: 0,
+      textAlign: "center",
+      backgroundColor: "transparent",
+    },
+    smallText: {
+      fontSize: "0.7rem",
+      color:
+        theme.palette.type === "light"
+          ? theme.palette.primary.main
+          : theme.palette.text.primary,
+    },
+  }));
 
 export default useStyles;
