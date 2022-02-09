@@ -7,15 +7,17 @@ import { useDispatch } from "react-redux";
 import { HighLightText, Paragraph, StrongText, SubSectionTitle } from "../text";
 
 // Material ui
-import { Avatar, Box, Grid } from "@material-ui/core";
+import { Avatar, Box, Grid } from "@mui/material";
+import { useTheme } from "@mui/styles";
+
 import { getGithubUser, getGithubUserOrgs } from "@local/src/services/api";
 import { InfoContainer, SectionContainer } from "../../hoc";
 
 import useStyles from "./card.style";
 
 export const GithubSummery = ({ props }) => {
-  const dispatch = useDispatch();
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
   const [githubAccount, setGithubAccount] = useState();
 
   useEffect(() => {
@@ -51,7 +53,7 @@ export const GithubSummery = ({ props }) => {
   }, [setGithubAccount]);
 
   return (
-    <SectionContainer padding={1} width='100%'>
+    <SectionContainer width='100%' mt={2}>
       <Grid container direction='column' component={Box}>
         <Grid item xs={12} className={styles.header}>
           <SubSectionTitle>Github Account</SubSectionTitle>
@@ -66,8 +68,14 @@ export const GithubSummery = ({ props }) => {
           <Avatar className={styles.avatar} src={githubAccount?.avatar_url} />
           <Grid container direction='column'>
             <StrongText> {githubAccount?.name} </StrongText>
-            <Grid item component={Box} display='flex' width='100%'>
-              <Paragraph className={styles.accountInfoText}>
+            <Grid
+              item
+              component={Box}
+              display='flex'
+              justifyContent='space-between'
+              width='50%'
+            >
+              <Paragraph>
                 <HighLightText> {githubAccount?.followers} </HighLightText>
                 followers
               </Paragraph>
@@ -85,7 +93,7 @@ export const GithubSummery = ({ props }) => {
           component={Box}
           display='flex'
           alignItems='center'
-          justify='space-around'
+          justifyContent='space-around'
         >
           <InfoContainer
             component={Box}

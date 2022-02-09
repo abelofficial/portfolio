@@ -30,15 +30,16 @@ export const SectionContainer = ({ children, ...restProps }) => {
   );
 };
 
-// export const InfoContainer = ({ children, ...restProps }) => {
-//   const styles = useStyles();
+export const InfoContainer = ({ children, ...restProps }) => {
+  const theme = useTheme();
+  const styles = useStyles(theme)();
 
-//   return (
-//     <Box className={clsx(styles.infoContainer)} {...restProps}>
-//       {children}
-//     </Box>
-//   );
-// };
+  return (
+    <Box className={clsx(styles.infoContainer)} {...restProps}>
+      {children}
+    </Box>
+  );
+};
 
 export const PageContainer = ({ children, ...restProps }) => {
   const theme = useTheme();

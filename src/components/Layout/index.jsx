@@ -18,7 +18,7 @@ import Contact from "../sections/Contact";
 import AboutMe from "../sections/AboutMe";
 import { LogoSvg } from "@local/src/assets/svgs/exports";
 // import Footer from "../sections/Footer";
-// import { GithubSummery } from "../collections/cards";
+import { GithubSummery } from "../collections/cards";
 import SiteConfig from "@local/src/components/sections/SiteConfig";
 
 const Layout = ({ children }) => {
@@ -61,11 +61,7 @@ const Layout = ({ children }) => {
           <SiteConfig />
           <AboutMe />
           <Contact />
-          {/* 
-          
-          <GithubSummery /> */}
-
-          <Typography> Sidebar Main</Typography>
+          <GithubSummery />
           <Hidden smDown>
             {/* <Footer className={clsx(styles.footer)} /> */}
             <Typography> Sidebar Footer</Typography>

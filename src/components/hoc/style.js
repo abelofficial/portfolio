@@ -11,7 +11,7 @@ const useStyles = (theme) =>
           : theme.palette.common.black,
       borderRadius: "1rem",
       height: "fit-content",
-      boxShadow: theme.shadows[2],
+      boxShadow: theme.shadows[1],
     },
     infoContainer: {
       marginTop: theme.spacing(1.5),
