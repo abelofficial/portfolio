@@ -3,7 +3,8 @@ import clsx from "classnames";
 import Github from "react-github-calendar";
 
 // Material ui
-import { Box, Grid, useTheme } from "@material-ui/core";
+import { Box, Grid } from "@mui/material";
+import { useTheme } from "@mui/styles";
 
 // Local
 import { SectionContainer } from "@local/src/components/hoc";
@@ -14,8 +15,8 @@ import { useOnScreen } from "@local/src/hooks/useOnScreen";
 import { SectionTitle } from "../../collections/text";
 
 const GithubActivities = (props) => {
-  const styles = useStyles();
   const theme = useTheme();
+  const styles = useStyles(theme)();
   const [setRef, visible] = useOnScreen({ threshold: "0.1" });
 
   const calendarTheme = {
@@ -27,7 +28,7 @@ const GithubActivities = (props) => {
   };
 
   return (
-    <SectionContainer>
+    <SectionContainer mt={2}>
       <Grid
         container
         justifyContent='space-around'
@@ -35,9 +36,7 @@ const GithubActivities = (props) => {
         className={styles.container}
       >
         <Grid item xs={12}>
-          <SectionTitle variant='h4' gutterBottom>
-            Github activities
-          </SectionTitle>
+          <SectionTitle gutterBottom>Github activities</SectionTitle>
           <Box className={clsx(styles.section, styles.slideAnim)}>
             <Github
               username='abelofficial'

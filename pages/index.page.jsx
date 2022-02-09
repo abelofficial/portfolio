@@ -8,7 +8,7 @@ import { NextSeo } from "next-seo";
 // Local
 import TechStack from "@local/src/components/sections/TechStack";
 // import Specialty from "@local/src/components/sections/Specialty";
-// import GitHubCalendar from "@local/src/components/sections/GithubActivities";
+import GitHubCalendar from "@local/src/components/sections/GithubActivities";
 import routeAnim from "@local/src/assets/routeAnimation.json";
 
 // Style
@@ -27,8 +27,7 @@ export default function Home() {
             <TechStack />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            {/* <GitHubCalendar /> */}
-            <h1>Section</h1>
+            <GitHubCalendar />
           </motion.div>
           <motion.div id='landing-services' variants={routeAnim.fadeInUp}>
             {/* <Specialty /> */}
