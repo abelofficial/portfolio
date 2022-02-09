@@ -23,7 +23,7 @@ export default function NotFound() {
             <Typography variant='h1'> 404 </Typography>
           </Grid>
           <Grid item component={Box} pt={4}>
-            <Typography>Page could not e located</Typography>
+            <Typography>Page could not be located.</Typography>
           </Grid>
         </Grid>
       </Box>
