@@ -53,7 +53,7 @@ export const GithubSummery = ({ props }) => {
   }, [setGithubAccount]);
 
   return (
-    <SectionContainer width='100%' mt={2}>
+    <SectionContainer width='100%' mt={2} mb={4}>
       <Grid container direction='column' component={Box}>
         <Grid item xs={12} className={styles.header}>
           <SubSectionTitle>Github Account</SubSectionTitle>

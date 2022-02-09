@@ -35,8 +35,9 @@ const useStyles = (theme) =>
       width: "100%",
     },
     main: {
+      position: "relative",
       width: "100%",
-      height: "100vh",
+      height: "100%",
       overflowY: "scroll",
       backgroundColor: theme.palette.background.paper,
     },
@@ -49,11 +50,12 @@ const useStyles = (theme) =>
       width: "100%",
       display: "flex",
       flexDirection: "column",
+      position: "relative",
       padding: theme.spacing(1),
       height: "fit-content",
       backgroundColor: theme.palette.background.default,
       [theme.breakpoints.up("md")]: {
-        height: "100vh",
+        minHeight: "100vh",
       },
     },
     logo: {

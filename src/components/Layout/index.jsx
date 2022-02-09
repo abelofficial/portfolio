@@ -17,7 +17,7 @@ import useStyles from "./layout.style";
 import Contact from "../sections/Contact";
 import AboutMe from "../sections/AboutMe";
 import { LogoSvg } from "@local/src/assets/svgs/exports";
-// import Footer from "../sections/Footer";
+import Footer from "../sections/Footer";
 import { GithubSummery } from "../collections/cards";
 import SiteConfig from "@local/src/components/sections/SiteConfig";
 
@@ -47,13 +47,12 @@ const Layout = ({ children }) => {
         alignItems={bigScreen ? "flex-start" : "stretch"}
         className={clsx(styles.container)}
       >
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12} md={7} className={clsx(styles.main)}>
           <Box className={clsx(styles.pageContainer)}>
             <PageContainer>{children}</PageContainer>
           </Box>
           <Hidden mdUp>
-            {/* <Footer /> */}
-            <Typography> Big screen footer</Typography>
+            <Footer />
           </Hidden>
         </Grid>
         <Grid item xs={12} md={5} className={clsx(styles.sideBar)}>
@@ -62,9 +61,8 @@ const Layout = ({ children }) => {
           <AboutMe />
           <Contact />
           <GithubSummery />
-          <Hidden smDown>
-            {/* <Footer className={clsx(styles.footer)} /> */}
-            <Typography> Sidebar Footer</Typography>
+          <Hidden mdDown>
+            <Footer />
           </Hidden>
         </Grid>
       </Grid>
