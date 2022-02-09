@@ -41,6 +41,12 @@ const GithubActivities = (props) => {
             <Github
               username='abelofficial'
               theme={calendarTheme}
+              style={{
+                color:
+                  theme.palette.type === "light"
+                    ? theme.palette.primary.main
+                    : theme.palette.text.primary,
+              }}
               blockMargin={5}
               blockRadius={7}
               blockSize={14}

@@ -6,7 +6,7 @@ const useStyles = (theme) =>
       color:
         theme.palette.type === "light"
           ? theme.palette.primary.main
-          : theme.palette.primary.dark,
+          : theme.palette.text.primary,
 
       transition: `${theme.transitions.create(["color"], {
         duration: theme.transitions.duration.complex,

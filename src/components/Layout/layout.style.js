@@ -41,21 +41,20 @@ const useStyles = (theme) =>
       overflowY: "scroll",
       backgroundColor: theme.palette.background.paper,
     },
-    pageContainer: {
-      [theme.breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(1),
-      },
-    },
+
     sideBar: {
       width: "100%",
       display: "flex",
       flexDirection: "column",
+
       position: "relative",
       padding: theme.spacing(1),
       height: "fit-content",
+
       backgroundColor: theme.palette.background.default,
       [theme.breakpoints.up("md")]: {
         height: "100vh",
+        alignItems: "center",
       },
     },
     logo: {

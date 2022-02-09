@@ -39,7 +39,7 @@ const useStyles = (theme) =>
     },
 
     frameworkContainer: {
-      marginRight: theme.spacing(2),
+      // marginRight: theme.spacing(2),
       position: "relative",
       display: "flex",
       flexDirection: "column",

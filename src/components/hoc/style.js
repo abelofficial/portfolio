@@ -4,7 +4,7 @@ const useStyles = (theme) =>
   makeStyles(() => ({
     sectionContainer: {
       padding: theme.spacing(0.2),
-      width: "95%",
+      width: "100%",
       backgroundColor:
         theme.palette.type === "light"
           ? theme.palette.common.white
@@ -43,7 +43,7 @@ const useStyles = (theme) =>
       margin: "auto",
 
       [theme.breakpoints.up("md")]: {
-        paddingLeft: theme.spacing(20),
+        paddingLeft: theme.spacing(16),
       },
 
       zIndex: 400,

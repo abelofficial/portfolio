@@ -15,6 +15,7 @@ import SEO from "@local/src/utils/next-seo.config";
 import createEmotionCache from "@local/src/utils/createEmotionCache";
 import { CustomThemeProvider } from "@local/src/components/hoc";
 import Layout from "@local-components/Layout";
+import { AnimatePresence } from "framer-motion";
 
 const clientSideEmotionCache = createEmotionCache();
 const App = (props) => {
@@ -29,13 +30,10 @@ const App = (props) => {
       <StateProvider store={store}>
         <CustomThemeProvider>
           <CssBaseline />
-
           <Layout>
-            <h1> Under Construction</h1>
-            <Component {...pageProps} />
-            {/* <AnimatePresence exitBeforeEnter>
-                <Component {...pageProps} />
-              </AnimatePresence> */}
+            <AnimatePresence exitBeforeEnter>
+              <Component {...pageProps} />
+            </AnimatePresence>
           </Layout>
         </CustomThemeProvider>
       </StateProvider>

@@ -2,6 +2,7 @@
 // Material ui
 import { Box, Divider, Grid, Typography } from "@mui/material";
 import { useTheme } from "@mui/styles";
+import { Paragraph } from "../../collections/text";
 
 // Local
 
@@ -14,10 +15,8 @@ const Footer = (props) => {
 
   return (
     <Box item xs={12} className={styles.container}>
-      <Typography variant='body2'>
-        <small>
-          Made by Abel © {new Date().getFullYear()}. As always With 💜
-        </small>
+      <Typography className={styles.smallText}>
+        Made by Abel © {new Date().getFullYear()}. As always With 💜
       </Typography>
     </Box>
   );

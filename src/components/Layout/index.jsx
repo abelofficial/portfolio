@@ -48,9 +48,7 @@ const Layout = ({ children }) => {
         className={clsx(styles.container)}
       >
         <Grid item xs={12} md={7} className={clsx(styles.main)}>
-          <Box className={clsx(styles.pageContainer)}>
-            <PageContainer>{children}</PageContainer>
-          </Box>
+          <PageContainer>{children}</PageContainer>
           <Hidden mdUp>
             <Footer />
           </Hidden>

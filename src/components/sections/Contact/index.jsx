@@ -11,7 +11,7 @@ import data from "./data.json";
 // Component style
 import useStyles from "./contact.style";
 import { HighLightText } from "../../collections/text";
-import { SectionTitle } from "../../collections/text";
+import { SubSectionTitle } from "../../collections/text";
 
 const Contact = (props) => {
   const styles = useStyles();
@@ -24,7 +24,7 @@ const Contact = (props) => {
       justifyContent='space-between'
       p={1}
     >
-      <SectionTitle className={styles.title}> Connect with me </SectionTitle>
+      <SubSectionTitle>Connect with me</SubSectionTitle>
       <Grid container direction='row' justifyContent='space-between' p={2}>
         {Object.keys(data).map((item) => (
           <Box

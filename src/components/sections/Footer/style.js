@@ -9,6 +9,13 @@ const useStyles = (theme) =>
       textAlign: "center",
       backgroundColor: "transparent",
     },
+    smallText: {
+      fontSize: "0.7rem",
+      color:
+        theme.palette.type === "light"
+          ? theme.palette.primary.main
+          : theme.palette.text.primary,
+    },
   }));
 
 export default useStyles;
