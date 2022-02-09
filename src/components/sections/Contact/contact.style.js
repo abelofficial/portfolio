@@ -1,15 +1,16 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from "@mui/styles";
 
-const useStyles = makeStyles((theme) => ({
-  contactLink: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: theme.spacing(2)
-  },
-  title: {
-    padding: theme.spacing(2)
-  }
-}));
+const useStyles = (theme) =>
+  makeStyles(() => ({
+    contactLink: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      padding: theme.spacing(2),
+    },
+    title: {
+      padding: theme.spacing(2),
+    },
+  }));
 
 export default useStyles;

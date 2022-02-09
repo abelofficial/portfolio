@@ -14,7 +14,7 @@ import { selectDrawer } from "@local-store/SiteConfig";
 // Component style
 import useStyles from "./layout.style";
 
-// import Contact from "../sections/Contact";
+import Contact from "../sections/Contact";
 import AboutMe from "../sections/AboutMe";
 import { LogoSvg } from "@local/src/assets/svgs/exports";
 // import Footer from "../sections/Footer";
@@ -60,8 +60,9 @@ const Layout = ({ children }) => {
           <LogoSvg width={200} height={60} className={clsx(styles.logo)} />
           <SiteConfig />
           <AboutMe />
-          {/* 
           <Contact />
+          {/* 
+          
           <GithubSummery /> */}
 
           <Typography> Sidebar Main</Typography>

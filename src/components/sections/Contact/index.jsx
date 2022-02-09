@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { v4 as uuid } from "uuid";
 // Material ui
-import { Box, Grid } from "@material-ui/core";
+import { Box, Grid } from "@mui/material";
 
 // Local
 import { SectionContainer } from "@local/src/components/hoc";
@@ -21,15 +21,17 @@ const Contact = (props) => {
       component={Box}
       width='100%'
       direction='column'
-      justifyContent='space-around'
+      justifyContent='space-between'
+      p={1}
     >
       <SectionTitle className={styles.title}> Connect with me </SectionTitle>
-      <Grid container direction='row' justify='space-between'>
+      <Grid container direction='row' justifyContent='space-between' p={2}>
         {Object.keys(data).map((item) => (
           <Box
             key={uuid()}
             display='flex'
             flexDirection='column'
+            alignItems='center'
             component={Grid}
             item
             xs={2}
