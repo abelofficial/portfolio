@@ -37,7 +37,7 @@ const useStyles = (theme) =>
     main: {
       position: "relative",
       width: "100%",
-      height: "100%",
+      height: "100vh",
       overflowY: "scroll",
       backgroundColor: theme.palette.background.paper,
     },
@@ -55,7 +55,7 @@ const useStyles = (theme) =>
       height: "fit-content",
       backgroundColor: theme.palette.background.default,
       [theme.breakpoints.up("md")]: {
-        minHeight: "100vh",
+        height: "100vh",
       },
     },
     logo: {

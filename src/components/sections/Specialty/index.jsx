@@ -1,7 +1,8 @@
 // Core
 import Image from "next/image";
 // Material ui
-import { Box, Divider, Grid, Fade } from "@material-ui/core";
+import { Box, Divider, Grid, Fade } from "@mui/material";
+import { useTheme } from "@mui/styles";
 
 // Local
 import { SectionContainer } from "@local/src/components/hoc";
@@ -14,20 +15,19 @@ import { Paragraph, SectionTitle } from "../../collections/text";
 import { SubSectionTitle } from "../../collections/text";
 
 const Specialty = (props) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
   const [setRef, visible] = useOnScreen({ threshold: "0.1" });
 
   return (
-    <SectionContainer>
+    <SectionContainer mt={2}>
       <Grid
         container
         justifyContent='space-around'
         ref={setRef}
         className={styles.container}
       >
-        <SectionTitle variant='h4' gutterBottom>
-          What I do ?
-        </SectionTitle>
+        <SectionTitle gutterBottom>What I do ?</SectionTitle>
         {data.map((item, index) => (
           <Fade key={item.title} in={visible} timeout={index * 600}>
             <Box>
