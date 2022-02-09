@@ -3,7 +3,7 @@ import clsx from "classnames";
 import { useSelector } from "react-redux";
 
 // Material ui
-import { Box, Grid, Hidden, Typography, useMediaQuery } from "@mui/material";
+import { Box, Grid, Hidden, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 // Internal

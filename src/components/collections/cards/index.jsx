@@ -1,7 +1,6 @@
 // Core
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
 
 // Internal
 import { HighLightText, Paragraph, StrongText, SubSectionTitle } from "../text";

@@ -1,8 +1,7 @@
 // Core
 // Material ui
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/styles";
-import { Paragraph } from "../../collections/text";
 
 // Local
 

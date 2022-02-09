@@ -1,7 +1,7 @@
 // Core
 
 // Material
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 
