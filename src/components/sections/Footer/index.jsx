@@ -1,6 +1,7 @@
 // Core
 // Material ui
-import { Divider, Grid, Typography } from "@material-ui/core";
+import { Box, Typography } from "@mui/material";
+import { useTheme } from "@mui/styles";
 
 // Local
 
@@ -8,26 +9,15 @@ import { Divider, Grid, Typography } from "@material-ui/core";
 import useStyles from "./style";
 
 const Footer = (props) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
 
   return (
-    <Grid
-      container
-      direction='column'
-      justifyContent='space-around'
-      alignItems='center'
-      className={styles.container}
-      {...props}
-    >
-      <Divider className={styles.divider} />
-      <Grid item xs={12}>
-        <Typography variant='body2'>
-          <small>
-            Made by Abel © {new Date().getFullYear()}. As always With 💜
-          </small>
-        </Typography>
-      </Grid>
-    </Grid>
+    <Box item xs={12} className={styles.container}>
+      <Typography className={styles.smallText}>
+        Made by Abel © {new Date().getFullYear()}. As always With 💜
+      </Typography>
+    </Box>
   );
 };
 

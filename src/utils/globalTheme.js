@@ -1,14 +1,15 @@
-import { createMuiTheme } from "@material-ui/core";
+import { createTheme } from "@mui/material/styles";
 
-// Fonts
-import {
-  balooBhai,
-  balooBhaiBold,
-  balooBhaiSemiBold,
-  balooBhaiExtraBold,
-} from "@local-utils/globalFonts";
+// // Fonts
+// import {
+//   balooBhai,
+//   balooBhaiBold,
+//   balooBhaiSemiBold,
+//   balooBhaiExtraBold,
+// } from "@local-utils/globalFonts";
+
 const theme = (darkMode = false) =>
-  createMuiTheme({
+  createTheme({
     overrides: {
       MuiCssBaseline: {
         "@global": {
@@ -32,12 +33,12 @@ const theme = (darkMode = false) =>
               "0px 2px 1px -1px rgba(255,196,12,0.2),0px 1px 1px 0px rgba(255,196,12,0.14),0px 1px 3px 0px rgba(255,196,12,0.12)",
           },
 
-          "@font-face": [
-            balooBhai,
-            balooBhaiBold,
-            balooBhaiSemiBold,
-            balooBhaiExtraBold,
-          ],
+          // "@font-face": [
+          //   balooBhai,
+          //   balooBhaiBold,
+          //   balooBhaiSemiBold,
+          //   balooBhaiExtraBold,
+          // ],
         },
       },
     },
@@ -62,7 +63,7 @@ const theme = (darkMode = false) =>
 
     typography: {
       fontFamily: [
-        "BalooBhai",
+        // "BalooBhai",
         "-apple-system",
         "BlinkMacSystemFont",
         '"Segoe UI"',

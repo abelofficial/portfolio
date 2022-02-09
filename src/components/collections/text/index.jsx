@@ -4,16 +4,18 @@ import clsx from "classnames";
 // Internal
 
 // Material ui
-import { Typography } from "@material-ui/core";
+import { Typography, useTheme } from "@mui/material";
 
 // Component
-import useStyles from "./text.styles.js";
+import useStyles from "./text.styles";
 
 export const Title = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <Typography
-      variant='h2'
+      variant='h5'
       className={clsx(styles.text, styles.title)}
       {...restProps}
     >
@@ -23,10 +25,12 @@ export const Title = ({ children, ...restProps }) => {
 };
 
 export const SectionTitle = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <Typography
-      variant='h3'
+      variant='h5'
       className={clsx(styles.text, styles.sectionTitle)}
       {...restProps}
     >
@@ -36,7 +40,9 @@ export const SectionTitle = ({ children, ...restProps }) => {
 };
 
 export const SubSectionTitle = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <Typography
       variant='subtitle1'
@@ -49,7 +55,9 @@ export const SubSectionTitle = ({ children, ...restProps }) => {
 };
 
 export const StrongText = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <Typography
       variant='subtitle1'
@@ -62,11 +70,13 @@ export const StrongText = ({ children, ...restProps }) => {
 };
 
 export const Paragraph = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <Typography
       variant='body1'
-      className={clsx(styles.text, styles.sectionTitle)}
+      className={clsx(styles.text, styles.paragraph)}
       {...restProps}
     >
       {children}
@@ -75,7 +85,9 @@ export const Paragraph = ({ children, ...restProps }) => {
 };
 
 export const HighLightText = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <Typography
       variant='body2'
@@ -89,7 +101,9 @@ export const HighLightText = ({ children, ...restProps }) => {
 
 // To be removed
 export const ComingSoon = ({ title, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <Typography
       variant='h1'

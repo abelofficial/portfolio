@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
+
 import {
   HomeIcon,
   BlogIcon,
@@ -7,51 +7,62 @@ import {
   SettingIcon,
   TimeLineIcon,
 } from "@local-assets/icons";
-import { Grid } from "@material-ui/core";
+import { ROUTES } from "@local-assets/RoutesObjects";
+
+import { Grid, IconButton, useTheme } from "@mui/material";
 
 import useStyles from "./style";
 
 export const NavigationLinks = ({ invert, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
   const router = useRouter();
 
   return (
     <Grid container direction='column' alignContent='center' {...restProps}>
-      <Link href='/' className={styles.link}>
-        <a>
-          <HomeIcon invert={invert} isActive={router.pathname === "/"} />
-        </a>
-      </Link>
-      <Link href='/timeline' className={styles.link}>
-        <a>
-          <TimeLineIcon
-            invert={invert}
-            isActive={router.pathname === "/timeline"}
-          />
-        </a>
-      </Link>
+      <IconButton
+        className={styles.link}
+        onClick={() => router.push(ROUTES.HOME)}
+      >
+        <HomeIcon invert={invert} isActive={router.pathname === ROUTES.HOME} />
+      </IconButton>
 
-      <Link href='/blog' className={styles.link}>
-        <a>
-          <BlogIcon invert={invert} isActive={router.pathname === "/blog"} />
-        </a>
-      </Link>
-      <Link href='message' className={styles.link}>
-        <a>
-          <MessageIcon
-            invert={invert}
-            isActive={router.pathname === "/message"}
-          />
-        </a>
-      </Link>
-      <Link href='/setting' className={styles.link}>
-        <a>
-          <SettingIcon
-            invert={invert}
-            isActive={router.pathname === "/setting"}
-          />
-        </a>
-      </Link>
+      <IconButton
+        className={styles.link}
+        onClick={() => router.push(ROUTES.TIMELINE)}
+      >
+        <TimeLineIcon
+          invert={invert}
+          isActive={router.pathname === ROUTES.TIMELINE}
+        />
+      </IconButton>
+
+      <IconButton
+        className={styles.link}
+        onClick={() => router.push(ROUTES.BLOG)}
+      >
+        <BlogIcon invert={invert} isActive={router.pathname === ROUTES.BLOG} />
+      </IconButton>
+
+      <IconButton
+        className={styles.link}
+        onClick={() => router.push(ROUTES.MESSAGE)}
+      >
+        <MessageIcon
+          invert={invert}
+          isActive={router.pathname === ROUTES.MESSAGE}
+        />
+      </IconButton>
+
+      <IconButton
+        className={styles.link}
+        onClick={() => router.push(ROUTES.SETTING)}
+      >
+        <SettingIcon
+          invert={invert}
+          isActive={router.pathname === ROUTES.SETTING}
+        />
+      </IconButton>
     </Grid>
   );
 };

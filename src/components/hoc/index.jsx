@@ -13,19 +13,15 @@ import {
 import globalTheme from "@local-utils/globalTheme";
 
 // Material-ui
-import {
-  Box,
-  useMediaQuery,
-  useTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from "@material-ui/core";
+import { useMediaQuery, Box } from "@mui/material";
+import { ThemeProvider, useTheme } from "@mui/styles";
 
 // Styles
 import useStyles from "./style";
 
 export const SectionContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
 
   return (
     <Box className={clsx(styles.sectionContainer)} {...restProps}>
@@ -35,7 +31,8 @@ export const SectionContainer = ({ children, ...restProps }) => {
 };
 
 export const InfoContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
+  const theme = useTheme();
+  const styles = useStyles(theme)();
 
   return (
     <Box className={clsx(styles.infoContainer)} {...restProps}>
@@ -45,8 +42,8 @@ export const InfoContainer = ({ children, ...restProps }) => {
 };
 
 export const PageContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
   const theme = useTheme();
+  const styles = useStyles(theme)();
 
   const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
   const drawer = useSelector(selectDrawer);
@@ -64,20 +61,20 @@ export const PageContainer = ({ children, ...restProps }) => {
   );
 };
 
-export const SiteContainer = ({ children, ...restProps }) => {
-  const styles = useStyles();
+// export const SiteContainer = ({ children, ...restProps }) => {
+//   const styles = useStyles();
 
-  return (
-    <Box className={styles.siteContainer} {...restProps}>
-      {children}
-    </Box>
-  );
-};
+//   return (
+//     <Box className={styles.siteContainer} {...restProps}>
+//       {children}
+//     </Box>
+//   );
+// };
 
 export const CustomThemeProvider = ({ children, ...restProps }) => {
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);
-  const theme = responsiveFontSizes(globalTheme(darkMode));
+  const theme = globalTheme(darkMode);
 
   useEffect(() => {
     darkMode || dispatch(turnOffDarkMode());

@@ -1,9 +1,8 @@
 // Core
-import Image from "next/image";
 import { NextSeo } from "next-seo";
 
 // Material
-import { Grid, Link, Container, Typography, Box } from "@material-ui/core";
+import { Grid, Container, Typography, Box } from "@mui/material";
 
 export default function NotFound() {
   return (
@@ -24,22 +23,7 @@ export default function NotFound() {
             <Typography variant='h1'> 404 </Typography>
           </Grid>
           <Grid item component={Box} pt={4}>
-            <Typography>
-              This is a boilerplate for{" "}
-              <Link href='https://nextjs.org/'>Nextjs</Link> with{" "}
-              <Link href='https://material-ui.com/'>Material-UI.</Link>
-            </Typography>
-            <Link href='https://github.com/abelofficial/Nextjs-Material-ui-boilerplate'>
-              <em>See Heres</em>
-            </Link>
-          </Grid>
-          <Grid item>
-            <Image
-              alt='Material ui with Next'
-              src='/material-vs-next.svg'
-              width={400}
-              height={400}
-            />
+            <Typography>Page could not be located.</Typography>
           </Grid>
         </Grid>
       </Box>
