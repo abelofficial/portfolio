@@ -23,7 +23,7 @@ const useStyles = (theme) =>
           : theme.palette.grey[800],
       borderRadius: "0.5rem",
       height: "fit-content",
-      boxShadow: theme.shadows[3],
+      boxShadow: theme.shadows[1],
     },
 
     siteContainer: {

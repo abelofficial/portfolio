@@ -11,6 +11,8 @@ import {
   turnOffDarkMode,
 } from "@local-store/SiteConfig";
 import globalTheme from "src/styles/globalTheme";
+import lightTheme from "src/styles/lightTheme";
+import darkTheme from "src/styles/darkTheme";
 
 // Material-ui
 import { useMediaQuery, Box } from "@mui/material";
@@ -74,7 +76,7 @@ export const PageContainer = ({ children, ...restProps }) => {
 export const CustomThemeProvider = ({ children, ...restProps }) => {
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);
-  const theme = globalTheme(darkMode);
+  const theme = globalTheme(darkMode ? darkTheme : lightTheme);
 
   useEffect(() => {
     darkMode || dispatch(turnOffDarkMode());
