@@ -32,13 +32,6 @@ const theme = (darkMode = false) =>
             boxShadow:
               "0px 2px 1px -1px rgba(255,196,12,0.2),0px 1px 1px 0px rgba(255,196,12,0.14),0px 1px 3px 0px rgba(255,196,12,0.12)",
           },
-
-          // "@font-face": [
-          //   balooBhai,
-          //   balooBhaiBold,
-          //   balooBhaiSemiBold,
-          //   balooBhaiExtraBold,
-          // ],
         },
       },
     },
@@ -62,20 +55,6 @@ const theme = (darkMode = false) =>
     },
 
     typography: {
-      fontFamily: [
-        // "BalooBhai",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        '"Segoe UI"',
-        "Roboto",
-        '"Helvetica Neue"',
-        "Arial",
-        "sans-serif",
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-      ].join(","),
-
       h1: {
         fontSize: "1.5rem",
         fontWeight: 900,
@@ -119,12 +98,6 @@ const theme = (darkMode = false) =>
         complex: 875,
       },
     },
-
-    breakpoints: {},
-
-    mixins: {},
-
-    props: {},
 
     shape: {
       borderRadius: "1rem",

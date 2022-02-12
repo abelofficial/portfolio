@@ -4,9 +4,9 @@
 import { Grid, Box } from "@mui/material";
 
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
+import { SectionContainer } from "@local-components/hoc";
 import { SiteThemeSelector } from "@local-components/collections/buttons";
-import { NavigationLinks } from "@local-components/collections/Link";
+import { NavigationLinks } from "@local-components/sections/NavigationLinks";
 
 const SiteConfig = (props) => {
   return (

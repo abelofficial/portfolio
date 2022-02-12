@@ -6,7 +6,7 @@ import {
   MessageIcon,
   SettingIcon,
   TimeLineIcon,
-} from "@local-assets/icons";
+} from "@local-components/collections/icons";
 import { ROUTES } from "@local-assets/RoutesObjects";
 
 import { Grid, IconButton, useTheme } from "@mui/material";

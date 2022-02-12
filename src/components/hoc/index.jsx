@@ -10,7 +10,7 @@ import {
   setDarkMode,
   turnOffDarkMode,
 } from "@local-store/SiteConfig";
-import globalTheme from "@local-utils/globalTheme";
+import globalTheme from "src/styles/globalTheme";
 
 // Material-ui
 import { useMediaQuery, Box } from "@mui/material";

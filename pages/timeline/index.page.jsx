@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { Box } from "@mui/material";
 
 // Local
-import data from "./data.json";
-import TimeLine from "@local/src/components/sections/TimeLine";
-import routeAnim from "@local/src/assets/routeAnimation.json";
+import data from "@local-static/timeLineData.json";
+import TimeLine from "@local-components/sections/TimeLine";
+import routeAnim from "@local-styles/routeAnimation.json";
 
 export default function Education() {
   return (
