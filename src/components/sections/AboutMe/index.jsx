@@ -8,7 +8,7 @@ import { Box, Grid, useTheme } from "@mui/material";
 
 // Local
 import { SectionContainer } from "@local-components/hoc";
-import data from "./data.json";
+import data from "@local-static/aboutMeData.json";
 
 // Component style
 import useStyles from "./about.style";

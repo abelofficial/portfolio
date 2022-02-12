@@ -16,7 +16,7 @@ import useStyles from "./layout.style";
 
 import Contact from "@local-components/sections/Contact";
 import AboutMe from "@local-components/sections/AboutMe";
-import { LogoSvg } from "@local-assets/svgs/exports";
+import LogoSvg from "@local-components/collections/logo/image";
 import Footer from "@local-components/sections/Footer";
 import { GithubSummery } from "@local-components/collections/cards";
 import SiteConfig from "@local-components/sections/SiteConfig";
