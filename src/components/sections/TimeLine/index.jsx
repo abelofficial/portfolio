@@ -3,13 +3,17 @@
 import { Divider, Grid, Fade, Box, useTheme } from "@mui/material";
 
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
+import { SectionContainer } from "@local-components/hoc";
 
 // Component
-import useStyles from "./timeline.style";
-import { useOnScreen } from "@local/src/hooks/useOnScreen";
-import { HighLightText, Paragraph, SectionTitle } from "../../collections/text";
-import { SubSectionTitle } from "../../collections/text";
+import useStyles from "./style";
+import { useOnScreen } from "@local-components/hooks/useOnScreen";
+import {
+  HighLightText,
+  Paragraph,
+  SectionTitle,
+} from "@local-components/collections/text";
+import { SubSectionTitle } from "@local-components/collections/text";
 
 const TimeLine = ({ title, data, ...restProps }) => {
   const theme = useTheme();
@@ -17,7 +21,7 @@ const TimeLine = ({ title, data, ...restProps }) => {
   const [setRef, visible] = useOnScreen({ threshold: "0.1" });
 
   return (
-    <SectionContainer my={3}>
+    <SectionContainer>
       <Grid container ref={setRef} className={styles.container} {...restProps}>
         <SectionTitle gutterBottom>{title}</SectionTitle>
         {data.map((item, index) => (

@@ -5,13 +5,13 @@ import { v4 as uuid } from "uuid";
 import { Box, Grid } from "@mui/material";
 
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
-import data from "./data.json";
+import { SectionContainer } from "@local-components/hoc";
+import data from "@local-static/contactData.json";
 
 // Component style
-import useStyles from "./contact.style";
-import { HighLightText } from "../../collections/text";
-import { SubSectionTitle } from "../../collections/text";
+import useStyles from "./style";
+import { HighLightText } from "@local-components/collections/text";
+import { SubSectionTitle } from "@local-components/collections/text";
 
 const Contact = (props) => {
   const styles = useStyles();
@@ -22,7 +22,6 @@ const Contact = (props) => {
       width='100%'
       direction='column'
       justifyContent='space-between'
-      p={1}
     >
       <SubSectionTitle>Connect with me</SubSectionTitle>
       <Grid container direction='row' justifyContent='space-between' p={2}>

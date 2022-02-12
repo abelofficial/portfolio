@@ -7,19 +7,19 @@ import { Box, Grid, Hidden, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 // Internal
-import Toolbar from "@local/src/components/sections/Toolbar";
-import { PageContainer } from "@local/src/components/hoc";
+import Toolbar from "@local-components/sections/Toolbar";
+import { PageContainer } from "@local-components/hoc";
 import { selectDrawer } from "@local-store/SiteConfig";
 
 // Component style
-import useStyles from "./layout.style";
+import useStyles from "./style";
 
-import Contact from "../sections/Contact";
-import AboutMe from "../sections/AboutMe";
-import { LogoSvg } from "@local/src/assets/svgs/exports";
-import Footer from "../sections/Footer";
-import { GithubSummery } from "../collections/cards";
-import SiteConfig from "@local/src/components/sections/SiteConfig";
+import Contact from "@local-components/sections/Contact";
+import AboutMe from "@local-components/sections/AboutMe";
+import LogoSvg from "@local-components/collections/logo/image";
+import Footer from "@local-components/sections/Footer";
+import GithubSummery from "@local-components/sections/GithubSummery";
+import SiteConfig from "@local-components/sections/SiteConfig";
 
 const Layout = ({ children }) => {
   const theme = useTheme();

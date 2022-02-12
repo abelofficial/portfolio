@@ -5,12 +5,12 @@ import Lottie from "react-lottie-player";
 import { Box, Button, Grid, TextField, useTheme } from "@material-ui/core";
 
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
-import * as animationPlane from "@local/public/animations/coming_soon.json";
-import * as animationPlaneDarkTheme from "@local/public/animations/coming_soon_dark.json";
+import { SectionContainer } from "@local-components/hoc";
+import * as animationPlane from "public/animations/coming_soon.json";
+import * as animationPlaneDarkTheme from "public/animations/coming_soon_dark.json";
 
 // Component style
-import useStyles from "./chatBox.style";
+import useStyles from "./style";
 
 const ChatBox = (props) => {
   const styles = useStyles();

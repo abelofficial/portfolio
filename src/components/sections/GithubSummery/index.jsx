@@ -3,18 +3,23 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // Internal
-import { HighLightText, Paragraph, StrongText, SubSectionTitle } from "../text";
+import {
+  HighLightText,
+  Paragraph,
+  StrongText,
+  SubSectionTitle,
+} from "src/components/collections/text";
 
 // Material ui
 import { Avatar, Box, Grid } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
-import { getGithubUser, getGithubUserOrgs } from "@local/src/services/api";
-import { InfoContainer, SectionContainer } from "../../hoc";
+import { getGithubUser, getGithubUserOrgs } from "@local-services/api";
+import { InfoContainer, SectionContainer } from "@local-components/hoc";
 
-import useStyles from "./card.style";
+import useStyles from "./style";
 
-export const GithubSummery = ({ props }) => {
+const GithubSummery = ({ props }) => {
   const theme = useTheme();
   const styles = useStyles(theme)();
   const [githubAccount, setGithubAccount] = useState();
@@ -52,7 +57,7 @@ export const GithubSummery = ({ props }) => {
   }, [setGithubAccount]);
 
   return (
-    <SectionContainer width='100%' mt={2} mb={4}>
+    <SectionContainer width='100%'>
       <Grid container direction='column' component={Box}>
         <Grid item xs={12} className={styles.header}>
           <SubSectionTitle>Github Account</SubSectionTitle>
@@ -127,3 +132,5 @@ export const GithubSummery = ({ props }) => {
     </SectionContainer>
   );
 };
+
+export default GithubSummery;
