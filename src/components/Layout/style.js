@@ -63,9 +63,8 @@ const useStyles = (theme) =>
       width: "100%",
       display: "flex",
       flexDirection: "column",
-
       position: "relative",
-      padding: theme.spacing(1),
+      padding: theme.spacing(2),
       height: "fit-content",
 
       backgroundColor: theme.palette.background.default,

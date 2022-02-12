@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 const useStyles = (theme) =>
   makeStyles(() => ({
     sectionContainer: {
-      padding: theme.spacing(0.2),
+      padding: theme.spacing(1),
       width: "100%",
       backgroundColor:
         theme.palette.type === "light"
@@ -23,18 +23,9 @@ const useStyles = (theme) =>
           : theme.palette.grey[800],
       borderRadius: "0.5rem",
       height: "fit-content",
-      boxShadow: theme.shadows[1],
+      boxShadow: theme.shadows[0],
     },
 
-    siteContainer: {
-      height: "100vh",
-      minHeight: "55rem",
-      backgroundColor: theme.palette.background.default,
-      transition: `${theme.transitions.create(["background-color"], {
-        duration: theme.transitions.duration.complex,
-        easing: theme.transitions.easing.easeInOut,
-      })}`,
-    },
     pageContainer: {
       padding: theme.spacing(1),
       width: "100vw",

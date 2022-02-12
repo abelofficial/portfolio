@@ -26,7 +26,7 @@ export const SectionContainer = ({ children, ...restProps }) => {
   const styles = useStyles(theme)();
 
   return (
-    <Box className={clsx(styles.sectionContainer)} {...restProps}>
+    <Box className={clsx(styles.sectionContainer)} {...restProps} my={2}>
       {children}
     </Box>
   );
@@ -62,16 +62,6 @@ export const PageContainer = ({ children, ...restProps }) => {
     </Box>
   );
 };
-
-// export const SiteContainer = ({ children, ...restProps }) => {
-//   const styles = useStyles();
-
-//   return (
-//     <Box className={styles.siteContainer} {...restProps}>
-//       {children}
-//     </Box>
-//   );
-// };
 
 export const CustomThemeProvider = ({ children, ...restProps }) => {
   const dispatch = useDispatch();

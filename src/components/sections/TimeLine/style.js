@@ -19,7 +19,7 @@ const useStyles = (theme) =>
       },
     },
     container: {
-      padding: theme.spacing(3),
+      padding: theme.spacing(2),
     },
     section: {
       padding: theme.spacing(1),
