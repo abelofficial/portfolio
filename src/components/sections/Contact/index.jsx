@@ -22,7 +22,6 @@ const Contact = (props) => {
       width='100%'
       direction='column'
       justifyContent='space-between'
-      p={1}
     >
       <SubSectionTitle>Connect with me</SubSectionTitle>
       <Grid container direction='row' justifyContent='space-between' p={2}>

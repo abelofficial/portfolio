@@ -38,17 +38,33 @@ const useStyles = (theme) =>
       position: "relative",
       width: "100%",
       height: "100vh",
+
       overflowY: "scroll",
+      overflowX: "hidden",
+      scrollbarWidth: "thin",
+      scrollbarColor: `${theme.palette.primary.light} ${theme.palette.background.paper}`,
+
       backgroundColor: theme.palette.background.paper,
+
+      "&::-webkit-scrollbar": {
+        width: "0.5rem",
+      },
+      "&::-webkit-scrollbar-track": {
+        backgroundColor: theme.palette.background.paper,
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: theme.palette.primary.light,
+        borderRadius: "3rem",
+        boxShadow: theme.shadows[1],
+      },
     },
 
     sideBar: {
       width: "100%",
       display: "flex",
       flexDirection: "column",
-
       position: "relative",
-      padding: theme.spacing(1),
+      padding: theme.spacing(2),
       height: "fit-content",
 
       backgroundColor: theme.palette.background.default,

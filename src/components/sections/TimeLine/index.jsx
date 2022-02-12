@@ -21,7 +21,7 @@ const TimeLine = ({ title, data, ...restProps }) => {
   const [setRef, visible] = useOnScreen({ threshold: "0.1" });
 
   return (
-    <SectionContainer my={3}>
+    <SectionContainer>
       <Grid container ref={setRef} className={styles.container} {...restProps}>
         <SectionTitle gutterBottom>{title}</SectionTitle>
         {data.map((item, index) => (

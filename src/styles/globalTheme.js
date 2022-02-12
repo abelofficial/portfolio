@@ -8,52 +8,8 @@ import { createTheme } from "@mui/material/styles";
 //   balooBhaiExtraBold,
 // } from "@local-utils/globalFonts";
 
-const theme = (darkMode = false) =>
-  createTheme({
-    overrides: {
-      MuiCssBaseline: {
-        "@global": {
-          "*": {
-            scrollbarColor: `${darkMode ? "#FFC40C" : "#424242"} ${
-              darkMode ? "#424242" : "#F2F2F2"
-            }`,
-            scrollbarWidth: "thin",
-            scrollbarGutter: "revert",
-          },
-          "::-webkit-scrollbar": {
-            width: "0.5rem",
-          },
-          "::-webkit-scrollbar-track": {
-            backgroundColor: darkMode ? "#424242" : "#F2F2F2",
-          },
-          "::-webkit-scrollbar-thumb": {
-            backgroundColor: darkMode ? "#FFC40C" : "#424242",
-            borderRadius: "1rem",
-            boxShadow:
-              "0px 2px 1px -1px rgba(255,196,12,0.2),0px 1px 1px 0px rgba(255,196,12,0.14),0px 1px 3px 0px rgba(255,196,12,0.12)",
-          },
-        },
-      },
-    },
-    palette: {
-      type: darkMode ? "dark" : "light",
-      primary: {
-        main: darkMode ? "#FFC40C" : "#000000",
-      },
-      secondary: {
-        main: darkMode ? "#000000" : "#FFC40C",
-      },
-      background: {
-        default: darkMode ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)",
-        paper: darkMode ? "#424242" : "#F2F2F2",
-      },
-
-      text: {
-        primary: darkMode ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)",
-      },
-      divider: "#FFE40C",
-    },
-
+const theme = (paletteTheme) =>
+  createTheme(paletteTheme, {
     typography: {
       h1: {
         fontSize: "1.5rem",
@@ -102,19 +58,6 @@ const theme = (darkMode = false) =>
     shape: {
       borderRadius: "1rem",
     },
-
-    zIndex: {},
-
-    shadows: [
-      "none",
-      "0px 2px 1px -1px rgba(255,196,12,0.2),0px 1px 1px 0px rgba(255,196,12,0.14),0px 1px 3px 0px rgba(255,196,12,0.12)",
-      "0px 3px 5px -1px rgba(255,196,12,0.2),0px 5px 8px 0px rgba(255,196,12,0.14),0px 1px 14px 0px rgba(255,196,12,0.12)",
-      "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-      "0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12)",
-    ],
-    // shadows: {},
-    /** @@type f e() */
-    // spacing: {},
   });
 
 export default theme;
