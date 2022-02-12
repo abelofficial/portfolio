@@ -20,7 +20,7 @@ import { BurgerMenuIcon } from "@local-assets/icons";
 
 // Component style
 import useStyles from "./toolbar.style";
-import { NavigationLinks } from "../../collections/Link";
+import { NavigationLinks } from "@local-components/collections/Link";
 
 const Toolbar = (props) => {
   const theme = useTheme();

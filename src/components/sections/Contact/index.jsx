@@ -5,13 +5,13 @@ import { v4 as uuid } from "uuid";
 import { Box, Grid } from "@mui/material";
 
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
+import { SectionContainer } from "@local-components/hoc";
 import data from "./data.json";
 
 // Component style
 import useStyles from "./contact.style";
-import { HighLightText } from "../../collections/text";
-import { SubSectionTitle } from "../../collections/text";
+import { HighLightText } from "@local-components/collections/text";
+import { SubSectionTitle } from "@local-components/collections/text";
 
 const Contact = (props) => {
   const styles = useStyles();

@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import { NextSeo } from "next-seo";
 
 // Local
-import TechStack from "@local/src/components/sections/TechStack";
-import Specialty from "@local/src/components/sections/Specialty";
-import GitHubCalendar from "@local/src/components/sections/GithubActivities";
-import routeAnim from "@local/src/assets/routeAnimation.json";
+import TechStack from "@local-components/sections/TechStack";
+import Specialty from "@local-components/sections/Specialty";
+import GitHubCalendar from "@local-components/sections/GithubActivities";
+import routeAnim from "@local-assets/routeAnimation.json";
 
 // Style
 import useStyle from "./index.style";

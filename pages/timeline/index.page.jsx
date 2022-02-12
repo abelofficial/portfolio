@@ -7,8 +7,8 @@ import { Box } from "@mui/material";
 
 // Local
 import data from "./data.json";
-import TimeLine from "@local/src/components/sections/TimeLine";
-import routeAnim from "@local/src/assets/routeAnimation.json";
+import TimeLine from "@local-components/sections/TimeLine";
+import routeAnim from "@local-assets/routeAnimation.json";
 
 export default function Education() {
   return (
