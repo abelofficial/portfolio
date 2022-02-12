@@ -7,12 +7,12 @@ import { Box, Grid } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
+import { SectionContainer } from "@local-components/hoc";
 
 // Component
 import useStyles from "./style";
-import { useOnScreen } from "@local/src/hooks/useOnScreen";
-import { SectionTitle } from "../../collections/text";
+import { useOnScreen } from "@local-components/hooks/useOnScreen";
+import { SectionTitle } from "@local-components/collections/text";
 
 const GithubActivities = (props) => {
   const theme = useTheme();

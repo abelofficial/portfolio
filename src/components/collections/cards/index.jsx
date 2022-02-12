@@ -3,14 +3,19 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 // Internal
-import { HighLightText, Paragraph, StrongText, SubSectionTitle } from "../text";
+import {
+  HighLightText,
+  Paragraph,
+  StrongText,
+  SubSectionTitle,
+} from "src/components/collections/text";
 
 // Material ui
 import { Avatar, Box, Grid } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
-import { getGithubUser, getGithubUserOrgs } from "@local/src/services/api";
-import { InfoContainer, SectionContainer } from "../../hoc";
+import { getGithubUser, getGithubUserOrgs } from "@local-services/api";
+import { InfoContainer, SectionContainer } from "@local-components/hoc";
 
 import useStyles from "./card.style";
 
