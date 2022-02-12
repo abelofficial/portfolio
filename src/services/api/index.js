@@ -1,4 +1,4 @@
-import { GithubConnect } from "@local/src/utils/githubConnect";
+import { GithubConnect } from "@local-utils/githubConnect";
 
 export const getGithubUser = async () => {
   try {
