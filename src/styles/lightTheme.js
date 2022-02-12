@@ -11,29 +11,6 @@ import { createTheme } from "@mui/material/styles";
 const shadowColor = 255 + "," + 196 + "," + 12;
 
 const theme = createTheme({
-  overrides: {
-    MuiCssBaseline: {
-      "@global": {
-        "*": {
-          scrollbarColor: "#424242 #F2F2F2",
-          scrollbarWidth: "thin",
-          scrollbarGutter: "revert",
-        },
-        "::-webkit-scrollbar": {
-          width: "0.5rem",
-        },
-        "::-webkit-scrollbar-track": {
-          backgroundColor: "#F2F2F2",
-        },
-        "::-webkit-scrollbar-thumb": {
-          backgroundColor: "#424242",
-          borderRadius: "1rem",
-          boxShadow:
-            "0px 2px 1px -1px rgba(255,196,12,0.2),0px 1px 1px 0px rgba(255,196,12,0.14),0px 1px 3px 0px rgba(255,196,12,0.12)",
-        },
-      },
-    },
-  },
   palette: {
     type: "light",
     primary: {
