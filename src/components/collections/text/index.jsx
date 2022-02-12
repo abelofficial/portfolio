@@ -7,7 +7,7 @@ import clsx from "classnames";
 import { Typography, useTheme } from "@mui/material";
 
 // Component
-import useStyles from "./text.styles";
+import useStyles from "./styles";
 
 export const Title = ({ children, ...restProps }) => {
   const theme = useTheme();

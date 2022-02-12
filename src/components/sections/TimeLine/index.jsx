@@ -6,7 +6,7 @@ import { Divider, Grid, Fade, Box, useTheme } from "@mui/material";
 import { SectionContainer } from "@local-components/hoc";
 
 // Component
-import useStyles from "./timeline.style";
+import useStyles from "./style";
 import { useOnScreen } from "@local-components/hooks/useOnScreen";
 import {
   HighLightText,

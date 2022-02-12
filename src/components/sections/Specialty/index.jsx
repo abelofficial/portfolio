@@ -9,7 +9,7 @@ import { SectionContainer } from "@local-components/hoc";
 
 // Component
 import data from "@local-static/specialtyData.json";
-import useStyles from "./specialty.style";
+import useStyles from "./style";
 import { useOnScreen } from "@local-components/hooks/useOnScreen";
 import { Paragraph, SectionTitle } from "@local-components/collections/text";
 import { SubSectionTitle } from "@local-components/collections/text";

@@ -10,7 +10,7 @@ import * as animationPlane from "public/animations/coming_soon.json";
 import * as animationPlaneDarkTheme from "public/animations/coming_soon_dark.json";
 
 // Component style
-import useStyles from "./chatBox.style";
+import useStyles from "./style";
 
 const ChatBox = (props) => {
   const styles = useStyles();
