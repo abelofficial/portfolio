@@ -9,7 +9,7 @@ import { SectionContainer } from "@local-components/hoc";
 import data from "@local-static/contactData.json";
 
 // Component style
-import useStyles from "./contact.style";
+import useStyles from "./style";
 import { HighLightText } from "@local-components/collections/text";
 import { SubSectionTitle } from "@local-components/collections/text";
 

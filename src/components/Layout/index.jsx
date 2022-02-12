@@ -12,7 +12,7 @@ import { PageContainer } from "@local-components/hoc";
 import { selectDrawer } from "@local-store/SiteConfig";
 
 // Component style
-import useStyles from "./layout.style";
+import useStyles from "./style";
 
 import Contact from "@local-components/sections/Contact";
 import AboutMe from "@local-components/sections/AboutMe";

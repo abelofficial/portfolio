@@ -19,8 +19,8 @@ import { openDrawer, closeDrawer, selectDrawer } from "@local-store/SiteConfig";
 import { BurgerMenuIcon } from "@local-components/collections/icons";
 
 // Component style
-import useStyles from "./toolbar.style";
-import { NavigationLinks } from "@local-components/collections/Link";
+import useStyles from "./style";
+import { NavigationLinks } from "@local-components/sections/NavigationLinks";
 
 const Toolbar = (props) => {
   const theme = useTheme();

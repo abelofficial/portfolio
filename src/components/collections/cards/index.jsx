@@ -17,7 +17,7 @@ import { useTheme } from "@mui/styles";
 import { getGithubUser, getGithubUserOrgs } from "@local-services/api";
 import { InfoContainer, SectionContainer } from "@local-components/hoc";
 
-import useStyles from "./card.style";
+import useStyles from "./style";
 
 export const GithubSummery = ({ props }) => {
   const theme = useTheme();

@@ -11,7 +11,7 @@ import { SectionContainer } from "@local-components/hoc";
 import data from "@local-static/aboutMeData.json";
 
 // Component style
-import useStyles from "./about.style";
+import useStyles from "./style";
 import { Paragraph, Title } from "@local-components/collections/text";
 
 const AboutMe = (props) => {

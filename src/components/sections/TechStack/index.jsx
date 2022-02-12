@@ -10,7 +10,7 @@ import { SectionContainer } from "@local-components/hoc";
 
 // Component
 import data from "@local-static/techStackData.json";
-import useStyles from "./techStack.style";
+import useStyles from "./style";
 import { useOnScreen } from "@local-components/hooks/useOnScreen";
 import { SectionTitle } from "@local-components/collections/text";
 import { HighLightText } from "@local-components/collections/text";
