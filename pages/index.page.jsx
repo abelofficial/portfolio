@@ -9,7 +9,7 @@ import { NextSeo } from "next-seo";
 import TechStack from "@local-components/sections/TechStack";
 import Specialty from "@local-components/sections/Specialty";
 import GitHubCalendar from "@local-components/sections/GithubActivities";
-import routeAnim from "@local-assets/routeAnimation.json";
+import routeAnim from "@local-styles/routeAnimation.json";
 
 // Style
 import useStyle from "./index.style";

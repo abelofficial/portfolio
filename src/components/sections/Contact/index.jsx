@@ -6,7 +6,7 @@ import { Box, Grid } from "@mui/material";
 
 // Local
 import { SectionContainer } from "@local-components/hoc";
-import data from "./data.json";
+import data from "@local-static/contactData.json";
 
 // Component style
 import useStyles from "./contact.style";

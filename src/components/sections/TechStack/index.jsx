@@ -9,7 +9,7 @@ import { useTheme } from "@mui/styles";
 import { SectionContainer } from "@local-components/hoc";
 
 // Component
-import data from "./data.json";
+import data from "@local-static/techStackData.json";
 import useStyles from "./techStack.style";
 import { useOnScreen } from "@local-components/hooks/useOnScreen";
 import { SectionTitle } from "@local-components/collections/text";

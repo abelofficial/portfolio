@@ -11,7 +11,7 @@ import { CacheProvider } from "@emotion/react";
 
 // Local
 import { store } from "@local-store/store";
-import SEO from "@local-utils/next-seo.config";
+import SEO from "@local-assets/next-seo.config";
 import createEmotionCache from "@local-utils/createEmotionCache";
 import { CustomThemeProvider } from "@local-components/hoc";
 import Layout from "@local-components/Layout";

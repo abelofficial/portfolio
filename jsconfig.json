@@ -6,7 +6,9 @@
       "@local-components/*": ["src/components/*"],
       "@local-utils/*": ["src/utils/*"],
       "@local-services/*": ["src/services/*"],
-      "@local-assets/*": ["src/assets/*"]
+      "@local-assets/*": ["src/assets/*"],
+      "@local-styles/*": ["src/styles/*"],
+      "@local-static/*": ["src/static/*"]
     }
   }
 }

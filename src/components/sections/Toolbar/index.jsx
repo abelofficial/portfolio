@@ -16,7 +16,7 @@ import { useTheme } from "@mui/styles";
 
 // Local
 import { openDrawer, closeDrawer, selectDrawer } from "@local-store/SiteConfig";
-import { BurgerMenuIcon } from "@local-assets/icons";
+import { BurgerMenuIcon } from "@local-components/collections/icons";
 
 // Component style
 import useStyles from "./toolbar.style";

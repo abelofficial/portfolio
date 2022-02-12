@@ -4,7 +4,7 @@ import createEmotionServer from "@emotion/server/create-instance";
 import createEmotionCache from "@local-utils/createEmotionCache";
 
 // Theme
-import theme from "@local-utils/globalTheme";
+import theme from "src/styles/globalTheme";
 
 export default class MyDocument extends Document {
   render() {
