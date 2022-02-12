@@ -6,14 +6,14 @@ import { v4 as uuid } from "uuid";
 import { Box, Slide, Grid } from "@mui/material";
 import { useTheme } from "@mui/styles";
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
+import { SectionContainer } from "@local-components/hoc";
 
 // Component
-import data from "./data.json";
-import useStyles from "./techStack.style";
-import { useOnScreen } from "@local/src/hooks/useOnScreen";
-import { SectionTitle } from "../../collections/text";
-import { HighLightText } from "../../collections/text";
+import data from "@local-static/techStackData.json";
+import useStyles from "./style";
+import { useOnScreen } from "@local-components/hooks/useOnScreen";
+import { SectionTitle } from "@local-components/collections/text";
+import { HighLightText } from "@local-components/collections/text";
 
 const TechStack = (props) => {
   const theme = useTheme();

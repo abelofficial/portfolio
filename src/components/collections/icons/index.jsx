@@ -8,7 +8,7 @@ import { SvgIcon } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 // Component style
-import useStyles from "./icons.style";
+import useStyles from "./style";
 
 export const HomeIcon = ({ isActive, invert, props }) => {
   const theme = useTheme();

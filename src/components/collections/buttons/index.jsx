@@ -7,7 +7,10 @@ import {
   setDarkMode,
   turnOffDarkMode,
 } from "@local-store/SiteConfig";
-import { DarkModeIcon, LightModeIcon } from "@local-assets/icons";
+import {
+  DarkModeIcon,
+  LightModeIcon,
+} from "@local-components/collections/icons";
 
 // Material ui
 import { IconButton } from "@mui/material";

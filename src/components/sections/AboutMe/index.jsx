@@ -7,12 +7,12 @@ import { v4 as uuid } from "uuid";
 import { Box, Grid, useTheme } from "@mui/material";
 
 // Local
-import { SectionContainer } from "@local/src/components/hoc";
-import data from "./data.json";
+import { SectionContainer } from "@local-components/hoc";
+import data from "@local-static/aboutMeData.json";
 
 // Component style
-import useStyles from "./about.style";
-import { Paragraph, Title } from "../../collections/text";
+import useStyles from "./style";
+import { Paragraph, Title } from "@local-components/collections/text";
 
 const AboutMe = (props) => {
   const theme = useTheme();
