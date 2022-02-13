@@ -15,7 +15,7 @@ import { SubSectionTitle } from "@local-components/collections/text";
 
 const Contact = (props) => {
   const styles = useStyles();
-  const dataList = data;
+
   return (
     <SectionContainer
       component={Box}

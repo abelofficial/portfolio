@@ -5,7 +5,7 @@ const useStyles = (theme) =>
     link: {
       "& a": {
         textDecoration: "none",
-        margin: theme.spacing(1),
+        margin: theme.spacing(0.5),
         color: theme.palette.text.primary,
       },
     },

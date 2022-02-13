@@ -20,7 +20,7 @@ const AboutMe = (props) => {
   const dataList = data;
 
   return (
-    <SectionContainer component={Box} my={2}>
+    <SectionContainer mb={1} p={0}>
       <Grid container direction='row' justifyContent='space-around'>
         <Grid item xs={9} className={styles.section} component={Box} p={1}>
           <Carousel
