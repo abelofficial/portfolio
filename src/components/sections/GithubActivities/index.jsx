@@ -28,7 +28,7 @@ const GithubActivities = (props) => {
   };
 
   return (
-    <SectionContainer mt={2}>
+    <SectionContainer my={2}>
       <Grid
         container
         justifyContent='space-around'
