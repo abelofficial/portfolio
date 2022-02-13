@@ -30,31 +30,28 @@ const TechStack = (props) => {
       >
         <Grid item xs={12}>
           <SectionTitle gutterBottom>Tech stack</SectionTitle>
-          <Box className={clsx(styles.section, styles.slideAnim)}>
+          <Grid
+            container
+            justifyContent='space-between'
+            alignItems='center'
+            className={clsx(styles.section, styles.slideAnim)}
+          >
             {data.map((item, index) => (
-              <Slide
-                key={uuid()}
-                in={visible}
-                direction='left'
-                timeout={index * 300}
-              >
-                <Box
-                  className={clsx(styles.frameworkContainer, {
-                    [styles.animWaveLeft]: index % 2 === 0,
-                    [styles.animWaveRight]: index % 2 !== 0,
-                  })}
-                >
-                  <Image
-                    alt={item.title + " icon"}
-                    width={20}
-                    height={20}
-                    src={item.link}
-                  />
-                  <HighLightText gutterBottom> {item.name} </HighLightText>
-                </Box>
-              </Slide>
+              <Grid item xs={3} my={1} key={uuid()}>
+                <Slide in={visible} direction='left' timeout={index * 300}>
+                  <Box className={clsx(styles.frameworkContainer)}>
+                    <Image
+                      alt={item.title + " icon"}
+                      width={20}
+                      height={20}
+                      src={item.link}
+                    />
+                    <HighLightText gutterBottom> {item.name} </HighLightText>
+                  </Box>
+                </Slide>
+              </Grid>
             ))}
-          </Box>
+          </Grid>
         </Grid>
       </Grid>
     </SectionContainer>

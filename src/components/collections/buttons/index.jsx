@@ -22,11 +22,11 @@ export const SiteThemeSelector = ({ props }) => {
   return (
     <>
       {darkMode ? (
-        <IconButton onClick={() => dispatch(turnOffDarkMode())}>
+        <IconButton disableRipple onClick={() => dispatch(turnOffDarkMode())}>
           <LightModeIcon />
         </IconButton>
       ) : (
-        <IconButton onClick={() => dispatch(setDarkMode())}>
+        <IconButton disableRipple onClick={() => dispatch(setDarkMode())}>
           <DarkModeIcon />
         </IconButton>
       )}

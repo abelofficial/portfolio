@@ -12,10 +12,12 @@ import data from "@local-static/contactData.json";
 import useStyles from "./style";
 import { HighLightText } from "@local-components/collections/text";
 import { SubSectionTitle } from "@local-components/collections/text";
+import { useTheme } from "@mui/styles";
 
 const Contact = (props) => {
-  const styles = useStyles();
-  const dataList = data;
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
   return (
     <SectionContainer
       component={Box}
@@ -25,7 +27,7 @@ const Contact = (props) => {
     >
       <SubSectionTitle>Connect with me</SubSectionTitle>
       <Grid container direction='row' justifyContent='space-between' p={2}>
-        {Object.keys(data).map((item) => (
+        {data.map((item) => (
           <Box
             key={uuid()}
             display='flex'
@@ -34,16 +36,23 @@ const Contact = (props) => {
             component={Grid}
             item
             xs={2}
-            className={styles.contactLink}
+            className={styles.contactContainer}
           >
-            <Image
-              alt='Github Icon'
-              src={data[item]}
-              height={35}
-              width={35}
-              className={styles.icon}
-            />
-            <HighLightText> {item} </HighLightText>
+            <a
+              target='_blank'
+              rel='noreferrer'
+              href={item.address}
+              className={styles.contactLink}
+            >
+              <Image
+                alt='Github Icon'
+                src={item.icon}
+                height={35}
+                width={35}
+                className={styles.icon}
+              />
+              <HighLightText> {item.name} </HighLightText>
+            </a>
           </Box>
         ))}
       </Grid>

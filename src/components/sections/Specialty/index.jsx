@@ -22,7 +22,7 @@ const Specialty = (props) => {
   return (
     <SectionContainer mt={2} mb={4}>
       <Grid container ref={setRef} className={styles.container}>
-        <SectionTitle>What I do</SectionTitle>
+        <SectionTitle>Specialty</SectionTitle>
         {data.map((item, index) => (
           <Fade key={item.title} in={visible} timeout={index * 600}>
             <Box>

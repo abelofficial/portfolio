@@ -26,7 +26,12 @@ export const SectionContainer = ({ children, ...restProps }) => {
   const styles = useStyles(theme)();
 
   return (
-    <Box className={clsx(styles.sectionContainer)} {...restProps} my={2}>
+    <Box
+      my={1}
+      p={0.7}
+      className={clsx(styles.sectionContainer)}
+      {...restProps}
+    >
       {children}
     </Box>
   );
