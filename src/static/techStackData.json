@@ -1,27 +1,43 @@
 [
   {
+    "name": "C-sharp",
+    "title": "C-sharp",
+    "link": "/images/c-sharp.svg"
+  },
+  {
+    "name": ".Net",
+    "title": ".Net",
+    "link": "/images/dotnet.svg"
+  },
+  {
+    "name": "JavaScript",
+    "title": "JavaScript",
+    "link": "/images/javascript.svg"
+  },
+  {
+    "name": "Node",
+    "title": "Node",
+    "link": "/images/nodejs-icon.svg"
+  },
+  {
     "name": "React",
-    "icon": "React",
+    "title": "React",
     "link": "/images/react.svg"
   },
   {
     "name": "Next.js",
-    "icon": "React",
+    "title": "Nextjs",
     "link": "/images/nextjs.svg"
   },
   {
     "name": "Nest.js",
-    "icon": "React",
+    "title": "Nest.js",
     "link": "/images/nestjs.svg"
   },
-  {
-    "name": "JavaScript",
-    "icon": "React",
-    "link": "/images/javascript.svg"
-  },
+
   {
     "name": "TypeScript",
-    "icon": "React",
+    "title": "TypeScript",
     "link": "/images/typescript-icon.svg"
   }
 ]
