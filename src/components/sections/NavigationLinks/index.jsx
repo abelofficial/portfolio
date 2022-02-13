@@ -21,6 +21,7 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
   return (
     <Grid container direction='column' alignContent='center' {...restProps}>
       <IconButton
+        disableRipple
         className={styles.link}
         onClick={() => router.push(ROUTES.HOME)}
       >
@@ -28,6 +29,7 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
       </IconButton>
 
       <IconButton
+        disableRipple
         className={styles.link}
         onClick={() => router.push(ROUTES.TIMELINE)}
       >
@@ -38,6 +40,7 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
       </IconButton>
 
       <IconButton
+        disableRipple
         className={styles.link}
         onClick={() => router.push(ROUTES.BLOG)}
       >
@@ -45,6 +48,7 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
       </IconButton>
 
       <IconButton
+        disableRipple
         className={styles.link}
         onClick={() => router.push(ROUTES.MESSAGE)}
       >
@@ -55,6 +59,7 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
       </IconButton>
 
       <IconButton
+        disableRipple
         className={styles.link}
         onClick={() => router.push(ROUTES.SETTING)}
       >
