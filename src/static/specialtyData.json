@@ -1,17 +1,17 @@
 [
   {
+    "title": "Backend development using .Net core (C#)",
+    "content": "I deliver modern web applications such as Restful APIs, MVC applications & Razor pages. The applications are guaranteed to follow best practices and well known design patters such as SOLID and DRY principles.",
+    "icon": "/images/dotnet.svg"
+  },
+  {
     "title": "Frontend development using React",
-    "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
+    "content": "I develope modern frontend applications using technologies such as Nextjs, Material-UI, Styled components and many more. The end products are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
     "icon": "/images/react.svg"
   },
   {
-    "title": "Advanced fullstack development using Nextjs + React",
-    "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
-    "icon": "/images/nextjs.svg"
-  },
-  {
-    "title": "Backend development using Nestjs",
-    "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
-    "icon": "/images/nestjs.svg"
+    "title": "Fullstack development using Nodejs platform.",
+    "content": "By using frameworks like Nestjs and Express for backend and React for frontend, I work on fullstack projects on the Nodejs platform.",
+    "icon": "/images/nodejs-icon.svg"
   }
 ]

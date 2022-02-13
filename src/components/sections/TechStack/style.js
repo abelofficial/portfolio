@@ -31,10 +31,8 @@ const useStyles = (theme) =>
       filter: "blur(0.1rem)",
     },
     slideAnim: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-
+      flexWrap: "wrap",
+      overflow: "hidden",
       borderRadius: theme.shape.borderRadius,
     },
 

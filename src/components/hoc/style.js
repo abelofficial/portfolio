@@ -3,7 +3,6 @@ import { makeStyles } from "@mui/styles";
 const useStyles = (theme) =>
   makeStyles(() => ({
     sectionContainer: {
-      padding: theme.spacing(1),
       width: "100%",
       backgroundColor:
         theme.palette.type === "light"
