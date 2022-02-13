@@ -23,10 +23,10 @@ export default function Home() {
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
         <motion.div variants={routeAnim.stagger}>
           <motion.div variants={routeAnim.fadeInUp}>
-            <TechStack />
+            <GitHubCalendar />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <GitHubCalendar />
+            <TechStack />
           </motion.div>
           <motion.div id='landing-services' variants={routeAnim.fadeInUp}>
             <Specialty />

@@ -1,5 +1,4 @@
 // Core
-import Image from "next/image";
 import clsx from "classnames";
 import Carousel from "react-material-ui-carousel";
 import { v4 as uuid } from "uuid";
@@ -13,6 +12,7 @@ import data from "@local-static/aboutMeData.json";
 // Component style
 import useStyles from "./style";
 import { Paragraph, Title } from "@local-components/collections/text";
+import Avatar from "@local-components/collections/svgs/avatar";
 
 const AboutMe = (props) => {
   const theme = useTheme();
@@ -22,7 +22,7 @@ const AboutMe = (props) => {
   return (
     <SectionContainer mb={1} p={0}>
       <Grid container direction='row' justifyContent='space-around'>
-        <Grid item xs={9} className={styles.section} component={Box} p={1}>
+        <Grid item xs={8} className={styles.section} component={Box} p={1}>
           <Carousel
             autoPlay
             animation='fade'
@@ -40,26 +40,7 @@ const AboutMe = (props) => {
         </Grid>
 
         <Grid item xs={3} className={clsx(styles.section, styles.animSection)}>
-          <Carousel
-            autoPlay
-            animation='fade'
-            interval={15000}
-            indicators={false}
-            navButtonsAlwaysInvisible={true}
-            className={styles.imageContainer}
-          >
-            {data.map((item) => (
-              <Image
-                key={uuid()}
-                alt='AboutMe image'
-                src={item.image}
-                width={100}
-                height={170}
-                layout='intrinsic'
-                className={styles.image}
-              />
-            ))}
-          </Carousel>
+          <Avatar alt='AboutMe image' className={styles.image} />
         </Grid>
       </Grid>
     </SectionContainer>
