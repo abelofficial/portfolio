@@ -15,9 +15,10 @@ import SEO from "@local-assets/next-seo.config";
 import createEmotionCache from "@local-utils/createEmotionCache";
 import { CustomThemeProvider } from "@local-components/hoc";
 import Layout from "@local-components/Layout";
-import { AnimatePresence } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
 
 const clientSideEmotionCache = createEmotionCache();
+
 const App = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
@@ -28,14 +29,14 @@ const App = (props) => {
       </Head>
 
       <StateProvider store={store}>
+        {/* <AnimatePresence exitBeforeEnter> */}
+        <CssBaseline />
         <CustomThemeProvider>
-          <CssBaseline />
           <Layout>
-            <AnimatePresence exitBeforeEnter>
-              <Component {...pageProps} />
-            </AnimatePresence>
+            <Component {...pageProps} />
           </Layout>
         </CustomThemeProvider>
+        {/* </AnimatePresence> */}
       </StateProvider>
     </CacheProvider>
   );

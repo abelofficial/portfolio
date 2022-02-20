@@ -11,12 +11,7 @@ import Specialty from "@local-components/sections/Specialty";
 import GitHubCalendar from "@local-components/sections/GithubActivities";
 import routeAnim from "@local-styles/routeAnimation.json";
 
-// Style
-import useStyle from "./index.style";
-
 export default function Home() {
-  const styles = useStyle();
-
   return (
     <Box>
       <NextSeo title='Abel Sintaro - Home' />
