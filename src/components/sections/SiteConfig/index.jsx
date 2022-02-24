@@ -15,12 +15,12 @@ const SiteConfig = (props) => {
         component={Grid}
         container
         alignItems='center'
-        justifyContent='space-between'
+        justifyContent='space-around'
       >
-        <Grid item xs={10}>
+        <Grid item>
           <NavigationLinks direction='row' />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item>
           <SiteThemeSelector />
         </Grid>
       </SectionContainer>

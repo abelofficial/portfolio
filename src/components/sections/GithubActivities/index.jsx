@@ -21,10 +21,10 @@ const GithubActivities = (props) => {
 
   const calendarTheme = {
     level0: theme.palette.background.paper,
-    level1: "#9BE9A8",
-    level2: "#40C463",
-    level3: "#30A14E",
-    level4: "#216E39",
+    level1: theme.palette.type === "light" ? "#9BE9A8" : "#f9ff0c",
+    level2: theme.palette.type === "light" ? "#40C463" : "#ffe40c",
+    level3: theme.palette.type === "light" ? "#30A14E" : "#ccb609",
+    level4: theme.palette.type === "light" ? "#216E39" : "#998806",
   };
 
   return (
@@ -46,6 +46,7 @@ const GithubActivities = (props) => {
                   theme.palette.type === "light"
                     ? theme.palette.primary.main
                     : theme.palette.text.primary,
+                ...theme.typography.body2,
               }}
               blockMargin={5}
               blockRadius={7}

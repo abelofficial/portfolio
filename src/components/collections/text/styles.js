@@ -20,9 +20,9 @@ const useStyles = (theme) =>
     },
 
     paragraph: {
-      fontSize: "0.8rem",
+      fontSize: "0.9rem",
       fontWeight: 300,
-      letterSpacing: "0.2em",
+      // letterSpacing: "0.2em",
       textAlign: "left",
     },
 

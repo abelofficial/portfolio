@@ -1,18 +1,25 @@
 {
   "education": [
     {
+      "title": "Full-stack .Net(C#) development",
+      "place": "SALT (School of applied technology)",
+      "startDate": "January 2022",
+      "endDate": "Present",
+      "content": ""
+    },
+    {
       "title": "Computer Management and Network Design",
       "place": "Halmstad University",
       "startDate": 2019,
       "endDate": 2020,
-      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+      "content": ""
     },
     {
       "title": "B.S Computer Science / Network security",
       "place": "Linnaeus University",
       "startDate": 2015,
       "endDate": 2020,
-      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+      "content": ""
     }
   ],
   "experience": [
@@ -20,22 +27,22 @@
       "title": "Full-stack Javascript Developer",
       "place": "Din Psykolog",
       "startDate": "May 2021",
-      "endDate": "August 2021",
-      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+      "endDate": "September 2021",
+      "content": "Responsible for maintaining the production code. I had a senior developer to counsel and review my codes. We used Gitlab for project management."
     },
     {
       "title": "React Frontend Lead ( Internship)",
       "place": "Virtual Connections",
       "startDate": "May 2021",
       "endDate": "August 2021",
-      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+      "content": "Responsible for dividing tasks, communicating with the UI/Ux designers, and bringing the Figma design to life. Technologies such as Firebase, Nextjs, and Material-UI were used in frontend development."
     },
     {
       "title": "Teaching Assistant",
       "place": "Linnaeus University",
       "startDate": "September 2019",
       "endDate": "November 2019",
-      "content": "I deliver modern web applications such as e-commerce sites, single-page web applications (SPA) & SaaS applications using Angular & TypeScript. The applications are guaranteed to be beautiful, user-friendly, and follow the latest best practices."
+      "content": "Responsible for aiding students in the laboratory and grading their assignments. The programming languages used in the course were Assembler and C."
     }
   ]
 }
