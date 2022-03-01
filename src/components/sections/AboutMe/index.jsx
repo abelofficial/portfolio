@@ -10,7 +10,7 @@ import data from "@local-static/aboutMeData.json";
 
 // Component style
 import useStyles from "./style";
-import { Title, StrongText } from "@local-components/collections/text";
+import { Title, Paragraph } from "@local-components/collections/text";
 import Avatar from "@local-components/collections/svgs/avatar";
 
 const AboutMe = (props) => {
@@ -24,7 +24,7 @@ const AboutMe = (props) => {
         <Grid item xs={8} className={styles.section} component={Box} p={1}>
           <Box key={uuid()}>
             <Title gutterBottom> {data[0].title} </Title>
-            <StrongText>{data[0].description}</StrongText>
+            <Paragraph>{data[0].description}</Paragraph>
           </Box>
         </Grid>
 

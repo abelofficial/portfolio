@@ -11,8 +11,8 @@ const useStyles = (theme) =>
       marginRight: theme.spacing(2),
     },
     avatar: {
-      marginRight: theme.spacing(1),
-      boxShadow: theme.shadows[3],
+      borderRadius: "50%",
+      // boxShadow: theme.shadows[1],
     },
     infoTextContainer: {
       width: "fit-content",

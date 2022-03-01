@@ -100,17 +100,13 @@ export const HighLightText = ({ children, ...restProps }) => {
 };
 
 // To be removed
-export const ComingSoon = ({ title, ...restProps }) => {
+export const PageTitle = ({ title, ...restProps }) => {
   const theme = useTheme();
   const styles = useStyles(theme)();
 
   return (
-    <Typography
-      variant='h1'
-      className={clsx(styles.text, styles.highlightText)}
-      {...restProps}
-    >
-      {title} coming soon!
+    <Typography className={clsx(styles.text, styles.pageTitle)} {...restProps}>
+      {title}
     </Typography>
   );
 };
