@@ -3,6 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   drawer: false,
   darkMode: false,
+  sideBarPage: {
+    summary: true,
+  },
 };
 
 export const siteConfigSlice = createSlice({

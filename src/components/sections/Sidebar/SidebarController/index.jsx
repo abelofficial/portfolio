@@ -6,19 +6,22 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import { IconButton } from "@mui/material";
 import { useTheme } from "@mui/styles";
-import { useState } from "react";
 import useStyle from "../style";
 import AboutMe from "@local-components/sections/AboutMe";
 import Contact from "@local-components/sections/Contact";
+import { useSelector } from "react-redux";
+import { selectSideBarPage } from "@local-store/SiteConfig";
+import GithubSummery from "@local-components/sections/GithubSummery";
 
-const getSummarySection = () => {
+const SummerySection = () => {
   const theme = useTheme();
   const styles = useStyle(theme)();
-  const [expanded, setExpanded] = useState("panel1");
+  const sideBarPage = useSelector(selectSideBarPage);
 
+  console.log("setSideBarPage: " + sideBarPage.summary);
   return (
     <IconButton color='primary' disableRipple>
-      {!expanded ? (
+      {!sideBarPage.summary ? (
         <MoreHorizIcon className={clsx(styles.icon)} width={80} height={80} />
       ) : (
         <ExpandMoreIcon className={clsx(styles.icon)} width={80} height={80} />
@@ -27,13 +30,14 @@ const getSummarySection = () => {
   );
 };
 
-const getDetailSection = () => {
+const DetailSection = () => {
   return (
     <>
       <AboutMe />
       <Contact />
+      <GithubSummery />
     </>
   );
 };
 
-export { getSummarySection, getDetailSection };
+export { SummerySection, DetailSection };

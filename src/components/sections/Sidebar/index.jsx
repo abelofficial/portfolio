@@ -4,32 +4,21 @@ import { AccordionSummary, Accordion, AccordionDetails } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 import useStyle from "./style";
-import { useState } from "react";
 
-import { useSelector } from "react-redux";
-import { selectSideBarPage } from "@local-store/SiteConfig";
-import AboutMe from "../AboutMe";
-import Contact from "../Contact";
-import { getSummarySection } from "./SidebarController";
-import { getDetailSection } from "./SidebarController";
+import { useDispatch, useSelector } from "react-redux";
+import { selectSideBarPage, setSideBarPage } from "@local-store/SiteConfig";
+import { SummerySection, DetailSection } from "./SidebarController";
 
 export const Sidebar = (params) => {
   const { children, force, ...props } = params;
   const theme = useTheme();
   const styles = useStyle(theme)();
   const sideBarPage = useSelector(selectSideBarPage);
-  const [expanded, setExpanded] = useState("panel1");
+  const dispatch = useDispatch();
 
-  const handleChange = () => (event, isExpanded) => {
-    setExpanded(isExpanded ? "panel1" : false);
+  const handleChange = () => {
+    dispatch(setSideBarPage({ ...sideBarPage, summary: !sideBarPage.summary }));
   };
-
-  const getChild = () => (
-    <>
-      {" "}
-      <AboutMe /> <Contact />{" "}
-    </>
-  );
 
   return (
     <Accordion
@@ -37,15 +26,15 @@ export const Sidebar = (params) => {
       aria-controls='panel1bh-content'
       id='panel1bh-header'
       className={clsx(styles.accordion)}
-      expanded={expanded === "panel1"}
-      onChange={handleChange()}
+      expanded={sideBarPage.summary}
+      onClick={handleChange}
     >
       <AccordionSummary className={clsx(styles.accordionSummery)}>
-        {getSummarySection()}
+        <SummerySection />
       </AccordionSummary>
 
       <AccordionDetails className={clsx(styles.sidebarContent)}>
-        {getDetailSection()}
+        <DetailSection />
       </AccordionDetails>
     </Accordion>
   );
