@@ -25,6 +25,10 @@ const useStyles = (theme) =>
       // letterSpacing: "0.2em",
       textAlign: "left",
     },
+    pageTitle: {
+      fontWeight: 600,
+      fontSize: "1.9rem",
+    },
 
     highlightText: {
       display: "inline",
