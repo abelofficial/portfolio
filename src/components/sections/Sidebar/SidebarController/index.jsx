@@ -18,7 +18,6 @@ const SummerySection = () => {
   const styles = useStyle(theme)();
   const sideBarPage = useSelector(selectSideBarPage);
 
-  console.log("setSideBarPage: " + sideBarPage.summary);
   return (
     <IconButton color='primary' disableRipple>
       {!sideBarPage.summary ? (

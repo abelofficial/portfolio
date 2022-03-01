@@ -38,13 +38,7 @@ const Layout = ({ children }) => {
       >
         <Toolbar />
       </Box>
-      <Grid
-        container
-        direction={bigScreen ? "row" : "column-reverse"}
-        justify='center'
-        alignItems={bigScreen ? "flex-start" : "stretch"}
-        className={clsx(styles.container)}
-      >
+      <Grid container justify='center' className={clsx(styles.container)}>
         <Grid item xs={12} md={7} className={clsx(styles.main)}>
           <PageContainer>{children}</PageContainer>
           <Hidden mdUp>
