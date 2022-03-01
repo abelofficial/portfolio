@@ -1,24 +1,38 @@
+import { useEffect } from "react";
 import clsx from "classnames";
 // Material ui
-import { AccordionSummary, Accordion, AccordionDetails } from "@mui/material";
+import {
+  AccordionSummary,
+  Accordion,
+  AccordionDetails,
+  useMediaQuery,
+} from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 import useStyle from "./style";
 
 import { useDispatch, useSelector } from "react-redux";
-import { selectSideBarPage, setSideBarPage } from "@local-store/SiteConfig";
+import {
+  selectSideBarPage,
+  setSideBarSummary,
+  setSideBarSummaryLock,
+} from "@local-store/SiteConfig";
 import { SummerySection, DetailSection } from "./SidebarController";
 
 export const Sidebar = (params) => {
-  const { children, force, ...props } = params;
   const theme = useTheme();
   const styles = useStyle(theme)();
   const sideBarPage = useSelector(selectSideBarPage);
   const dispatch = useDispatch();
+  const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
 
   const handleChange = () => {
-    dispatch(setSideBarPage({ ...sideBarPage, summary: !sideBarPage.summary }));
+    dispatch(setSideBarSummary(!sideBarPage.summary));
   };
+
+  useEffect(() => {
+    dispatch(setSideBarSummaryLock(bigScreen));
+  }, [bigScreen]);
 
   return (
     <Accordion
@@ -29,9 +43,11 @@ export const Sidebar = (params) => {
       expanded={sideBarPage.summary}
       onClick={handleChange}
     >
-      <AccordionSummary className={clsx(styles.accordionSummery)}>
-        <SummerySection />
-      </AccordionSummary>
+      {!sideBarPage.lock && (
+        <AccordionSummary className={clsx(styles.accordionSummery)}>
+          <SummerySection />
+        </AccordionSummary>
+      )}
 
       <AccordionDetails className={clsx(styles.sidebarContent)}>
         <DetailSection />

@@ -38,6 +38,8 @@ const useStyles = (theme) =>
       },
 
       icon: {
+        borderRadius: "50%",
+        boxShadow: theme.shadows[1],
         color: theme.palette.primary.dark,
       },
     };

@@ -4,7 +4,8 @@ const initialState = {
   drawer: false,
   darkMode: false,
   sideBarPage: {
-    summary: true,
+    summary: false,
+    lock: false,
   },
 };
 
@@ -27,8 +28,11 @@ export const siteConfigSlice = createSlice({
     getSideBarPage: (state) => {
       return state.sideBarPage;
     },
-    setSideBarPage: (state, action) => {
-      state.sideBarPage = action.payload;
+    setSideBarSummary: (state, action) => {
+      if (!state.sideBarPage.lock) state.sideBarPage.summary = action.payload;
+    },
+    setSideBarSummaryLock: (state, action) => {
+      state.sideBarPage.lock = action.payload;
     },
   },
 });
@@ -40,7 +44,8 @@ export const {
   setDarkMode,
   turnOffDarkMode,
   getSideBarPage,
-  setSideBarPage,
+  setSideBarSummary,
+  setSideBarSummaryLock,
 } = siteConfigSlice.actions;
 
 // Selectors
