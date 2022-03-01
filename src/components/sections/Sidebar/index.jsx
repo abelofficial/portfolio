@@ -41,7 +41,7 @@ export const Sidebar = (params) => {
       id='panel1bh-header'
       className={clsx(styles.accordion)}
       expanded={sideBarPage.summary}
-      onClick={handleChange}
+      onChange={handleChange}
     >
       {!sideBarPage.lock && (
         <AccordionSummary className={clsx(styles.accordionSummery)}>
