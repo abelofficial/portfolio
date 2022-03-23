@@ -7,20 +7,21 @@ import { Box } from "@mui/material";
 
 // Local
 import data from "@local-static/timeLineData.json";
-import TimeLine from "@local-components/sections/TimeLine";
 import routeAnim from "@local-styles/routeAnimation.json";
+import ComingSoon from "@local-components/sections/ComingSoon";
+import { PageTitle } from "@local-components/collections/text";
 
-export default function Education() {
+export default function Blogs() {
   return (
     <Box>
       <NextSeo title='Abel Sintaro - Timeline' />
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
         <motion.div variants={routeAnim.stagger}>
           <motion.div variants={routeAnim.fadeInUp}>
-            <TimeLine title='Education' data={data.education} />
+            <PageTitle title='Blogs' data={data.experience} />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <TimeLine title='Work Experience' data={data.experience} />
+            <ComingSoon data={data.experience} />
           </motion.div>
         </motion.div>
       </motion.div>

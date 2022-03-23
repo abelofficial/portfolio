@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 import {
   HomeIcon,
   BlogIcon,
-  MessageIcon,
-  SettingIcon,
   TimeLineIcon,
 } from "@local-components/collections/icons";
 import { ROUTES } from "@local-assets/RoutesObjects";
@@ -45,28 +43,6 @@ export const NavigationLinks = ({ invert, ...restProps }) => {
         onClick={() => router.push(ROUTES.BLOG)}
       >
         <BlogIcon invert={invert} isActive={router.pathname === ROUTES.BLOG} />
-      </IconButton>
-
-      <IconButton
-        disableRipple
-        className={styles.link}
-        onClick={() => router.push(ROUTES.MESSAGE)}
-      >
-        <MessageIcon
-          invert={invert}
-          isActive={router.pathname === ROUTES.MESSAGE}
-        />
-      </IconButton>
-
-      <IconButton
-        disableRipple
-        className={styles.link}
-        onClick={() => router.push(ROUTES.SETTING)}
-      >
-        <SettingIcon
-          invert={invert}
-          isActive={router.pathname === ROUTES.SETTING}
-        />
       </IconButton>
     </Grid>
   );

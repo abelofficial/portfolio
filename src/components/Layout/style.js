@@ -6,7 +6,7 @@ const useStyles = (theme) =>
       position: "relative",
       height: "100%",
       width: "100vw",
-      maxWidth: "100%",
+      // maxWidth: "100%",
     },
     toolbar: {
       position: "fixed",
@@ -31,8 +31,16 @@ const useStyles = (theme) =>
     },
 
     container: {
-      position: "relative",
+      // position: "relative",
       width: "100%",
+      display: "flex",
+      alignItems: "stretch",
+      flexDirection: "column-reverse",
+
+      [theme.breakpoints.up("md")]: {
+        flexDirection: "row",
+        alignItems: "space-between",
+      },
     },
     main: {
       position: "relative",

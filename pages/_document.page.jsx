@@ -4,7 +4,7 @@ import createEmotionServer from "@emotion/server/create-instance";
 import createEmotionCache from "@local-utils/createEmotionCache";
 
 // Theme
-import theme from "src/styles/globalTheme";
+import theme from "src/styles/lightTheme";
 
 export default class MyDocument extends Document {
   render() {
@@ -12,10 +12,27 @@ export default class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           {/* PWA primary color */}
-          <meta name='theme-color' content={theme().palette.primary.main} />
+          <meta name='theme-color' content={theme.palette.primary.main} />
           <link
             rel='stylesheet'
             href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'
+          />
+
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStyleTags}

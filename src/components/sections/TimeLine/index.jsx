@@ -22,7 +22,13 @@ const TimeLine = ({ title, data, ...restProps }) => {
 
   return (
     <SectionContainer mb={3}>
-      <Grid container ref={setRef} className={styles.container} {...restProps}>
+      <Grid
+        container
+        direction='column'
+        ref={setRef}
+        className={styles.container}
+        {...restProps}
+      >
         <SectionTitle gutterBottom>{title}</SectionTitle>
         {data.map((item, index) => (
           <Fade key={item.title} in={visible} timeout={index * 600}>

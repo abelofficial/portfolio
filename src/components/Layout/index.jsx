@@ -14,12 +14,10 @@ import { selectDrawer } from "@local-store/SiteConfig";
 // Component style
 import useStyles from "./style";
 
-import Contact from "@local-components/sections/Contact";
-import AboutMe from "@local-components/sections/AboutMe";
 import LogoSvg from "@local-components/collections/svgs/logo";
 import Footer from "@local-components/sections/Footer";
-import GithubSummery from "@local-components/sections/GithubSummery";
 import SiteConfig from "@local-components/sections/SiteConfig";
+import { Sidebar } from "@local-components/sections/Sidebar";
 
 const Layout = ({ children }) => {
   const theme = useTheme();
@@ -40,13 +38,7 @@ const Layout = ({ children }) => {
       >
         <Toolbar />
       </Box>
-      <Grid
-        container
-        direction={bigScreen ? "row" : "column-reverse"}
-        justify='center'
-        alignItems={bigScreen ? "flex-start" : "stretch"}
-        className={clsx(styles.container)}
-      >
+      <Grid container justify='center' className={clsx(styles.container)}>
         <Grid item xs={12} md={7} className={clsx(styles.main)}>
           <PageContainer>{children}</PageContainer>
           <Hidden mdUp>
@@ -56,9 +48,10 @@ const Layout = ({ children }) => {
         <Grid item xs={12} md={5} className={clsx(styles.sideBar)}>
           <LogoSvg width={200} height={60} className={clsx(styles.logo)} />
           <SiteConfig />
-          <AboutMe />
+          {/* <AboutMe />
           <Contact />
-          <GithubSummery />
+          <GithubSummery /> */}
+          <Sidebar />
           <Hidden mdDown>
             <Footer />
           </Hidden>

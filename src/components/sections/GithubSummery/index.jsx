@@ -11,7 +11,7 @@ import {
 } from "src/components/collections/text";
 
 // Material ui
-import { Avatar, Box, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
 import { getGithubUser, getGithubUserOrgs } from "@local-services/api";
@@ -69,8 +69,18 @@ const GithubSummery = ({ props }) => {
           />
         </Grid>
         <Grid item xs={12} component={Box} display='flex' alignItems='center'>
-          <Avatar className={styles.avatar} src={githubAccount?.avatar_url} />
-          <Grid container direction='column'>
+          <Image
+            alt='github-profile-image'
+            className={styles.avatar}
+            src={
+              githubAccount?.avatar_url
+                ? githubAccount?.avatar_url
+                : "/images/github-octocat.svg"
+            }
+            width={40}
+            height={40}
+          />
+          <Grid container direction='column' ml={1}>
             <StrongText> {githubAccount?.name} </StrongText>
             <Grid
               item

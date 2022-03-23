@@ -1,7 +1,7 @@
 export const ROUTES = {
   HOME: "/",
   TIMELINE: "/timeline",
-  BLOG: "/message",
+  BLOG: "/blogs",
   MESSAGE: "/message",
   SETTING: "/setting",
 };

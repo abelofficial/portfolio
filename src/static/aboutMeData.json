@@ -3,11 +3,5 @@
     "title": "Hello there 👋",
     "description": "Welcome to my personal space. Feel free to poke around and subscribe if you wish to be notified about upcoming projects.",
     "image": "/images/no_bg_2.png"
-  },
-
-  {
-    "title": "JavaScript Developer",
-    "description": "I am a trained Network technician and self-taught JavaScript developer. I specialized in frameworks such as React, Nextjs and Nestjs (node) for backend and front development.",
-    "image": "/images/no_bg.png"
   }
 ]
