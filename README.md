@@ -1,28 +1,21 @@
-# nextjs-material-ui_boilerplate
+# Portfolio website
 
-This is an SEO friendly NEXT.js boilerplate that uses Material-Ui.
+This is a personal website to showcase my work and daily activities. The website is made using [Nextjs v.12](https://nextjs.org/blog/next-12) and [Material-UI v.5](https://mui.com/blog/mui-core-v5/). Currently the website shows my daily activities on github as well as previous work experiences, timeline, and my tech stacks.
 
-## npm scripts
+## Findings
 
-- npm run dev:windows
-- npm run dev
-- npm run build
-- npm run start:windows
-- npm run start
-- npm run lint
+While doing this project I have learned so much on how to use the newest version Nextjs (v.12) with the newest version of material ui (V.5). The pre-configurations could be tricky however, by following [this suggestion solution](https://github.com/mui/material-ui/tree/master/examples/nextjs) from Material-ui i was able to configure it. I also handled page route animation using [Framer-motions](https://www.framer.com/docs/).
 
-## Dependencies
+## Running project
 
-- Material-Ui ^4.11.4
-- cors ^2.8.5
-- next ^11.0.1
-- next-connect ^0.10.1
-- next-seo ^4.26.0
-- react ^17.0.2
-- react-dom 17.0.2
+- `npm run lint && npm run dev`
 
-## Dev Dependencies
+## Notes
 
-- cross-env ^7.0.3
-- eslint ^7.30.0
-- eslint-config-next ^11.0.1
+All images are in the SVG format and color changes are done programmatically. The images can be found inside `/src/components/collections` folder. All text contents are defined in the directory `/src/static` as JSON format.
+
+## Browser Support
+
+Currently, This site officially aim to support the last two versions of the following browsers:
+
+<img src="./public/images/readme/chrome.png" width="64" height="64"> <img src="./public/images/readme/firefox.png" width="64" height="64"> <img src="./public/images/readme/edge.png" width="64" height="64"> <img src="./public/images/readme/safari.png" width="64" height="64">
