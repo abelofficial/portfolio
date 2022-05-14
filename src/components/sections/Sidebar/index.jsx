@@ -18,7 +18,11 @@ import {
   setSideBarSummary,
   setSideBarSummaryLock,
 } from "@local-store/SiteConfig";
-import { SummerySection, DetailSection } from "./SidebarController";
+import {
+  SummerySection,
+  FullDetailSection,
+  ConnectionSection,
+} from "./SidebarController";
 
 export const Sidebar = (params) => {
   const theme = useTheme();
@@ -53,7 +57,11 @@ export const Sidebar = (params) => {
       )}
 
       <AccordionDetails className={clsx(styles.sidebarContent)}>
-        <DetailSection />
+        {navigator.pathname == "/" || bigScreen ? (
+          <FullDetailSection />
+        ) : (
+          <ConnectionSection />
+        )}
       </AccordionDetails>
     </Accordion>
   );
