@@ -3,15 +3,30 @@ import { makeStyles } from "@mui/styles";
 const useStyles = (theme) =>
   makeStyles(() => ({
     sectionContainer: {
+      position: "relative",
       width: "100%",
-      backgroundColor:
-        theme.palette.type === "light"
-          ? theme.palette.common.white
-          : theme.palette.common.black,
+      backgroundColor: "transparent",
       borderRadius: "1rem",
       height: "fit-content",
       marginBottom: theme.spacing(2),
       boxShadow: theme.shadows[1],
+    },
+    sectionContainer_bg: {
+      position: "absolute",
+      zIndex: -100,
+      width: "100%",
+      height: "100%",
+      backgroundColor:
+        theme.palette.type === "light"
+          ? theme.palette.common.white
+          : theme.palette.secondary.main,
+      opacity: 0.9,
+      borderRadius: "1rem",
+    },
+
+    sectionContainer_main: {
+      position: "relative",
+      zIndex: 200,
     },
     infoContainer: {
       marginTop: theme.spacing(1.5),

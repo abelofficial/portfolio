@@ -1,7 +1,7 @@
 // Core
 import { useRouter } from "next/router";
 import clsx from "classnames";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 // Material ui
 import { Box, Grid, Hidden, useMediaQuery } from "@mui/material";
@@ -10,7 +10,12 @@ import { useTheme } from "@mui/styles";
 // Internal
 import Toolbar from "@local-components/sections/Toolbar";
 import { PageContainer } from "@local-components/hoc";
-import { selectDrawer } from "@local-store/SiteConfig";
+import {
+  hideBurgerMenu,
+  selectDrawer,
+  showBurgerMenu,
+} from "@local-store/SiteConfig";
+import { useOnScreen } from "@local-components/hooks/useOnScreen";
 
 // Component style
 import useStyles from "./style";
@@ -24,14 +29,22 @@ import { useEffect } from "react";
 const Layout = ({ children }) => {
   const theme = useTheme();
   const router = useRouter();
+  const dispatch = useDispatch();
   const styles = useStyles(theme)();
   const isDrawerOpen = useSelector(selectDrawer);
+  const [setRef, visible] = useOnScreen({ threshold: "0.6" });
 
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   useEffect(() => {
     isSmallScreen && router.push("/");
   }, []);
+
+  useEffect(() => {
+    if (visible) return dispatch(hideBurgerMenu());
+
+    dispatch(showBurgerMenu());
+  }, [visible]);
 
   return (
     <Box className={styles.page}>
@@ -51,15 +64,20 @@ const Layout = ({ children }) => {
           </Hidden>
         </Grid>
         <Grid item xs={12} md={5} className={clsx(styles.sideBar)}>
-          <LogoSvg width={200} height={60} className={clsx(styles.logo)} />
-          <SiteConfig />
-          {/* <AboutMe />
+          <Box className={clsx(styles.sideBar_bg)} />
+          <Box className={clsx(styles.sideBar_main)}>
+            <LogoSvg width={200} height={60} className={clsx(styles.logo)} />
+            <Box ref={setRef} width='100%'>
+              <SiteConfig />
+            </Box>
+            {/* <AboutMe />
           <Contact />
           <GithubSummery /> */}
-          <Sidebar />
-          <Hidden mdDown>
-            <Footer />
-          </Hidden>
+            <Sidebar />
+            <Hidden mdDown>
+              <Footer />
+            </Hidden>
+          </Box>
         </Grid>
       </Grid>
     </Box>

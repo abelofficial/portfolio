@@ -15,7 +15,12 @@ import {
 import { useTheme } from "@mui/styles";
 
 // Local
-import { openDrawer, closeDrawer, selectDrawer } from "@local-store/SiteConfig";
+import {
+  openDrawer,
+  closeDrawer,
+  selectDrawer,
+  selectBurgerMenu,
+} from "@local-store/SiteConfig";
 import { BurgerMenuIcon } from "@local-components/collections/icons";
 
 // Component style
@@ -29,6 +34,7 @@ const Toolbar = (props) => {
 
   const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
   const drawer = useSelector(selectDrawer);
+  const showBurgerMenu = useSelector(selectBurgerMenu);
 
   const handleCloseDrawer = () => {
     bigScreen || dispatch(closeDrawer());
@@ -53,9 +59,7 @@ const Toolbar = (props) => {
           </Grid>
         </Grid>
         <Box>
-          {bigScreen ? (
-            <> </>
-          ) : (
+          {showBurgerMenu ? (
             <IconButton
               onClick={() => dispatch(openDrawer())}
               className={clsx(styles.actionButton, styles.openButton, {
@@ -65,6 +69,8 @@ const Toolbar = (props) => {
             >
               <BurgerMenuIcon Width={60} />
             </IconButton>
+          ) : (
+            <> </>
           )}
         </Box>
       </Grid>

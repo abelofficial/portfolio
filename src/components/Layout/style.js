@@ -72,9 +72,33 @@ const useStyles = (theme) =>
       display: "flex",
       flexDirection: "column",
       position: "relative",
-      padding: theme.spacing(2),
       height: "fit-content",
 
+      [theme.breakpoints.up("md")]: {
+        height: "100vh",
+        alignItems: "center",
+      },
+    },
+
+    sideBar_bg: {
+      width: "100%",
+      height: "100%",
+      position: "absolute",
+      opacity: theme.palette.type === "dark" ? 0.2 : 0.1,
+      filter: "blur(1px)",
+      backgroundImage:
+        theme.palette.type === "dark"
+          ? 'url("/images/blueprints_dark.svg")'
+          : 'url("/images/blueprints.svg")',
+      backgroundRepeat: "no-repeat, repeat",
+      backgroundSize: "cover",
+    },
+
+    sideBar_main: {
+      display: "flex",
+      flexDirection: "column",
+      padding: theme.spacing(2),
+      height: "fit-content",
       backgroundColor: theme.palette.background.default,
       [theme.breakpoints.up("md")]: {
         height: "100vh",
