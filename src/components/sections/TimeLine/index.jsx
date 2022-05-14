@@ -1,6 +1,6 @@
 // Core
 // Material ui
-import { Divider, Grid, Fade, Box, useTheme } from "@mui/material";
+import { Divider, Grid, Fade, Box, useTheme, Avatar } from "@mui/material";
 
 // Local
 import { SectionContainer } from "@local-components/hoc";
@@ -41,10 +41,22 @@ const TimeLine = ({ title, data, ...restProps }) => {
                 className={styles.section}
               >
                 <SubSectionTitle>{item.title}</SubSectionTitle>
-                <HighLightText gutterBottom>
-                  {item.place}, {item.startDate} - {item.endDate}
-                </HighLightText>
-                <Paragraph>{item.content}</Paragraph>
+                <Box
+                  display='flex'
+                  flexDirection='row'
+                  alignItems='center'
+                  justifyContent='space-between'
+                >
+                  <Avatar src={item.logo} className={styles.avatarImage}>
+                    A.S
+                  </Avatar>
+                  <Box pl={1}>
+                    <HighLightText gutterBottom>
+                      {item.place}, {item.startDate} - {item.endDate}
+                    </HighLightText>
+                    <Paragraph>{item.content}</Paragraph>
+                  </Box>
+                </Box>
               </Grid>
             </Box>
           </Fade>
