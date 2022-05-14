@@ -1,4 +1,5 @@
 // Core
+import { useRouter } from "next/router";
 import clsx from "classnames";
 import { useSelector } from "react-redux";
 
@@ -18,22 +19,26 @@ import LogoSvg from "@local-components/collections/svgs/logo";
 import Footer from "@local-components/sections/Footer";
 import SiteConfig from "@local-components/sections/SiteConfig";
 import { Sidebar } from "@local-components/sections/Sidebar";
+import { useEffect } from "react";
 
 const Layout = ({ children }) => {
   const theme = useTheme();
+  const router = useRouter();
   const styles = useStyles(theme)();
-  const drawer = useSelector(selectDrawer);
+  const isDrawerOpen = useSelector(selectDrawer);
 
-  const bigScreen = useMediaQuery(theme.breakpoints.up("md"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  // const [setRef, visible] = useOnScreen({ threshold: '0.35' });
+  useEffect(() => {
+    isSmallScreen && router.push("/");
+  }, []);
 
   return (
     <Box className={styles.page}>
       <Box
         className={clsx(styles.toolbar, {
-          [`${styles.showToolbar}`]: drawer,
-          [`${styles.hideToolbar}`]: !drawer,
+          [`${styles.showToolbar}`]: isDrawerOpen,
+          [`${styles.hideToolbar}`]: !isDrawerOpen,
         })}
       >
         <Toolbar />

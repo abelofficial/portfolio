@@ -21,6 +21,7 @@ const clientSideEmotionCache = createEmotionCache();
 const App = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
+  console.log("emotionCache : ", emotionCache);
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -29,8 +30,9 @@ const App = (props) => {
 
       <StateProvider store={store}>
         {/* <AnimatePresence exitBeforeEnter> */}
-        <CssBaseline />
+
         <CustomThemeProvider>
+          <CssBaseline />
           <Layout>
             <Component {...pageProps} />
           </Layout>
