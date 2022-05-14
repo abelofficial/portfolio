@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useRouter } from "next/router";
 import clsx from "classnames";
 // Material ui
 import {
@@ -17,10 +18,15 @@ import {
   setSideBarSummary,
   setSideBarSummaryLock,
 } from "@local-store/SiteConfig";
-import { SummerySection, DetailSection } from "./SidebarController";
+import {
+  SummerySection,
+  FullDetailSection,
+  ConnectionSection,
+} from "./SidebarController";
 
 export const Sidebar = (params) => {
   const theme = useTheme();
+  const navigator = useRouter();
   const styles = useStyle(theme)();
   const sideBarPage = useSelector(selectSideBarPage);
   const dispatch = useDispatch();
@@ -31,8 +37,9 @@ export const Sidebar = (params) => {
   };
 
   useEffect(() => {
-    dispatch(setSideBarSummaryLock(bigScreen));
-  }, [bigScreen]);
+    if (navigator.pathname === "/") dispatch(setSideBarSummaryLock(true));
+    else dispatch(setSideBarSummaryLock(bigScreen));
+  });
 
   return (
     <Accordion
@@ -50,7 +57,11 @@ export const Sidebar = (params) => {
       )}
 
       <AccordionDetails className={clsx(styles.sidebarContent)}>
-        <DetailSection />
+        {navigator.pathname == "/" || bigScreen ? (
+          <FullDetailSection />
+        ) : (
+          <ConnectionSection />
+        )}
       </AccordionDetails>
     </Accordion>
   );

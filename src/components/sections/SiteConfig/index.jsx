@@ -10,7 +10,7 @@ import { NavigationLinks } from "@local-components/sections/NavigationLinks";
 
 const SiteConfig = (props) => {
   return (
-    <Box width='100%' pl={5} justifyItems='flex-end'>
+    <Box width='100%' pl={5} justifyItems='flex-end' {...props}>
       <SectionContainer
         component={Grid}
         container

@@ -29,7 +29,7 @@ const SummerySection = () => {
   );
 };
 
-const DetailSection = () => {
+const FullDetailSection = () => {
   return (
     <>
       <AboutMe />
@@ -39,4 +39,12 @@ const DetailSection = () => {
   );
 };
 
-export { SummerySection, DetailSection };
+const ConnectionSection = () => {
+  return (
+    <>
+      <Contact />
+    </>
+  );
+};
+
+export { SummerySection, FullDetailSection, ConnectionSection };

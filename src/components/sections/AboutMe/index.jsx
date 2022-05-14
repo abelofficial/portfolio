@@ -19,7 +19,7 @@ const AboutMe = (props) => {
   const dataList = data;
 
   return (
-    <SectionContainer mb={1} p={0}>
+    <SectionContainer mb={1}>
       <Grid container direction='row' justifyContent='space-around'>
         <Grid item xs={8} className={styles.section} component={Box} p={1}>
           <Box key={uuid()}>

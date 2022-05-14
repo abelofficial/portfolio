@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import { Box } from "@mui/material";
 
 // Local
-import data from "@local-static/timeLineData.json";
+import staticData from "@local-static/timeLineData.json";
 import TimeLine from "@local-components/sections/TimeLine";
 import routeAnim from "@local-styles/routeAnimation.json";
 
-export default function Education() {
+export default function Education({ data }) {
   return (
     <Box>
       <NextSeo title='Abel Sintaro - Timeline' />
@@ -26,4 +26,10 @@ export default function Education() {
       </motion.div>
     </Box>
   );
+}
+
+export async function getStaticProps(context) {
+  return {
+    props: { data: staticData }, // will be passed to the page component as props
+  };
 }

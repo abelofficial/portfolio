@@ -21,18 +21,16 @@ import { ThemeProvider, useTheme } from "@mui/styles";
 // Styles
 import useStyles from "./style";
 
-export const SectionContainer = ({ children, ...restProps }) => {
+export const SectionContainer = ({ bgStyle, children, ...restProps }) => {
   const theme = useTheme();
   const styles = useStyles(theme)();
 
   return (
-    <Box
-      my={1}
-      p={0.7}
-      className={clsx(styles.sectionContainer)}
-      {...restProps}
-    >
-      {children}
+    <Box my={1} className={clsx(styles.sectionContainer)}>
+      <Box className={clsx(styles.sectionContainer_bg)} />
+      <Box {...restProps} className={clsx(styles.sectionContainer_main)}>
+        {children}
+      </Box>
     </Box>
   );
 };

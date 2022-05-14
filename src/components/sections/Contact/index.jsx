@@ -21,6 +21,7 @@ const Contact = (props) => {
   return (
     <SectionContainer
       component={Box}
+      p={1}
       width='100%'
       direction='column'
       justifyContent='space-between'
