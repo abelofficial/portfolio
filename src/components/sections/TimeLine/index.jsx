@@ -47,9 +47,10 @@ const TimeLine = ({ title, data, ...restProps }) => {
                   alignItems='center'
                   justifyContent='space-between'
                 >
-                  <Avatar src={item.logo} className={styles.avatarImage}>
-                    A.S
-                  </Avatar>
+                  <Avatar
+                    src={item.logo}
+                    className={styles.avatarImage}
+                  ></Avatar>
                   <Box pl={1}>
                     <HighLightText gutterBottom>
                       {item.place}, {item.startDate} - {item.endDate}

@@ -28,7 +28,7 @@ export const SectionContainer = ({ bgStyle, children, ...restProps }) => {
   return (
     <Box my={1} className={clsx(styles.sectionContainer)}>
       <Box className={clsx(styles.sectionContainer_bg)} />
-      <Box p={1} {...restProps} className={clsx(styles.sectionContainer_main)}>
+      <Box {...restProps} className={clsx(styles.sectionContainer_main)}>
         {children}
       </Box>
     </Box>
