@@ -1,5 +1,5 @@
 // Core components
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { DefaultSeo } from "next-seo";
@@ -15,28 +15,13 @@ import SEO from "@local-assets/next-seo.config";
 import createEmotionCache from "@local-utils/createEmotionCache";
 import { CustomThemeProvider } from "@local-components/hoc";
 import Layout from "@local-components/Layout";
-import { useRouter } from "next/router";
-import * as ga from "@local-utils/googleAnalytics";
-// import { AnimatePresence } from "framer-motion";
 
 const clientSideEmotionCache = createEmotionCache();
 
 const App = (props) => {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const router = useRouter();
 
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      ga.logPageView(url);
-    };
-
-    router.events.on("routeChangeComplete", handleRouteChange);
-
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router.events]);
-
+  console.log("emotionCache : ", emotionCache);
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -45,8 +30,9 @@ const App = (props) => {
 
       <StateProvider store={store}>
         {/* <AnimatePresence exitBeforeEnter> */}
-        <CssBaseline />
+
         <CustomThemeProvider>
+          <CssBaseline />
           <Layout>
             <Component {...pageProps} />
           </Layout>
