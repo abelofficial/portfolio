@@ -52,8 +52,8 @@ const TimeLine = ({ title, data, ...restProps }) => {
                     alt='github-profile-image'
                     className={styles.avatarImage}
                     src={item.logo}
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                   />
                   <Box pl={1}>
                     <HighLightText gutterBottom>

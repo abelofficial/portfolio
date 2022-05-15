@@ -17,10 +17,10 @@ export default function Education({ data }) {
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
         <motion.div variants={routeAnim.stagger}>
           <motion.div variants={routeAnim.fadeInUp}>
-            <TimeLine title='Education' data={data.education} />
+            <TimeLine title='Work Experience' data={data.experience} />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <TimeLine title='Work Experience' data={data.experience} />
+            <TimeLine title='Education' data={data.education} />
           </motion.div>
         </motion.div>
       </motion.div>
