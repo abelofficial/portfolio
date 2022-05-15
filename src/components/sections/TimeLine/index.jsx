@@ -1,6 +1,7 @@
 // Core
 // Material ui
-import { Divider, Grid, Fade, Box, useTheme, Avatar } from "@mui/material";
+import { Divider, Grid, Fade, Box, useTheme } from "@mui/material";
+import Image from "next/image";
 
 // Local
 import { SectionContainer } from "@local-components/hoc";
@@ -47,10 +48,13 @@ const TimeLine = ({ title, data, ...restProps }) => {
                   alignItems='center'
                   justifyContent='space-between'
                 >
-                  <Avatar
-                    src={item.logo}
+                  <Image
+                    alt='github-profile-image'
                     className={styles.avatarImage}
-                  ></Avatar>
+                    src={item.logo}
+                    width={40}
+                    height={40}
+                  />
                   <Box pl={1}>
                     <HighLightText gutterBottom>
                       {item.place}, {item.startDate} - {item.endDate}

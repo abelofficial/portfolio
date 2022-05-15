@@ -47,8 +47,9 @@ const useStyles = (theme) =>
     },
 
     avatarImage: {
-      width: "2.1rem",
-      height: "2.1rem",
+      width: "2em",
+      height: "2em",
+      borderRadius: "50%",
     },
     animWaveLeft: {
       animation: `$slideLeft 1500ms ${theme.transitions.easing.easeInOut} 100ms infinite alternate`,
