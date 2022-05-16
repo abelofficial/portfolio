@@ -20,19 +20,28 @@ const Projects = ({ props }) => {
   const styles = useStyles(theme)();
   const [data, setData] = useState();
 
+  const projectsToShow = [
+    "portfolio",
+    "saltimer",
+    "zede-agency",
+    "yellow-page",
+  ];
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getVercelProjects();
 
-      const projectData = data.projects.map((i) => ({
-        name: i.name,
-        link: i.latestDeployments[0].alias[0],
-        status: i.latestDeployments[0].readyState,
-        history: i.latestDeployments.map((d) => ({
-          lastUpdate: d.createdAt,
-          commitMessage: d.meta.githubCommitMessage,
-        })),
-      }));
+      const projectData = data.projects
+        .filter((i) => projectsToShow.find((n) => n === i.name))
+        .map((i) => ({
+          name: i.name,
+          link: i.latestDeployments[0].alias[0],
+          framework: i.framework,
+          history: i.latestDeployments.map((d) => ({
+            lastUpdate: d.createdAt,
+            commitMessage: d.meta.githubCommitMessage,
+          })),
+        }));
 
       setData(projectData);
       console.log("Projects: ", data.projects);
