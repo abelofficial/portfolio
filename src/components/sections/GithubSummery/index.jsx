@@ -14,7 +14,7 @@ import {
 import { Box, Grid } from "@mui/material";
 import { useTheme } from "@mui/styles";
 
-import { getGithubUser, getGithubUserOrgs } from "@local-services/api";
+import { getGithubUser, getGithubUserOrgs } from "@local-services/api/Github";
 import { InfoContainer, SectionContainer } from "@local-components/hoc";
 
 import useStyles from "./style";
