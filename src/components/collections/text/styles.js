@@ -30,6 +30,12 @@ const useStyles = (theme) =>
       fontSize: "1.9rem",
     },
 
+    grayText: {
+      color: theme.palette.text.disabled,
+
+      fontSize: "0.9rem",
+    },
+
     highlightText: {
       display: "inline",
       color:

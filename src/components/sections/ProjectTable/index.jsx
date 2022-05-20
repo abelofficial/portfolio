@@ -2,9 +2,8 @@ import * as React from "react";
 import { v4 as uuid } from "uuid";
 import Box from "@mui/material/Box";
 import Collapse from "@mui/material/Collapse";
-import Paper from "@mui/material/Paper";
 import { InternetIcon } from "@local-components/collections/icons";
-import { Button, Chip, Grid, useTheme } from "@mui/material";
+import { Button, Chip, Grid, Typography, useTheme } from "@mui/material";
 import {
   HighLightText,
   Paragraph,
@@ -45,8 +44,6 @@ function Row(props) {
           <Chip
             style={{
               backgroundColor: theme.palette.secondary.main,
-              padding: "0.1em",
-              fontSize: "0.7rem",
             }}
             label={row.framework}
           />
@@ -82,16 +79,32 @@ function Row(props) {
         <Grid item style={{ paddingBottom: 0, paddingTop: 0 }}>
           <Collapse in={open} timeout='auto' unmountOnExit>
             <Box sx={{ padding: 1 }}>
-              <StrongText>Latest activities</StrongText>
+              <StrongText variant='h5' style={{ fontWeight: 300 }} gutterBottom>
+                Deployment message
+              </StrongText>
 
               <Box size='small' aria-label='purchases'>
-                <Grid container>
+                <Grid container direction='column'>
                   {row.history.map((historyRow) => (
-                    <Grid item scope='row' key={historyRow.date}>
-                      <HighLightText>
+                    <Grid
+                      item
+                      component={Box}
+                      display='flex'
+                      alignItems='center'
+                      key={uuid()}
+                    >
+                      <Typography style={{ fontStyle: "italic" }}>
+                        <Paragraph>{historyRow.commitMessage}</Paragraph>
+                      </Typography>
+                      <Box px={0.5} />
+                      <Paragraph> deployed at</Paragraph>
+                      <Box px={0.5} />
+                      <HighLightText
+                        variant='body2'
+                        style={{ fontWeight: 300 }}
+                      >
                         {getDate(historyRow.lastUpdate)}
                       </HighLightText>
-                      <Paragraph>{historyRow.commitMessage}</Paragraph>
                     </Grid>
                   ))}
                 </Grid>
@@ -106,8 +119,7 @@ function Row(props) {
 
 export default function ProjectTable({ projectsData }) {
   return (
-    <Paper
-      component={Paper}
+    <Box
       style={{
         backgroundColor: "transparent",
         padding: "0.5rem",
@@ -115,13 +127,17 @@ export default function ProjectTable({ projectsData }) {
         borderRadius: "1rem",
       }}
     >
-      <Grid column direction='row' aria-label='collapsible table'>
+      <Grid
+        container
+        xs={{ flexDirection: "column" }}
+        md={{ flexDirection: "row" }}
+      >
         {projectsData.map((row) => (
-          <Grid item key={uuid()}>
+          <Grid item key={uuid()} width='100%'>
             <Row key={row.name} row={row} />
           </Grid>
         ))}
       </Grid>
-    </Paper>
+    </Box>
   );
 }
