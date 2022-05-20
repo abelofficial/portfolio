@@ -2,7 +2,8 @@
 import Lottie from "react-lottie-player";
 
 // Material ui
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material";
+
 // Local
 import { SectionContainer } from "@local-components/hoc";
 import * as animationPlane from "public/animations/coming_soon.json";

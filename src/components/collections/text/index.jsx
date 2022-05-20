@@ -110,3 +110,15 @@ export const PageTitle = ({ title, ...restProps }) => {
     </Typography>
   );
 };
+
+// To be removed
+export const GrayText = ({ children, ...restProps }) => {
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
+  return (
+    <Typography className={clsx(styles.text, styles.grayText)} {...restProps}>
+      {children}
+    </Typography>
+  );
+};

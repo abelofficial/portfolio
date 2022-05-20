@@ -4,8 +4,7 @@ import clsx from "classnames";
 import { useSelector, useDispatch } from "react-redux";
 
 // Material ui
-import { Box, Grid, Hidden, useMediaQuery } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Box, Grid, Hidden, useMediaQuery, useTheme } from "@mui/material";
 
 // Internal
 import Toolbar from "@local-components/sections/Toolbar";

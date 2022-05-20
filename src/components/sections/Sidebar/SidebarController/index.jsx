@@ -4,8 +4,7 @@ import clsx from "classnames";
 import ExpandMoreIcon from "@mui/icons-material/ExpandLess";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
-import { IconButton } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { IconButton, useTheme } from "@mui/material";
 import useStyle from "../style";
 import AboutMe from "@local-components/sections/AboutMe";
 import Contact from "@local-components/sections/Contact";

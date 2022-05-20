@@ -3,8 +3,7 @@ import Image from "next/image";
 import clsx from "classnames";
 import { v4 as uuid } from "uuid";
 // Material ui
-import { Box, Slide, Grid } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Box, Slide, Grid, useTheme } from "@mui/material";
 // Local
 import { SectionContainer } from "@local-components/hoc";
 

@@ -13,7 +13,8 @@ import {
 } from "@local-components/collections/icons";
 
 // Material ui
-import { IconButton } from "@mui/material";
+import { Button, IconButton, useTheme } from "@mui/material";
+import useStyles from "./style";
 
 export const SiteThemeSelector = ({ props }) => {
   const dispatch = useDispatch();
@@ -31,5 +32,16 @@ export const SiteThemeSelector = ({ props }) => {
         </IconButton>
       )}
     </>
+  );
+};
+
+export const ActionButton = ({ children, ...restProps }) => {
+  const theme = useTheme();
+  const styles = useStyles(theme)();
+
+  return (
+    <Button variant='outlined' className={styles.actionButton} {...restProps}>
+      {children}
+    </Button>
   );
 };

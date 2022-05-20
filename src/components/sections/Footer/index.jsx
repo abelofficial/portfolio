@@ -1,7 +1,6 @@
 // Core
 // Material ui
-import { Box, Typography } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Box, Typography, useTheme } from "@mui/material";
 
 // Local
 

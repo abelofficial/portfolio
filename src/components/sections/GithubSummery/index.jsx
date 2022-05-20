@@ -11,10 +11,9 @@ import {
 } from "src/components/collections/text";
 
 // Material ui
-import { Box, Grid } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Box, Grid, useTheme } from "@mui/material";
 
-import { getGithubUser, getGithubUserOrgs } from "@local-services/api";
+import { getGithubUser, getGithubUserOrgs } from "@local-services/api/Github";
 import { InfoContainer, SectionContainer } from "@local-components/hoc";
 
 import useStyles from "./style";
@@ -53,8 +52,9 @@ const GithubSummery = ({ props }) => {
         total_private_repos,
       });
     };
+    console.log("Run");
     fetchData();
-  }, [setGithubAccount]);
+  }, []);
 
   return (
     <SectionContainer width='100%' p={1}>

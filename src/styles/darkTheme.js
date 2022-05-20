@@ -26,6 +26,7 @@ const theme = createTheme({
 
     text: {
       primary: "rgba(255, 255, 255, 1)",
+      secondary: "rgb(242, 242, 242)",
     },
     divider: "#FFE40C",
   },

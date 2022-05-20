@@ -1,4 +1,4 @@
-import { useTheme } from "@mui/styles";
+import { useTheme } from "@mui/material";
 
 const LogoSvg = (props) => {
   const theme = useTheme();

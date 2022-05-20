@@ -7,8 +7,8 @@ import {
   Accordion,
   AccordionDetails,
   useMediaQuery,
+  useTheme,
 } from "@mui/material";
-import { useTheme } from "@mui/styles";
 
 import useStyle from "./style";
 

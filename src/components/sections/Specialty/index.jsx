@@ -1,8 +1,7 @@
 // Core
 import Image from "next/image";
 // Material ui
-import { Box, Divider, Grid, Fade } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Box, Divider, Grid, Fade, useTheme } from "@mui/material";
 
 // Local
 import { SectionContainer } from "@local-components/hoc";
@@ -39,7 +38,7 @@ const Specialty = (props) => {
                   width={60}
                   height={60}
                 />
-                <SubSectionTitle gutterBottom>{item.title}</SubSectionTitle>
+                <SubSectionTitle>{item.title}</SubSectionTitle>
                 <Paragraph>{item.content}</Paragraph>
               </Grid>
             </Box>

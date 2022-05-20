@@ -3,8 +3,7 @@ import clsx from "classnames";
 import Github from "react-github-calendar";
 
 // Material ui
-import { Box, Grid } from "@mui/material";
-import { useTheme } from "@mui/styles";
+import { Box, Grid, useTheme } from "@mui/material";
 
 // Local
 import { SectionContainer } from "@local-components/hoc";

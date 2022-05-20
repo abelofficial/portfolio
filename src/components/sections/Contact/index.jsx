@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { v4 as uuid } from "uuid";
 // Material ui
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, useTheme } from "@mui/material";
 
 // Local
 import { SectionContainer } from "@local-components/hoc";
@@ -12,7 +12,6 @@ import data from "@local-static/contactData.json";
 import useStyles from "./style";
 import { HighLightText } from "@local-components/collections/text";
 import { SubSectionTitle } from "@local-components/collections/text";
-import { useTheme } from "@mui/styles";
 
 const Contact = (props) => {
   const theme = useTheme();

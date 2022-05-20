@@ -11,8 +11,8 @@ import {
   Typography,
   useMediaQuery,
   ClickAwayListener,
+  useTheme,
 } from "@mui/material";
-import { useTheme } from "@mui/styles";
 
 // Local
 import {
