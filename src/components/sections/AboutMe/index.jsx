@@ -16,7 +16,6 @@ import Avatar from "@local-components/collections/svgs/avatar";
 const AboutMe = (props) => {
   const theme = useTheme();
   const styles = useStyles(theme)();
-  const dataList = data;
 
   return (
     <SectionContainer mb={1}>

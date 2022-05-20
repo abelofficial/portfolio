@@ -39,7 +39,7 @@ const Specialty = (props) => {
                   width={60}
                   height={60}
                 />
-                <SubSectionTitle gutterBottom>{item.title}</SubSectionTitle>
+                <SubSectionTitle>{item.title}</SubSectionTitle>
                 <Paragraph>{item.content}</Paragraph>
               </Grid>
             </Box>

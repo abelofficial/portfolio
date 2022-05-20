@@ -7,9 +7,9 @@ import { NextSeo } from "next-seo";
 
 // Local
 import TechStack from "@local-components/sections/TechStack";
-import Specialty from "@local-components/sections/Specialty";
 import GitHubCalendar from "@local-components/sections/GithubActivities";
 import routeAnim from "@local-styles/routeAnimation.json";
+import Projects from "@local-components/sections/Projects";
 
 export default function Home() {
   return (
@@ -23,8 +23,8 @@ export default function Home() {
           <motion.div variants={routeAnim.fadeInUp}>
             <TechStack />
           </motion.div>
-          <motion.div id='landing-services' variants={routeAnim.fadeInUp}>
-            <Specialty />
+          <motion.div variants={routeAnim.fadeInUp}>
+            <Projects />
           </motion.div>
         </motion.div>
       </motion.div>
