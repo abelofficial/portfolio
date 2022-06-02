@@ -2,6 +2,7 @@
 import { useRouter } from "next/router";
 import clsx from "classnames";
 import { useSelector, useDispatch } from "react-redux";
+import { MantineProvider } from "@mantine/core";
 
 // Material ui
 import { Box, Grid, Hidden, useMediaQuery, useTheme } from "@mui/material";
@@ -57,7 +58,13 @@ const Layout = ({ children }) => {
       </Box>
       <Grid container justify='center' className={clsx(styles.container)}>
         <Grid item xs={12} md={7} className={clsx(styles.main)}>
-          <PageContainer>{children}</PageContainer>
+          <MantineProvider
+            theme={{ fontFamily: "Open Sans" }}
+            withGlobalStyles
+            withNormalizeCSS
+          >
+            <PageContainer>{children}</PageContainer>
+          </MantineProvider>
           <Hidden mdUp>
             <Footer />
           </Hidden>
