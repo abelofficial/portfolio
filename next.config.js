@@ -3,12 +3,5 @@ module.exports = {
     domains: ["avatars.githubusercontent.com"],
   },
   reactStrictMode: true,
-  pageExtensions: [
-    "page.jsx",
-    "page.js",
-    "page.ts",
-    "page.tsx",
-    "api.js",
-    "api.ts",
-  ],
+  pageExtensions: ["page.jsx", "page.ts", "page.tsx", "api.ts"],
 };
