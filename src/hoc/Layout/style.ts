@@ -47,16 +47,14 @@ const styles = createStyles((theme) => ({
     scrollbarWidth: "thin",
     scrollbarColor: `${theme.colors.cyan} ${theme.colors.pink}`,
 
-    backgroundColor: theme.white,
-
     "&::-webkit-scrollbar": {
       width: "0.5rem",
     },
     "&::-webkit-scrollbar-track": {
-      backgroundColor: theme.colors.red,
+      backgroundColor: theme.black,
     },
     "&::-webkit-scrollbar-thumb": {
-      backgroundColor: theme.colors.green,
+      backgroundColor: theme.primaryColor,
       borderRadius: "3rem",
       boxShadow: theme.shadows[1],
     },
@@ -93,7 +91,6 @@ const styles = createStyles((theme) => ({
     flexDirection: "column",
     padding: "1rem",
     height: "fit-content",
-    backgroundColor: theme.white,
 
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       height: "100vh",

@@ -2,6 +2,7 @@ import React from "react";
 import { Box, MediaQuery, SimpleGrid } from "@mantine/core";
 import SectionContainer from "../SectionContainer";
 import useStyles from "./style";
+import InfoContainer from "@hoc/InfoContainer";
 
 export interface LayoutProps {
   children: JSX.Element;
@@ -18,16 +19,20 @@ const Layout = ({ children }: LayoutProps) => {
       <SimpleGrid cols={2} className={classes.container}>
         <Box className={classes.main}>
           <SectionContainer>{children}</SectionContainer>
-          <MediaQuery smallerThan='md' styles={{ display: "none" }}>
+          <MediaQuery largerThan='md' styles={{ display: "none" }}>
             <h1>Footer</h1>
           </MediaQuery>
         </Box>
         <Box className={classes.sideBar}>
           <Box className={classes.sideBar_bg} />
           <Box className={classes.sideBar_main}>
-            <h1>Sidebar top</h1>
-            <h1>Sidebar bottom</h1>
-            <MediaQuery largerThan='md' styles={{ display: "none" }}>
+            <InfoContainer>
+              <h1>Sidebar top</h1>
+            </InfoContainer>
+            <InfoContainer>
+              <h1>Sidebar bottom</h1>
+            </InfoContainer>
+            <MediaQuery smallerThan='md' styles={{ display: "none" }}>
               <h1>Footer</h1>
             </MediaQuery>
           </Box>

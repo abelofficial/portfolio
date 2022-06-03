@@ -15,7 +15,7 @@ const useStyles = createStyles((theme) => ({
     zIndex: -100,
     width: "100%",
     height: "100%",
-    backgroundColor: theme.colors.orange[3],
+    backgroundColor: "transparent",
     opacity: 0.9,
     borderRadius: theme.defaultRadius,
   },
