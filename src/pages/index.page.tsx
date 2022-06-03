@@ -1,6 +1,6 @@
 import Layout from "@hoc/Layout";
 import React from "react";
-import InfoContainer from "src/hoc/InfoContainer";
+import InfoContainer from "@hoc/InfoContainer";
 
 const Index = () => {
   return (

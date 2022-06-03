@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, createStyles } from "@mantine/core";
+import { createStyles } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
   container: {
@@ -12,10 +11,4 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const InfoContainer = ({ children }) => {
-  const { classes } = useStyles();
-
-  return <Box className={classes.container}>{children}</Box>;
-};
-
-export default InfoContainer;
+export default useStyles;
