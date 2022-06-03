@@ -2,34 +2,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@store/*": [
-        "src/store/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@utils/*": [
-        "src/utils/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@styles/*": [
-        "src/styles/*"
-      ],
-      "@static/*": [
-        "src/static/*"
-      ]
+      "@hoc/*": ["src/hoc/*"],
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
+      "@services/*": ["src/services/*"],
+      "@assets/*": ["src/assets/*"],
+      "@styles/*": ["src/styles/*"],
+      "@static/*": ["src/static/*"]
     },
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -43,12 +25,6 @@
     "jsx": "preserve",
     "resolveJsonModule": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "cypress.config.js"],
+  "exclude": ["node_modules"]
 }

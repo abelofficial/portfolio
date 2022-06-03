@@ -1,24 +1,20 @@
 {
-  "name": "nextjs-material-ui-boilerplate",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "This is a boilerplate for next-js using material-ui.",
+  "description": "This is a my portfolio project.",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/abelofficial/nextjs-material-ui_Boiler.git"
+    "lint": "next lint",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test dev http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
   "author": "Abel Sintaro",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/abelofficial/nextjs-material-ui_Boiler/issues"
-  },
-  "homepage": "https://github.com/abelofficial/nextjs-material-ui_Boiler#readme",
   "dependencies": {
     "@mantine/core": "^4.2.7",
     "@reduxjs/toolkit": "^1.8.2",
