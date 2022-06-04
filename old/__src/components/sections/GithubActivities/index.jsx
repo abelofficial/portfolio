@@ -10,13 +10,11 @@ import { SectionContainer } from "@local-components/hoc";
 
 // Component
 import useStyles from "./style";
-import { useOnScreen } from "@local-components/hooks/useOnScreen";
 import { SectionTitle } from "@local-components/collections/text";
 
 const GithubActivities = (props) => {
   const theme = useTheme();
   const styles = useStyles(theme)();
-  const [setRef, visible] = useOnScreen({ threshold: "0.1" });
 
   const calendarTheme = {
     level0: theme.palette.background.paper,
