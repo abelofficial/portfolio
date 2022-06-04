@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, MediaQuery, SimpleGrid } from "@mantine/core";
+import { Box, Grid, MediaQuery } from "@mantine/core";
 import SectionContainer from "../SectionContainer";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
-
+import Toolbar from "@components/Toolbar";
+import { BurgerMenuIcon } from "@components/Icons";
 export interface LayoutProps {
   children: JSX.Element;
 }
@@ -14,16 +15,16 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <Box className={classes.page}>
       <Box className={classes.toolbar}>
-        <h1>Toolbar</h1>
+        <Toolbar />
       </Box>
-      <SimpleGrid cols={2} className={classes.container}>
-        <Box className={classes.main}>
+      <Grid columns={16} className={classes.container}>
+        <Grid.Col md={10} sm={16} className={classes.main}>
           <SectionContainer>{children}</SectionContainer>
           <MediaQuery largerThan='md' styles={{ display: "none" }}>
             <h1>Footer</h1>
           </MediaQuery>
-        </Box>
-        <Box className={classes.sideBar}>
+        </Grid.Col>
+        <Grid.Col md={6} sm={16} className={classes.sideBar}>
           <Box className={classes.sideBar_bg} />
           <Box className={classes.sideBar_main}>
             <InfoContainer>
@@ -31,13 +32,14 @@ const Layout = ({ children }: LayoutProps) => {
             </InfoContainer>
             <InfoContainer>
               <h1>Sidebar bottom</h1>
+              <BurgerMenuIcon isActive={true} invert={true} />
             </InfoContainer>
             <MediaQuery smallerThan='md' styles={{ display: "none" }}>
               <h1>Footer</h1>
             </MediaQuery>
           </Box>
-        </Box>
-      </SimpleGrid>
+        </Grid.Col>
+      </Grid>
     </Box>
   );
 };

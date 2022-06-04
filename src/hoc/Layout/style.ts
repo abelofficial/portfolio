@@ -42,21 +42,24 @@ const styles = createStyles((theme) => ({
     width: "100%",
     height: "100vh",
 
-    overflowY: "scroll",
-    overflowX: "hidden",
-    scrollbarWidth: "thin",
-    scrollbarColor: `${theme.colors.cyan} ${theme.colors.pink}`,
-
-    "&::-webkit-scrollbar": {
-      width: "0.5rem",
-    },
-    "&::-webkit-scrollbar-track": {
-      backgroundColor: theme.black,
-    },
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: theme.primaryColor,
-      borderRadius: "3rem",
-      boxShadow: theme.shadows[1],
+    [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+      overflowY: "scroll",
+      overflowX: "hidden",
+      scrollbarWidth: "thin",
+      scrollbarColor: `${theme.colors.cyan} ${theme.colors.pink}`,
+      flexDirection: "row",
+      alignItems: "space-between",
+      "&::-webkit-scrollbar": {
+        width: "0.5rem",
+      },
+      "&::-webkit-scrollbar-track": {
+        backgroundColor: theme.black,
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: theme.primaryColor,
+        borderRadius: "3rem",
+        boxShadow: theme.shadows[1],
+      },
     },
   },
   sideBar: {
