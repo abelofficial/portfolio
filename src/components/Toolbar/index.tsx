@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import clsx from "classnames";
 import { Box, Grid, Title } from "@mantine/core";
 import React, { useEffect } from "react";
@@ -14,7 +13,7 @@ import {
   openDrawer,
 } from "src/store/SiteConfig";
 
-const index = () => {
+const Index = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { classes } = useStyles();
   const dispatch = useDispatch();
@@ -59,4 +58,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

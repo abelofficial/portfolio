@@ -5,6 +5,7 @@ import SectionContainer from "../SectionContainer";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
 import Toolbar from "@components/Toolbar";
+import Sidebar from "@components/Sidebar";
 import { BurgerMenuIcon } from "@components/Icons";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -12,7 +13,7 @@ import {
   selectDrawer,
   showBurgerMenu,
 } from "src/store/SiteConfig";
-import useOnScreen from "src/Hooks/UseOnScreen";
+import useOnScreen from "src/hooks/UseOnScreen";
 
 export interface LayoutProps {
   children: JSX.Element;
@@ -54,7 +55,7 @@ const Layout = ({ children }: LayoutProps) => {
           <Box className={classes.sideBar_bg} />
           <Box className={classes.sideBar_main}>
             <InfoContainer>
-              <h1>Sidebar top</h1>
+              <Sidebar />
             </InfoContainer>
             <InfoContainer>
               <h1>Sidebar bottom</h1>

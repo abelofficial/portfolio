@@ -2,7 +2,7 @@ import React from "react";
 import { BlogIcon, HomeIcon, TimeLineIcon } from "@components/Icons";
 import useStyles from "./style";
 
-const index = ({ invert }) => {
+const Index = ({ invert }) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { classes } = useStyles();
 
@@ -15,4 +15,4 @@ const index = ({ invert }) => {
   );
 };
 
-export default index;
+export default Index;
