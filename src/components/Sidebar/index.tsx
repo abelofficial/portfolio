@@ -1,3 +1,4 @@
+import AboutMe from "@components/AboutMe";
 import SectionContainer from "@hoc/SectionContainer";
 import { useMediaQuery } from "@mantine/hooks";
 import { useRouter } from "next/router";
@@ -30,7 +31,7 @@ const Index = () => {
       {/* <AboutMe />
       <Contact />
       <GithubSummery /> */}
-      <h1>About Me</h1>
+      <AboutMe />
       <h1>Contact</h1>
       <h1>GithubSummery</h1>
     </SectionContainer>

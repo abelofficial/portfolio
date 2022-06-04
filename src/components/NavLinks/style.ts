@@ -1,6 +1,13 @@
 import { createStyles } from "@mantine/core";
 
 const styles = createStyles((theme) => ({
+  container: {
+    width: "100%",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "space-evenly",
+  },
+
   link: {
     "& a": {
       textDecoration: "none",

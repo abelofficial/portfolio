@@ -71,7 +71,7 @@ const styles = createStyles((theme) => ({
 
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       height: "100vh",
-      alignItems: "center",
+      alignItems: "flex-start",
     },
   },
 
@@ -90,6 +90,7 @@ const styles = createStyles((theme) => ({
   },
 
   sideBar_main: {
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     padding: "1rem",

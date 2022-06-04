@@ -291,11 +291,11 @@ export const BurgerMenuIcon = ({ isActive, invert, ...props }) => {
   );
 };
 
-export const DarkModeIcon = () => {
+export const DarkModeIcon = (props) => {
   const { classes } = useStyles();
 
   return (
-    <svg viewBox='0 0 16 16' className={classes.icon}>
+    <svg viewBox='0 0 16 16' className={classes.icon} {...props}>
       <path
         d='M8 0.5C5.65 0.5 3.75 3.85 3.75 8C3.75 12.15 5.65 15.5 8 15.5C12.15 15.5 15.5 12.15 15.5 8C15.5 3.85 12.15 0.5 8 0.5Z'
         fill='#FFE8A6'
@@ -364,11 +364,11 @@ export const DarkModeIcon = () => {
   );
 };
 
-export const LightModeIcon = () => {
+export const LightModeIcon = (props) => {
   const { classes } = useStyles();
 
   return (
-    <svg viewBox='0 0 16 16' className={classes.icon}>
+    <svg viewBox='0 0 16 16' className={classes.icon} {...props}>
       <path
         d='M5.125 14.925L6.875 13.125C6.25 13 5.675 12.75 5.15 12.4L5.125 14.925Z'
         fill='#FFCA28'

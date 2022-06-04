@@ -1,8 +1,8 @@
 import React from "react";
-import { Box } from "@mantine/core";
+import { Box, ListItemProps } from "@mantine/core";
 import useStyles from "./style";
 
-const SectionContainer = ({ children }) => {
+const SectionContainer = ({ children }: ListItemProps) => {
   const { classes } = useStyles();
 
   return (

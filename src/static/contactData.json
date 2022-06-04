@@ -1,0 +1,22 @@
+[
+  {
+    "name": "LinkedIn",
+    "icon": "/images/linkedin-icon.svg",
+    "address": "https://www.linkedin.com/in/abel-sintaro/"
+  },
+  {
+    "name": "Github",
+    "icon": "/images/github-octocat.svg",
+    "address": "https://github.com/abelofficial"
+  },
+  {
+    "name": "Twitter",
+    "icon": "/images/twitter.svg",
+    "address": "https://twitter.com/AbelSintaro"
+  },
+  {
+    "name": "Email",
+    "icon": "/images/google-gmail.svg",
+    "address": "mailto:hi@abel.st"
+  }
+]
