@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useEffect } from "react";
+import clsx from "classnames";
 import { Box, Grid, MediaQuery } from "@mantine/core";
 import SectionContainer from "../SectionContainer";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
 import Toolbar from "@components/Toolbar";
 import { BurgerMenuIcon } from "@components/Icons";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  hideBurgerMenu,
+  selectDrawer,
+  showBurgerMenu,
+} from "src/store/SiteConfig";
+import useOnScreen from "src/Hooks/UseOnScreen";
+
 export interface LayoutProps {
   children: JSX.Element;
 }
 
 const Layout = ({ children }: LayoutProps) => {
   const { classes } = useStyles();
+  const dispatch = useDispatch();
+  const isDrawerOpen = useSelector(selectDrawer);
+  const [setRef, visible] = useOnScreen({ threshold: 0.6 });
+
+  useEffect(() => {
+    if (visible) {
+      dispatch(hideBurgerMenu());
+      return;
+    }
+
+    dispatch(showBurgerMenu());
+  }, [visible]);
 
   return (
     <Box className={classes.page}>
-      <Box className={classes.toolbar}>
+      <Box
+        className={clsx(classes.toolbar, {
+          [`${classes.showToolbar}`]: isDrawerOpen,
+          [`${classes.hideToolbar}`]: !isDrawerOpen,
+        })}
+      >
         <Toolbar />
       </Box>
       <Grid columns={16} className={classes.container}>
@@ -35,7 +61,7 @@ const Layout = ({ children }: LayoutProps) => {
               <BurgerMenuIcon isActive={true} invert={true} />
             </InfoContainer>
             <MediaQuery smallerThan='md' styles={{ display: "none" }}>
-              <h1>Footer</h1>
+              <h1 ref={setRef}>Footer</h1>
             </MediaQuery>
           </Box>
         </Grid.Col>

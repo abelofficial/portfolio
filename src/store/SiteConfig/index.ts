@@ -66,9 +66,9 @@ export const {
 } = configsSlice.actions;
 
 // Selectors
-export const selectDrawer = (state) => state.siteConfig.drawer;
-export const selectDarkMode = (state) => state.siteConfig.darkMode;
-export const selectSideBarPage = (state) => state.siteConfig.sideBarPage;
-export const selectBurgerMenu = (state) => state.siteConfig.showBurgerMenu;
+export const selectDrawer = (state) => state.configs.drawer;
+export const selectDarkMode = (state) => state.configs.darkMode;
+export const selectSideBarPage = (state) => state.configs.sideBarPage;
+export const selectBurgerMenu = (state) => state.configs.showBurgerMenu;
 
 export default configsSlice.reducer;
