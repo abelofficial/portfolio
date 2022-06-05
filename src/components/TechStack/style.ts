@@ -23,13 +23,30 @@ const styles = createStyles((theme) => ({
   section: {
     padding: theme.spacing.xs,
   },
-
+  divider: {
+    marginTop: theme.spacing.sm,
+    marginBottom: theme.spacing.sm,
+    opacity: 0.4,
+    filter: "blur(0.1rem)",
+  },
   slideAnim: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-
+    flexWrap: "wrap",
+    overflow: "hidden",
     borderRadius: theme.defaultRadius,
+  },
+
+  frameworkContainer: {
+    // marginRight: theme.spacing(2),
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  animWaveLeft: {
+    animation: `$slideLeft 1500ms ease 100ms infinite alternate`,
+  },
+  animWaveRight: {
+    animation: `$slideRight 1500ms ease 100ms infinite alternate`,
   },
 }));
 

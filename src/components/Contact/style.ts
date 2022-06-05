@@ -27,6 +27,8 @@ const styles = createStyles((theme) => ({
   listContainer: {
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-between",
+    flexWrap: "nowrap",
   },
 }));
 

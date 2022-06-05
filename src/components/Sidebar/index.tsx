@@ -1,7 +1,6 @@
 import AboutMe from "@components/AboutMe";
 import Contact from "@components/Contact";
 import GithubSummery from "@components/GithubSummery";
-import SectionContainer from "@hoc/SectionContainer";
 import { useMediaQuery } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
@@ -29,11 +28,11 @@ const Index = () => {
     else dispatch(setSideBarSummaryLock(bigScreen));
   });
   return (
-    <SectionContainer>
+    <>
       <AboutMe />
       <Contact />
       <GithubSummery />
-    </SectionContainer>
+    </>
   );
 };
 

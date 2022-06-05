@@ -1,18 +1,14 @@
 import Layout from "@hoc/Layout";
 import React from "react";
-import InfoContainer from "@hoc/InfoContainer";
 import GithubActivities from "@components/GithubActivities";
+import TechStack from "@components/TechStack";
 
 const Index = () => {
   return (
     <Layout>
       <>
-        <InfoContainer>
-          <GithubActivities />
-        </InfoContainer>
-        <InfoContainer>
-          <h1>Home page</h1>
-        </InfoContainer>
+        <GithubActivities />
+        <TechStack />
       </>
     </Layout>
   );

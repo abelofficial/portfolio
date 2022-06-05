@@ -11,8 +11,9 @@ const InfoContainer = ({ children, props }: IInfoContainer) => {
   const { classes } = useStyles();
 
   return (
-    <Box className={classes.container} {...props}>
-      {children}
+    <Box className={classes.container}>
+      <Box className={classes.container_bg} />
+      <Box className={classes.container_main}>{children}</Box>
     </Box>
   );
 };

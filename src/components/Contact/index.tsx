@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { v4 as uuid } from "uuid";
-import { Grid, Title } from "@mantine/core";
+import { Box, Center, Title } from "@mantine/core";
 import data from "@static/contactData.json";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
@@ -10,13 +10,13 @@ const Index = () => {
   const { classes } = useStyles();
 
   return (
-    <InfoContainer props={{ p: "xs" }}>
+    <InfoContainer>
       <Title order={4} pb='xs'>
         Connect with me
       </Title>
-      <Grid columns={data.length} p={2} className={classes.listContainer}>
+      <Box className={classes.listContainer}>
         {data.map((item) => (
-          <Grid.Col key={uuid()} xs={1} className={classes.contactContainer}>
+          <Center key={uuid()} className={classes.contactContainer}>
             <a
               target='_blank'
               rel='noreferrer'
@@ -32,9 +32,9 @@ const Index = () => {
               />
               <p> {item.name} </p>
             </a>
-          </Grid.Col>
+          </Center>
         ))}
-      </Grid>
+      </Box>
     </InfoContainer>
   );
 };

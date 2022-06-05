@@ -1,9 +1,9 @@
 import clsx from "classnames";
 import Github from "react-github-calendar";
-import SectionContainer from "@hoc/SectionContainer";
 import { Box, Grid, Title } from "@mantine/core";
 import React from "react";
 import useStyles from "./style";
+import InfoContainer from "@hoc/InfoContainer";
 
 const Index = () => {
   const { classes, theme } = useStyles();
@@ -15,7 +15,7 @@ const Index = () => {
     level4: theme.colorScheme === "light" ? "#216E39" : "#998806",
   };
   return (
-    <SectionContainer>
+    <InfoContainer>
       <Grid className={classes.container}>
         <Grid>
           <Title order={4}>Github activities</Title>
@@ -34,7 +34,7 @@ const Index = () => {
           </Box>
         </Grid>
       </Grid>
-    </SectionContainer>
+    </InfoContainer>
   );
 };
 

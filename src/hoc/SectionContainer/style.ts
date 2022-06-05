@@ -8,7 +8,6 @@ const useStyles = createStyles((theme) => ({
     borderRadius: "1rem",
     height: "fit-content",
     marginBottom: theme.spacing.sm,
-    boxShadow: theme.shadows[1],
   },
   container_bg: {
     position: "absolute",

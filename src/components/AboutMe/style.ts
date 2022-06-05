@@ -1,26 +1,11 @@
 import { createStyles } from "@mantine/core";
 
 const styles = createStyles((theme) => ({
-  section: {
+  container: {
     display: "flex",
-    flexDirection: "column",
+    flexWrap: "nowrap",
+    flexDirection: "row",
     justifyContent: "center",
-  },
-  animSection: {
-    position: "relative",
-  },
-
-  imageContainer: {
-    position: "relative",
-    bottom: 0,
-    right: 0,
-  },
-  image: {
-    boxShadow: theme.shadows[1],
-  },
-  info: {
-    fontSize: "11px",
-    textAlign: "justify",
   },
 }));
 

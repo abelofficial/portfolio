@@ -8,8 +8,7 @@ const SectionContainer = ({ children }: ListItemProps) => {
   return (
     <Box className={classes.container}>
       <Box className={classes.container_bg} />
-      <Box className={classes.container_main}></Box>
-      {children}
+      <Box className={classes.container_main}>{children}</Box>
     </Box>
   );
 };

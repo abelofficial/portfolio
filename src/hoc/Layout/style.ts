@@ -5,7 +5,7 @@ const styles = createStyles((theme) => ({
     position: "relative",
     height: "100%",
     width: "100vw",
-    // maxWidth: "100%",
+    maxWidth: "100%",
   },
   toolbar: {
     position: "fixed",
@@ -26,7 +26,7 @@ const styles = createStyles((theme) => ({
   },
 
   container: {
-    // position: "relative",
+    position: "relative",
     width: "100%",
     display: "flex",
     alignItems: "stretch",
@@ -41,6 +41,7 @@ const styles = createStyles((theme) => ({
     position: "relative",
     width: "100%",
     height: "100vh",
+    backgroundColor: theme.colors.gray[1],
 
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       overflowY: "scroll",
@@ -90,11 +91,14 @@ const styles = createStyles((theme) => ({
   },
 
   sideBar_main: {
+    position: "relative",
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    padding: "1rem",
+    paddingLeft: theme.spacing.xs,
+    paddingRight: 0,
     height: "fit-content",
+    margin: 0,
 
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       height: "100vh",

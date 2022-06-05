@@ -15,9 +15,12 @@ import {
 
 const Index = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { classes } = useStyles();
+  const { classes, theme } = useStyles();
   const dispatch = useDispatch();
-  const bigScreen = useMediaQuery("(min-width: 600px)", false);
+  const bigScreen = useMediaQuery(
+    `(min-width: ${theme.breakpoints.md}px)`,
+    true
+  );
   const drawer = useSelector(selectDrawer);
   const showBurgerMenu = useSelector(selectBurgerMenu);
   const ref = useClickOutside(() => dispatch(closeDrawer()));
