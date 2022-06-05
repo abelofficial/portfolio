@@ -3,7 +3,6 @@ import clsx from "classnames";
 import { Box, Grid, MediaQuery } from "@mantine/core";
 import SectionContainer from "../SectionContainer";
 import useStyles from "./style";
-import InfoContainer from "@hoc/InfoContainer";
 import Toolbar from "@components/Toolbar";
 import Sidebar from "@components/Sidebar";
 import { useDispatch, useSelector } from "react-redux";
@@ -60,9 +59,6 @@ const Layout = ({ children }: LayoutProps) => {
           <Box className={classes.sideBar_main}>
             <MenuBar />
             <Sidebar />
-            <InfoContainer>
-              <h1>Sidebar bottom</h1>
-            </InfoContainer>
             <MediaQuery smallerThan='md' styles={{ display: "none" }}>
               <Footer />
             </MediaQuery>

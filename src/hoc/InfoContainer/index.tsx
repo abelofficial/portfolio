@@ -4,7 +4,7 @@ import useStyles from "./style";
 import { IProps } from "src/types";
 
 export interface IInfoContainer extends IProps {
-  props: BoxProps<any>;
+  props?: BoxProps<any>;
 }
 
 const InfoContainer = ({ children, props }: IInfoContainer) => {
