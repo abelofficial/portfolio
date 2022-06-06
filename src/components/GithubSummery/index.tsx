@@ -5,7 +5,6 @@ import { GithubConnect } from "@services/GithubConnect";
 import { IGithubProfile } from "src/types";
 import InfoContainer from "@hoc/InfoContainer";
 import { Grid, Box, Title } from "@mantine/core";
-import SectionContainer from "@hoc/SectionContainer";
 
 const Index = () => {
   const { classes } = useStyles();
@@ -24,7 +23,6 @@ const Index = () => {
       };
 
       setGithubAccount(data);
-      console.log("Run: ", orgData.data);
     };
 
     fetchData();
@@ -57,47 +55,38 @@ const Index = () => {
           <Box className={classes.profileInfo}>
             <strong className={classes.text}> {githubAccount?.name} </strong>
             <Box className={classes.followContainer}>
-              <p className={classes.text}>
+              <Box className={classes.statusContainer}>
                 <pre className={classes.highlightedText}>
                   {githubAccount?.followers}
                 </pre>
-                followers
-              </p>
-
-              <p className={classes.text}>
+                <p className={classes.text}>followers</p>
+              </Box>
+              <Box className={classes.statusContainer}>
                 <pre className={classes.highlightedText}>
                   {githubAccount?.following}
                 </pre>
-                following
-              </p>
+                <p className={classes.text}>following</p>
+              </Box>
             </Box>
           </Box>
         </Grid.Col>
-        <Grid.Col xs={12} className={classes.statusContainer}>
-          <SectionContainer>
-            <p className={classes.text}>
-              <pre className={classes.highlightedText}>
-                {githubAccount?.public_repos}
-              </pre>
-              Public repos
-            </p>
-          </SectionContainer>
-          <SectionContainer>
-            <p className={classes.text}>
-              <pre className={classes.highlightedText}>
-                {githubAccount?.total_private_repos}
-              </pre>
-              Private repos
-            </p>
-          </SectionContainer>
-          <SectionContainer>
-            <p className={classes.text}>
-              <pre className={classes.highlightedText}>
-                {githubAccount?.orgs}
-              </pre>
-              Organizations
-            </p>
-          </SectionContainer>
+        <Grid.Col xs={12} className={classes.statues}>
+          <Box className={classes.statusContainer}>
+            <pre className={classes.highlightedText}>
+              {githubAccount?.public_repos}
+            </pre>
+            <p className={classes.text}>Public repos</p>
+          </Box>
+          <Box className={classes.statusContainer}>
+            <pre className={classes.highlightedText}>
+              {githubAccount?.total_private_repos}
+            </pre>
+            <p className={classes.text}>Private repos</p>
+          </Box>
+          <Box className={classes.statusContainer}>
+            <pre className={classes.highlightedText}>{githubAccount?.orgs}</pre>
+            <p className={classes.text}>Organizations</p>
+          </Box>
         </Grid.Col>
       </Grid>
     </InfoContainer>

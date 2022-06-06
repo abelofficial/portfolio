@@ -33,8 +33,9 @@ const styles = createStyles((theme) => ({
   },
   statusContainer: {
     display: "flex",
+    flexDirection: "column",
     flexWrap: "nowrap",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
@@ -45,8 +46,13 @@ const styles = createStyles((theme) => ({
   },
   highlightedText: {
     margin: 0,
+    display: "block",
     color: theme.primaryColor,
     fontWeight: "bold",
+  },
+  statues: {
+    display: "flex",
+    justifyContent: "space-between",
   },
 }));
 

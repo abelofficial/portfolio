@@ -11,7 +11,6 @@ import {
   showBurgerMenu,
 } from "src/store/SiteConfig";
 import useOnScreen from "src/hooks/UseOnScreen";
-import Footer from "@components/Footer";
 import MenuBar from "@components/MenuBar";
 import PageContainer from "@hoc/PageContainer";
 
@@ -47,7 +46,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Grid columns={16} className={classes.container}>
         <Grid.Col md={10} sm={16} className={classes.main}>
           <PageContainer>{children}</PageContainer>
-          <Footer />
+          {/* <Footer /> */}
         </Grid.Col>
         <Grid.Col md={6} sm={16} className={classes.sideBar}>
           <Box className={classes.sideBar_bg} />

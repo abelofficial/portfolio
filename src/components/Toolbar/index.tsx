@@ -19,20 +19,24 @@ const Index = () => {
   const dispatch = useDispatch();
   const bigScreen = useMediaQuery(
     `(min-width: ${theme.breakpoints.md}px)`,
-    true
+    false
   );
   const drawer = useSelector(selectDrawer);
   const showBurgerMenu = useSelector(selectBurgerMenu);
-  const ref = useClickOutside(() => dispatch(closeDrawer()));
-
-  const handleCloseDrawer = () => {
-    bigScreen || dispatch(closeDrawer());
-  };
+  const ref = useClickOutside(() => handleOutsideClick());
 
   useEffect(() => {
     bigScreen && dispatch(openDrawer());
     bigScreen || handleCloseDrawer();
   }, [bigScreen]);
+
+  const handleCloseDrawer = () => {
+    bigScreen || dispatch(closeDrawer());
+  };
+
+  const handleOutsideClick = () => {
+    bigScreen || dispatch(closeDrawer());
+  };
 
   return (
     <Box ref={ref}>
@@ -43,7 +47,7 @@ const Index = () => {
           </Title>
         </Box>
         <Box my='lg'>
-          <NavLink column />
+          <NavLink column invert />
         </Box>
       </Grid>
       {showBurgerMenu && (

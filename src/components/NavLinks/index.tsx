@@ -3,14 +3,18 @@ import clsx from "classnames";
 import { BlogIcon, HomeIcon, TimeLineIcon } from "@components/Icons";
 import useStyles from "./style";
 import { Box } from "@mantine/core";
+import { ROUTES } from "@utils/RoutePaths";
+import { useRouter } from "next/router";
 
 export interface NavLinkProps {
   column?: boolean;
+  invert?: boolean;
 }
 
-const Index = ({ column }: NavLinkProps) => {
+const Index = ({ invert, column }: NavLinkProps) => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { classes } = useStyles();
+  const router = useRouter();
 
   return (
     <Box
@@ -19,9 +23,27 @@ const Index = ({ column }: NavLinkProps) => {
         [`${classes.row}`]: !column,
       })}
     >
-      <HomeIcon invert={true} isActive={true} width={25} height={25} />
-      <TimeLineIcon invert={true} isActive={false} width={25} height={25} />
-      <BlogIcon invert={true} isActive={true} width={25} height={25} />
+      <HomeIcon
+        invert={invert}
+        isActive={router.pathname === ROUTES.HOME}
+        width={25}
+        height={25}
+        onClick={() => router.push(ROUTES.HOME)}
+      />
+      <TimeLineIcon
+        invert={invert}
+        isActive={router.pathname === ROUTES.TIMELINE}
+        width={25}
+        height={25}
+        onClick={() => router.push(ROUTES.TIMELINE)}
+      />
+      <BlogIcon
+        invert={invert}
+        isActive={router.pathname === ROUTES.BLOG}
+        width={25}
+        height={25}
+        onClick={() => router.push(ROUTES.BLOG)}
+      />
     </Box>
   );
 };

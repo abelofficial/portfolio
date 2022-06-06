@@ -5,20 +5,23 @@ const styles = createStyles((theme) => ({
     margin: theme.spacing.xs,
   },
   active: {
-    color:
-      theme.colorScheme === "dark" ? theme.primaryColor : theme.primaryColor,
+    stroke: theme.primaryColor,
+    fill: theme.primaryColor,
   },
   largeIcon: {
     fontSize: "2rem",
   },
   normal: {
-    color: theme.primaryColor,
+    stroke: theme.colorScheme === "dark" ? theme.white : theme.black,
+    fill: theme.colorScheme === "dark" ? theme.white : theme.black,
   },
   invert: {
-    color: theme.colorScheme === "dark" ? theme.black : theme.white,
+    stroke: theme.colorScheme === "dark" ? theme.white : theme.black,
+    fill: theme.colorScheme === "dark" ? theme.white : theme.black,
   },
   invertActive: {
-    color: theme.colorScheme === "dark" ? theme.white : theme.black,
+    stroke: theme.colorScheme === "dark" ? theme.black : theme.white,
+    fill: theme.colorScheme === "dark" ? theme.black : theme.white,
   },
 }));
 
