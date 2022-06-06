@@ -3,18 +3,16 @@ import { Box, ColorScheme } from "@mantine/core";
 import { motion } from "framer-motion";
 import { GetServerSidePropsContext } from "next";
 import { AppProps } from "next/app";
-import { Provider as StateProvider, useDispatch } from "react-redux";
+import { Provider as StateProvider } from "react-redux";
 import { getCookie } from "cookies-next";
 import store from "@src/store";
 import Layout from "@hoc/Layout";
-import { turnOffDarkMode, setDarkMode } from "@store/SiteConfig";
 
 const App = ({
   Component,
   pageProps,
   colorScheme,
 }: AppProps & { colorScheme: ColorScheme }) => {
-  console.log(colorScheme);
   return (
     <StateProvider store={store}>
       <ThemeProvider mode={colorScheme}>
