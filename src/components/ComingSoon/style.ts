@@ -1,6 +1,6 @@
 import { createStyles } from "@mantine/core";
 
-const styles = createStyles((theme) => ({
+const styles = createStyles(() => ({
   anim: {
     width: "100%",
     height: "100%",

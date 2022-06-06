@@ -5,17 +5,14 @@ import { v4 as uuid } from "uuid";
 import { Box, Grid, Title } from "@mantine/core";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
-import useOnScreen from "@src/hooks/UseOnScreen";
 import data from "@static/techStackData.json";
 
 const Index = () => {
   const { classes } = useStyles();
 
-  const [setRef, visible] = useOnScreen({ threshold: 0.1 });
-
   return (
     <InfoContainer>
-      <Box ref={setRef}>
+      <Box>
         <Title order={4}>Tech stack</Title>
         <Grid className={clsx(classes.section, classes.slideAnim)}>
           {data.map((item, _i) => (

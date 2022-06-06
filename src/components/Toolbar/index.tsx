@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import clsx from "classnames";
 import { Box, Grid, Title } from "@mantine/core";
 import React, { useEffect } from "react";

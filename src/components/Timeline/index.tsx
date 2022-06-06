@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import Image from "next/image";
-import { Grid, Box, Divider, Title, Center, SimpleGrid } from "@mantine/core";
+import { Grid, Box, Divider, Title } from "@mantine/core";
 import React from "react";
 
 import useStyles from "./style";

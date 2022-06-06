@@ -1,6 +1,6 @@
 import { createStyles } from "@mantine/core";
 
-const styles = createStyles((theme) => ({
+const styles = createStyles(() => ({
   container: {
     display: "inline-flex",
     justifyContent: "space-evenly",
