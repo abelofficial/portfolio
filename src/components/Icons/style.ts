@@ -5,8 +5,8 @@ const styles = createStyles((theme) => ({
     margin: theme.spacing.xs,
   },
   active: {
-    stroke: theme.primaryColor,
-    fill: theme.primaryColor,
+    stroke: theme.primaryColor[0],
+    fill: theme.primaryColor[0],
   },
   largeIcon: {
     fontSize: "2rem",

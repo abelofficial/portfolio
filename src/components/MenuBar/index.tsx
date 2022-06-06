@@ -4,19 +4,19 @@ import React from "react";
 import useStyles from "./style";
 import NavLinks from "@components/NavLinks";
 import { SiteThemeSelector } from "@components/Buttons";
-import InfoContainer from "@hoc/InfoContainer";
 import { Box } from "@mantine/core";
+import SectionContainer from "@hoc/SectionContainer";
 
 const Index = () => {
   const { classes } = useStyles();
 
   return (
-    <InfoContainer>
+    <SectionContainer>
       <Box className={classes.container}>
         <NavLinks invert={false} />
         <SiteThemeSelector />
       </Box>
-    </InfoContainer>
+    </SectionContainer>
   );
 };
 

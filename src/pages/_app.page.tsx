@@ -1,19 +1,30 @@
-import { Theme } from "@hoc/theme";
-import { AppShell } from "@mantine/core";
+import { ThemeProvider } from "@hoc/ThemeProvider";
+import { Box } from "@mantine/core";
+import { GetServerSidePropsContext } from "next";
 import { AppProps } from "next/app";
 import { Provider as StateProvider } from "react-redux";
+import { getCookie } from "cookies-next";
 import store from "src/store";
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
+const App = ({ Component, pageProps }: AppProps) => (
   <StateProvider store={store}>
-    <Theme>
-      <AppShell
-        styles={{ main: { overflow: "hidden", margin: 0, padding: 0 } }}
+    <ThemeProvider>
+      <Box
+        styles={{
+          main: {
+            margin: 0,
+            padding: 0,
+          },
+        }}
       >
         <Component {...pageProps} />
-      </AppShell>
-    </Theme>
+      </Box>
+    </ThemeProvider>
   </StateProvider>
 );
 
-export default MyApp;
+App.getInitialProps = ({ ctx }: { ctx: GetServerSidePropsContext }) => ({
+  colorScheme: getCookie("mantine-color-scheme", ctx) || "light",
+});
+
+export default App;

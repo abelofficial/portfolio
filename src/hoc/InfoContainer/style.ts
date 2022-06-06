@@ -15,16 +15,19 @@ const useStyles = createStyles((theme) => ({
     zIndex: -100,
     width: "100%",
     height: "100%",
-    backgroundColor: theme.colorScheme === "light" ? theme.white : theme.black,
+
+    backgroundColor: theme.colors.backgroundPrimary,
+
     opacity: 0.9,
     borderRadius: theme.defaultRadius,
     boxShadow: theme.shadows.sm,
   },
   container_main: {
+    backdropFilter: "saturate(180%) blur(3px)",
     position: "relative",
     zIndex: 200,
-    padding: "0.2rem",
     borderRadius: theme.defaultRadius,
+    padding: `${theme.spacing.xs}px ${theme.spacing.sm}px`,
   },
 }));
 

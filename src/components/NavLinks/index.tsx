@@ -26,22 +26,22 @@ const Index = ({ invert, column }: NavLinkProps) => {
       <HomeIcon
         invert={invert}
         isActive={router.pathname === ROUTES.HOME}
-        width={25}
-        height={25}
+        width={16}
+        height={16}
         onClick={() => router.push(ROUTES.HOME)}
       />
       <TimeLineIcon
         invert={invert}
         isActive={router.pathname === ROUTES.TIMELINE}
-        width={25}
-        height={25}
+        width={16}
+        height={16}
         onClick={() => router.push(ROUTES.TIMELINE)}
       />
       <BlogIcon
         invert={invert}
         isActive={router.pathname === ROUTES.BLOG}
-        width={25}
-        height={25}
+        width={16}
+        height={16}
         onClick={() => router.push(ROUTES.BLOG)}
       />
     </Box>

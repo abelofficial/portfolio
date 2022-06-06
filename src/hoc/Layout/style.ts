@@ -6,6 +6,7 @@ const styles = createStyles((theme) => ({
     height: "100%",
     width: "100vw",
     maxWidth: "100%",
+    padding: 0,
   },
   toolbar: {
     position: "fixed",
@@ -38,26 +39,26 @@ const styles = createStyles((theme) => ({
     },
   },
   main: {
+    padding: 0,
     position: "relative",
     width: "100%",
     height: "100vh",
-    backgroundColor: theme.colors.gray[1],
+    backgroundColor: theme.colors.backgroundSecondary[1],
 
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       overflowY: "scroll",
       overflowX: "hidden",
       scrollbarWidth: "thin",
-      scrollbarColor: `${theme.colors.cyan} ${theme.colors.pink}`,
       flexDirection: "row",
       alignItems: "space-between",
       "&::-webkit-scrollbar": {
         width: "0.5rem",
       },
       "&::-webkit-scrollbar-track": {
-        backgroundColor: theme.black,
+        backgroundColor: theme.colors.backgroundSecondary[1],
       },
       "&::-webkit-scrollbar-thumb": {
-        backgroundColor: theme.primaryColor,
+        backgroundColor: theme.primaryColor[0],
         borderRadius: "3rem",
         boxShadow: theme.shadows[1],
       },
@@ -73,6 +74,7 @@ const styles = createStyles((theme) => ({
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       height: "100vh",
       alignItems: "flex-start",
+      width: "60vw",
     },
   },
 
@@ -81,7 +83,8 @@ const styles = createStyles((theme) => ({
     height: "100%",
     position: "absolute",
     opacity: theme.colorScheme === "dark" ? 0.2 : 0.1,
-    filter: "blur(1px)",
+    filter: "blur(px)",
+
     backgroundImage:
       theme.colorScheme === "dark"
         ? 'url("/images/blueprints_dark.svg")'
@@ -95,10 +98,9 @@ const styles = createStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: "column",
-    paddingLeft: theme.spacing.xs,
-    paddingRight: 0,
+    padding: theme.spacing.xs,
     height: "fit-content",
-    margin: 0,
+    paddingTop: theme.spacing.lg,
 
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       height: "100vh",

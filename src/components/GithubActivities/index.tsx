@@ -8,11 +8,11 @@ import InfoContainer from "@hoc/InfoContainer";
 const Index = () => {
   const { classes, theme } = useStyles();
   const calendarTheme = {
-    level0: theme.colors.gray[2],
-    level1: theme.colorScheme === "light" ? "#9BE9A8" : "#f9ff0c",
-    level2: theme.colorScheme === "light" ? "#40C463" : "#ffe40c",
-    level3: theme.colorScheme === "light" ? "#30A14E" : "#ccb609",
-    level4: theme.colorScheme === "light" ? "#216E39" : "#998806",
+    level0: theme.colors.backgroundSecondary[1],
+    level1: theme.primaryColor[3],
+    level2: theme.primaryColor[2],
+    level3: theme.primaryColor[1],
+    level4: theme.primaryColor[0],
   };
   return (
     <InfoContainer>

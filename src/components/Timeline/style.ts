@@ -22,7 +22,7 @@ const styles = createStyles((theme) => ({
   },
   highlightText: {
     fontStyle: "italic",
-    color: theme.colors.gray[7],
+    color: theme.primaryColor[0],
     fontWeight: 200,
     overflowWrap: "break-word",
   },

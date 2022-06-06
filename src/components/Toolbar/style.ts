@@ -12,7 +12,7 @@ const styles = createStyles((theme) => ({
     padding: `${theme.spacing.sm}px ${theme.spacing.xs}px`,
     borderRadius: theme.spacing.sm,
     boxShadow: theme.shadows.md,
-    backgroundColor: theme.primaryColor,
+    backgroundColor: theme.primaryColor[0],
   },
   initial: {
     fontWeight: 900,
@@ -25,15 +25,15 @@ const styles = createStyles((theme) => ({
     alignItems: "center",
   },
   openButton: {
-    backgroundColor: theme.primaryColor,
+    backgroundColor: theme.primaryColor[0],
   },
   actionButton: {
-    width: "3rem",
+    width: "2.5rem",
     padding: "0.2rem",
     position: "absolute",
     zIndex: 100,
     borderRadius: "50%",
-    boxShadow: theme.shadows.sm,
+    boxShadow: theme.shadows.lg,
   },
 
   showActionButton: {

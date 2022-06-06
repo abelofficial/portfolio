@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import clsx from "classnames";
-import { Box, Grid } from "@mantine/core";
+import { Box } from "@mantine/core";
 import useStyles from "./style";
 import Toolbar from "@components/Toolbar";
 import Sidebar from "@components/Sidebar";
@@ -43,19 +43,19 @@ const Layout = ({ children }: LayoutProps) => {
       >
         <Toolbar />
       </Box>
-      <Grid columns={16} className={classes.container}>
-        <Grid.Col md={10} sm={16} className={classes.main}>
+      <Box className={classes.container}>
+        <Box className={classes.main}>
           <PageContainer>{children}</PageContainer>
           {/* <Footer /> */}
-        </Grid.Col>
-        <Grid.Col md={6} sm={16} className={classes.sideBar}>
+        </Box>
+        <Box className={classes.sideBar}>
           <Box className={classes.sideBar_bg} />
           <Box className={classes.sideBar_main}>
             <MenuBar />
             <Sidebar />
           </Box>
-        </Grid.Col>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 };

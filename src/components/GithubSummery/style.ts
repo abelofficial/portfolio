@@ -47,7 +47,7 @@ const styles = createStyles((theme) => ({
   highlightedText: {
     margin: 0,
     display: "block",
-    color: theme.primaryColor,
+    color: theme.primaryColor[0],
     fontWeight: "bold",
   },
   statues: {

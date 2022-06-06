@@ -5,9 +5,8 @@ const useStyles = createStyles((theme) => ({
     padding: theme.spacing.xs,
     width: "100vw",
     maxWidth: "100%",
-    minHeight: "90vh",
+    minHeight: "100vh",
     margin: "auto",
-
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       paddingLeft: "5rem",
     },
