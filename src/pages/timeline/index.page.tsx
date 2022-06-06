@@ -17,7 +17,7 @@ const Index = ({ data }) => {
   );
 };
 
-export async function getStaticProps(context) {
+export async function getStaticProps() {
   return {
     props: { data: staticData }, // will be passed to the page component as props
   };

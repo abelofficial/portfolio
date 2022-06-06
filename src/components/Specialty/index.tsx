@@ -13,7 +13,7 @@ const Index = () => {
     <InfoContainer>
       <Grid className={classes.container}>
         <Title order={4}>Specialty</Title>
-        {data.map((item, index) => (
+        {data.map((item, _i) => (
           <Box key={uuid()}>
             <Divider className={classes.divider} />
             <Container className={classes.section}>

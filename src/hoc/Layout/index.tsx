@@ -10,7 +10,7 @@ import {
   selectDrawer,
   showBurgerMenu,
 } from "@store/SiteConfig";
-import useOnScreen from "@hooks/UseOnScreen";
+import useOnScreen from "@src/hooks/UseOnScreen";
 import MenuBar from "@components/MenuBar";
 import PageContainer from "@hoc/PageContainer";
 

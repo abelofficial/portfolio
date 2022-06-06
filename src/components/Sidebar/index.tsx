@@ -4,24 +4,13 @@ import GithubSummery from "@components/GithubSummery";
 import { useMediaQuery } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectSideBarPage,
-  setSideBarSummary,
-  setSideBarSummaryLock,
-} from "@store/SiteConfig";
-import useStyles from "./style";
+import { useDispatch } from "react-redux";
+import { setSideBarSummaryLock } from "@store/SiteConfig";
 
 const Index = () => {
-  const { classes } = useStyles();
   const navigator = useRouter();
-  const sideBarPage = useSelector(selectSideBarPage);
   const dispatch = useDispatch();
   const bigScreen = useMediaQuery("(min-width: 600px)", false);
-
-  const handleChange = () => {
-    dispatch(setSideBarSummary(!sideBarPage.summary));
-  };
 
   useEffect(() => {
     if (navigator.pathname === "/") dispatch(setSideBarSummaryLock(true));

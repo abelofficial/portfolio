@@ -1,7 +1,6 @@
 import React from "react";
 
 // Component style
-import useStyles from "./style";
 import { Box } from "@mantine/core";
 import { LightModeIcon, DarkModeIcon } from "@components/Icons";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,8 +11,6 @@ import {
 } from "@store/SiteConfig";
 
 export const SiteThemeSelector = () => {
-  const { classes } = useStyles();
-
   const dispatch = useDispatch();
   const darkMode = useSelector(selectDarkMode);
 

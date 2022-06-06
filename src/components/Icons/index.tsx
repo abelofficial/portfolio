@@ -158,9 +158,7 @@ export const LogInIcon = ({}) => {
   );
 };
 
-export const BurgerMenuIcon = ({ isActive, invert, ...props }) => {
-  const { classes } = useStyles();
-
+export const BurgerMenuIcon = () => {
   return (
     <svg viewBox='0 0 52 45'>
       <path

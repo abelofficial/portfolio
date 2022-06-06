@@ -25,11 +25,6 @@ const Index = () => {
   const showBurgerMenu = useSelector(selectBurgerMenu);
   const ref = useClickOutside(() => handleOutsideClick());
 
-  useEffect(() => {
-    bigScreen && dispatch(openDrawer());
-    bigScreen || handleCloseDrawer();
-  }, [bigScreen]);
-
   const handleCloseDrawer = () => {
     bigScreen || dispatch(closeDrawer());
   };
@@ -37,6 +32,11 @@ const Index = () => {
   const handleOutsideClick = () => {
     bigScreen || dispatch(closeDrawer());
   };
+
+  useEffect(() => {
+    bigScreen && dispatch(openDrawer());
+    bigScreen || handleCloseDrawer();
+  }, [bigScreen, dispatch]);
 
   return (
     <Box ref={ref}>
@@ -58,7 +58,7 @@ const Index = () => {
             [`${classes.hideActionButton}`]: drawer,
           })}
         >
-          <BurgerMenuIcon isActive={true} invert={true} height={20} />
+          <BurgerMenuIcon />
         </Box>
       )}
     </Box>
