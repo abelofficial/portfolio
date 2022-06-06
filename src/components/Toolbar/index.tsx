@@ -38,12 +38,12 @@ const Index = () => {
     <Box ref={ref}>
       <Grid className={classes.mainSection}>
         <Box className={classes.headerContainer}>
-          <Title order={4} className={classes.initial}>
+          <Title order={2} className={classes.initial}>
             A.S
           </Title>
         </Box>
         <Box my='lg'>
-          <NavLink invert />
+          <NavLink column />
         </Box>
       </Grid>
       {showBurgerMenu && (
@@ -54,7 +54,7 @@ const Index = () => {
             [`${classes.hideActionButton}`]: drawer,
           })}
         >
-          <BurgerMenuIcon isActive={true} invert={true} />
+          <BurgerMenuIcon isActive={true} invert={true} height={20} />
         </Box>
       )}
     </Box>

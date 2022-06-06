@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <InfoContainer>
       <Box className={classes.container}>
-        <NavLinks invert={undefined} />
+        <NavLinks />
         <SiteThemeSelector />
       </Box>
     </InfoContainer>

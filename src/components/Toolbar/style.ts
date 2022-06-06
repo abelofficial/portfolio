@@ -2,18 +2,20 @@ import { createStyles } from "@mantine/core";
 
 const styles = createStyles((theme) => ({
   mainSection: {
+    height: "50vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-around",
     position: "absolute",
     zIndex: 200,
-    padding: `${theme.spacing.sm} ${theme.spacing.xs}`,
+    padding: `${theme.spacing.sm}px ${theme.spacing.xs}px`,
     borderRadius: theme.spacing.sm,
-    boxShadow: theme.shadows.sm,
+    boxShadow: theme.shadows.md,
     backgroundColor: theme.primaryColor,
   },
   initial: {
+    fontWeight: 900,
     color: theme.colors.gray,
     justifySelf: "center",
   },
@@ -23,27 +25,15 @@ const styles = createStyles((theme) => ({
     alignItems: "center",
   },
   openButton: {
-    backgroundColor:
-      theme.colorScheme === "light" ? theme.colors.orange : theme.primaryColor,
-    "&:hover": {
-      backgroundColor:
-        theme.colorScheme === "light"
-          ? theme.colors.orange
-          : theme.primaryColor,
-    },
-  },
-  closeButton: {
     backgroundColor: theme.primaryColor,
-    "&:hover": {
-      backgroundColor: theme.primaryColor,
-    },
   },
   actionButton: {
-    boxShadow: theme.shadows.xs,
-    padding: "0.3rem",
+    width: "3rem",
+    padding: "0.2rem",
     position: "absolute",
     zIndex: 100,
-    borderRadius: theme.defaultRadius,
+    borderRadius: "50%",
+    boxShadow: theme.shadows.sm,
   },
 
   showActionButton: {

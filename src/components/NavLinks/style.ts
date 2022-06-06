@@ -7,6 +7,12 @@ const styles = createStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-evenly",
   },
+  row: {
+    flexDirection: "row",
+  },
+  column: {
+    flexDirection: "column",
+  },
 
   link: {
     "& a": {

@@ -23,7 +23,7 @@ const useStyles = createStyles((theme) => ({
   container_main: {
     position: "relative",
     zIndex: 200,
-    padding: "1rem",
+    padding: "0.2rem",
     borderRadius: theme.defaultRadius,
   },
 }));
