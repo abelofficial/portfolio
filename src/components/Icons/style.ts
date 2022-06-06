@@ -20,8 +20,14 @@ const styles = createStyles((theme) => ({
     fill: theme.white,
   },
   invertActive: {
-    stroke: theme.colorScheme === "dark" ? theme.white : theme.primaryColor[0],
-    fill: theme.colorScheme === "dark" ? theme.white : theme.primaryColor[0],
+    stroke:
+      theme.colorScheme === "dark"
+        ? theme.colors.gray[0]
+        : theme.primaryColor[0],
+    fill:
+      theme.colorScheme === "dark"
+        ? theme.colors.gray[0]
+        : theme.primaryColor[0],
   },
 }));
 

@@ -11,22 +11,26 @@ const Index = () => {
 
   return (
     <InfoContainer>
-      <Grid className={classes.container}>
-        <Title order={4}>Specialty</Title>
+      <Grid columns={1} className={classes.container}>
+        <Grid.Col span={1}>
+          <Title order={4}>Specialty</Title>
+        </Grid.Col>
         {data.map((item, _i) => (
-          <Box key={uuid()}>
-            <Divider className={classes.divider} />
-            <Container className={classes.section}>
-              <Image
-                alt={item.title + " Image"}
-                src={item.icon}
-                width={60}
-                height={60}
-              />
-              <Title order={5}>{item.title}</Title>
-              <p>{item.content}</p>
-            </Container>
-          </Box>
+          <Grid.Col span={1} key={uuid()}>
+            <Box>
+              <Divider className={classes.divider} />
+              <Container className={classes.section}>
+                <Image
+                  alt={item.title + " Image"}
+                  src={item.icon}
+                  width={60}
+                  height={60}
+                />
+                <Title order={5}>{item.title}</Title>
+                <p>{item.content}</p>
+              </Container>
+            </Box>
+          </Grid.Col>
         ))}
       </Grid>
     </InfoContainer>
