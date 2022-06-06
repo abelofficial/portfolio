@@ -1,11 +1,11 @@
 import { Global, MantineProvider } from "@mantine/core";
-import { IProps } from "src/types";
+import { IProps } from "@src/types";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectDarkMode,
   setDarkMode,
   turnOffDarkMode,
-} from "src/store/SiteConfig";
+} from "@store/SiteConfig";
 import { useEffect } from "react";
 import darkTheme from "@utils/theme/darkTheme";
 import lightTheme from "@utils/theme/lightTheme";

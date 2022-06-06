@@ -1,5 +1,5 @@
 import { HttpClientBase } from "@utils/HttpClient";
-import { IGithubOrgs, IGithubProfile } from "src/types";
+import { IGithubOrgs, IGithubProfile } from "@src/types";
 
 export class GithubConnect extends HttpClientBase {
   public constructor() {

@@ -9,7 +9,7 @@ import {
   selectSideBarPage,
   setSideBarSummary,
   setSideBarSummaryLock,
-} from "src/store/SiteConfig";
+} from "@store/SiteConfig";
 import useStyles from "./style";
 
 const Index = () => {

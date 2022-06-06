@@ -11,7 +11,7 @@ import {
   selectBurgerMenu,
   closeDrawer,
   openDrawer,
-} from "src/store/SiteConfig";
+} from "@store/SiteConfig";
 
 const Index = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks

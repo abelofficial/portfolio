@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, BoxProps } from "@mantine/core";
 import useStyles from "./style";
-import { IProps } from "src/types";
+import { IProps } from "@src/types";
 
 export interface IPageContainer extends IProps {
   props?: BoxProps<any>;

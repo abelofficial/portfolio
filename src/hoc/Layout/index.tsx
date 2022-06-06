@@ -9,8 +9,8 @@ import {
   hideBurgerMenu,
   selectDrawer,
   showBurgerMenu,
-} from "src/store/SiteConfig";
-import useOnScreen from "src/hooks/UseOnScreen";
+} from "@store/SiteConfig";
+import useOnScreen from "@hooks/UseOnScreen";
 import MenuBar from "@components/MenuBar";
 import PageContainer from "@hoc/PageContainer";
 

@@ -5,7 +5,7 @@ import { GetServerSidePropsContext } from "next";
 import { AppProps } from "next/app";
 import { Provider as StateProvider } from "react-redux";
 import { getCookie } from "cookies-next";
-import store from "src/store";
+import store from "@src/store";
 import Layout from "@hoc/Layout";
 
 const App = ({ Component, pageProps }: AppProps) => (

@@ -9,7 +9,7 @@ import {
   selectDarkMode,
   turnOffDarkMode,
   setDarkMode,
-} from "src/store/SiteConfig";
+} from "@store/SiteConfig";
 
 export const SiteThemeSelector = () => {
   const { classes } = useStyles();

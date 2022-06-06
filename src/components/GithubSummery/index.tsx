@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import useStyles from "./style";
 import { GithubConnect } from "@services/GithubConnect";
-import { IGithubProfile } from "src/types";
+import { IGithubProfile } from "@src/types";
 import InfoContainer from "@hoc/InfoContainer";
 import { Grid, Box, Title } from "@mantine/core";
 
