@@ -17,7 +17,7 @@ const styles = createStyles((theme) => ({
   },
   showToolbar: {
     left: "1rem",
-    top: "2rem",
+    top: "6rem",
     transform: "scale(1)",
   },
   hideToolbar: {

@@ -2,14 +2,17 @@ import { createStyles } from "@mantine/core";
 
 const styles = createStyles((theme) => ({
   contactLink: {
-    textDecoration: "none",
-
     padding: theme.spacing.sm,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    textDecoration: "none",
     "&:focus": {
       WebkitTapHighlightColor: "transparent",
+    },
+    "& p": {
+      color: theme.colorScheme === "light" ? theme.black : theme.white,
+      fontStyle: "normal",
     },
   },
   contactContainer: {

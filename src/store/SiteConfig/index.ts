@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { setCookies } from "cookies-next";
 
 // Define a type for the slice state
 interface ConfigState {
   drawer: boolean;
   showBurgerMenu: boolean;
-  darkMode: boolean;
+  darkMode: boolean | undefined;
   sideBarPage: {
     summary: boolean;
     lock: boolean;
@@ -15,7 +16,7 @@ interface ConfigState {
 const initialState: ConfigState = {
   drawer: false,
   showBurgerMenu: false,
-  darkMode: false,
+  darkMode: undefined,
   sideBarPage: {
     summary: false,
     lock: false,
@@ -35,9 +36,15 @@ export const configsSlice = createSlice({
     },
     setDarkMode: (state) => {
       state.darkMode = true;
+      setCookies("mantine-color-scheme", "dark", {
+        maxAge: 60 * 60 * 24 * 30,
+      });
     },
     turnOffDarkMode: (state) => {
       state.darkMode = false;
+      setCookies("mantine-color-scheme", "light", {
+        maxAge: 60 * 60 * 24 * 30,
+      });
     },
     setSideBarSummary: (state, action) => {
       if (!state.sideBarPage.lock) state.sideBarPage.summary = action.payload;

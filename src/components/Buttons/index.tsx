@@ -18,11 +18,11 @@ export const SiteThemeSelector = () => {
     <>
       {darkMode ? (
         <Box onClick={() => dispatch(turnOffDarkMode())}>
-          <LightModeIcon width={30} />
+          <DarkModeIcon width={30} />
         </Box>
       ) : (
         <Box onClick={() => dispatch(setDarkMode())}>
-          <DarkModeIcon width={30} />
+          <LightModeIcon width={30} />
         </Box>
       )}
     </>

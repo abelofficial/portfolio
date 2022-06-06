@@ -12,11 +12,15 @@ const styles = createStyles((theme) => ({
     padding: `${theme.spacing.sm}px ${theme.spacing.xs}px`,
     borderRadius: theme.spacing.sm,
     boxShadow: theme.shadows.md,
-    backgroundColor: theme.primaryColor[0],
+    backgroundColor:
+      theme.colorScheme === "light" ? theme.black : theme.primaryColor[0],
   },
   initial: {
     fontWeight: 900,
-    color: theme.colors.gray,
+    color:
+      theme.colorScheme === "light"
+        ? theme.white
+        : theme.colors.backgroundPrimary[0],
     justifySelf: "center",
   },
   headerContainer: {

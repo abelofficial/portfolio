@@ -16,12 +16,12 @@ const styles = createStyles((theme) => ({
     fill: theme.colorScheme === "dark" ? theme.white : theme.black,
   },
   invert: {
-    stroke: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fill: theme.colorScheme === "dark" ? theme.white : theme.black,
+    stroke: theme.white,
+    fill: theme.white,
   },
   invertActive: {
-    stroke: theme.colorScheme === "dark" ? theme.black : theme.white,
-    fill: theme.colorScheme === "dark" ? theme.black : theme.white,
+    stroke: theme.colorScheme === "dark" ? theme.white : theme.primaryColor[0],
+    fill: theme.colorScheme === "dark" ? theme.white : theme.primaryColor[0],
   },
 }));
 
