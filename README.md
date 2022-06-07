@@ -1,18 +1,40 @@
-# Portfolio website
+# My Portfolio Website
 
-This is a personal website to showcase my work and daily activities. The website is made using [Nextjs v.12](https://nextjs.org/blog/next-12) and [Material-UI v.5](https://mui.com/blog/mui-core-v5/). Currently the website shows my daily activities on github as well as previous work experiences, timeline, and my tech stacks.
+![Banner](public/thumbnails/screenshot-dark.png)
 
-## Findings
+This is a personal website to showcase my work and daily activities. The website is made using [Nextjs v.12](https://nextjs.org/blog/next-12). Currently the website shows my daily activities on github as well as previous work experiences, timeline, and my tech stacks.
 
-While doing this project I have learned so much on how to use the newest version Nextjs (v.12) with the newest version of material ui (V.5). The pre-configurations could be tricky however, by following [this suggestion solution](https://github.com/mui/material-ui/tree/master/examples/nextjs) from Material-ui i was able to configure it. I also handled page route animation using [Framer-motions](https://www.framer.com/docs/).
+## Packages
 
-## Running project
+- React `17.0.2`
+- Next `12.1.6`
+- Framer-motion `6.3.10`
+- Cookies-next `2.0.4`
+- React-redux `8.0.2`
+- Reduxjs/toolkit `1.8.2`
+- Axios `0.27.2`
+- Mantine/next `4.2.8`
+- Mantine/core `4.2.7`
+- Mantine/hooks `4.2.7`
 
-- `npm run lint && npm run dev`
+## Instruction on running project
 
-## Notes
+1. Download or clone this repository to your local machine and change your working directory to the repository directory.
 
-All images are in the SVG format and color changes are done programmatically. The images can be found inside `/src/components/collections` folder. All text contents are defined in the directory `/src/static` as JSON format.
+```
+$ git clone <repo-url>
+$ cd <repo-directory>
+```
+
+2. Copy the `.env.example` file to `.env.local` file. Change the values in the file accordingly.
+
+3. Run the following command:
+
+```
+$ npm run dev
+```
+
+4. Now your endpoints should be available on [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
 
 ## Browser Support
 
