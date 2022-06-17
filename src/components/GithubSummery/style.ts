@@ -6,30 +6,15 @@ const styles = createStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
   },
-  accountInfoText: {
-    marginRight: theme.spacing.sm,
-  },
   profile: {
     display: "flex",
-
+    flexDirection: "column",
     alignItems: "center",
-  },
-  profileInfo: {
-    width: "100%",
-    paddingLeft: theme.spacing.sm,
+    justifyContent: "center",
   },
   avatar: {
     borderRadius: "50%",
-    // boxShadow: theme.shadows[1],
-  },
-  infoTextContainer: {
-    width: "fit-content",
-  },
-  followContainer: {
-    width: "40%",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+    boxShadow: theme.shadows[4],
   },
   statusContainer: {
     display: "flex",
@@ -47,7 +32,6 @@ const styles = createStyles((theme) => ({
   highlightedText: {
     margin: 0,
     display: "block",
-    color: theme.primaryColor[0],
     fontWeight: "bold",
   },
   statues: {
