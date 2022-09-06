@@ -6,8 +6,8 @@ import {
   turnOffDarkMode,
 } from "@store/SiteConfig";
 import { useEffect } from "react";
-import darkTheme from "@utils/theme/darkTheme";
-import lightTheme from "@utils/theme/lightTheme";
+import darkTheme from "@styles/darkTheme";
+import lightTheme from "@styles/lightTheme";
 
 export interface IThemeProviderProps {
   mode: ColorScheme | undefined;

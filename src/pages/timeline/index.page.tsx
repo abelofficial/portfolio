@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import routeAnim from "@utils/routeAnimation.json";
+import routeAnim from "@styles/routeAnimation.json";
 import staticData from "@static/timeLineData.json";
 import Timeline from "@components/Timeline";
 import Specialty from "@components/Specialty";

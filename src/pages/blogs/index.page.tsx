@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import routeAnim from "@utils/routeAnimation.json";
+import routeAnim from "@styles/routeAnimation.json";
 import ComingSoon from "@components/ComingSoon";
 
 const Index = () => {
