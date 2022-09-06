@@ -18,6 +18,7 @@ const styles = createStyles((theme) => ({
     position: "relative",
     zIndex: 150,
     margin: "0.5rem 3rem",
+    overflow: "hidden",
   },
 }));
 
