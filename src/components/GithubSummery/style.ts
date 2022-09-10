@@ -37,6 +37,12 @@ const styles = createStyles((theme) => ({
   statues: {
     display: "flex",
     justifyContent: "space-between",
+    margin: "0.5rem auto",
+  },
+  calenderContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
 

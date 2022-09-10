@@ -18,9 +18,9 @@ const Index = () => {
       style={{
         color: theme.colorScheme === "light" ? theme.black : theme.white,
       }}
-      blockMargin={5}
-      blockRadius={7}
-      blockSize={14}
+      blockMargin={4}
+      blockRadius={5}
+      blockSize={10}
     />
   );
 };

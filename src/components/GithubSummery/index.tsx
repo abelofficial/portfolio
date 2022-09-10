@@ -55,7 +55,8 @@ const Index = () => {
           />
           <strong className={classes.text}> {githubAccount?.name} </strong>
         </Grid.Col>
-        <Grid.Col xs={12} className={classes.statues}>
+
+        <Grid.Col xs={8} className={classes.statues}>
           <Box className={classes.statusContainer}>
             <pre className={classes.highlightedText}>
               {githubAccount?.public_repos}
@@ -73,7 +74,7 @@ const Index = () => {
             <p className={classes.text}>Organizations</p>
           </Box>
         </Grid.Col>
-        <Grid.Col xs={12}>
+        <Grid.Col xs={12} className={classes.calenderContainer}>
           <GithubActivities />
         </Grid.Col>
       </Grid>

@@ -35,6 +35,27 @@ export const ThemeProvider = ({ mode, children }: IThemeProviderProps) => {
       withNormalizeCSS
       theme={{
         defaultRadius: "1rem",
+        headings: {
+          // properties for all headings
+          fontWeight: 400,
+          fontFamily: "Roboto",
+
+          // properties for individual headings, all of them are optional
+          sizes: {
+            h1: { fontWeight: 100, fontSize: 32, lineHeight: 1.4 },
+            h2: { fontSize: 28, lineHeight: 1.5 },
+            // ...up to h6
+            h6: { fontWeight: 900 },
+          },
+        },
+        fontSizes: {
+          xs: 10,
+          sm: 12,
+          md: 14,
+          lg: 16,
+          xl: 20,
+        },
+
         ...theme,
       }}
     >

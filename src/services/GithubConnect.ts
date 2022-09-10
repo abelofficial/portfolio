@@ -8,8 +8,5 @@ export class GithubConnect extends HttpClientBase {
 
   public getUser = () => this.instance.get<IGithubProfile>(`user`);
 
-  // public getRepositories = () =>
-  //   this.instance.get<IGithubProfile>(`users/abelofficial/repos`);
-
   public getUserOrgs = () => this.instance.get<IGithubOrgs[]>(`user/orgs`);
 }
