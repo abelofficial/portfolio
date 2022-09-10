@@ -1,26 +1,18 @@
 [
   {
     "name": "Zede tech",
-    "media": "/images/linkedin-icon.svg",
+    "media": "/videos/zede.mp4",
     "github": "https://www.linkedin.com/in/abel-sintaro/",
     "link": "https://www.linkedin.com/in/abel-sintaro/",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "description": "From idea to design & development to post launch support. Zede tech develops cost efficient, future proof solutions for companies that aim for impact.",
     "techStack": ["React", "Node", "MongoDB", "Express"]
   },
   {
     "name": "SALT pre-course",
-    "media": "/images/linkedin-icon.svg",
+    "media": "/videos/retro.mp4",
     "github": "https://www.linkedin.com/in/abel-sintaro/",
     "link": "https://www.linkedin.com/in/abel-sintaro/",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    "techStack": ["React", "Node", "MongoDB", "Express"]
-  },
-  {
-    "name": "SALT retro",
-    "media": "/images/linkedin-icon.svg",
-    "github": "https://www.linkedin.com/in/abel-sintaro/",
-    "link": "https://www.linkedin.com/in/abel-sintaro/",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
-    "techStack": ["React", "Node", "MongoDB", "Express"]
+    "techStack": ["React", "Node", "MongoDB", "Nextjs", "Prisma", "TRPC"]
   }
 ]

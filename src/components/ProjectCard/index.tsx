@@ -22,7 +22,7 @@ const Index = ({ data }: ProjectCardProps) => {
     <Grid className={classes.container}>
       <Grid.Col xs={7}>
         <video className={classes.media} autoPlay loop muted>
-          <source src='/videos/zede.mp4' type='video/mp4' />
+          <source src={data.media} type='video/mp4' />
         </video>
       </Grid.Col>
       <Grid.Col xs={5}>

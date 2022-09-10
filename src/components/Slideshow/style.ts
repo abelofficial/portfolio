@@ -39,7 +39,7 @@ const styles = createStyles((theme) => ({
         : theme.colors.gray[6],
   },
   activePointer: {
-    backgroundColor: theme.primaryColor[2],
+    backgroundColor: theme.primaryColor[3],
   },
   indicatorContent: {
     display: "flex",
