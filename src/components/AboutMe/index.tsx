@@ -1,4 +1,4 @@
-import { Box, Container, Title } from "@mantine/core";
+import { Grid, Title } from "@mantine/core";
 import React from "react";
 import useStyles from "./style";
 import data from "@static/aboutMeData.json";
@@ -9,13 +9,11 @@ const Index = () => {
 
   return (
     <InfoContainer>
-      <Container className={classes.container}>
-        <Box>
-          <Title order={2}> {data[0].title} </Title>
-          <p>{data[0].description}</p>
-        </Box>
-        <Avatar alt='AboutMe image' />
-      </Container>
+      <Grid align='center' justify='space-evenly' className={classes.container}>
+        <Title order={2}> {data[0].title} </Title>
+        <Avatar alt='AboutMe image' width={50} />
+      </Grid>
+      <p>{data[0].description}</p>
     </InfoContainer>
   );
 };

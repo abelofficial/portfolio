@@ -23,11 +23,11 @@ const styles = createStyles((theme) => ({
     stroke:
       theme.colorScheme === "dark"
         ? theme.colors.gray[0]
-        : theme.primaryColor[0],
+        : theme.primaryColor[1],
     fill:
       theme.colorScheme === "dark"
         ? theme.colors.gray[0]
-        : theme.primaryColor[0],
+        : theme.primaryColor[1],
   },
 }));
 
