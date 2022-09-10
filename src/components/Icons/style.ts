@@ -5,8 +5,8 @@ const styles = createStyles((theme) => ({
     margin: theme.spacing.xs,
   },
   active: {
-    stroke: theme.primaryColor[0],
-    fill: theme.primaryColor[0],
+    stroke: theme.colors.primaryColor[0],
+    fill: theme.colors.primaryColor[0],
   },
   largeIcon: {
     fontSize: "2rem",
@@ -23,11 +23,11 @@ const styles = createStyles((theme) => ({
     stroke:
       theme.colorScheme === "dark"
         ? theme.colors.gray[0]
-        : theme.primaryColor[1],
+        : theme.colors.primaryColor[1],
     fill:
       theme.colorScheme === "dark"
         ? theme.colors.gray[0]
-        : theme.primaryColor[1],
+        : theme.colors.primaryColor[1],
   },
 }));
 

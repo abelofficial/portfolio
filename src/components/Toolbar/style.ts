@@ -13,7 +13,9 @@ const styles = createStyles((theme) => ({
     borderRadius: theme.spacing.sm,
     boxShadow: theme.shadows.md,
     backgroundColor:
-      theme.colorScheme === "light" ? theme.black : theme.primaryColor[0],
+      theme.colorScheme === "light"
+        ? theme.black
+        : theme.colors.primaryColor[0],
   },
   initial: {
     fontWeight: 900,
@@ -29,7 +31,7 @@ const styles = createStyles((theme) => ({
     alignItems: "center",
   },
   openButton: {
-    backgroundColor: theme.primaryColor[0],
+    backgroundColor: theme.colors.primaryColor[0],
     border: "0.2rem solid" + theme.colors.gray[0],
   },
   actionButton: {

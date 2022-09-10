@@ -18,7 +18,7 @@ const styles = createStyles((theme) => ({
     "& a": {
       textDecoration: "none",
       margin: theme.spacing.xs,
-      color: theme.primaryColor[0],
+      color: theme.colors.primaryColor[0],
     },
   },
   active: {
