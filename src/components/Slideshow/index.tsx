@@ -38,7 +38,7 @@ const Index = ({ children }: SlideshowProps) => {
 
     setPage([currentPage, newDirection]);
   };
-  console.log("page: ", page);
+
   return (
     <>
       <Box className={classes.container}>
