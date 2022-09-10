@@ -30,14 +30,20 @@ const styles = createStyles((theme) => ({
   },
   openButton: {
     backgroundColor: theme.primaryColor[0],
+    border: "0.2rem solid" + theme.colors.gray[0],
   },
   actionButton: {
-    width: "2.5rem",
-    padding: "0.2rem",
+    width: "2.3rem",
+    height: "2.3rem",
+    padding: "0.15rem",
     position: "absolute",
     zIndex: 100,
     borderRadius: "50%",
-    boxShadow: theme.shadows.lg,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "0.5rem",
+    boxShadow: theme.shadows.sm,
   },
 
   showActionButton: {
