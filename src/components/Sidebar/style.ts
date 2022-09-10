@@ -38,7 +38,7 @@ const styles = createStyles((theme) => ({
   icon: {
     borderRadius: "50%",
     boxShadow: theme.shadows[1],
-    color: theme.primaryColor[0],
+    color: theme.colors.primaryColor[0],
   },
 }));
 

@@ -13,7 +13,7 @@ const Index = () => {
         <Title order={2}> {data[0].title} </Title>
         <Avatar alt='AboutMe image' width={50} />
       </Grid>
-      <p>{data[0].description}</p>
+      <p className={classes.text}>{data[0].description}</p>
     </InfoContainer>
   );
 };
