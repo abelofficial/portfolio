@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 import { Box, Grid, Title } from "@mantine/core";
 import useStyles from "./style";
 
@@ -21,9 +21,14 @@ const Index = ({ data }: ProjectCardProps) => {
   return (
     <Grid className={classes.container}>
       <Grid.Col xs={7}>
-        <video className={classes.media} autoPlay loop muted>
-          <source src={data.media} type='video/mp4' />
-        </video>
+        <Image
+          src={data.media}
+          alt={data.name}
+          className={classes.media}
+          width={300}
+          height={150}
+          layout='responsive'
+        />
       </Grid.Col>
       <Grid.Col xs={5}>
         <Title order={3} pb='xs'>
