@@ -1,11 +1,26 @@
 import React, { Children, useState } from "react";
+import clsx from "classnames";
 import useStyles from "./style";
-import InfoContainer from "@hoc/InfoContainer";
 import { Box } from "@mantine/core";
 import { BackIcon, NextIcon } from "@components/Icons";
 import { AnimatePresence, motion } from "framer-motion";
 import { variants, swipePower, swipeConfidenceThreshold } from "./helper";
 
+export interface IndicatorProps {
+  active: boolean;
+}
+
+export const Indicator = ({ active }: IndicatorProps) => {
+  const { classes } = useStyles();
+
+  return (
+    <div
+      className={clsx(classes.pointer, {
+        [classes.activePointer]: active,
+      })}
+    ></div>
+  );
+};
 export interface SlideshowProps {
   children: React.ReactNode;
 }
@@ -23,9 +38,9 @@ const Index = ({ children }: SlideshowProps) => {
 
     setPage([currentPage, newDirection]);
   };
-
+  console.log("page: ", page);
   return (
-    <InfoContainer>
+    <>
       <Box className={classes.container}>
         <Box className={classes.header}>
           <BackIcon onClick={() => paginate(-1)} />
@@ -64,8 +79,13 @@ const Index = ({ children }: SlideshowProps) => {
             }
           </div>
         </AnimatePresence>
+        <Box className={classes.indicatorContent}>
+          {childrenList.map((item, index) => (
+            <Indicator key={index} active={index === page} />
+          ))}
+        </Box>
       </Box>
-    </InfoContainer>
+    </>
   );
 };
 

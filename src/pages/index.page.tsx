@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import routeAnim from "@styles/routeAnimation.json";
 import TechStack from "@components/TechStack";
 import GithubSummery from "@components/GithubSummery";
+import Projects from "@components/Projects";
 
 const Index = () => {
   return (
@@ -12,6 +13,9 @@ const Index = () => {
       </motion.div>
       <motion.div variants={routeAnim.fadeInUp}>
         <TechStack />
+      </motion.div>
+      <motion.div variants={routeAnim.fadeInUp}>
+        <Projects />
       </motion.div>
     </motion.div>
   );

@@ -1,7 +1,6 @@
 import React from "react";
-import { Grid, Title } from "@mantine/core";
+import { Box, Grid, Title } from "@mantine/core";
 import useStyles from "./style";
-import Image from "next/image";
 
 type Project = {
   name: string;
@@ -9,6 +8,7 @@ type Project = {
   github: string;
   link: string;
   description: string;
+  techStack: string[];
 };
 
 export interface ProjectCardProps {
@@ -20,21 +20,24 @@ const Index = ({ data }: ProjectCardProps) => {
 
   return (
     <Grid className={classes.container}>
-      <Grid.Col xs={6}>
-        <Image
-          className={classes.media}
-          alt=''
-          src='/images/project.png'
-          width={400}
-          height={300}
-          layout='intrinsic'
-        />
+      <Grid.Col xs={7}>
+        <video className={classes.media} autoPlay loop muted>
+          <source src='/videos/zede.mp4' type='video/mp4' />
+        </video>
       </Grid.Col>
-      <Grid.Col xs={6}>
-        <Title order={4} pb='xs'>
+      <Grid.Col xs={5}>
+        <Title order={3} pb='xs'>
           {data.name}
         </Title>
         <p className={classes.text}>{data.description}</p>
+        <Title order={4}>Tech stack</Title>
+        <Box className={classes.chipList}>
+          {data.techStack.map((t) => (
+            <Box key={t} className={classes.chip}>
+              <p>{t}</p>
+            </Box>
+          ))}
+        </Box>
       </Grid.Col>
     </Grid>
   );

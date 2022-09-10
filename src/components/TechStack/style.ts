@@ -17,8 +17,13 @@ const styles = createStyles((theme) => ({
     },
   },
 
+  image: {
+    width: theme.spacing.lg,
+    height: theme.spacing.lg,
+  },
+
   text: {
-    color: theme.primaryColor[4],
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
     paddingTop: theme.spacing.xs,
   },
   frameworkContainer: {

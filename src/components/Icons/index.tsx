@@ -397,8 +397,8 @@ export const BackIcon = (props) => {
   return (
     <svg
       viewBox='0 0 511 511'
-      width={30}
-      height={30}
+      width={26}
+      height={26}
       onClick={props.onClick}
       className={clsx(classes.icon, classes.normal)}
       {...props}
@@ -450,8 +450,8 @@ export const NextIcon = (props) => {
   return (
     <svg
       viewBox='0 0 511 511'
-      width={30}
-      height={30}
+      width={26}
+      height={26}
       onClick={props.onClick}
       className={clsx(classes.icon, classes.normal)}
     >
