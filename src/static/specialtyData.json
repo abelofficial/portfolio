@@ -1,17 +1,12 @@
 [
   {
-    "title": "Backend development using .Net core (C#)",
-    "content": "I deliver modern web applications such as Restful APIs, MVC applications & Razor pages. The applications are guaranteed to follow best practices and well known design patters such as SOLID and DRY principles.",
+    "title": "Backend development using .Net ",
+    "content": "I deliver modern web applications such as Restful APIs and MVC applications. The applications are guaranteed to follow best practices and well known best practices such as SOLID and DRY.",
     "icon": "/images/dotnet.svg"
   },
   {
     "title": "Frontend development using React",
-    "content": "I develope modern frontend applications using technologies such as Nextjs, Material-UI, Styled components and many more. The end products are guaranteed to be beautiful, user-friendly, and follow the latest best practices.",
+    "content": "I develope modern frontend applications using technologies Nextjs or vanilla React. The end products are guaranteed to be user-friendly, and follow the latest technologies.",
     "icon": "/images/react.svg"
-  },
-  {
-    "title": "Fullstack development using Nodejs platform.",
-    "content": "By using frameworks like Nestjs and Express for backend and React for frontend, I work on fullstack projects on the Nodejs platform.",
-    "icon": "/images/nodejs-icon.svg"
   }
 ]
