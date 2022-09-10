@@ -7,6 +7,12 @@ const styles = createStyles(() => ({
     width: "fit-content",
     margin: "auto",
   },
+  text: {
+    textAlign: "justify",
+    maxWidth: "30rem",
+    margin: "auto",
+    marginBottom: "1rem",
+  },
 }));
 
 export default styles;

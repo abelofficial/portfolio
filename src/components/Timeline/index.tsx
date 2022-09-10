@@ -1,13 +1,13 @@
 import { v4 as uuid } from "uuid";
-import Image from "next/image";
-import { Grid, Box, Divider, Title } from "@mantine/core";
+import { Grid, Box, Title, Timeline, ThemeIcon } from "@mantine/core";
 import React from "react";
 
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
+import { TimeLineIcon } from "@components/Icons";
 
 const Index = ({ title, data, ...restProps }) => {
-  const { classes } = useStyles();
+  const { classes, theme } = useStyles();
 
   return (
     <InfoContainer>
@@ -16,33 +16,41 @@ const Index = ({ title, data, ...restProps }) => {
           <Title order={4}>{title}</Title>
         </Grid.Col>
 
-        {data.map((item, _i) => (
-          <Box
-            className={classes.section}
-            component={Grid.Col}
-            span={1}
-            key={uuid()}
-          >
-            <Divider className={classes.divider} />
-            <Title order={5}>{item.title}</Title>
-            <Box className={classes.section}>
-              <p className={classes.highlightText}>
-                {item.place}, {item.startDate} - {item.endDate}
-              </p>
-              <Box pl='md' className={classes.sectionTop}>
-                <Image
-                  alt='github-profile-image'
-                  className={classes.avatarImage}
-                  src={item.logo}
-                  width={50}
-                  height={50}
-                  layout='intrinsic'
-                />
-                <p className={classes.textContent}>{item.content}</p>
+        <Timeline active={0} bulletSize={15} lineWidth={1} color='orange'>
+          {data.map((item, _i) => (
+            <Timeline.Item
+              key={uuid()}
+              color={theme.colors.primaryColor[5]}
+              bullet={
+                <ThemeIcon
+                  size={22}
+                  variant='gradient'
+                  gradient={{
+                    from: theme.colors.primaryColor[1],
+                    to: theme.colors.primaryColor[5],
+                  }}
+                  radius='xl'
+                >
+                  <TimeLineIcon
+                    width={16}
+                    height={16}
+                    isActive
+                    invert={false}
+                  />
+                </ThemeIcon>
+              }
+            >
+              <Box className={classes.indicator}>
+                <p className={classes.highlightText}>{item.place}</p>
               </Box>
-            </Box>
-          </Box>
-        ))}
+              <Title order={5}>{item.title}</Title>
+              <p className={classes.highlightText}>
+                {item.startDate} - {item.endDate}
+              </p>
+              <p className={classes.description}>{item.content}</p>
+            </Timeline.Item>
+          ))}
+        </Timeline>
       </Grid>
     </InfoContainer>
   );

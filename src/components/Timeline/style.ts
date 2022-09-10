@@ -8,7 +8,6 @@ const styles = createStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifySelf: "flex-start",
-    // padding: theme.spacing.xs,
   },
   divider: {
     marginTop: theme.spacing.sm,
@@ -21,9 +20,11 @@ const styles = createStyles((theme) => ({
     borderRadius: "50%",
   },
   highlightText: {
-    fontStyle: "italic",
-    color: theme.colors.gray[6],
-    fontWeight: 200,
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.gray[2]
+        : theme.colors.gray[4],
+    fontWeight: 400,
     overflowWrap: "break-word",
     margin: 0,
   },
@@ -34,6 +35,14 @@ const styles = createStyles((theme) => ({
   },
   textContent: {
     paddingLeft: theme.spacing.sm,
+  },
+  indicator: {
+    width: "fit-content",
+    borderRadius: "1rem",
+  },
+  description: {
+    textAlign: "justify",
+    maxWidth: "30rem",
   },
 }));
 

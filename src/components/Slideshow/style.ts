@@ -41,8 +41,8 @@ const styles = createStyles((theme) => ({
   activePointer: {
     backgroundColor:
       theme.colorScheme === "light"
-        ? theme.primaryColor[2]
-        : theme.primaryColor[3],
+        ? theme.colors.primaryColor[2]
+        : theme.colors.primaryColor[3],
   },
   indicatorContent: {
     display: "flex",

@@ -28,9 +28,10 @@ export const ThemeProvider = ({ mode, children }: IThemeProviderProps) => {
     darkMode && dispatch(setDarkMode());
   }, [darkMode]);
 
-  const theme = darkMode ? lightTheme : darkTheme;
+  const { colorScheme, ...theme } = darkMode ? lightTheme : darkTheme;
   return (
     <MantineProvider
+      withCSSVariables
       withGlobalStyles
       withNormalizeCSS
       theme={{
@@ -55,8 +56,10 @@ export const ThemeProvider = ({ mode, children }: IThemeProviderProps) => {
           lg: 16,
           xl: 20,
         },
-
-        ...theme,
+        colorScheme,
+        colors: {
+          ...theme.colors,
+        },
       }}
     >
       <Global

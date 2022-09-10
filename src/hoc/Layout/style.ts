@@ -52,13 +52,13 @@ const styles = createStyles((theme) => ({
       flexDirection: "row",
       alignItems: "space-between",
       "&::-webkit-scrollbar": {
-        width: "0.5rem",
+        width: "0.2rem",
       },
       "&::-webkit-scrollbar-track": {
         backgroundColor: theme.colors.backgroundSecondary[1],
       },
       "&::-webkit-scrollbar-thumb": {
-        backgroundColor: theme.primaryColor[0],
+        backgroundColor: theme.colors.primaryColor[0],
         borderRadius: "3rem",
         boxShadow: theme.shadows[1],
       },

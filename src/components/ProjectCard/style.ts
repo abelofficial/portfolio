@@ -21,7 +21,7 @@ const styles = createStyles((theme) => ({
   },
 
   chip: {
-    backgroundColor: theme.primaryColor[0],
+    backgroundColor: theme.colors.primaryColor[0],
     borderRadius: "1rem",
     padding: "0.2rem 0.5rem",
     height: "fit-content",

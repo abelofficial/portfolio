@@ -7,14 +7,14 @@ const styles = createStyles((theme) => ({
   active: {
     color:
       theme.colorScheme === "dark"
-        ? theme.primaryColor[0]
-        : theme.primaryColor[0],
+        ? theme.colors.primaryColor[0]
+        : theme.colors.primaryColor[0],
   },
   largeIcon: {
     fontSize: "2rem",
   },
   normal: {
-    color: theme.primaryColor[0],
+    color: theme.colors.primaryColor[0],
   },
   invert: {
     color: theme.colorScheme === "dark" ? theme.black : theme.white,
