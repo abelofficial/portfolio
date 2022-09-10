@@ -5,6 +5,7 @@ import { GithubConnect } from "@services/GithubConnect";
 import { IGithubProfile } from "@src/types";
 import InfoContainer from "@hoc/InfoContainer";
 import { Grid, Box, Title } from "@mantine/core";
+import GithubActivities from "@components/GithubActivities";
 
 const Index = () => {
   const { classes } = useStyles();
@@ -49,28 +50,13 @@ const Index = () => {
                 ? githubAccount?.avatar_url
                 : "/images/github-octocat.svg"
             }
-            width={40}
-            height={40}
+            width={80}
+            height={80}
           />
-          <Box className={classes.profileInfo}>
-            <strong className={classes.text}> {githubAccount?.name} </strong>
-            <Box className={classes.followContainer}>
-              <Box className={classes.statusContainer}>
-                <pre className={classes.highlightedText}>
-                  {githubAccount?.followers}
-                </pre>
-                <p className={classes.text}>followers</p>
-              </Box>
-              <Box className={classes.statusContainer}>
-                <pre className={classes.highlightedText}>
-                  {githubAccount?.following}
-                </pre>
-                <p className={classes.text}>following</p>
-              </Box>
-            </Box>
-          </Box>
+          <strong className={classes.text}> {githubAccount?.name} </strong>
         </Grid.Col>
-        <Grid.Col xs={12} className={classes.statues}>
+
+        <Grid.Col xs={8} className={classes.statues}>
           <Box className={classes.statusContainer}>
             <pre className={classes.highlightedText}>
               {githubAccount?.public_repos}
@@ -87,6 +73,9 @@ const Index = () => {
             <pre className={classes.highlightedText}>{githubAccount?.orgs}</pre>
             <p className={classes.text}>Organizations</p>
           </Box>
+        </Grid.Col>
+        <Grid.Col xs={12} className={classes.calenderContainer}>
+          <GithubActivities />
         </Grid.Col>
       </Grid>
     </InfoContainer>

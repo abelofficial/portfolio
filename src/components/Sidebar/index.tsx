@@ -1,6 +1,5 @@
 import AboutMe from "@components/AboutMe";
 import Contact from "@components/Contact";
-import GithubSummery from "@components/GithubSummery";
 import { useMediaQuery } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
@@ -20,7 +19,6 @@ const Index = () => {
     <>
       <AboutMe />
       <Contact />
-      <GithubSummery />
     </>
   );
 };
