@@ -15,12 +15,15 @@ const useStyles = createStyles((theme) => ({
     zIndex: -100,
     width: "100%",
     height: "100%",
-
     backgroundColor: theme.colors.backgroundPrimary,
-
     opacity: 0.9,
     borderRadius: theme.defaultRadius,
-    boxShadow: theme.shadows.sm,
+    border: "0.02em solid",
+    borderColor:
+      theme.colorScheme === "dark"
+        ? theme.colors.gray[4]
+        : theme.colors.gray[1],
+    // boxShadow: theme.shadows.xs,
   },
   container_main: {
     backdropFilter: "saturate(180%) blur(3px)",
