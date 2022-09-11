@@ -1,4 +1,4 @@
-import React, { Children, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 import clsx from "classnames";
 import useStyles from "./style";
 import { Box } from "@mantine/core";
@@ -17,15 +17,18 @@ export const Indicator = ({ active }: IndicatorProps) => {
     <div
       className={clsx(classes.pointer, {
         [classes.activePointer]: active,
+        [classes.inactivePointer]: !active,
       })}
     ></div>
   );
 };
 export interface SlideshowProps {
   children: React.ReactNode;
+  auto?: boolean;
+  duration?: number;
 }
 
-const Index = ({ children }: SlideshowProps) => {
+const Index = ({ children, duration, auto }: SlideshowProps) => {
   const { classes } = useStyles();
   const childrenList = Children.toArray(children);
   const [[page, direction], setPage] = useState([0, 0]);
@@ -39,13 +42,25 @@ const Index = ({ children }: SlideshowProps) => {
     setPage([currentPage, newDirection]);
   };
 
+  useEffect(() => {
+    if (auto) {
+      const interval = setInterval(
+        () => paginate(1),
+        duration ? duration : 5000
+      );
+      return () => clearInterval(interval);
+    }
+  }, [page]);
+
   return (
     <>
       <Box className={classes.container}>
-        <Box className={classes.header}>
-          <BackIcon onClick={() => paginate(-1)} />
-          <NextIcon onClick={() => paginate(1)} />
-        </Box>
+        {!auto && (
+          <Box className={classes.header}>
+            <BackIcon onClick={() => paginate(-1)} />
+            <NextIcon onClick={() => paginate(1)} />
+          </Box>
+        )}
         <AnimatePresence>
           <div className={classes.content}>
             {
