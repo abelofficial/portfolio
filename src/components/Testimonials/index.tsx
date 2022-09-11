@@ -12,7 +12,7 @@ const Testimonials = () => {
       <Title order={4} pb='xs'>
         Testimonials
       </Title>
-      <Slideshow>
+      <Slideshow auto duration={12000}>
         {data.map((t) => (
           <Grid align='center' justify='center' key={t.name}>
             <p className={classes.text}>{t.text}</p>

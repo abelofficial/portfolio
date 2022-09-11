@@ -8,6 +8,7 @@ const styles = createStyles((theme) => ({
     flexWrap: "nowrap",
   },
   text: {
+    padding: "1rem",
     fontStyle: "italic",
     fontSize: "1rem",
     color:
