@@ -26,11 +26,11 @@ const Index = () => {
               <Image
                 alt='Github Icon'
                 src={item.icon}
-                height={35}
-                width={35}
+                height={25}
+                width={25}
                 className={classes.icon}
               />
-              <p> {item.name} </p>
+              <p className={classes.text}> {item.name} </p>
             </a>
           </Center>
         ))}

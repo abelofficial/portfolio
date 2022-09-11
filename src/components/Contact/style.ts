@@ -2,7 +2,7 @@ import { createStyles } from "@mantine/core";
 
 const styles = createStyles((theme) => ({
   contactLink: {
-    padding: theme.spacing.sm,
+    padding: theme.spacing.xs,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -20,8 +20,10 @@ const styles = createStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
   },
-  title: {
-    padding: theme.spacing.sm,
+  text: {
+    margin: "0.5rem 0",
+    fontSize: "0.9rem",
+    fontWeight: 400,
   },
   icon: {
     width: "2.2rem",

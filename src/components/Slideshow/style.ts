@@ -20,14 +20,10 @@ const styles = createStyles((theme) => ({
   content: {
     position: "relative",
     zIndex: 150,
-    margin: "0 auto",
     overflow: "hidden",
     padding: "0.5rem",
+    width: "100%",
     minHeight: "10rem",
-
-    [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
-      margin: "0.5rem 3rem",
-    },
   },
   pointer: {
     width: 10,
