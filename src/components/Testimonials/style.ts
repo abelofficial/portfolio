@@ -8,13 +8,20 @@ const styles = createStyles((theme) => ({
     flexWrap: "nowrap",
   },
   text: {
-    padding: "1rem",
+    margin: "0.5rem 0",
+    padding: "0 1rem",
+    lineHeight: "1.3rem",
     fontStyle: "italic",
-    fontSize: "1rem",
+    fontSize: "0.9rem",
+    textAlign: "justify",
     color:
       theme.colorScheme === "light"
         ? theme.colors.gray[4]
         : theme.colors.gray[2],
+
+    [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+      fontSize: "1rem",
+    },
   },
   strongText: {
     fontWeight: "bold",

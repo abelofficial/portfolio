@@ -9,13 +9,13 @@ const Testimonials = () => {
 
   return (
     <InfoContainer>
-      <Title order={4} pb='xs'>
+      <Title order={4} pb='xs' color='dimmed'>
         Testimonials
       </Title>
       <Slideshow auto duration={12000}>
         {data.map((t) => (
           <Grid align='center' justify='center' key={t.name}>
-            <p className={classes.text}>{t.text}</p>
+            <p className={classes.text}>{`"${t.text}"`}</p>
             <p className={classes.strongText}> {t.name}</p> {t.position} at
             <span className={classes.highlightedText}> {t.workPlace} </span>
           </Grid>

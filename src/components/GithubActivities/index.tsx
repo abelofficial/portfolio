@@ -1,15 +1,19 @@
-import Github from "react-github-calendar";
+import Github, { Theme } from "react-github-calendar";
 import React from "react";
 import useStyles from "./style";
 
 const Index = () => {
   const { theme } = useStyles();
-  const calendarTheme = {
-    level0: theme.colors.backgroundSecondary[1],
-    level1: theme.colors.primaryColor[3],
-    level2: theme.colors.primaryColor[2],
-    level3: theme.colors.primaryColor[1],
-    level4: theme.colors.primaryColor[0],
+
+  const calendarTheme: Theme = {
+    level0:
+      theme.colorScheme === "light"
+        ? theme.colors.gray[0]
+        : theme.colors.gray[5],
+    level4: theme.colors.green[3],
+    level3: theme.colors.green[5],
+    level2: theme.colors.green[7],
+    level1: theme.colors.green[9],
   };
   return (
     <Github

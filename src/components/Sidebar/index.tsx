@@ -1,4 +1,3 @@
-import AboutMe from "@components/AboutMe";
 import Contact from "@components/Contact";
 import { useMediaQuery } from "@mantine/hooks";
 import { useRouter } from "next/router";
@@ -18,7 +17,6 @@ const Index = () => {
   });
   return (
     <>
-      <AboutMe />
       <Contact />
       <Testimonials />
     </>
