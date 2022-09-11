@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setSideBarSummaryLock } from "@store/SiteConfig";
+import Testimonials from "@components/Testimonials";
 
 const Index = () => {
   const navigator = useRouter();
@@ -19,6 +20,7 @@ const Index = () => {
     <>
       <AboutMe />
       <Contact />
+      <Testimonials />
     </>
   );
 };

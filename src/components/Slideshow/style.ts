@@ -33,16 +33,15 @@ const styles = createStyles((theme) => ({
     width: 10,
     height: 10,
     borderRadius: "50%",
+  },
+  inactivePointer: {
     backgroundColor:
       theme.colorScheme === "dark"
-        ? theme.colors.dark[6]
-        : theme.colors.gray[6],
+        ? theme.colors.gray[2]
+        : theme.colors.gray[3],
   },
   activePointer: {
-    backgroundColor:
-      theme.colorScheme === "light"
-        ? theme.colors.primaryColor[2]
-        : theme.colors.primaryColor[3],
+    backgroundColor: theme.colors.primaryColor[1],
   },
   indicatorContent: {
     display: "flex",

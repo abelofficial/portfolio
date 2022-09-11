@@ -17,6 +17,7 @@ export const Indicator = ({ active }: IndicatorProps) => {
     <div
       className={clsx(classes.pointer, {
         [classes.activePointer]: active,
+        [classes.inactivePointer]: !active,
       })}
     ></div>
   );
