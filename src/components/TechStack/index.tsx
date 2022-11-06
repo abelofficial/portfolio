@@ -5,14 +5,15 @@ import { v4 as uuid } from "uuid";
 import { Box, Title } from "@mantine/core";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
-import data from "@static/techStackData.json";
 import { motion } from "framer-motion";
+import { ITechstackModule } from "@src/types";
 
 export interface ITechStackProps {
   title: string;
+  data: Array<ITechstackModule>;
 }
 
-const Index = ({ title }: ITechStackProps) => {
+const Index = ({ title, data }: ITechStackProps) => {
   const { classes, theme } = useStyles();
 
   return (
@@ -37,7 +38,7 @@ const Index = ({ title }: ITechStackProps) => {
                 alt={item.title + " icon"}
                 width={theme.spacing.lg}
                 height={theme.spacing.lg}
-                src={item.link}
+                src={item.icon.url}
                 className={classes.image}
               />
               <small className={classes.text}>{item.title}</small>

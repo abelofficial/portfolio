@@ -12,6 +12,7 @@ import {
   contactsQuery,
   projectsQuery,
   sectionsQuery,
+  techstacksQuery,
   testimonialsQuery,
 } from "@services/DatoQueries";
 import { IPageModule } from "@src/types";
@@ -28,6 +29,7 @@ const HOMEPAGE_QUERY = `query PageModule {
   ${testimonialsQuery}
   ${projectsQuery}
   ${sectionsQuery}
+  ${techstacksQuery}
 }
 `;
 interface IHomeProps {
@@ -55,7 +57,7 @@ const Index = ({ data }: IHomeProps) => {
           <GithubSummery title={getTitle(GITHUBSUMMERY_ID)} />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
-          <TechStack title={getTitle(TECHSTACK_ID)} />
+          <TechStack title={getTitle(TECHSTACK_ID)} data={data.allTechstacks} />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
           <Projects data={data.allProjects} title={getTitle(PROJECTS_ID)} />

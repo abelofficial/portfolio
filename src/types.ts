@@ -53,6 +53,16 @@ export interface IPageModule {
   allEducations: Array<IEducationModule>;
   allSpecialties: Array<ISpecialtyModule>;
   allSections: Array<ISectionModule>;
+  allTechstacks: Array<ITechstackModule>;
+}
+
+export interface ITechstackModule {
+  id: string;
+  title: string;
+  name: string;
+  icon: {
+    url: string;
+  };
 }
 
 export interface ISectionModule {

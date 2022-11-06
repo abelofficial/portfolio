@@ -129,3 +129,13 @@ export const sectionsQuery = `
         title
     }
 `;
+
+export const techstacksQuery = `
+    allTechstacks {
+        icon {
+        url
+        }
+        title
+        name
+    }
+`;
