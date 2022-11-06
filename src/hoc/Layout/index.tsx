@@ -16,9 +16,10 @@ import PageContainer from "@hoc/PageContainer";
 
 export interface LayoutProps {
   children: JSX.Element;
+  sidebar: JSX.Element;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, sidebar }: LayoutProps) => {
   const { classes, theme } = useStyles();
   const dispatch = useDispatch();
   const isDrawerOpen = useSelector(selectDrawer);
@@ -52,7 +53,7 @@ const Layout = ({ children }: LayoutProps) => {
           <Box className={classes.sideBar_bg} />
           <Box className={classes.sideBar_main}>
             <MenuBar />
-            <Sidebar />
+            <Sidebar>{sidebar}</Sidebar>
           </Box>
         </Box>
       </Box>

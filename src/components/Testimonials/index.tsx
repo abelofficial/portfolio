@@ -2,9 +2,8 @@ import Slideshow from "@components/Slideshow";
 import InfoContainer from "@hoc/InfoContainer";
 import { Grid, Title } from "@mantine/core";
 import useStyles from "./style";
-import data from "@static/testimonialsData.json";
 
-const Testimonials = () => {
+const Testimonials = ({ data }) => {
   const { classes } = useStyles();
 
   return (
