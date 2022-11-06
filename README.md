@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-![Banner](public/thumbnails/screenshot-dark.png)
+![Banner](github/thumbnails/screenshot-dark.png)
 
 This is a personal website to showcase my work and daily activities. The website is made using [Nextjs v.12](https://nextjs.org/blog/next-12). Currently the website shows my daily activities on github as well as previous work experiences, timeline, and my tech stacks.
 
@@ -40,4 +40,4 @@ $ npm run dev
 
 Currently, This site officially aim to support the last two versions of the following browsers:
 
-<img src="./public/images/readme/chrome.png" width="64" height="64"> <img src="./public/images/readme/firefox.png" width="64" height="64"> <img src="./public/images/readme/edge.png" width="64" height="64"> <img src="./public/images/readme/safari.png" width="64" height="64">
+<img src="./github/readme/chrome.png" width="64" height="64"> <img src="./github/readme/firefox.png" width="64" height="64"> <img src="./github/readme/edge.png" width="64" height="64"> <img src="./github/readme/safari.png" width="64" height="64">
