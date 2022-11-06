@@ -46,19 +46,35 @@ export interface IGithubRepos {
 }
 
 export interface IPageModule {
-  allContacts: Array<{
-    icon: string;
-    url: string;
-    title: string;
+  allContacts: Array<IContactModule>;
+  allTestimonials: Array<ITestimonialsModule>;
+  allProjects: Array<IProjectModule>;
+}
+
+export interface IContactModule {
+  icon: string;
+  url: string;
+  title: string;
+  responsiveImage: ResponsiveImageType;
+}
+export interface IProjectModule {
+  id: string;
+  githubLink: string;
+  description: string;
+  title: string;
+  url: string;
+  name: string;
+  techstack: string;
+  medias: {
     responsiveImage: ResponsiveImageType;
-  }>;
-  allTestimonials: {
-    id: string;
-    name: string;
-    text: string;
-    workPlace: string;
-    workPosition: string;
   };
+}
+export interface ITestimonialsModule {
+  id: string;
+  name: string;
+  text: string;
+  workPlace: string;
+  workPosition: string;
 }
 
 export declare type ResponsiveImageType = {

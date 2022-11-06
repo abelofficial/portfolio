@@ -8,12 +8,17 @@ import { request } from "@services/DatoCMS";
 import Layout from "@hoc/Layout";
 import Contact from "@components/Contact";
 import Testimonials from "@components/Testimonials";
-import { contactsQuery, testimonialsQuery } from "@services/DatoQueries";
+import {
+  contactsQuery,
+  projectsQuery,
+  testimonialsQuery,
+} from "@services/DatoQueries";
 import { IPageModule } from "@src/types";
 
 const HOMEPAGE_QUERY = `query PageModule {
   ${contactsQuery}
   ${testimonialsQuery}
+  ${projectsQuery}
 }
 `;
 
@@ -22,6 +27,7 @@ interface IProps {
 }
 
 const Index = ({ data }: IProps) => {
+  console.log(data);
   return (
     <Layout
       sidebar={
@@ -39,7 +45,7 @@ const Index = ({ data }: IProps) => {
           <TechStack />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
-          <Projects />
+          <Projects data={data.allProjects} />
         </motion.div>
       </motion.div>
     </Layout>
