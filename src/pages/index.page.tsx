@@ -8,42 +8,20 @@ import { request } from "@services/DatoCMS";
 import Layout from "@hoc/Layout";
 import Contact from "@components/Contact";
 import Testimonials from "@components/Testimonials";
+import { contactsQuery, testimonialsQuery } from "@services/DatoQueries";
+import { IPageModule } from "@src/types";
 
-const HOMEPAGE_QUERY = `query MyQuery {
-  allContacts {
-    icon {
-      url
-      title
-      responsiveImage {
-        alt
-        aspectRatio
-        base64
-        bgColor
-        height
-        sizes
-        src
-        srcSet
-        title
-        webpSrcSet
-        width
-      }
-    }
-    title
-    id
-    updatedAt
-  }
-  allTestimonials {
-    id
-    name
-    text(markdown: false)
-    updatedAt
-    workPlace
-    workPosition
-  }
+const HOMEPAGE_QUERY = `query PageModule {
+  ${contactsQuery}
+  ${testimonialsQuery}
 }
 `;
 
-const Index = ({ data }) => {
+interface IProps {
+  data: IPageModule;
+}
+
+const Index = ({ data }: IProps) => {
   return (
     <Layout
       sidebar={
@@ -69,7 +47,7 @@ const Index = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const data = await request({
+  const data: IPageModule = await request({
     query: HOMEPAGE_QUERY,
     variables: { limit: 10 },
   });
