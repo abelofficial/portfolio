@@ -3,13 +3,13 @@ import InfoContainer from "@hoc/InfoContainer";
 import { Grid, Title } from "@mantine/core";
 import useStyles from "./style";
 
-const Testimonials = ({ data }) => {
+const Testimonials = ({ data, title }) => {
   const { classes } = useStyles();
 
   return (
     <InfoContainer>
       <Title order={4} pb='xs' color='dimmed'>
-        Testimonials
+        {title}
       </Title>
       <Slideshow auto duration={12000}>
         {data.map((t) => (

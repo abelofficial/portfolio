@@ -5,13 +5,13 @@ import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
 import { Image } from "react-datocms";
 
-const Index = ({ data }) => {
+const Index = ({ data, title }) => {
   const { classes } = useStyles();
 
   return (
     <InfoContainer>
       <Title order={4} pb='xs'>
-        Connect with me
+        {title}
       </Title>
       <Box className={classes.listContainer}>
         {data.map((item) => (

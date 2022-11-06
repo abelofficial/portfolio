@@ -108,3 +108,24 @@ export const educationExperienceQuery = `
         }
     }
 `;
+
+export const specialtyQuery = `
+    allSpecialties {
+        icon {
+            url
+        }
+        title
+        content
+    }
+`;
+
+export const sectionsQuery = `
+    allSections {
+        id
+        icon {
+            url
+          }
+        subtitle
+        title
+    }
+`;

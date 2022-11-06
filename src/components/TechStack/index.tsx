@@ -8,13 +8,17 @@ import InfoContainer from "@hoc/InfoContainer";
 import data from "@static/techStackData.json";
 import { motion } from "framer-motion";
 
-const Index = () => {
+export interface ITechStackProps {
+  title: string;
+}
+
+const Index = ({ title }: ITechStackProps) => {
   const { classes, theme } = useStyles();
 
   return (
     <InfoContainer>
       <Box>
-        <Title order={4}>Tech stack</Title>
+        <Title order={4}> {title} </Title>
         <div className={classes.section}>
           {data.map((item, i) => (
             <motion.div

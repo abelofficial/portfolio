@@ -9,18 +9,29 @@ import {
   educationExperienceQuery,
   testimonialsQuery,
   workExperienceQuery,
+  specialtyQuery,
+  sectionsQuery,
 } from "@services/DatoQueries";
 import { IPageModule } from "@src/types";
 import { request } from "@services/DatoCMS";
 import Contact from "@components/Contact";
 import { Box } from "@mantine/core";
 import Timeline from "@components/Timeline";
+import {
+  CONTACT_ID,
+  EDUCATION_EXPERIENCE_ID,
+  SPECIALTY_ID,
+  TESTIMONIALS_ID,
+  WORK_EXPERIENCE_ID,
+} from "@utils/constants";
 
 const TIMELINEPAGE_QUERY = `query PageModule {
   ${testimonialsQuery}
   ${contactsQuery}
   ${workExperienceQuery}
   ${educationExperienceQuery}
+  ${specialtyQuery}
+  ${sectionsQuery}
 }
 `;
 interface ITimelineProps {
@@ -28,24 +39,36 @@ interface ITimelineProps {
 }
 
 const Index = ({ data }: ITimelineProps) => {
+  const getTitle = (id: string) =>
+    data.allSections.find((s) => s.id === id).title;
+
   return (
     <Layout
       sidebar={
         <Box>
-          <Testimonials data={data.allTestimonials} />
-          <Contact data={data.allContacts} />
+          <Testimonials
+            data={data.allTestimonials}
+            title={getTitle(CONTACT_ID)}
+          />
+          <Contact data={data.allContacts} title={getTitle(TESTIMONIALS_ID)} />
         </Box>
       }
     >
       <motion.div variants={routeAnim.stagger}>
         <motion.div variants={routeAnim.fadeInUp}>
-          <Specialty />
+          <Specialty
+            title={getTitle(SPECIALTY_ID)}
+            data={data.allSpecialties}
+          />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
-          <Timeline title='Work Experience' data={data.allWorks} />
+          <Timeline title={getTitle(WORK_EXPERIENCE_ID)} data={data.allWorks} />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
-          <Timeline title='Education' data={data.allEducations} />
+          <Timeline
+            title={getTitle(EDUCATION_EXPERIENCE_ID)}
+            data={data.allEducations}
+          />
         </motion.div>
       </motion.div>
     </Layout>

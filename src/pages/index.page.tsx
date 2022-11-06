@@ -11,14 +11,23 @@ import Testimonials from "@components/Testimonials";
 import {
   contactsQuery,
   projectsQuery,
+  sectionsQuery,
   testimonialsQuery,
 } from "@services/DatoQueries";
 import { IPageModule } from "@src/types";
+import {
+  CONTACT_ID,
+  GITHUBSUMMERY_ID,
+  PROJECTS_ID,
+  TECHSTACK_ID,
+  TESTIMONIALS_ID,
+} from "@utils/constants";
 
 const HOMEPAGE_QUERY = `query PageModule {
   ${contactsQuery}
   ${testimonialsQuery}
   ${projectsQuery}
+  ${sectionsQuery}
 }
 `;
 interface IHomeProps {
@@ -26,24 +35,30 @@ interface IHomeProps {
 }
 
 const Index = ({ data }: IHomeProps) => {
+  const getTitle = (id: string) =>
+    data.allSections.find((s) => s.id === id).title;
+
   return (
     <Layout
       sidebar={
         <>
-          <Contact data={data.allContacts} />
-          <Testimonials data={data.allTestimonials} />
+          <Contact data={data.allContacts} title={getTitle(CONTACT_ID)} />
+          <Testimonials
+            data={data.allTestimonials}
+            title={getTitle(TESTIMONIALS_ID)}
+          />
         </>
       }
     >
       <motion.div variants={routeAnim.stagger}>
         <motion.div variants={routeAnim.fadeInUp}>
-          <GithubSummery />
+          <GithubSummery title={getTitle(GITHUBSUMMERY_ID)} />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
-          <TechStack />
+          <TechStack title={getTitle(TECHSTACK_ID)} />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
-          <Projects data={data.allProjects} />
+          <Projects data={data.allProjects} title={getTitle(PROJECTS_ID)} />
         </motion.div>
       </motion.div>
     </Layout>

@@ -2,18 +2,23 @@ import React from "react";
 import { v4 as uuid } from "uuid";
 import Image from "next/image";
 import { Box, Grid, Title } from "@mantine/core";
-import data from "@static/specialtyData.json";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
+import { ISpecialtyModule } from "@src/types";
 
-const Index = () => {
+interface ISpecialtyProps {
+  title: string;
+  data: Array<ISpecialtyModule>;
+}
+
+const Index = ({ title, data }: ISpecialtyProps) => {
   const { classes } = useStyles();
 
   return (
     <InfoContainer>
       <Grid columns={1} className={classes.container}>
         <Grid.Col span={1}>
-          <Title order={4}>Specialty</Title>
+          <Title order={4}> {title} </Title>
         </Grid.Col>
         <Grid.Col className={classes.listContainer}>
           <Grid>
@@ -29,7 +34,7 @@ const Index = () => {
               >
                 <Image
                   alt={item.title + " Image"}
-                  src={item.icon}
+                  src={item.icon.url}
                   width={60}
                   height={60}
                 />

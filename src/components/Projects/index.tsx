@@ -7,11 +7,12 @@ import ProjectCard from "@components/ProjectCard";
 import { v4 as uuid } from "uuid";
 export interface ProjectsProps {
   data: IProjectModule;
+  title: string;
 }
-const Index = ({ data }) => (
+const Index = ({ data, title }) => (
   <InfoContainer>
     <Title order={4} pb='xs'>
-      Projects
+      {title}
     </Title>
     <Slideshow>
       {data.map((item) => (

@@ -7,7 +7,10 @@ import InfoContainer from "@hoc/InfoContainer";
 import { Grid, Box, Title } from "@mantine/core";
 import GithubActivities from "@components/GithubActivities";
 
-const Index = () => {
+export interface IGithubSummeryProps {
+  title: string;
+}
+const Index = ({ title }: IGithubSummeryProps) => {
   const { classes } = useStyles();
 
   const [githubAccount, setGithubAccount] = useState<IGithubProfile>();
@@ -33,7 +36,7 @@ const Index = () => {
     <InfoContainer>
       <Grid columns={12}>
         <Grid.Col xs={12} className={classes.header}>
-          <Title order={5}>Github Account</Title>
+          <Title order={5}> {title} </Title>
           <Image
             src='/images/github-octocat.svg'
             alt='github-log'

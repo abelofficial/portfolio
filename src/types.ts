@@ -51,6 +51,25 @@ export interface IPageModule {
   allProjects: Array<IProjectModule>;
   allWorks: Array<IWorkModule>;
   allEducations: Array<IEducationModule>;
+  allSpecialties: Array<ISpecialtyModule>;
+  allSections: Array<ISectionModule>;
+}
+
+export interface ISectionModule {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: {
+    url: string;
+  };
+}
+
+export interface ISpecialtyModule {
+  title: string;
+  content: string;
+  icon: {
+    url: string;
+  };
 }
 
 export interface IEducationModule {
