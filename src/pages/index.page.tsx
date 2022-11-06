@@ -21,13 +21,11 @@ const HOMEPAGE_QUERY = `query PageModule {
   ${projectsQuery}
 }
 `;
-
-interface IProps {
+interface IHomeProps {
   data: IPageModule;
 }
 
-const Index = ({ data }: IProps) => {
-  console.log(data);
+const Index = ({ data }: IHomeProps) => {
   return (
     <Layout
       sidebar={

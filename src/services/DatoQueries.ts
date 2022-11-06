@@ -42,19 +42,69 @@ export const projectsQuery = `
         description
         techstack
         medias {
-        responsiveImage {
-            alt
-            aspectRatio
-            base64
-            bgColor
-            height
-            sizes
-            src
-            srcSet
-            title
-            webpSrcSet
-            width
-        }
+            responsiveImage {
+                alt
+                aspectRatio
+                base64
+                bgColor
+                height
+                sizes
+                src
+                srcSet
+                title
+                webpSrcSet
+                width
+            }
         }
     }  
+`;
+
+export const workExperienceQuery = `
+    allWorks {
+        content
+        startDate
+        endDate
+        place
+        title
+        logo {
+            responsiveImage {
+                alt
+                aspectRatio
+                base64
+                bgColor
+                height
+                sizes
+                src
+                srcSet
+                title
+                webpSrcSet
+                width
+            }
+        }
+    }
+`;
+
+export const educationExperienceQuery = `
+    allEducations {
+        content
+        startDate
+        endDate
+        place
+        title
+        logo {
+            responsiveImage {
+                alt
+                aspectRatio
+                base64
+                bgColor
+                height
+                sizes
+                src
+                srcSet
+                title
+                webpSrcSet
+                width
+            }
+        }
+    }
 `;

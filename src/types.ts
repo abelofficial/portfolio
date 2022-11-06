@@ -49,6 +49,24 @@ export interface IPageModule {
   allContacts: Array<IContactModule>;
   allTestimonials: Array<ITestimonialsModule>;
   allProjects: Array<IProjectModule>;
+  allWorks: Array<IWorkModule>;
+  allEducations: Array<IEducationModule>;
+}
+
+export interface IEducationModule {
+  title: string;
+  content: string;
+  endDate: string;
+  place: string;
+  responsiveImage: ResponsiveImageType;
+}
+
+export interface IWorkModule {
+  title: string;
+  content: string;
+  endDate: string;
+  place: string;
+  responsiveImage: ResponsiveImageType;
 }
 
 export interface IContactModule {
