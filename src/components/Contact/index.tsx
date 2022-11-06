@@ -1,12 +1,11 @@
 import React from "react";
-import Image from "next/image";
 import { v4 as uuid } from "uuid";
 import { Box, Center, Title } from "@mantine/core";
-import data from "@static/contactData.json";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
+import { Image } from "react-datocms";
 
-const Index = () => {
+const Index = ({ data }) => {
   const { classes } = useStyles();
 
   return (
@@ -24,13 +23,11 @@ const Index = () => {
               className={classes.contactLink}
             >
               <Image
-                alt='Github Icon'
-                src={item.icon}
-                height={25}
-                width={25}
                 className={classes.icon}
+                style={{ width: "25px", height: "25px" }}
+                data={item?.icon?.responsiveImage || {}}
               />
-              <p className={classes.text}> {item.name} </p>
+              <p className={classes.text}> {item.title} </p>
             </a>
           </Center>
         ))}

@@ -6,7 +6,6 @@ import { AppProps } from "next/app";
 import { Provider as StateProvider } from "react-redux";
 import { getCookie } from "cookies-next";
 import store from "@src/store";
-import Layout from "@hoc/Layout";
 
 const App = ({
   Component,
@@ -25,9 +24,7 @@ const App = ({
           }}
         >
           <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
+            <Component {...pageProps} />
           </motion.div>
         </Box>
       </ThemeProvider>

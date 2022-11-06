@@ -1,19 +1,19 @@
-import Contact from "@components/Contact";
 import { useMediaQuery } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import Testimonials from "@components/Testimonials";
 import { Box, Collapse } from "@mantine/core";
 import userStyles from "./style";
 import { CloseIcon, OpenIcon } from "@components/Icons";
 
-const Index = () => {
+export interface SidebarProps {
+  children: JSX.Element;
+}
+
+const Index = ({ children }) => {
   const { classes } = userStyles();
   const [opened, setOpened] = useState(false);
   const [showing, setShowing] = useState(true);
   const { pathname } = useRouter();
-  const dispatch = useDispatch();
   const bigScreen = useMediaQuery("(min-width: 993px)");
 
   useEffect(() => {
@@ -55,10 +55,7 @@ const Index = () => {
           </CloseIcon>
         ))}
 
-      <Collapse in={opened}>
-        <Contact />
-        <Testimonials />
-      </Collapse>
+      <Collapse in={opened}>{children}</Collapse>
     </Box>
   );
 };
