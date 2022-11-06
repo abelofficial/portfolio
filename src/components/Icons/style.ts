@@ -8,8 +8,8 @@ const styles = createStyles((theme) => ({
     },
   },
   active: {
-    stroke: theme.colors.orange[7],
-    fill: theme.colors.orange[2],
+    stroke: theme.colors.primaryColor[5],
+    fill: theme.colors.primaryColor[0],
   },
   largeIcon: {
     fontSize: "2rem",

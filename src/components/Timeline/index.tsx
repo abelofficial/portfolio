@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { Grid, Box, Title, Timeline, ThemeIcon } from "@mantine/core";
+import { Grid, Title, Timeline, ThemeIcon, Text } from "@mantine/core";
 import React from "react";
 import Image from "next/image";
 import useStyles from "./style";
@@ -13,7 +13,7 @@ const Index = ({ title, iconUrl, data, ...restProps }) => {
     <InfoContainer>
       <Grid columns={12} className={classes.container} {...restProps}>
         <Grid.Col xs={12} className={classes.header}>
-          <Title order={5}>{title}</Title>
+          <Title order={4}>{title}</Title>
           <Image src={iconUrl} alt='icon' width={35} height={35} />
         </Grid.Col>
 
@@ -24,31 +24,37 @@ const Index = ({ title, iconUrl, data, ...restProps }) => {
               color={theme.colors.primaryColor[5]}
               bullet={
                 <ThemeIcon
-                  size={22}
+                  size={15}
                   variant='gradient'
                   gradient={{
-                    from: theme.colors.primaryColor[1],
-                    to: theme.colors.primaryColor[5],
+                    from: theme.colors.primaryColor[0],
+                    to: theme.colors.primaryColor[3],
                   }}
                   radius='xl'
                 >
                   <TimeLineIcon
-                    width={16}
-                    height={16}
+                    width={10}
+                    height={10}
                     isActive
                     invert={false}
                   />
                 </ThemeIcon>
               }
             >
-              <Box className={classes.indicator}>
-                <p className={classes.highlightText}>{item.place}</p>
-              </Box>
-              <Title order={5}>{item.title}</Title>
-              <p className={classes.highlightText}>
+              <Title order={4} color='secondary'>
+                {item.title}
+              </Title>
+              <Text className={classes.highlightText} color='gray'>
                 {item.startDate} - {item.endDate}
-              </p>
-              <p className={classes.description}>{item.content}</p>
+              </Text>
+              <Text
+                className={classes.highlightText}
+                variant='gradient'
+                gradient={{ from: "#F76707", to: "#FFA94D", deg: 90 }}
+              >
+                {item.place}
+              </Text>
+              <Text className={classes.description}>{item.content}</Text>
             </Timeline.Item>
           ))}
         </Timeline>

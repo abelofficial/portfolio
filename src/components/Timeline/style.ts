@@ -43,6 +43,7 @@ const styles = createStyles((theme) => ({
   description: {
     textAlign: "justify",
     maxWidth: "30rem",
+    margin: "0.5rem 0",
   },
   header: {
     display: "flex",
