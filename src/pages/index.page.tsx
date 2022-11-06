@@ -54,7 +54,12 @@ const Index = ({ data }: IHomeProps) => {
     >
       <motion.div variants={routeAnim.stagger}>
         <motion.div variants={routeAnim.fadeInUp}>
-          <GithubSummery title={getTitle(GITHUBSUMMERY_ID)} />
+          <GithubSummery
+            title={getTitle(GITHUBSUMMERY_ID)}
+            iconUrl={
+              data.allSections.find((s) => s.id === GITHUBSUMMERY_ID).icon.url
+            }
+          />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
           <TechStack title={getTitle(TECHSTACK_ID)} data={data.allTechstacks} />

@@ -9,8 +9,10 @@ import GithubActivities from "@components/GithubActivities";
 
 export interface IGithubSummeryProps {
   title: string;
+  iconUrl?: string;
 }
-const Index = ({ title }: IGithubSummeryProps) => {
+
+const Index = ({ title, iconUrl }: IGithubSummeryProps) => {
   const { classes } = useStyles();
 
   const [githubAccount, setGithubAccount] = useState<IGithubProfile>();
@@ -37,12 +39,7 @@ const Index = ({ title }: IGithubSummeryProps) => {
       <Grid columns={12}>
         <Grid.Col xs={12} className={classes.header}>
           <Title order={5}> {title} </Title>
-          <Image
-            src='/images/github-octocat.svg'
-            alt='github-log'
-            width={40}
-            height={40}
-          />
+          <Image src={iconUrl} alt='icon' width={40} height={40} />
         </Grid.Col>
         <Grid.Col xs={12} className={classes.profile}>
           <Image

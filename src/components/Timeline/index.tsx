@@ -1,19 +1,20 @@
 import { v4 as uuid } from "uuid";
 import { Grid, Box, Title, Timeline, ThemeIcon } from "@mantine/core";
 import React from "react";
-
+import Image from "next/image";
 import useStyles from "./style";
 import InfoContainer from "@hoc/InfoContainer";
 import { TimeLineIcon } from "@components/Icons";
 
-const Index = ({ title, data, ...restProps }) => {
+const Index = ({ title, iconUrl, data, ...restProps }) => {
   const { classes, theme } = useStyles();
 
   return (
     <InfoContainer>
-      <Grid columns={1} className={classes.container} {...restProps}>
-        <Grid.Col span={1}>
-          <Title order={4}>{title}</Title>
+      <Grid columns={12} className={classes.container} {...restProps}>
+        <Grid.Col xs={12} className={classes.header}>
+          <Title order={5}>{title}</Title>
+          <Image src={iconUrl} alt='icon' width={35} height={35} />
         </Grid.Col>
 
         <Timeline active={0} bulletSize={15} lineWidth={1} color='orange'>

@@ -44,6 +44,11 @@ const styles = createStyles((theme) => ({
     textAlign: "justify",
     maxWidth: "30rem",
   },
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
 }));
 
 export default styles;

@@ -42,6 +42,8 @@ const Index = ({ data }: ITimelineProps) => {
   const getTitle = (id: string) =>
     data.allSections.find((s) => s.id === id).title;
 
+  const getIconUrl = (id: string) =>
+    data.allSections.find((s) => s.id === id).icon.url;
   return (
     <Layout
       sidebar={
@@ -62,12 +64,17 @@ const Index = ({ data }: ITimelineProps) => {
           />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
-          <Timeline title={getTitle(WORK_EXPERIENCE_ID)} data={data.allWorks} />
+          <Timeline
+            title={getTitle(WORK_EXPERIENCE_ID)}
+            data={data.allWorks}
+            iconUrl={getIconUrl(WORK_EXPERIENCE_ID)}
+          />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>
           <Timeline
             title={getTitle(EDUCATION_EXPERIENCE_ID)}
             data={data.allEducations}
+            iconUrl={getIconUrl(EDUCATION_EXPERIENCE_ID)}
           />
         </motion.div>
       </motion.div>
