@@ -23,7 +23,8 @@ import {
   SPECIALTY_ID,
   TESTIMONIALS_ID,
   WORK_EXPERIENCE_ID,
-} from "@utils/constants";
+} from "@utils/Variables";
+import { TimelinePageMetadata } from "@components/SEOMetadata";
 
 const TIMELINEPAGE_QUERY = `query PageModule {
   ${testimonialsQuery}
@@ -45,40 +46,46 @@ const Index = ({ data }: ITimelineProps) => {
   const getIconUrl = (id: string) =>
     data.allSections.find((s) => s.id === id).icon.url;
   return (
-    <Layout
-      sidebar={
-        <Box>
-          <Testimonials
-            data={data.allTestimonials}
-            title={getTitle(CONTACT_ID)}
-          />
-          <Contact data={data.allContacts} title={getTitle(TESTIMONIALS_ID)} />
-        </Box>
-      }
-    >
-      <motion.div variants={routeAnim.stagger}>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <Specialty
-            title={getTitle(SPECIALTY_ID)}
-            data={data.allSpecialties}
-          />
+    <>
+      <TimelinePageMetadata />
+      <Layout
+        sidebar={
+          <Box>
+            <Testimonials
+              data={data.allTestimonials}
+              title={getTitle(CONTACT_ID)}
+            />
+            <Contact
+              data={data.allContacts}
+              title={getTitle(TESTIMONIALS_ID)}
+            />
+          </Box>
+        }
+      >
+        <motion.div variants={routeAnim.stagger}>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <Specialty
+              title={getTitle(SPECIALTY_ID)}
+              data={data.allSpecialties}
+            />
+          </motion.div>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <Timeline
+              title={getTitle(WORK_EXPERIENCE_ID)}
+              data={data.allWorks}
+              iconUrl={getIconUrl(WORK_EXPERIENCE_ID)}
+            />
+          </motion.div>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <Timeline
+              title={getTitle(EDUCATION_EXPERIENCE_ID)}
+              data={data.allEducations}
+              iconUrl={getIconUrl(EDUCATION_EXPERIENCE_ID)}
+            />
+          </motion.div>
         </motion.div>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <Timeline
-            title={getTitle(WORK_EXPERIENCE_ID)}
-            data={data.allWorks}
-            iconUrl={getIconUrl(WORK_EXPERIENCE_ID)}
-          />
-        </motion.div>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <Timeline
-            title={getTitle(EDUCATION_EXPERIENCE_ID)}
-            data={data.allEducations}
-            iconUrl={getIconUrl(EDUCATION_EXPERIENCE_ID)}
-          />
-        </motion.div>
-      </motion.div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

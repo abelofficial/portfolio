@@ -22,7 +22,8 @@ import {
   PROJECTS_ID,
   TECHSTACK_ID,
   TESTIMONIALS_ID,
-} from "@utils/constants";
+} from "@utils/Variables";
+import { HomePageMetadata } from "@components/SEOMetadata";
 
 const HOMEPAGE_QUERY = `query PageModule {
   ${contactsQuery}
@@ -41,34 +42,40 @@ const Index = ({ data }: IHomeProps) => {
     data.allSections.find((s) => s.id === id).title;
 
   return (
-    <Layout
-      sidebar={
-        <>
-          <Contact data={data.allContacts} title={getTitle(CONTACT_ID)} />
-          <Testimonials
-            data={data.allTestimonials}
-            title={getTitle(TESTIMONIALS_ID)}
-          />
-        </>
-      }
-    >
-      <motion.div variants={routeAnim.stagger}>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <GithubSummery
-            title={getTitle(GITHUBSUMMERY_ID)}
-            iconUrl={
-              data.allSections.find((s) => s.id === GITHUBSUMMERY_ID).icon.url
-            }
-          />
+    <>
+      <HomePageMetadata />
+      <Layout
+        sidebar={
+          <>
+            <Contact data={data.allContacts} title={getTitle(CONTACT_ID)} />
+            <Testimonials
+              data={data.allTestimonials}
+              title={getTitle(TESTIMONIALS_ID)}
+            />
+          </>
+        }
+      >
+        <motion.div variants={routeAnim.stagger}>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <GithubSummery
+              title={getTitle(GITHUBSUMMERY_ID)}
+              iconUrl={
+                data.allSections.find((s) => s.id === GITHUBSUMMERY_ID).icon.url
+              }
+            />
+          </motion.div>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <TechStack
+              title={getTitle(TECHSTACK_ID)}
+              data={data.allTechstacks}
+            />
+          </motion.div>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <Projects data={data.allProjects} title={getTitle(PROJECTS_ID)} />
+          </motion.div>
         </motion.div>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <TechStack title={getTitle(TECHSTACK_ID)} data={data.allTechstacks} />
-        </motion.div>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <Projects data={data.allProjects} title={getTitle(PROJECTS_ID)} />
-        </motion.div>
-      </motion.div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

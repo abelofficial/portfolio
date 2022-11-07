@@ -6,6 +6,7 @@ import { AppProps } from "next/app";
 import { Provider as StateProvider } from "react-redux";
 import { getCookie } from "cookies-next";
 import store from "@src/store";
+import { DefaultSEOMetadata } from "@components/SEOMetadata";
 
 const App = ({
   Component,
@@ -13,22 +14,29 @@ const App = ({
   colorScheme,
 }: AppProps & { colorScheme: ColorScheme }) => {
   return (
-    <StateProvider store={store}>
-      <ThemeProvider mode={colorScheme}>
-        <Box
-          styles={{
-            main: {
-              margin: 0,
-              padding: 0,
-            },
-          }}
-        >
-          <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
-            <Component {...pageProps} />
-          </motion.div>
-        </Box>
-      </ThemeProvider>
-    </StateProvider>
+    <>
+      <DefaultSEOMetadata />
+      <StateProvider store={store}>
+        <ThemeProvider mode={colorScheme}>
+          <Box
+            styles={{
+              main: {
+                margin: 0,
+                padding: 0,
+              },
+            }}
+          >
+            <motion.div
+              exit={{ opacity: 0 }}
+              initial='initial'
+              animate='animate'
+            >
+              <Component {...pageProps} />
+            </motion.div>
+          </Box>
+        </ThemeProvider>
+      </StateProvider>
+    </>
   );
 };
 
