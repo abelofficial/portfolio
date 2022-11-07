@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@hoc/ThemeProvider";
+import { ThemeProvider } from "@utils/ThemeProvider";
 import { Box, ColorScheme } from "@mantine/core";
 import { motion } from "framer-motion";
 import { GetServerSidePropsContext } from "next";
@@ -6,7 +6,7 @@ import { AppProps } from "next/app";
 import { Provider as StateProvider } from "react-redux";
 import { getCookie } from "cookies-next";
 import store from "@src/store";
-import { DefaultSEOMetadata } from "@components/SEOMetadata";
+import { DefaultSEOMetadata } from "@components/Atoms/Metadata";
 
 const App = ({
   Component,

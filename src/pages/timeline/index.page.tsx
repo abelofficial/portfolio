@@ -1,9 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import routeAnim from "@styles/routeAnimation.json";
-import Specialty from "@components/Specialty";
-import Layout from "@hoc/Layout";
-import Testimonials from "@components/Testimonials";
+import Layout from "@components/Modules/Layout";
 import {
   contactsQuery,
   educationExperienceQuery,
@@ -11,12 +9,11 @@ import {
   workExperienceQuery,
   specialtyQuery,
   sectionsQuery,
-} from "@services/DatoQueries";
+} from "@utils/DatoQueries";
 import { IPageModule } from "@src/types";
 import { request } from "@services/DatoCMS";
-import Contact from "@components/Contact";
+import Contact from "@components/Modules/Contact";
 import { Box } from "@mantine/core";
-import Timeline from "@components/Timeline";
 import {
   CONTACT_ID,
   EDUCATION_EXPERIENCE_ID,
@@ -24,7 +21,10 @@ import {
   TESTIMONIALS_ID,
   WORK_EXPERIENCE_ID,
 } from "@utils/Variables";
-import { TimelinePageMetadata } from "@components/SEOMetadata";
+import { TimelinePageMetadata } from "@components/Atoms/Metadata";
+import Timeline from "@components/Modules/Timeline";
+import Specialty from "@components/Modules/Specialty";
+import Testimonials from "@components/Modules/Testimonials";
 
 const TIMELINEPAGE_QUERY = `query PageModule {
   ${testimonialsQuery}

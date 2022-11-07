@@ -1,20 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import routeAnim from "@styles/routeAnimation.json";
-import TechStack from "@components/TechStack";
-import GithubSummery from "@components/GithubSummery";
-import Projects from "@components/Projects";
+import Projects from "@components/Modules/Projects";
 import { request } from "@services/DatoCMS";
-import Layout from "@hoc/Layout";
-import Contact from "@components/Contact";
-import Testimonials from "@components/Testimonials";
+import Layout from "@components/Modules/Layout";
+import Contact from "@components/Modules/Contact";
 import {
   contactsQuery,
   projectsQuery,
   sectionsQuery,
   techstacksQuery,
   testimonialsQuery,
-} from "@services/DatoQueries";
+} from "@utils/DatoQueries";
 import { IPageModule } from "@src/types";
 import {
   CONTACT_ID,
@@ -23,7 +20,10 @@ import {
   TECHSTACK_ID,
   TESTIMONIALS_ID,
 } from "@utils/Variables";
-import { HomePageMetadata } from "@components/SEOMetadata";
+import { HomePageMetadata } from "@components/Atoms/Metadata";
+import TechStack from "@components/Modules/TechStack";
+import Testimonials from "@components/Modules/Testimonials";
+import GithubSummery from "@components/Modules/GithubSummery";
 
 const HOMEPAGE_QUERY = `query PageModule {
   ${contactsQuery}
