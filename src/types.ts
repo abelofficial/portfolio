@@ -99,10 +99,11 @@ export interface IWorkModule {
 }
 
 export interface IContactModule {
-  icon: string;
-  url: string;
+  address: string;
   title: string;
-  responsiveImage: ResponsiveImageType;
+  icon: {
+    responsiveImage: ResponsiveImageType;
+  };
 }
 export interface IProjectModule {
   id: string;

@@ -2,6 +2,7 @@ export const contactsQuery = `
     allContacts {
         title
         id
+        address
         icon {
             url
             title
