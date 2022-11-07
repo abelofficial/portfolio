@@ -13,6 +13,8 @@ import {
 import useOnScreen from "@src/hooks/UseOnScreen";
 import MenuBar from "@components/MenuBar";
 import PageContainer from "@hoc/PageContainer";
+import Footer from "@components/Footer";
+import { useMediaQuery } from "@mantine/hooks";
 
 export interface LayoutProps {
   children: JSX.Element;
@@ -20,10 +22,11 @@ export interface LayoutProps {
 }
 
 const Layout = ({ children, sidebar }: LayoutProps) => {
-  const { classes, theme } = useStyles();
+  const { classes } = useStyles();
   const dispatch = useDispatch();
   const isDrawerOpen = useSelector(selectDrawer);
-  const [setRef, visible] = useOnScreen({ threshold: 0.6 });
+  const [visible] = useOnScreen({ threshold: 0.6 });
+  const bigScreen = useMediaQuery("(min-width: 993px)");
 
   useEffect(() => {
     if (visible) {
@@ -46,8 +49,10 @@ const Layout = ({ children, sidebar }: LayoutProps) => {
       </Box>
       <Box className={classes.container}>
         <Box className={classes.main}>
-          <PageContainer>{children}</PageContainer>
-          {/* <Footer /> */}
+          <PageContainer>
+            {children}
+            {bigScreen || <Footer />}
+          </PageContainer>
         </Box>
         <Box className={classes.sideBar}>
           <Box className={classes.sideBar_bg} />

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Collapse } from "@mantine/core";
 import userStyles from "./style";
 import { CloseIcon, OpenIcon } from "@components/Icons";
+import Footer from "@components/Footer";
 
 export interface SidebarProps {
   children: JSX.Element;
@@ -55,7 +56,10 @@ const Index = ({ children }) => {
           </CloseIcon>
         ))}
 
-      <Collapse in={opened}>{children}</Collapse>
+      <Collapse in={opened}>
+        {children}
+        {bigScreen && <Footer />}
+      </Collapse>
     </Box>
   );
 };
