@@ -5,6 +5,7 @@ const styles = createStyles((theme) => ({
     padding: `${theme.spacing.xl}px ${theme.spacing.sm}px`,
     minHeight: "100vh",
     display: "flex",
+    gap: "1rem",
     flexDirection: "column",
     justifyContent: "space-evenly",
     alignItems: "center",
