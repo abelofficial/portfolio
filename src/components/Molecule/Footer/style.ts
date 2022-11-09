@@ -2,9 +2,9 @@ import { createStyles } from "@mantine/core";
 
 const styles = createStyles((theme) => ({
   container: {
-    width: "100%",
     position: "absolute",
     bottom: 0,
+    left: "40%",
     textAlign: "center",
     backgroundColor: "transparent",
   },

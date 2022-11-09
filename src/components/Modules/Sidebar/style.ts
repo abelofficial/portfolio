@@ -2,10 +2,10 @@ import { createStyles } from "@mantine/core";
 
 const styles = createStyles((theme) => ({
   container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
+    width: "100%",
+    [`@media (min-width: ${theme.breakpoints.md}px)`]: {
+      minHeight: "90vh",
+    },
   },
 
   icon: {
