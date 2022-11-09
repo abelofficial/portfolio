@@ -53,12 +53,9 @@ const Index = ({ data }: ITimelineProps) => {
           <Box>
             <Testimonials
               data={data.allTestimonials}
-              title={getTitle(CONTACT_ID)}
-            />
-            <Contact
-              data={data.allContacts}
               title={getTitle(TESTIMONIALS_ID)}
             />
+            <Contact data={data.allContacts} title={getTitle(CONTACT_ID)} />
           </Box>
         }
       >
