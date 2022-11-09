@@ -1,9 +1,16 @@
 import { Card, Group, Badge, Button, Text } from "@mantine/core";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import useStyles from "./style";
 
-const BlogTopic = () => {
+export interface BlogTopic {
+  id: number;
+  title: string;
+  description: string;
+}
+const BlogTopic = ({ id, title, description }: BlogTopic) => {
   const { classes } = useStyles();
+  const router = useRouter();
 
   return (
     <Card shadow='sm' p='lg' radius='md' withBorder className={classes.card}>
@@ -18,18 +25,24 @@ const BlogTopic = () => {
       </Card.Section>
 
       <Group position='apart' mt='md' mb='xs'>
-        <Text weight={500}>AWS Cloud Engineering</Text>
+        <Text weight={500}>{title}</Text>
         <Badge color='pink' variant='light'>
           AWS
         </Badge>
       </Group>
 
       <Text size='sm' color='dimmed'>
-        With Fjord Tours you can explore more of the magical fjord landscapes
-        with tours and activities on and around the fjords of Norway
+        {description}
       </Text>
 
-      <Button variant='light' color='blue' fullWidth mt='md' radius='md'>
+      <Button
+        variant='light'
+        color='orange'
+        fullWidth
+        mt='md'
+        radius='md'
+        onClick={() => router.push(`blogs/${id}`)}
+      >
         Explore Articles
       </Button>
     </Card>
