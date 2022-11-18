@@ -1,4 +1,6 @@
 import { Box, TextInput } from "@mantine/core";
+import Lottie from "react-lottie-player";
+import * as animData from "../../../../public/animations/under-construction.json";
 import useStyles from "./style";
 
 const BlogSidebar = () => {
@@ -10,6 +12,7 @@ const BlogSidebar = () => {
         radius='xl'
         className={classes.input}
       />
+      <Lottie loop play animationData={animData} className={classes.anim} />
     </Box>
   );
 };

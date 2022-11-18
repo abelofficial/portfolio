@@ -1,7 +1,10 @@
 import Layout from "@components/Modules/Layout";
 import { Title, Text } from "@mantine/core";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Lottie from "react-lottie-player";
 import sampleUserData from "./sample-data.json";
+import * as animData from "../../../public/animations/under-construction.json";
+import useStyles from "./style";
 
 export interface BlogDetailPageProps {
   data: {
@@ -12,12 +15,21 @@ export interface BlogDetailPageProps {
 }
 
 const BlogDetailPage = ({ data }: BlogDetailPageProps) => {
+  const { classes, theme } = useStyles();
+
   if (!data) return <></>;
+
   const { id, title, description } = data;
 
   console.log(title);
   return (
-    <Layout sidebar={<></>}>
+    <Layout
+      sidebar={
+        <>
+          <Lottie loop play animationData={animData} className={classes.anim} />
+        </>
+      }
+    >
       <>
         <Title>{title}</Title>
         <Text>{description}</Text>
