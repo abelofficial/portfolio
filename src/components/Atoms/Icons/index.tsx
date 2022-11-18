@@ -514,7 +514,10 @@ export const OpenIcon = ({ isActive, invert, ...props }) => {
         <g>
           <path
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             d='M287.165,127.078c-2.461-2.836-5.878-4.547-9.628-4.814l-8.648-0.614L163.833,16.589
 			C162.745,7.28,154.898,0,145.303,0c-9.534,0-17.339,7.177-18.511,16.397L25.05,103.688l0.009-0.563h-0.005
@@ -534,7 +537,10 @@ export const OpenIcon = ({ isActive, invert, ...props }) => {
             y='23.486'
             transform='matrix(0.0711 -0.9975 0.9975 0.0711 -5.337 266.2547)'
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             width='9.375'
             height='225.014'
@@ -545,7 +551,10 @@ export const OpenIcon = ({ isActive, invert, ...props }) => {
             y='140.297'
             transform='matrix(0.0711 -0.9975 0.9975 0.0711 102.9672 400.5374)'
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             width='9.375'
             height='9.375'
@@ -556,7 +565,10 @@ export const OpenIcon = ({ isActive, invert, ...props }) => {
             y='145.058'
             transform='matrix(0.0711 -0.9975 0.9975 0.0711 -134.6485 370.5419)'
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             width='9.375'
             height='225.014'
@@ -567,14 +579,20 @@ export const OpenIcon = ({ isActive, invert, ...props }) => {
             y='261.844'
             transform='matrix(0.071 -0.9975 0.9975 0.071 -26.3137 504.8105)'
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             width='9.375'
             height='9.375'
           />
           <path
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             d='M66.67,234.075c10.95,0,20.236-8.498,21.028-19.598l2.995-42.08
 			c0.398-5.62-1.411-11.063-5.1-15.319c-3.689-4.256-8.817-6.82-14.437-7.223c-5.611-0.398-11.062,1.411-15.319,5.1
@@ -586,7 +604,10 @@ export const OpenIcon = ({ isActive, invert, ...props }) => {
           />
           <path
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             d='M110.227,162.038l9.356,0.67c7.73,0.548,13.575,7.289,13.027,15.023s-7.331,13.613-15.028,13.027
 			l-9.352-0.666l-0.67,9.352l9.352,0.666c12.853,0.844,24.127-8.822,25.045-21.713c0.914-12.891-8.822-24.122-21.712-25.041
@@ -594,14 +615,20 @@ export const OpenIcon = ({ isActive, invert, ...props }) => {
           />
           <polygon
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             points='189.712,167.705 190.383,158.353 152.977,155.686 146.981,239.845 184.383,242.512 
 			185.053,233.161 156.998,231.164 158.995,203.109 187.05,205.106 187.716,195.755 159.661,193.758 161.658,165.703 		'
           />
           <polygon
             style={{
-              fill: theme.colorScheme === "light" ? "#333333" : "#FFFFFF",
+              fill:
+                theme.colorScheme === "light"
+                  ? theme.colors.dark[8]
+                  : theme.white,
             }}
             points='231.811,236.494 231.014,236.433 222.314,160.627 204.408,159.352 198.412,243.511 
 			207.764,244.181 213.089,169.369 213.886,169.425 222.586,245.231 240.492,246.506 246.487,162.347 237.136,161.681 		'

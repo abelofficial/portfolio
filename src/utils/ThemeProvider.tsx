@@ -26,7 +26,7 @@ export const ThemeProvider = ({ mode, children }: IThemeProviderProps) => {
     }
     darkMode || dispatch(turnOffDarkMode());
     darkMode && dispatch(setDarkMode());
-  }, [darkMode]);
+  }, [darkMode, dispatch, mode]);
 
   const { colorScheme, ...theme } = darkMode ? lightTheme : darkTheme;
   return (

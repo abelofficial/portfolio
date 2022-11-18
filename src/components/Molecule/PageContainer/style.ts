@@ -3,8 +3,7 @@ import { createStyles } from "@mantine/core";
 const useStyles = createStyles((theme) => ({
   container: {
     padding: theme.spacing.xs,
-    width: "100vw",
-    maxWidth: "100%",
+    width: "100%",
     minHeight: "100vh",
     margin: "auto",
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {

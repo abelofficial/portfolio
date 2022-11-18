@@ -1,10 +1,11 @@
 import { useMediaQuery } from "@mantine/hooks";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { Box, Collapse } from "@mantine/core";
+import { Box, Collapse, Grid } from "@mantine/core";
 import userStyles from "./style";
 import { CloseIcon, OpenIcon } from "@components/Atoms/Icons";
 import Footer from "@components/Molecule/Footer";
+import SwitchableIcon from "../../Atoms/SwitchableIcon";
 
 export interface SidebarProps {
   children: JSX.Element;
@@ -33,29 +34,32 @@ const Index = ({ children }) => {
 
   return (
     <Box className={classes.container}>
-      {showing &&
-        (!opened ? (
-          <OpenIcon
-            width={30}
-            height={30}
-            onClick={() => setOpened(true)}
-            isActive={undefined}
-            invert={undefined}
-          >
-            {opened ? "hide" : "more"}
-          </OpenIcon>
-        ) : (
-          <CloseIcon
-            width={30}
-            height={30}
-            onClick={() => setOpened(false)}
-            isActive={undefined}
-            invert={undefined}
-          >
-            {opened ? "hide" : "more"}
-          </CloseIcon>
-        ))}
-
+      <Grid justify='center'>
+        {showing && (
+          <SwitchableIcon
+            value={opened}
+            setValue={setOpened}
+            activeIcon={
+              <CloseIcon
+                width={30}
+                height={30}
+                onClick={() => setOpened(false)}
+                isActive={undefined}
+                invert={undefined}
+              />
+            }
+            inactiveIcon={
+              <OpenIcon
+                width={30}
+                height={30}
+                onClick={() => setOpened(true)}
+                isActive={undefined}
+                invert={undefined}
+              />
+            }
+          />
+        )}
+      </Grid>
       <Collapse in={opened}>
         {children}
         {bigScreen && <Footer />}
