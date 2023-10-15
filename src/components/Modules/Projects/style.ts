@@ -1,6 +1,6 @@
 import { createStyles } from "@mantine/core";
 
-const styles = createStyles((theme) => ({
+const styles = createStyles(() => ({
   listContainer: {
     display: "flex",
     flexDirection: "column",

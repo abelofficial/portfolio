@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Image from "next/image";
 import useStyles from "./style";
-import { GithubConnect } from "@services/GithubConnect";
 import { IGithubProfile } from "@src/types";
 import InfoContainer from "@components/Molecule/InfoContainer";
 import { Grid, Box, Title } from "@mantine/core";
@@ -10,29 +9,11 @@ import GithubActivities from "../GithubActivities";
 export interface IGithubSummeryProps {
   title: string;
   iconUrl?: string;
+  githubAccount: IGithubProfile;
 }
 
-const Index = ({ title, iconUrl }: IGithubSummeryProps) => {
+const Index = ({ title, iconUrl, githubAccount }: IGithubSummeryProps) => {
   const { classes } = useStyles();
-
-  const [githubAccount, setGithubAccount] = useState<IGithubProfile>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const github = new GithubConnect();
-      const accountData = await github.getUser();
-      const orgData = await github.getUserOrgs();
-
-      const data: IGithubProfile = {
-        orgs: orgData.data.length,
-        ...accountData.data,
-      };
-
-      setGithubAccount(data);
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <InfoContainer>

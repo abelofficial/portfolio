@@ -12,7 +12,7 @@ import {
   techstacksQuery,
   testimonialsQuery,
 } from "@utils/DatoQueries";
-import { IPageModule } from "@src/types";
+import { IGithubProfile, IPageModule } from "@src/types";
 import {
   CONTACT_ID,
   GITHUBSUMMERY_ID,
@@ -24,6 +24,7 @@ import { HomePageMetadata } from "@components/Atoms/Metadata";
 import TechStack from "@components/Modules/TechStack";
 import Testimonials from "@components/Modules/Testimonials";
 import GithubSummery from "@components/Modules/GithubSummery";
+import { GithubConnect } from "@services/GithubConnect";
 
 const HOMEPAGE_QUERY = `query PageModule {
   ${contactsQuery}
@@ -34,12 +35,13 @@ const HOMEPAGE_QUERY = `query PageModule {
 }
 `;
 interface IHomeProps {
-  data: IPageModule;
+  datoData: IPageModule;
+  github: IGithubProfile;
 }
 
-const Index = ({ data }: IHomeProps) => {
+const Index = ({ datoData, github }: IHomeProps) => {
   const getTitle = (id: string) =>
-    data.allSections.find((s) => s.id === id).title;
+    datoData.allSections.find((s) => s.id === id).title;
 
   return (
     <>
@@ -47,9 +49,9 @@ const Index = ({ data }: IHomeProps) => {
       <Layout
         sidebar={
           <>
-            <Contact data={data.allContacts} title={getTitle(CONTACT_ID)} />
+            <Contact data={datoData.allContacts} title={getTitle(CONTACT_ID)} />
             <Testimonials
-              data={data.allTestimonials}
+              data={datoData.allTestimonials}
               title={getTitle(TESTIMONIALS_ID)}
             />
           </>
@@ -58,20 +60,25 @@ const Index = ({ data }: IHomeProps) => {
         <motion.div variants={routeAnim.stagger}>
           <motion.div variants={routeAnim.fadeInUp}>
             <GithubSummery
+              githubAccount={github}
               title={getTitle(GITHUBSUMMERY_ID)}
               iconUrl={
-                data.allSections.find((s) => s.id === GITHUBSUMMERY_ID).icon.url
+                datoData.allSections.find((s) => s.id === GITHUBSUMMERY_ID).icon
+                  .url
               }
             />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
             <TechStack
               title={getTitle(TECHSTACK_ID)}
-              data={data.allTechstacks}
+              data={datoData.allTechstacks}
             />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <Projects data={data.allProjects} title={getTitle(PROJECTS_ID)} />
+            <Projects
+              data={datoData.allProjects}
+              title={getTitle(PROJECTS_ID)}
+            />
           </motion.div>
         </motion.div>
       </Layout>
@@ -80,12 +87,23 @@ const Index = ({ data }: IHomeProps) => {
 };
 
 export async function getStaticProps() {
-  const data: IPageModule = await request({
+  const datoData: IPageModule = await request({
     query: HOMEPAGE_QUERY,
     variables: { limit: 10 },
   });
+
+  const githubConnect = new GithubConnect();
+  const accountData = await githubConnect.getUser();
+  const orgData = await githubConnect.getUserOrgs();
+
+  const github: IGithubProfile = {
+    orgs: orgData.data.length,
+    ...accountData.data,
+  };
+
   return {
-    props: { data },
+    props: { datoData, github },
+    revalidate: 10,
   };
 }
 
