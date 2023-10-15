@@ -1,3 +1,4 @@
+import { IPageModule } from "@src/types";
 import { GraphQLClient } from "graphql-request";
 
 export interface IDatoRequestProps {
@@ -12,7 +13,7 @@ export function request({
   variables,
   includeDrafts,
   excludeInvalid,
-}: IDatoRequestProps) {
+}: IDatoRequestProps): Promise<IPageModule> {
   const headers = {
     authorization: `Bearer ${process.env.NEXT_DATOCMS_API_TOKEN}`,
   };
@@ -23,5 +24,6 @@ export function request({
     headers["X-Exclude-Invalid"] = "true";
   }
   const client = new GraphQLClient("https://graphql.datocms.com", { headers });
-  return client.request(query, variables);
+  let response = client.request<IPageModule>(query, variables);
+  return response;
 }
