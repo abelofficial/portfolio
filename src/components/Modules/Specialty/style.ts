@@ -30,10 +30,7 @@ const styles = createStyles((theme) => ({
   card: {
     margin: `1rem`,
     borderRadius: theme.radius.md,
-    backgroundColor:
-      theme.colorScheme === "dark"
-        ? theme.colors.dark[7]
-        : theme.colors.gray[0],
+    backgroundColor: "inherit",
     maxWidth: "100%",
     padding: theme.spacing.xs,
   },
@@ -49,6 +46,7 @@ const styles = createStyles((theme) => ({
   },
   text: {
     margin: "0 0 1rem",
+    textAlign: "justify",
     color:
       theme.colorScheme === "dark"
         ? theme.colors.gray[1]
