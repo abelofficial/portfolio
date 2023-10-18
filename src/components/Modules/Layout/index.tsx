@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import clsx from "classnames";
-import { Box } from "@mantine/core";
+import { Box, Grid } from "@mantine/core";
 import useStyles from "./style";
 import Toolbar from "@components/Molecule/Toolbar";
 import Sidebar from "@components/Modules/Sidebar";
@@ -50,8 +50,14 @@ const Layout = ({ children, sidebar }: LayoutProps) => {
       <Box className={classes.container}>
         <Box className={classes.main}>
           <PageContainer>
-            {children}
-            {bigScreen || <Footer />}
+            <Grid>
+              <Grid.Col>{children}</Grid.Col>
+              {bigScreen || (
+                <Grid.Col>
+                  <Footer />
+                </Grid.Col>
+              )}
+            </Grid>
           </PageContainer>
         </Box>
         <Box className={classes.sideBar}>
