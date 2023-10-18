@@ -103,7 +103,7 @@ export async function getStaticProps() {
 
   return {
     props: { datoData, github },
-    revalidate: 10,
+    revalidate: 60,
   };
 }
 
