@@ -87,7 +87,7 @@ const Index = ({ data }: ITimelineProps) => {
 };
 
 export async function getStaticProps() {
-  const data: IPageModule = await request({
+  const data: IPageModule = await request<IPageModule>({
     query: TIMELINEPAGE_QUERY,
     variables: { limit: 10 },
   });

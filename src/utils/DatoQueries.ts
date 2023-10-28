@@ -140,3 +140,31 @@ export const techstacksQuery = `
         name
     }
 `;
+
+export const blogQuery = `
+    allBlogs {
+        id
+        position
+        title
+        coverImage {
+        url
+        title
+        }
+        description
+        content
+    }
+`;
+
+export const singleBlogQuery = (id: string) => `
+    allBlogs(filter: {id: {eq: ${id}}}) {
+        id
+        position
+        title
+        coverImage {
+        url
+        title
+        }
+        description
+        content
+    }
+`;

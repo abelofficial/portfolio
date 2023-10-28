@@ -1,27 +1,37 @@
 import Layout from "@components/Modules/Layout";
-import { Title, Text } from "@mantine/core";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Lottie from "react-lottie-player";
-import sampleUserData from "./sample-data.json";
 import * as animData from "../../../public/animations/under-construction.json";
 import useStyles from "./style";
+import { IBlogContent, IBlogResponse } from "@src/types";
+import { blogQuery, singleBlogQuery } from "@utils/DatoQueries";
+import { request } from "@services/DatoCMS";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import { BackIcon } from "@components/Atoms/Icons";
+import { useRouter } from "next/router";
 
 export interface BlogDetailPageProps {
-  data: {
-    id: number;
-    title: string;
-    description: string;
-  };
+  data: IBlogContent;
 }
 
-const BlogDetailPage = ({ data }: BlogDetailPageProps) => {
-  const { classes, theme } = useStyles();
+const BLOGPAGE_QUERY = (id: string) => `query BlogModule {
+    ${singleBlogQuery(id)}
+  }
+`;
 
+const ALL_BLOGPAGE_QUERY = `query BlogModule {
+  ${blogQuery}
+}
+`;
+
+const BlogDetailPage = ({ data }: BlogDetailPageProps) => {
+  const { classes } = useStyles();
+  const router = useRouter();
   if (!data) return <></>;
 
-  const { id, title, description } = data;
+  const { content } = data;
 
-  console.log(title);
   return (
     <Layout
       sidebar={
@@ -31,8 +41,8 @@ const BlogDetailPage = ({ data }: BlogDetailPageProps) => {
       }
     >
       <>
-        <Title>{title}</Title>
-        <Text>{description}</Text>
+        <BackIcon onClick={() => router.back()} />
+        <MDXRemote {...content} />
       </>
     </Layout>
   );
@@ -41,23 +51,36 @@ const BlogDetailPage = ({ data }: BlogDetailPageProps) => {
 export default BlogDetailPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Get the paths we want to pre-render based on users
-  const paths = sampleUserData.map((blog) => ({
+  const data: IBlogResponse = await request<IBlogResponse>({
+    query: ALL_BLOGPAGE_QUERY,
+  });
+
+  const paths = data.allBlogs.map((blog) => ({
     params: { id: blog.id.toString() },
   }));
 
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  try {
-    const id = params?.id;
-    const data = sampleUserData.find((data) => data.id === Number(id));
-    // By returning { props: item }, the StaticPropsDetail component
-    // will receive `item` as a prop at build time
+interface StaticPathParamProp {
+  params: {
+    id: string;
+  };
+}
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}: StaticPathParamProp) => {
+  const response: IBlogResponse = await request<IBlogResponse>({
+    query: BLOGPAGE_QUERY(params.id),
+    variables: { limit: 10 },
+  });
 
-    return { props: { data } };
-  } catch (err: any) {
-    return { props: { errors: err.message } };
-  }
+  const result = response.allBlogs.find((b) => b.id == params.id);
+  const { content, ...rest } = result;
+  const textContent = await serialize(result.content);
+
+  return {
+    props: { data: { ...rest, content: textContent } },
+    revalidate: 60,
+  };
 };

@@ -1,8 +1,25 @@
 import { Maybe } from "graphql/jsutils/Maybe";
+import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { ReactNode } from "react";
 
 export interface IProps {
   children: ReactNode;
+}
+
+export interface IBlogResponse {
+  allBlogs: Array<IBlogContent>;
+}
+
+export interface IBlogContent {
+  id: string;
+  title: string;
+  position: Number;
+  description: string;
+  coverImage: IBlogImageResponse;
+  content: MDXRemoteSerializeResult<
+    Record<string, unknown>,
+    Record<string, unknown>
+  >;
 }
 
 export interface IGithubProfile {
@@ -123,6 +140,11 @@ export interface ITestimonialsModule {
   text: string;
   workPlace: string;
   workPosition: string;
+}
+
+export interface IBlogImageResponse {
+  url: String;
+  title: String;
 }
 
 export declare type ResponsiveImageType = {

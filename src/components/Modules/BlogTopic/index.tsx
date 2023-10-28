@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import useStyles from "./style";
 
 export interface BlogTopic {
-  id: number;
+  id: string;
   title: string;
   description: string;
 }
