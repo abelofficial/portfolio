@@ -8,6 +8,9 @@ const styles = createStyles(() => ({
     margin: "auto",
     paddingTop: "3rem",
   },
+  code: {
+    "pre code": {},
+  },
 }));
 
 export default styles;

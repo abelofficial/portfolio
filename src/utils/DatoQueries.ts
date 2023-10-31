@@ -156,7 +156,7 @@ export const blogQuery = `
 `;
 
 export const singleBlogQuery = (id: string) => `
-    allBlogs(filter: {id: {eq: ${id}}}) {
+    allBlogs(filter: {id: {eq: "${id}"}}) {
         id
         position
         title

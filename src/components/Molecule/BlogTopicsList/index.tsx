@@ -7,15 +7,26 @@ export interface BlogTopicsListProps {
   data: IBlogResponse;
 }
 
+const ITEMS_PER_PAGE = 5;
+
 const BlogTopicsList = ({ data }: BlogTopicsListProps) => {
   const { classes } = useStyles();
   return (
     <Box className={classes.container}>
-      <Pagination total={data.allBlogs.length} boundaries={1} color='yellow' />
+      <Pagination
+        total={data.allBlogs.length / ITEMS_PER_PAGE + 0.9}
+        boundaries={ITEMS_PER_PAGE}
+        color='yellow'
+      />
       <Grid justify='space-between' align='center'>
         {data.allBlogs.map((b) => (
           <Grid.Col xs={5} key={b.id}>
-            <BlogTopic id={b.id} title={b.title} description={b.description} />
+            <BlogTopic
+              id={b.id}
+              title={b.title}
+              description={b.description}
+              image={b.coverImage}
+            />
           </Grid.Col>
         ))}
       </Grid>

@@ -56,6 +56,16 @@ export const ThemeProvider = ({ mode, children }: IThemeProviderProps) => {
     >
       <Global
         styles={(t) => ({
+          ".mantine-Code-root": {
+            display: "block",
+            background: "none",
+            whiteSpace: "pre",
+            "-webkit-overflow-scrolling": "touch",
+            overflowX: "scroll",
+            maxWidth: "100%",
+            minWidth: "100px",
+            padding: 0,
+          },
           "*, *::before, *::after": {
             boxSizing: "border-box",
           },

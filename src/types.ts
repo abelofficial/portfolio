@@ -143,8 +143,8 @@ export interface ITestimonialsModule {
 }
 
 export interface IBlogImageResponse {
-  url: String;
-  title: String;
+  url: string;
+  title: string;
 }
 
 export declare type ResponsiveImageType = {

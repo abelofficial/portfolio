@@ -10,6 +10,7 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { BackIcon } from "@components/Atoms/Icons";
 import { useRouter } from "next/router";
+import { Code } from "@mantine/core";
 
 export interface BlogDetailPageProps {
   data: IBlogContent;
@@ -42,7 +43,7 @@ const BlogDetailPage = ({ data }: BlogDetailPageProps) => {
     >
       <>
         <BackIcon onClick={() => router.back()} />
-        <MDXRemote {...content} />
+        <MDXRemote {...content} components={{ code: Code }} />
       </>
     </Layout>
   );
