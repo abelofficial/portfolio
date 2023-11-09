@@ -2,7 +2,10 @@ import Github, { Theme } from "react-github-calendar";
 import React from "react";
 import useStyles from "./style";
 
-const Index = () => {
+export interface GithubActivitiesProps {
+  hideContributions?: boolean;
+}
+const Index = ({ hideContributions }: GithubActivitiesProps) => {
   const { theme } = useStyles();
 
   const calendarTheme: Theme = {
@@ -17,6 +20,7 @@ const Index = () => {
   };
   return (
     <Github
+      hideTotalCount={hideContributions}
       username='abelofficial'
       theme={calendarTheme}
       style={{

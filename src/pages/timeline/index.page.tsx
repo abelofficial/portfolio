@@ -13,18 +13,17 @@ import {
 import { IPageModule } from "@src/types";
 import { request } from "@services/DatoCMS";
 import Contact from "@components/Modules/Contact";
-import { Box } from "@mantine/core";
+import { Grid } from "@mantine/core";
 import {
   CONTACT_ID,
   EDUCATION_EXPERIENCE_ID,
   SPECIALTY_ID,
-  TESTIMONIALS_ID,
   WORK_EXPERIENCE_ID,
 } from "@utils/Variables";
 import { TimelinePageMetadata } from "@components/Atoms/Metadata";
 import Timeline from "@components/Modules/Timeline";
 import Specialty from "@components/Modules/Specialty";
-import Testimonials from "@components/Modules/Testimonials";
+import GithubActivities from "@components/Modules/GithubActivities";
 
 const TIMELINEPAGE_QUERY = `query PageModule {
   ${testimonialsQuery}
@@ -50,13 +49,14 @@ const Index = ({ data }: ITimelineProps) => {
       <TimelinePageMetadata />
       <Layout
         sidebar={
-          <Box>
-            <Testimonials
-              data={data.allTestimonials}
-              title={getTitle(TESTIMONIALS_ID)}
-            />
-            <Contact data={data.allContacts} title={getTitle(CONTACT_ID)} />
-          </Box>
+          <Grid py={20} px={5} mb={5}>
+            <Grid.Col>
+              <Contact data={data.allContacts} title={getTitle(CONTACT_ID)} />
+            </Grid.Col>
+            <Grid.Col>
+              <GithubActivities hideContributions />
+            </Grid.Col>
+          </Grid>
         }
       >
         <motion.div variants={routeAnim.stagger}>

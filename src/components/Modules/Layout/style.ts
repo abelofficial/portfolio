@@ -8,24 +8,6 @@ const styles = createStyles((theme) => ({
     maxWidth: "100%",
     padding: 0,
   },
-  toolbar: {
-    position: "fixed",
-    zIndex: 500,
-    left: "1rem",
-    height: "75%",
-    minHeight: "50rem",
-  },
-  showToolbar: {
-    left: "1rem",
-    top: "6rem",
-    transform: "scale(1)",
-  },
-  hideToolbar: {
-    left: "-7.2rem",
-    top: "-2rem",
-    transform: "scale(0.8)",
-  },
-
   container: {
     position: "relative",
     width: "100%",
@@ -43,7 +25,7 @@ const styles = createStyles((theme) => ({
     position: "relative",
     width: "100%",
     height: "100vh",
-    backgroundColor: theme.colors.backgroundSecondary[1],
+    backgroundColor: theme.colors.backgroundSecondary[2],
 
     [`@media (min-width: ${theme.breakpoints.md}px)`]: {
       overflowY: "scroll",

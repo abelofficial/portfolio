@@ -58,7 +58,6 @@ export const ThemeProvider = ({ mode, children }: IThemeProviderProps) => {
         styles={(t) => ({
           ".mantine-Code-root": {
             display: "block",
-            background: "none",
             whiteSpace: "pre",
             "-webkit-overflow-scrolling": "touch",
             overflowX: "scroll",

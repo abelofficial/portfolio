@@ -12,8 +12,8 @@ const theme: MantineThemeOverride = {
   },
   colors: {
     primaryColor: ["#ffc40c", "#ffc40c", "#ffc40c", "#ffc40c", "#ffc40c"],
-    backgroundPrimary: ["#000", ""],
-    backgroundSecondary: ["#0f0f0f", "#262626"],
+    backgroundPrimary: ["#262626", "#262626"],
+    backgroundSecondary: ["#0f0f0f", "#0f0f0f"],
     gray: [
       "#eee",
       "#BDBDBD",
