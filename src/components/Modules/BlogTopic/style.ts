@@ -10,9 +10,13 @@ const styles = createStyles((theme) => ({
     backgroundColor:
       theme.colorScheme === "light" ? "white" : theme.colors.dark[9],
   },
-  smallText: {
-    fontSize: "0.7rem",
-    color: theme.colorScheme === "light" ? theme.black : theme.white,
+  button: {
+    border: `0.06rem solid ${
+      theme.colorScheme === "light"
+        ? theme.colors.primaryColor[0]
+        : theme.colors.gray[1]
+    }`,
+    color: theme.colorScheme === "light" ? theme.black : theme.colors.gray[1],
   },
 }));
 

@@ -147,11 +147,16 @@ export const blogQuery = `
         position
         title
         coverImage {
-        url
-        title
+            responsiveImage(imgixParams: {w: "400", h: "160"}) {
+                title
+                width
+                src
+                height
+            }
         }
         description
         content
+        readArticle
     }
 `;
 

@@ -8,9 +8,16 @@ export interface BlogTopic {
   id: string;
   title: string;
   description: string;
+  readArticle: String;
   image: IBlogImageResponse;
 }
-const BlogTopic = ({ id, title, description, image }: BlogTopic) => {
+const BlogTopic = ({
+  id,
+  title,
+  description,
+  image,
+  readArticle,
+}: BlogTopic) => {
   const { classes } = useStyles();
   const router = useRouter();
 
@@ -18,10 +25,10 @@ const BlogTopic = ({ id, title, description, image }: BlogTopic) => {
     <Card shadow='sm' p='lg' radius='md' withBorder className={classes.card}>
       <Card.Section>
         <Image
-          src={image.url}
+          src={image.responsiveImage.src}
           width={400}
           height={160}
-          alt={image.title}
+          alt={image.responsiveImage.title}
           layout='responsive'
         />
       </Card.Section>
@@ -32,20 +39,18 @@ const BlogTopic = ({ id, title, description, image }: BlogTopic) => {
           AWS
         </Badge>
       </Group>
-
-      <Text size='sm' color='dimmed'>
-        {description}
-      </Text>
-
+      <Card.Section p={10}>
+        <Text size='sm' color='dimmed'>
+          {description}
+        </Text>
+      </Card.Section>
       <Button
-        variant='light'
-        color='orange'
+        className={classes.button}
         fullWidth
-        mt='md'
-        radius='md'
+        variant='outline'
         onClick={() => router.push(`blogs/${id}`)}
       >
-        Explore Articles
+        {readArticle}
       </Button>
     </Card>
   );

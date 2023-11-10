@@ -20,6 +20,7 @@ export interface IBlogContent {
     Record<string, unknown>,
     Record<string, unknown>
   >;
+  readArticle: string;
 }
 
 export interface IGithubProfile {
@@ -143,8 +144,12 @@ export interface ITestimonialsModule {
 }
 
 export interface IBlogImageResponse {
-  url: string;
-  title: string;
+  responsiveImage: {
+    src: string;
+    title: string;
+    width: number;
+    height: number;
+  };
 }
 
 export declare type ResponsiveImageType = {
