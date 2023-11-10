@@ -157,6 +157,7 @@ export const blogQuery = `
         description
         content
         readArticle
+        topics
     }
 `;
 

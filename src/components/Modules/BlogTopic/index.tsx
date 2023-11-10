@@ -8,7 +8,8 @@ export interface BlogTopic {
   id: string;
   title: string;
   description: string;
-  readArticle: String;
+  readArticle: string;
+  topic: string;
   image: IBlogImageResponse;
 }
 const BlogTopic = ({
@@ -17,6 +18,7 @@ const BlogTopic = ({
   description,
   image,
   readArticle,
+  topic: topics,
 }: BlogTopic) => {
   const { classes } = useStyles();
   const router = useRouter();
@@ -32,18 +34,21 @@ const BlogTopic = ({
           layout='responsive'
         />
       </Card.Section>
-
-      <Group position='apart' mt='md' mb='xs'>
+      <Group pt='md'>
         <Text weight={500}>{title}</Text>
-        <Badge color='pink' variant='light'>
-          AWS
-        </Badge>
       </Group>
       <Card.Section p={10}>
         <Text size='sm' color='dimmed'>
           {description}
         </Text>
       </Card.Section>
+      <Group position='left' py='xs'>
+        {topics.split(",").map((t) => (
+          <Badge key={t} color='pink' variant='light'>
+            {t}
+          </Badge>
+        ))}
+      </Group>
       <Button
         className={classes.button}
         fullWidth

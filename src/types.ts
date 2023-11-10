@@ -21,6 +21,7 @@ export interface IBlogContent {
     Record<string, unknown>
   >;
   readArticle: string;
+  topics: string;
 }
 
 export interface IGithubProfile {
