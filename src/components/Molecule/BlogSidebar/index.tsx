@@ -1,9 +1,8 @@
-import { Box, TextInput } from "@mantine/core";
-import Lottie from "react-lottie-player";
-import * as animData from "../../../../public/animations/under-construction.json";
+import { Box } from "@mantine/core";
 import useStyles from "./style";
 import { Topics } from "@components/Modules/Topics";
 import { IBlogResponse } from "@src/types";
+import { BlogCTA } from "@components/Modules/BlogCTA";
 
 export interface BlogSidebarProps {
   data: IBlogResponse;
@@ -28,13 +27,8 @@ export const BlogSidebar = ({ data }: BlogSidebarProps) => {
 
   return (
     <Box className={classes.container}>
-      <TextInput
-        placeholder='Search for blog'
-        radius='xl'
-        className={classes.input}
-      />
       <Topics topicTitles={getUniqueTopics()} />
-      <Lottie loop play animationData={animData} className={classes.anim} />
+      <BlogCTA blogs={data.allBlogs} blogCTA={data.allBlogsCtas} />
     </Box>
   );
 };

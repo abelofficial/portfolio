@@ -7,12 +7,6 @@ const styles = createStyles((theme) => ({
       minHeight: "90vh",
     },
   },
-
-  icon: {
-    borderRadius: "50%",
-    boxShadow: theme.shadows[1],
-    color: theme.colors.primaryColor[0],
-  },
 }));
 
 export default styles;

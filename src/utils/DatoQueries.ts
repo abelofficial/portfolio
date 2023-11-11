@@ -161,6 +161,16 @@ export const blogQuery = `
     }
 `;
 
+export const blogCTAQuery = `
+    allBlogsCtas {
+        id
+        blog {
+            id
+        }
+        sortIndex
+        title
+    }
+`;
 export const singleBlogQuery = (id: string) => `
     allBlogs(filter: {id: {eq: "${id}"}}) {
         id

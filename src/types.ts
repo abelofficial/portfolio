@@ -8,6 +8,16 @@ export interface IProps {
 
 export interface IBlogResponse {
   allBlogs: Array<IBlogContent>;
+  allBlogsCtas: Array<IBlogCTA>;
+}
+
+export interface IBlogCTA {
+  id: string;
+  blog: {
+    id: string;
+  };
+  sortIndex: Number;
+  title: string;
 }
 
 export interface IBlogContent {

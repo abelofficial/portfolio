@@ -5,12 +5,13 @@ const styles = createStyles((theme) => ({
     width: "100%",
     display: "flex",
     flexDirection: "column",
+    alignItems: "left",
+    padding: theme.spacing.lg,
+  },
+  section: {
+    display: "flex",
+    flexDirection: "column",
     alignItems: "center",
-    padding: 0,
-
-    [`@media (min-width: ${theme.breakpoints.md}px)`]: {
-      padding: theme.spacing.lg,
-    },
   },
 }));
 
