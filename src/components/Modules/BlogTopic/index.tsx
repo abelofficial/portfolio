@@ -9,7 +9,7 @@ export interface BlogTopic {
   title: string;
   description: string;
   readArticle: string;
-  topic: string;
+  topic: string[];
   image: IBlogImageResponse;
 }
 const BlogTopic = ({
@@ -43,7 +43,7 @@ const BlogTopic = ({
         </Text>
       </Card.Section>
       <Group position='left' py='xs'>
-        {topics.split(",").map((t) => (
+        {topics.map((t) => (
           <Badge key={t} color='pink' variant='light'>
             {t}
           </Badge>

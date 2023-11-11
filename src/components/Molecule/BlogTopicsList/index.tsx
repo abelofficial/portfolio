@@ -1,7 +1,7 @@
 import BlogTopic from "@components/Modules/BlogTopic";
 import { Grid, Pagination } from "@mantine/core";
 import useStyles from "./style";
-import { IBlogResponse } from "@src/types";
+import { IBlogContent, IBlogResponse } from "@src/types";
 import { useState } from "react";
 
 export interface BlogTopicsListProps {
@@ -13,6 +13,8 @@ const ITEMS_PER_PAGE = 4;
 const BlogTopicsList = ({ data }: BlogTopicsListProps) => {
   const { classes } = useStyles();
   const [page, setPage] = useState(1);
+
+  const topics = (b: IBlogContent) => b.topics.split(",");
 
   const currentPageBlogs = (page: number) =>
     data.allBlogs.slice(
@@ -41,7 +43,7 @@ const BlogTopicsList = ({ data }: BlogTopicsListProps) => {
                 description={b.description}
                 image={b.coverImage}
                 readArticle={b.readArticle}
-                topic={b.topics}
+                topic={topics(b)}
               />
             </Grid.Col>
           ))}
